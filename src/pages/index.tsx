@@ -1,45 +1,45 @@
-import { BaseLayout, GButton } from "ui";
+import { BaseLayout, GButton } from 'ui';
 
-import type { NextPageWithLayout, GetServerSideProps } from "next";
+import type { NextPageWithLayout, GetServerSideProps } from 'next';
 
 interface Props {
-  data: {
-    message: string;
-  };
+	data: {
+		message: string;
+	};
 }
 
 const IndexPage: NextPageWithLayout<Props, { yo: string }> = () => (
-  <>
-    <GButton />
-  </>
+	<>
+		<GButton />
+	</>
 );
 
 IndexPage.Layout = {
-  Component: BaseLayout,
-  props: ({ data: { message } }) => {
-    if (message == "yo") {
-      return {
-        yo: "yo",
-      };
-    } else {
-      return {
-        yo: "no",
-        style: {
-          display: "block",
-        },
-      };
-    }
-  },
+	Component: BaseLayout,
+	props: ({ data: { message } }) => {
+		if (message == 'yo') {
+			return {
+				yo: 'yo',
+			};
+		} else {
+			return {
+				yo: 'no',
+				style: {
+					display: 'block',
+				},
+			};
+		}
+	},
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
-  return {
-    props: {
-      data: {
-        message: "Message from getServerSideProps",
-      },
-    },
-  };
+	return {
+		props: {
+			data: {
+				message: 'Message from getServerSideProps',
+			},
+		},
+	};
 };
 
 export default IndexPage;

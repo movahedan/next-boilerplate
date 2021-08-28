@@ -1,28 +1,33 @@
-module.exports = {
-  purge: {
-    mode: "all",
-    options: {
-      keyframes: true,
-      fontFace: true,
-    },
-    preserveHtmlElements: false,
-    content: [],
-  },
+// @ts-check
 
-  mode: "jit",
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {
-      maxWidth: {
-        screen: "100vw",
-      },
-    },
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-  corePlugins: {
-    float: false,
-  },
+/**
+ * @type {import("tailwindcss/tailwind-config").TailwindConfig }
+ **/
+module.exports = {
+	purge: {
+		mode: 'all',
+		options: {
+			keyframes: true,
+			fontFace: true,
+		},
+		preserveHtmlElements: false,
+		content: [],
+	},
+
+	mode: 'jit',
+	darkMode: false,
+	theme: {
+		extend: {
+			maxWidth: {
+				screen: '100vw',
+			},
+		},
+	},
+	variants: {
+		extend: {},
+	},
+	plugins: [],
+	corePlugins: {
+		float: false,
+	},
 };

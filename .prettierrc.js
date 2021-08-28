@@ -1,4 +1,7 @@
 module.exports = {
-  semi: true,
-  printWidth: 80,
+	semi: true,
+	singleQuote: true,
+	jsxSingleQuote: true,
+	printWidth: 80,
+	useTabs: true,
 };

@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 
-import { PostList } from "ui";
+import { PostList } from 'ui';
 
 const ClientOnly = () => {
-  return (
-    <>
-      <p>This data is loaded on client and not prefetched</p>
-      <PostList />
-    </>
-  );
+	return (
+		<>
+			<p>This data is loaded on client and not prefetched</p>
+			<PostList />
+		</>
+	);
 };
 
 export default ClientOnly;

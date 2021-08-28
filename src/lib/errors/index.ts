@@ -1,1 +1,1 @@
-export * from "./withErrorHandler";
+export * from './withErrorHandler';

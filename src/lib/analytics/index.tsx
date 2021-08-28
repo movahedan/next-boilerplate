@@ -1,13 +1,13 @@
-import { useAnalyticsPageEvent, useAuthenticatedEvent } from "./providers";
+import { useAnalyticsPageEvent, useAuthenticatedEvent } from './providers';
 
-import type { FC } from "react";
+import type { FC } from 'react';
 
 export const AnalyticsProvider: FC = () => {
-  useAnalyticsPageEvent();
-  useAuthenticatedEvent();
+	useAnalyticsPageEvent();
+	useAuthenticatedEvent();
 
-  return null;
+	return null;
 };
 
-export * from "./script";
-export * from "./events";
+export * from './script';
+export * from './events';
