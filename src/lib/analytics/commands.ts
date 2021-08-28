@@ -1,4 +1,4 @@
-import { TfieldsObject, TAnalyticEvent } from "./types";
+import type { TfieldsObject, TAnalyticEvent } from "./types";
 
 const resetFields = (fieldsObject: TfieldsObject = {}): TfieldsObject => {
   return Object.entries(fieldsObject).reduce(

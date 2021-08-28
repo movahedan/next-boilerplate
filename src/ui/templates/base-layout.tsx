@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import type { FC } from "react";
 
-export const GBaseLayout: FC = ({ children }) => (
+export const BaseLayout: FC = ({ children }) => (
   <>
     <nav>
       <Link href="/">

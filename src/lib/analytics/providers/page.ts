@@ -1,7 +1,9 @@
 import { useRouter } from "next/router";
-import { ReactEventHandler, useEffect } from "react";
+import { useEffect } from "react";
 
 import { analyticPageEvent } from "../events";
+
+import type { ReactEventHandler } from "react";
 
 export const useAnalyticsPageEvent = () => {
   const router = useRouter();

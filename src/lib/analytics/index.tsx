@@ -1,6 +1,6 @@
-import { FC } from "react";
-
 import { useAnalyticsPageEvent, useAuthenticatedEvent } from "./providers";
+
+import type { FC } from "react";
 
 export const AnalyticsProvider: FC = () => {
   useAnalyticsPageEvent();

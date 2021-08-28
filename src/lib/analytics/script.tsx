@@ -1,6 +1,6 @@
-import { FC } from "react";
-
 import { analyticsTrackingId, analyticsId } from "./consts";
+
+import type { FC } from "react";
 
 export const AnalyticsHeadScript: FC = () =>
   analyticsId && analyticsTrackingId ? (

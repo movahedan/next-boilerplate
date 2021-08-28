@@ -1,4 +1,4 @@
-import { GBaseLayout, GButton } from "ui";
+import { BaseLayout, GButton } from "ui";
 
 import type { NextPageWithLayout, GetServerSideProps } from "next";
 
@@ -15,7 +15,7 @@ const IndexPage: NextPageWithLayout<Props, { yo: string }> = () => (
 );
 
 IndexPage.Layout = {
-  Component: GBaseLayout,
+  Component: BaseLayout,
   props: ({ data: { message } }) => {
     if (message == "yo") {
       return {

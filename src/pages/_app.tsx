@@ -4,11 +4,10 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { Hydrate } from "react-query/hydration";
 
-import { GBaseLayout } from "ui";
+import { BaseLayout } from "ui";
 
 import { AnalyticsProvider } from "lib/analytics";
 import { withErrorHandler } from "lib/errors";
-// import { reduxWrapper } from "lib/store";
 import { isWebVitalsEnable } from "lib/utils";
 import "tailwindcss/tailwind.css";
 
@@ -18,7 +17,7 @@ import type { FC } from "react";
 const App: FC<AppWithLayoutProps> = ({ Component, pageProps }) => {
   const queryClient = useRef(new QueryClient());
 
-  const Layout = Component.Layout?.Component || GBaseLayout;
+  const Layout = Component.Layout?.Component || BaseLayout;
   const layoutProps =
     typeof Component.Layout?.props === "function"
       ? Component.Layout?.props(pageProps)
@@ -65,14 +64,6 @@ const App: FC<AppWithLayoutProps> = ({ Component, pageProps }) => {
           sizes="32x32"
         />
         <link rel="apple-touch-icon" href="/apple-icon.png"></link>
-
-        <link
-          rel="preconnect"
-          crossOrigin=""
-          href="https://fonts.gstatic.com/"
-        />
-        <link rel="preload" as="style" href="/font.css" />
-        <link rel="stylesheet" href="/font.css" />
       </Head>
     </>
   );

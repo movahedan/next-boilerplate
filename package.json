@@ -13,31 +13,27 @@
     "start": "NODE_ENV=production next start",
     "postinstall": "husky install",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
-    "lint": "eslint --ext js,jsx,ts,tsx . --fix"
+    "lint": "next lint"
   },
   "dependencies": {
-    "next": "^10.2.0",
+    "next": "^11.1.0",
     "react": "^17.0.2",
-    "react-dom": "17.0.2",
+    "react-dom": "^17.0.2",
     "react-query": "^3.21.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
+    "@next/eslint-plugin-next": "^11.1.0",
     "@styled-jsx/plugin-sass": "^4.0.1",
     "@types/node": "^15.3.0",
     "@types/react": "^17.0.5",
-    "@typescript-eslint/eslint-plugin": "^4.24.0",
-    "@typescript-eslint/parser": "^4.24.0",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
     "autoprefixer": "^10.3.3",
-    "clean-css-cli": "^5.3.0",
     "eslint": "^7.26.0",
+    "eslint-config-next": "11.1.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-import-resolver-typescript": "^2.4.0",
-    "eslint-plugin-import": "^2.23.3",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.23.2",
-    "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-tailwind": "^0.2.1",
     "fetch": "^1.1.0",
     "husky": "^6.0.0",
@@ -47,10 +43,9 @@
     "postcss": "^8.3.6",
     "postcss-nested": "^5.0.6",
     "prettier": "^2.3.0",
-    "redux-devtools-extension": "^2.13.9",
     "sass": "^1.38.1",
     "styled-jsx-plugin-postcss": "^4.0.1",
     "tailwindcss": "^2.2.8",
-    "typescript": "^4.2.4"
+    "typescript": "~4.3"
   }
 }
