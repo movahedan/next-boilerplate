@@ -1,6 +1,3 @@
-// eslint-disable-next-line import/no-unassigned-import
-import 'isomorphic-unfetch';
-
 export const fetchPosts = async (limit = 10) => {
 	const parsed = (await fetch(
 		'https://jsonplaceholder.typicode.com/posts'

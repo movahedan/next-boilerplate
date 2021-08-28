@@ -51,7 +51,6 @@ module.exports = {
 					'**/*.jpg',
 					'**/*.jpeg',
 					'node',
-					'isomorphic-unfetch',
 				],
 			},
 		],

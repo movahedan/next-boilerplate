@@ -37,7 +37,6 @@
     "eslint-plugin-tailwind": "^0.2.1",
     "fetch": "^1.1.0",
     "husky": "^6.0.0",
-    "isomorphic-unfetch": "^3.1.0",
     "lint-staged": "^11.0.0",
     "lost": "^8.3.1",
     "postcss": "^8.3.6",
