@@ -1,4 +1,4 @@
-import { BaseLayout, GButton } from 'ui';
+import { BaseLayout } from 'ui';
 
 import type { NextPageWithLayout, GetServerSideProps } from 'next';
 
@@ -13,7 +13,6 @@ const IndexPage: NextPageWithLayout<Props, { yo: string }> = ({
 }) => (
 	<>
 		<h1>{message}</h1>
-		<GButton />
 	</>
 );
 

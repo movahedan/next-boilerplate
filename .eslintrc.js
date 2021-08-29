@@ -1,4 +1,11 @@
 module.exports = {
+	env: {
+		browser: true,
+		commonjs: true,
+		es6: true,
+		node: true,
+		jest: true,
+	},
 	ignorePatterns: ['node_modules/*', '.next/*', '.out/*', '.husky/*'],
 	plugins: ['@typescript-eslint'],
 	extends: [
