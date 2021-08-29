@@ -8,8 +8,11 @@ interface Props {
 	};
 }
 
-const IndexPage: NextPageWithLayout<Props, { yo: string }> = () => (
+const IndexPage: NextPageWithLayout<Props, { yo: string }> = ({
+	data: { message },
+}) => (
 	<>
+		<h1>{message}</h1>
 		<GButton />
 	</>
 );
