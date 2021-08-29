@@ -2,13 +2,14 @@
   "compilerOptions": {
     "target": "es6",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
     "strict": true,
+    "allowJs": false,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "module": "esnext",
     "typeRoots": ["node_modules/@types"],
+    "types": ["jest", "@testing-library/jest-dom"],
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -18,17 +19,13 @@
     "baseUrl": ".",
     "paths": {
       "*": ["src/*", "*"]
-    },
-    "plugins": [
-      { 
-        "name": "typescript-styled-plugin", 
-        "tags": [
-          "styled",
-          "css",
-        ] 
-      }
-    ]
+    }
   },
   "exclude": ["node_modules", ".next", "cypress"],
-  "include": ["./next-env.d.ts", "./src/**/*.ts", "./src/**/*.tsx"],
+  "include": [
+    "./next-env.d.ts", 
+    "./src/**/*.d.ts", 
+    "./src/**/*.ts", 
+    "./src/**/*.tsx",
+  ]
 }
