@@ -3,7 +3,7 @@ import { axe } from 'jest-axe';
 import { GetServerSidePropsContext } from 'next';
 import { create } from 'react-test-renderer';
 
-import Homepage, { getServerSideProps } from './index';
+import Homepage, { getServerSideProps } from '../pages/index';
 
 describe('<Homepage>', () => {
 	it('should match snapshot', async () => {

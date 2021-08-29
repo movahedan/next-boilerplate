@@ -1,6 +1,6 @@
 {
   "name": "next-start",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "private": true,
   "license": "MIT",
   "sideEffects": [
@@ -17,10 +17,10 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "cypress": "cypress open",
-    "cy": "yarn dev & yarn cypress",
+    "cy-dev": "yarn dev & yarn cypress",
     "cypress:headless": "cypress run",
-    "e2e": "yarn start & yarn cypress:headless",
-    "pre-deploy": "yarn build && yarn e2e",
+    "test-e2e": "yarn start & yarn cypress:headless",
+    "pre-deploy": "yarn test && yarn build && yarn test-e2e",
     "clean-server": "kill -9 $(lsof -iTCP -sTCP:LISTEN | grep 3000 | awk '{print $2}');"
   },
   "dependencies": {
@@ -70,7 +70,6 @@
     "prettier": "^2.3.0",
     "react-test-renderer": "^17.0.2",
     "sass": "^1.38.1",
-    "start-server-and-test": "^1.13.1",
     "styled-jsx-plugin-postcss": "^4.0.1",
     "tailwindcss": "^2.2.8",
     "typescript": "~4.3"
