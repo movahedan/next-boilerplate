@@ -15,7 +15,11 @@
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
     "lint": "next lint",
     "cypress": "cypress open",
-    "cypress:headless": "cypress run"
+    "cy": "yarn dev & yarn cypress",
+    "cypress:headless": "cypress run",
+    "e2e": "yarn start & yarn cypress:headless",
+    "pre-deploy": "yarn build && yarn e2e",
+    "clean-server": "kill -9 $(lsof -iTCP -sTCP:LISTEN | grep 3000 | awk '{print $2}');"
   },
   "dependencies": {
     "next": "^11.1.0",
@@ -41,7 +45,7 @@
     "fetch": "^1.1.0",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
-    "lost": "^8.3.1",
+    "lost": "^8.3.0",
     "postcss": "^8.3.6",
     "postcss-nested": "^5.0.6",
     "prettier": "^2.3.0",
