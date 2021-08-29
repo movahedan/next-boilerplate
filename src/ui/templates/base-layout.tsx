@@ -41,7 +41,7 @@ const globalCSS = css.global`
 		font-family: Inter sans-serif;
 	}
 
-	#__next {
+	:global(#__next) {
 		@apply relative flex flex-col min-h-screen m-0 overflow-hidden text-base max-w-screen;
 
 		padding: env(safe-area-inset-top) env(safe-area-inset-right)

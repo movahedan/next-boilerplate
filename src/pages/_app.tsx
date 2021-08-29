@@ -1,12 +1,12 @@
 import Head from 'next/head';
-import { useRef } from 'react';
+import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { Hydrate } from 'react-query/hydration';
 
 import { AnalyticsProvider } from 'lib/analytics';
 import { withErrorHandler } from 'lib/errors';
-import { isWebVitalsEnable } from 'lib/utils';
+import { isProduction, isWebVitalsEnable } from 'lib/utils';
 
 import { BaseLayout } from 'ui';
 import 'tailwindcss/tailwind.css';
@@ -15,7 +15,7 @@ import type { AppWithLayoutProps, NextWebVitalsMetric } from 'next/app';
 import type { FC } from 'react';
 
 const App: FC<AppWithLayoutProps> = ({ Component, pageProps }) => {
-	const queryClient = useRef(new QueryClient());
+	const [queryClient] = useState(() => new QueryClient());
 
 	const Layout = Component.Layout?.Component || BaseLayout;
 	const layoutProps =
@@ -25,13 +25,13 @@ const App: FC<AppWithLayoutProps> = ({ Component, pageProps }) => {
 
 	return (
 		<>
-			<QueryClientProvider client={queryClient.current}>
+			<QueryClientProvider client={queryClient}>
 				<Hydrate state={pageProps.dehydratedState}>
 					<Layout {...layoutProps}>
 						<Component {...pageProps} />
 					</Layout>
 
-					<AnalyticsProvider />
+					{isProduction && <AnalyticsProvider />}
 				</Hydrate>
 
 				<ReactQueryDevtools />
@@ -44,26 +44,7 @@ const App: FC<AppWithLayoutProps> = ({ Component, pageProps }) => {
 					name='viewport'
 					content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=5,user-scalable=yes'
 				/>
-				<meta name='description' content='Description' />
-				<meta name='keywords' content='Keywords' />
-
 				<title>Next.js</title>
-
-				<link rel='manifest' href='/manifest.json' />
-				<meta name='theme-color' content='#317EFB' />
-				<link
-					href='/icons/icon-16x16.png'
-					rel='icon'
-					type='image/png'
-					sizes='16x16'
-				/>
-				<link
-					href='/icons/icon-32x32.png'
-					rel='icon'
-					type='image/png'
-					sizes='32x32'
-				/>
-				<link rel='apple-touch-icon' href='/apple-icon.png'></link>
 			</Head>
 		</>
 	);

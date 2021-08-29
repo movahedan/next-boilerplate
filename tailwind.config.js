@@ -14,7 +14,7 @@ module.exports = {
 		content: [],
 	},
 
-	// mode: 'jit',
+	mode: 'jit',
 	darkMode: false,
 	theme: {
 		extend: {

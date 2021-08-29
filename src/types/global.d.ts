@@ -1,7 +1,9 @@
 /* eslint-disable import/no-default-export */
 import 'node';
+
 import type { NextPage } from 'next';
-import type { AppProps, AppPropsType } from 'next/app';
+import type { AppProps } from 'next/app';
+import type { AppPropsType } from 'next/dist/shared/lib/utils';
 import type { FC, CSSProperties } from 'react';
 
 declare global {
