@@ -1,9 +1,13 @@
 import Link from 'next/link';
 import css from 'styled-jsx/css';
 
-import type { FC } from 'react';
+import type { FC, CSSProperties } from 'react';
 
-export const BaseLayout: FC = ({ children }) => (
+export const BaseLayout: FC<{ style?: CSSProperties; className?: string }> = ({
+	style,
+	className,
+	children,
+}) => (
 	<>
 		<style jsx global>
 			{globalCSS}
@@ -14,6 +18,9 @@ export const BaseLayout: FC = ({ children }) => (
 			<Link href='/'>
 				<a>Go to home</a>
 			</Link>
+			<Link href='/pets'>
+				<a>See Pets!</a>
+			</Link>
 			<Link href='/react-query/client-side'>
 				<a>Go to /react-query</a>
 			</Link>
@@ -22,7 +29,9 @@ export const BaseLayout: FC = ({ children }) => (
 			</Link>
 		</nav>
 
-		{children}
+		<main style={style} className={className}>
+			{children}
+		</main>
 	</>
 );
 
@@ -36,6 +45,7 @@ const navbarCSS = css`
 	}
 `;
 
+// eslint-disable-next-line import/no-named-as-default-member
 const globalCSS = css.global`
 	*:not(i) {
 		font-family: Inter sans-serif;

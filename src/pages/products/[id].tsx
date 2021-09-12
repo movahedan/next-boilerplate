@@ -1,10 +1,11 @@
-import {
+import { useRouter } from 'next/router';
+
+import type {
 	NextPage,
 	GetStaticPaths,
 	GetStaticProps,
 	InferGetStaticPropsType,
 } from 'next';
-import { useRouter } from 'next/router';
 
 interface IProductsPage {
 	data?: {

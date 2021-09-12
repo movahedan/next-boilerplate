@@ -1,4 +1,7 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Personal project
+
+This project is created by Soheil Movahedan, feel free to leave
+a comment or even better! A Pull request and make it better.
 
 ## Getting Started
 
@@ -12,14 +15,18 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### TODO
-	0.	Error Handling!
-	1.	Add storybook
-	2.	Add headless-ui
-	3.	MediaQuery, Agent, tailwindConfig
-	4.	Connect with mongodb
-	5.	Develop server-side
-	6.	Blog
-	7.	Authentication
-	8.	Jest mocking service
-	
+### Todo
+	-	Error Handling and Sentry!
+	- Deploy on vercel
+	-	Add storybook
+	-	Add headless-ui
+	-	MediaQuery, Agent, tailwindConfig
+	-	Jest mocking service
+	- Develop server-side, Structure for features/models/queries
+	- Develop react-query
+	-	Complete Authentication
+	-	Blog
+	- Introduce to machine learning and create an example
+
+### Done
+	-	Connect with mongoose
