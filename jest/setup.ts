@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unassigned-import */
 /* eslint-disable @typescript-eslint/no-empty-function */
 import '@testing-library/jest-dom/extend-expect';
 import { loadEnvConfig } from '@next/env';
@@ -23,12 +22,16 @@ afterEach(() => server.resetHandlers());
 // Clean up after the tests are finished.
 afterAll(() => server.close());
 
-// @ts-ignore
 window.matchMedia =
 	window.matchMedia ||
 	function () {
 		return {
+			media: '',
 			matches: false,
+			onchange: function () {},
+			dispatchEvent: function () {
+				return false;
+			},
 			addListener: function () {},
 			removeListener: function () {},
 			addEventListener: function () {},

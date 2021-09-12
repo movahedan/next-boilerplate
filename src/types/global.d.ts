@@ -1,4 +1,3 @@
-/* eslint-disable import/no-default-export */
 import 'node';
 
 import type { NextPage } from 'next';

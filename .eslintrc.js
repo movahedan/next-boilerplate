@@ -102,6 +102,7 @@ const importPlugin = {
 					'**/*.jpg',
 					'**/*.jpeg',
 					'node',
+					'@testing-library/jest-dom/extend-expect',
 				],
 			},
 		],
@@ -143,7 +144,11 @@ const importPlugin = {
 	},
 	overrides: [
 		{
-			files: ['./src/pages/**/*.tsx', './src/pages/**/*.ts'],
+			files: [
+				'./src/pages/**/*.tsx',
+				'./src/pages/**/*.ts',
+				'./src/types/global.d.ts',
+			],
 			rules: {
 				'import/no-default-export': 'off',
 			},

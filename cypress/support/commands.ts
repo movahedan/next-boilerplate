@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-namespace */
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite
@@ -9,9 +13,8 @@
 // ***********************************************
 
 /// <reference types="Cypress" />
-// eslint-disable-next-line @typescript-eslint/no-namespace
+
 declare namespace Cypress {
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	interface Chainable<Subject = any> {
 		find(arg0: string): globalThis.Cypress.CanReturnChainable;
 		getEl<E extends Node = HTMLElement>(
