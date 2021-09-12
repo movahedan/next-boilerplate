@@ -144,44 +144,37 @@ const importPlugin = {
 	},
 	overrides: [
 		{
-			files: [
-				'./src/pages/**/*.tsx',
-				'./src/pages/**/*.ts',
-				'./src/types/global.d.ts',
-			],
+			files: ['./src/pages/**/*.tsx', './src/pages/**/*.ts'],
 			rules: {
 				'import/no-default-export': 'off',
 			},
 		},
-	],
-	typescriptConfig: {
-		settings: {
-			'import/parsers': {
-				'@typescript-eslint/parser': ['.ts', '.tsx'],
-			},
-			'import/resolver': {
-				// eslint-import-resolver-typescript
-				typescript: {
-					project: '.',
-					alwaysTryTypes: true,
+		{
+			files: ['**/*.ts', '**/*.tsx'],
+			settings: {
+				'import/parsers': {
+					'@typescript-eslint/parser': ['.ts', '.tsx'],
+				},
+				'import/resolver': {
+					// eslint-import-resolver-typescript
+					typescript: {
+						project: '.',
+						alwaysTryTypes: true,
+					},
 				},
 			},
+			extends: [
+				'plugin:import/typescript', // Import plugin (eslint-plugin-import)
+			],
 		},
-		extends: [
-			'plugin:import/typescript', // Import plugin (eslint-plugin-import)
-		],
-	},
+	],
 };
 
 const typescriptConfig = {
 	files: ['**/*.ts', '**/*.tsx'],
 	plugins: ['@typescript-eslint'],
 	parser: '@typescript-eslint/parser',
-	settings: {
-		...importPlugin.typescriptConfig.settings,
-	},
 	extends: [
-		...importPlugin.typescriptConfig.extends,
 		'plugin:@typescript-eslint/recommended',
 		'plugin:@typescript-eslint/eslint-recommended',
 	],
@@ -192,6 +185,10 @@ const typescriptConfig = {
 		'@typescript-eslint/no-empty-function': ['warn'],
 		'@typescript-eslint/explicit-module-boundary-types': ['off'],
 		'@typescript-eslint/explicit-function-return-type': ['off'],
+		'@typescript-eslint/consistent-type-imports': [
+			'error',
+			{ prefer: 'type-imports' },
+		],
 	},
 };
 
