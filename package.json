@@ -1,21 +1,21 @@
 {
   "name": "next-start",
   "license": "MIT",
-  "author": "soheil.movahhedan@gmail.com",
   "private": "false",
   "version": "0.3.0",
+  "author": "soheil.movahhedan@gmail.com",
   "scripts": {
-    "lint": "next lint",
     "dev": "NODE_ENV=development next dev",
-    "cy-dev": "yarn dev & yarn cypress open",
-    "jest-dev": "yarn dev & jest --watch",
-    "cy-check": "yarn start & yarn cypress run",
-    "type-check": "tsc --project tsconfig.json --pretty --noEmit",
-    "double-check": "yarn type-check && jest && yarn build && yarn cy-check",
-    "after-check": "kill -9 $(lsof -iTCP -sTCP:LISTEN | grep 3000 | awk '{print $2}');",
+    "dev:cypress": "yarn dev & yarn cypress open",
     "build": "NODE_ENV=production next build",
     "start": "NODE_ENV=production next start",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "lint": "next lint",
+    "test": "yarn type-check && yarn jest",
+    "cypress-check": "yarn build && (yarn start & yarn cypress run)",
+    "type-check": "tsc --project tsconfig.json --pretty --noEmit",
+    "release-check": "yarn test && yarn cypress-check",
+    "after-check": "kill -9 $(lsof -iTCP -sTCP:LISTEN | grep 3000 | awk '{print $2}');"
   },
   "sideEffects": [
     "./public/*",
