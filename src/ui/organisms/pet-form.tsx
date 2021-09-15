@@ -98,9 +98,9 @@ export const PetForm: FC<PetFormInterface> = ({ petForm, className }) => {
 			setErrors(errors);
 		} else {
 			if (id) {
-				postData(form);
-			} else {
 				putData(form);
+			} else {
+				postData(form);
 			}
 		}
 	};
