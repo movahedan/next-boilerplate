@@ -80,6 +80,7 @@ const importPlugin = {
 		'import/newline-after-import': 'error',
 		'import/no-useless-path-segments': 'error',
 		'import/no-relative-parent-imports': 'off',
+		'no-restricted-imports': ['error', { patterns: ['..*'] }],
 		'import/no-anonymous-default-export': [
 			'error',
 			{

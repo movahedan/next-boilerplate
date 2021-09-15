@@ -1,4 +1,4 @@
-import { analyticEvent } from '../commands';
+import { analyticEvent } from './command';
 
 interface ISearchEventProps {
 	typed?: string; // What was typed by the user.
