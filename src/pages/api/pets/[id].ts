@@ -1,9 +1,10 @@
 import { dbConnect } from 'lib/mongodb';
+import { withDefaultMiddlewares } from 'lib/utils';
 import { PetModel } from 'models';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default async function handler(
+export default withDefaultMiddlewares(async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse
 ) {
@@ -11,7 +12,6 @@ export default async function handler(
 		query: { id },
 		method,
 	} = req;
-
 	await dbConnect();
 
 	switch (method) {
@@ -58,4 +58,4 @@ export default async function handler(
 			res.status(400).json({ success: false });
 			break;
 	}
-}
+});

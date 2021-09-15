@@ -5,8 +5,6 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import { Hydrate } from 'react-query/hydration';
 
 import { AnalyticsProvider } from 'lib/analytics';
-import { withErrorHandler } from 'lib/errors';
-import { isProduction, isWebVitalsEnable } from 'lib/utils';
 
 import { BaseLayout } from 'ui';
 import 'tailwindcss/tailwind.css';
@@ -31,7 +29,7 @@ const App: FC<AppWithLayoutProps> = ({ Component, pageProps }) => {
 						<Component {...pageProps} />
 					</Layout>
 
-					{isProduction && <AnalyticsProvider />}
+					<AnalyticsProvider />
 				</Hydrate>
 
 				<ReactQueryDevtools />
@@ -50,8 +48,9 @@ const App: FC<AppWithLayoutProps> = ({ Component, pageProps }) => {
 	);
 };
 
+const IS_WEB_VITALS_ENABLE = process.env.NEXT_PUBLIC_WEB_VITALS === '1';
 export const reportWebVitals = (metric: NextWebVitalsMetric): void => {
-	if (isWebVitalsEnable) console.log(metric);
+	if (IS_WEB_VITALS_ENABLE) console.log(metric);
 };
 
-export default withErrorHandler(App);
+export default App;

@@ -30,3 +30,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Done
 	-	Connect with mongoose
+
+# Features
+
+	- Authentication
+	- Notification
+	- Blog (with comments)
+	- Show this codebase
+	- 
+	

@@ -1,6 +1,6 @@
 import { connect } from 'mongoose';
 
-import { mongodbUri } from 'lib/utils';
+const MONGODB_URI = process.env.MONGODB_URI;
 
 /**
  * Global is used here to maintain a cached connection across hot reloads
@@ -11,13 +11,13 @@ let cached = global.mongoose || null;
 export async function dbConnect() {
 	if (cached) return cached;
 
-	if (!mongodbUri) {
+	if (!MONGODB_URI) {
 		throw new Error(
 			'Please define the MONGODB_URI environment variable inside .env'
 		);
 	}
 
-	cached = await connect(mongodbUri);
+	cached = await connect(MONGODB_URI);
 
 	return cached;
 }
