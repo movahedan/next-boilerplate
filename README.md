@@ -16,7 +16,6 @@ yarn dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ### Todo
-	-	Error Handling and Sentry!
 	- Deploy on vercel
 	-	Add storybook
 	-	Add headless-ui
@@ -30,6 +29,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ### Done
 	-	Connect with mongoose
+	-	Error Handling and Sentry!
 
 # Features
 
