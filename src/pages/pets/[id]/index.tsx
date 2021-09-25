@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
-import { dbConnect } from 'lib/mongodb';
-import { PetModel } from 'models';
+import { dbConnect } from 'lib/db';
+import { PetModel } from 'lib/db/models';
 
-import type { PetType } from 'models';
+import type { PetType } from 'lib/db/models';
 import type { GetServerSideProps, NextPageWithLayout } from 'next';
 
 const PetPage: NextPageWithLayout<{ pet: PetType }> = ({ pet }) => {

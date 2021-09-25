@@ -5,6 +5,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import { Hydrate } from 'react-query/hydration';
 
 import { AnalyticsProvider } from 'lib/analytics';
+import { BrowserProvider, extractBrowserServerSideData } from 'lib/browser';
 
 import { BaseLayout } from 'ui';
 import 'tailwindcss/tailwind.css';
@@ -38,6 +39,7 @@ class MyApp extends App<AppWithLayoutProps> {
 	render() {
 		const { queryClient, hasError } = this.state;
 		const { Component, pageProps } = this.props;
+		const browserData = extractBrowserServerSideData(pageProps);
 
 		if (hasError) {
 			return (
@@ -60,9 +62,11 @@ class MyApp extends App<AppWithLayoutProps> {
 
 				<QueryClientProvider client={queryClient}>
 					<Hydrate state={pageProps.dehydratedState}>
-						<Layout {...layoutProps}>
-							<Component {...pageProps} />
-						</Layout>
+						<BrowserProvider initialData={browserData}>
+							<Layout {...layoutProps}>
+								<Component {...pageProps} />
+							</Layout>
+						</BrowserProvider>
 
 						<AnalyticsProvider />
 					</Hydrate>

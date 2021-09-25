@@ -19,7 +19,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 	- Deploy on vercel
 	-	Add storybook
 	-	Add headless-ui
-	-	MediaQuery, Agent, tailwindConfig
 	-	Jest mocking service
 	- Develop server-side, Structure for features/models/queries
 	- Develop react-query
@@ -30,6 +29,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ### Done
 	-	Connect with mongoose
 	-	Error Handling and Sentry!
+	-	MediaQuery, Agent, tailwindConfig
 
 # Features
 

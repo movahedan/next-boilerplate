@@ -1,6 +1,8 @@
+import { globalGetServerSideProps } from 'lib/server';
+
 import { BaseLayout } from 'ui';
 
-import type { NextPageWithLayout, GetServerSideProps } from 'next';
+import type { NextPageWithLayout } from 'next';
 
 interface Props {
 	data: {
@@ -34,7 +36,7 @@ IndexPage.Layout = {
 	},
 };
 
-export const getServerSideProps: GetServerSideProps<Props> = async () => {
+export const getServerSideProps = globalGetServerSideProps<Props>(async () => {
 	return {
 		props: {
 			data: {
@@ -42,6 +44,6 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
 			},
 		},
 	};
-};
+});
 
 export default IndexPage;

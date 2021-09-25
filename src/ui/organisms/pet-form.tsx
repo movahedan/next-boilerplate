@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { mutate } from 'swr';
 
-import type { PetType } from 'models';
+import type { PetType } from 'lib/db/models';
 import type { FormEventHandler, ChangeEventHandler, FC } from 'react';
 
 interface PetFormInterface {

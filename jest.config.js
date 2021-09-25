@@ -21,25 +21,25 @@ module.exports = {
 
 	// An array of glob patterns indicating a set of files for which coverage information should be collected
 	collectCoverageFrom: [
-    'src/**/*.{ts,tsx}',
-    // Indexes (Warning! Do not write logic/function/statement in index files)
-    '!src/**/index.ts',
-    // Types
-    '!src/**/*.d.ts',
-    '!src/types/**/*.ts',
-    '!src/**/*.types.ts',
-    // Styles
-    '!src/**/*.styles.{ts,tsx}',
-    // Apis
-    '!src/pages/api/**',
-    // Hard to tests
-    '!src/pages/_app.tsx',
-    '!src/pages/_document.tsx',
-    '!src/pages/**/*.{ts,tsx}',
-    '!src/lib/analytics/**/*.{ts,tsx}',
-    'src/lib/analytics/__tests__/**',
-    '!src/pages/analytics-sample.tsx',
-  ],
+		'src/**/*.{ts,tsx}',
+		// Indexes (Warning! Do not write logic/function/statement in index files)
+		'!src/**/index.ts',
+		// Types
+		'!src/**/*.d.ts',
+		'!src/types/**/*.ts',
+		'!src/**/*.types.ts',
+		// Styles
+		'!src/**/*.styles.{ts,tsx}',
+		// Apis
+		'!src/pages/api/**',
+		// Hard to tests
+		'!src/pages/_app.tsx',
+		'!src/pages/_document.tsx',
+		'!src/pages/**/*.{ts,tsx}',
+		'!src/lib/analytics/**/*.{ts,tsx}',
+		'src/lib/analytics/__tests__/**',
+		'!src/pages/analytics-sample.tsx',
+	],
 
 	// The directory where Jest should output its coverage files
 	coverageDirectory: 'coverage',

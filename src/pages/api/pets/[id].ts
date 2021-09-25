@@ -1,10 +1,9 @@
-import { dbConnect } from 'lib/mongodb';
-import { withDefaultMiddlewares } from 'lib/utils';
-import { PetModel } from 'models';
+import { PetModel } from 'lib/db/models';
+import { globalApiHanlder } from 'lib/server';
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default withDefaultMiddlewares(async function handler(
+export default globalApiHanlder(async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse
 ) {
@@ -12,7 +11,6 @@ export default withDefaultMiddlewares(async function handler(
 		query: { id },
 		method,
 	} = req;
-	await dbConnect();
 
 	switch (method) {
 		case 'GET' /* Get a model by its ID */:

@@ -1,6 +1,6 @@
 import { PetForm } from 'ui/organisms';
 
-import type { PetType } from 'models';
+import type { PetType } from 'lib/db/models';
 import type { NextPageWithLayout } from 'next';
 
 const petForm: Omit<PetType, '_id'> = {

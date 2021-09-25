@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 
-import { dbConnect } from 'lib/mongodb';
-import { PetModel } from 'models';
+import { dbConnect } from 'lib/db';
+import { PetModel } from 'lib/db/models';
 
 import { BaseLayout } from 'ui';
 
-import type { PetType } from 'models';
+import type { PetType } from 'lib/db/models';
 import type { NextPageWithLayout, GetServerSideProps } from 'next';
 
 interface Props {

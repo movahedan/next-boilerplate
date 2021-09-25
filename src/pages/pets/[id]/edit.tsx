@@ -3,7 +3,7 @@ import useSWR from 'swr';
 
 import { PetForm } from 'ui/organisms';
 
-import type { PetType } from 'models';
+import type { PetType } from 'lib/db/models';
 
 const fetcher = (url: string) =>
 	fetch(url)

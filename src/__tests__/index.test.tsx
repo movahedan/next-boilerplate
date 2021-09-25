@@ -1,9 +1,11 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
-import { GetServerSidePropsContext } from 'next';
 import { create } from 'react-test-renderer';
 
+import { getServerMediaQuery } from 'lib/browser/browser.utils';
 import Homepage, { getServerSideProps } from 'pages/index';
+
+import type { GetServerSidePropsContext } from 'next';
 
 describe('<Homepage>', () => {
 	it('should match snapshot', async () => {
@@ -29,6 +31,7 @@ describe('<Homepage>', () => {
 		expect(response).toEqual(
 			expect.objectContaining({
 				props: {
+					...getServerMediaQuery(),
 					data: {
 						message: 'Message from getServerSideProps',
 					},

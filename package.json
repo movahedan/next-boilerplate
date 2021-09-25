@@ -29,7 +29,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-query": "^3.21.0",
-    "swr": "^1.0.0"
+    "swr": "^1.0.0",
+    "ua-parser-js": "^0.7.28"
   },
   "devDependencies": {
     "@axe-core/react": "^4.2.2",
@@ -46,6 +47,8 @@
     "@types/node": "^15.3.0",
     "@types/react": "^17.0.5",
     "@types/react-test-renderer": "^17.0.1",
+    "@types/tailwindcss": "^2.2.1",
+    "@types/ua-parser-js": "^0.7.36",
     "@typescript-eslint/eslint-plugin": "^4.29.3",
     "autoprefixer": "^10.3.3",
     "babel-jest": "^27.1.0",
