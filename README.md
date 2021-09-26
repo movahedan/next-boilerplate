@@ -8,34 +8,58 @@ a comment or even better! A Pull request and make it better.
 First, run the development server:
 
 ```bash
-npm run dev
-# or
 yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+To run storybook:
+
+```bash
+yarn storybook
+```
+
+Open [http://localhost:6006](http://localhost:6006) with your browser to see the result.
+
+
+To check your staged changes status:
+It runs `yarn type-check` and `yarn lint` and `yarn test`.
+
+```bash
+yarn commit-check
+```
+
+To do pre-release check:
+
+```bash
+yarn release-check
+yarn after-check
+```
+
 ### Todo
-	- Deploy on vercel
-	-	Add storybook
-	-	Add headless-ui
-	-	Jest mocking service
-	- Develop server-side, Structure for features/models/queries
-	- Develop react-query
-	-	Complete Authentication
-	-	Blog
-	- Introduce to machine learning and create an example
+- Deploy on vercel
+-	Add headless-ui
+-	Jest mocking service
+- Develop server-side, Structure for features/models/queries
+- Develop react-query
+- Authentication
+- Notification
+- Blog (with comments)
+- Show this codebase
+- Introduce to machine learning and create an example
 
 ### Done
-	-	Connect with mongoose
-	-	Error Handling and Sentry!
-	-	MediaQuery, Agent, tailwindConfig
-
-# Features
-
-	- Authentication
-	- Notification
-	- Blog (with comments)
-	- Show this codebase
-	- 
-	
+- Create directory structure
+- Implement well documented eslint config
+- Implement jest config
+- Implement cypress minimal config
+- Complete workflow, lint-staged, lint, tests
+- Implement styled-jsx, tailwind and postcss
+- Implement layout structuring per page
+- Implement minimal react-query
+- Implement minimal analytics
+- Declare clean types
+-	Implement Error Handling and Sentry!
+-	Implement browser module (MediaQuery, Agent, tailwindConfig)
+-	Add minimal storybook config
+-	Connect with mongoose

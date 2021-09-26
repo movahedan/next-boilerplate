@@ -6,20 +6,20 @@
   "author": "soheil.movahhedan@gmail.com",
   "scripts": {
     "lint": "next lint",
-    "dev": "NODE_ENV=development next dev",
+    "dev": "yarn clone:tailwind && NODE_ENV=development next dev",
     "dev:cypress": "yarn dev & yarn cypress open",
     "storybook": "start-storybook -s ./public -p 6006",
     "test": "yarn type-check && yarn jest",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
     "cypress-check": "yarn build && (yarn start & yarn cypress run)",
-    "release-check": "yarn test && yarn cypress-check",
+    "commit-check": "yarn type-check && yarn lint && yarn test",
+    "release-check": "yarn commit-check && yarn cypress-check",
     "after-check": "kill -9 $(lsof -iTCP -sTCP:LISTEN | grep 3000 | awk '{print $2}');",
     "clone:tailwind": "chmod u+x ./tailwind.generate.config.js && ./tailwind.generate.config.js",
     "build:storybook": "build-storybook -s public",
     "build": "NODE_ENV=production next build",
     "start": "NODE_ENV=production next start",
-    "postinstall": "husky install",
-    "check-commit": "yarn type-check && yarn lint && yarn test"
+    "postinstall": "husky install"
   },
   "sideEffects": [
     "./public/*",
