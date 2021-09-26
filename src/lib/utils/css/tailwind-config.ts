@@ -1,11 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-import resolveConfig from 'tailwindcss/resolveConfig';
+import tailwindTheme from './tailwind-theme';
 
-import tailwindConfigFile from 'tailwind.config';
-import tailwindScreensFile from 'tailwind.screens';
+export const tailwindConfig = tailwindTheme;
 
-import type { Screens } from 'types/screens';
-
-export const tailwindConfig = resolveConfig(tailwindConfigFile);
-export const screensConfig: Screens = tailwindScreensFile;
+export type Screens = typeof tailwindTheme.theme.screens;
+export const screensConfig: Screens = tailwindTheme.theme.screens;

@@ -16,7 +16,11 @@ module.exports = {
 	// mode: 'jit',
 	darkMode: false,
 	theme: {
-		screens: require('./tailwind.screens'),
+		screens: {
+			sm: '480px',
+			md: '768px',
+			lg: '1280px',
+		},
 		extend: {
 			maxWidth: {
 				screen: '100vw',

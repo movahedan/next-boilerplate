@@ -1,9 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import { attachBrowserServerSideData } from 'lib/browser';
-import { dbConnect } from 'lib/db';
 
-import type { BrowserObject } from 'lib/browser/browser.context';
+import type { BrowserObject } from 'lib/browser';
 import type { GetServerSideProps } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
 
@@ -14,13 +13,18 @@ export function globalGetServerSideProps<
 	getServerSideProps: GetServerSideProps<Props, Query>
 ): GetServerSideProps<Props & BrowserObject, Query> {
 	return async (ctx) => {
-		await dbConnect();
+		const pageResult = await getServerSideProps(ctx);
 
-		return {
-			props: {
-				...attachBrowserServerSideData(ctx.req),
-				...(await getServerSideProps(ctx)).props,
-			},
-		};
+		if (pageResult.props) {
+			return {
+				...pageResult,
+				props: {
+					...pageResult.props,
+					...attachBrowserServerSideData(ctx.req),
+				},
+			};
+		}
+
+		return pageResult;
 	};
 }

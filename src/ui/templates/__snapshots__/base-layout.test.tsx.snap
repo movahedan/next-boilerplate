@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BaseLayout> should match is's snapshot 1`] = `
+Array [
+  <nav
+    className="jsx-2513862931"
+  >
+    <a
+      className="jsx-2513862931"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Go to home
+    </a>
+    <a
+      className="jsx-2513862931"
+      href="/pets"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      See Pets!
+    </a>
+    <a
+      className="jsx-2513862931"
+      href="/react-query/client-side"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Go to /react-query
+    </a>
+    <a
+      className="jsx-2513862931"
+      href="/react-query/static-props"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Go to /react-query/static-props
+    </a>
+  </nav>,
+  <main
+    className="jsx-2513862931 "
+  />,
+]
+`;

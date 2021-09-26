@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "NODE_ENV=development next dev",
     "dev:cypress": "yarn dev & yarn cypress open",
+    "clone:tailwind": "chmod u+x ./tailwind.generate.config.js && ./tailwind.generate.config.js",
     "build": "NODE_ENV=production next build",
     "start": "NODE_ENV=production next start",
     "postinstall": "husky install",
@@ -77,6 +78,7 @@
     "sass": "^1.38.1",
     "styled-jsx-plugin-postcss": "^4.0.1",
     "tailwindcss": "^2.2.8",
+    "ts-jest": "^27.0.5",
     "typescript": "~4.3"
   }
 }

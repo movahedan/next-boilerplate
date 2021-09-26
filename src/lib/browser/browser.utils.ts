@@ -1,45 +1,39 @@
-import UAParser from 'ua-parser-js';
+import {
+	getIsTablet,
+	getParsedUserAgent,
+	getUserAgent,
+	mediaQueries,
+} from 'lib/utils';
 
-import { matchMediaEntries } from './browser.constants';
-
-import type { BrowserMediaQuery } from './browser.context';
+import type { BrowserMediaQuery } from './browser.types';
 import type { IncomingMessage } from 'http';
-import type { Screens } from 'types/screens';
+import type { Screens } from 'lib/utils';
+
+type MatchMediaEntry = [keyof typeof mediaQueries, MediaQueryList | undefined];
+export const getMatchMediaEntries = () =>
+	Object.entries(mediaQueries).map(([key, value]) => [
+		key,
+		global.window?.matchMedia(value),
+	]) as MatchMediaEntry[];
 
 export const mediaQueryInitializer = () =>
 	Object.fromEntries(
-		matchMediaEntries.map(([mediaQueryName, matchMedia]) => [
+		getMatchMediaEntries().map(([mediaQueryName, matchMedia]) => [
 			mediaQueryName,
 			mediaQueryName === 'sm' || matchMedia?.matches,
 		])
 	) as BrowserMediaQuery;
 
-export const getUserAgent = (req?: IncomingMessage) => {
-	const userAgent =
-		req?.headers['user-agent'] || global.window?.navigator.userAgent;
-
-	return userAgent;
-};
-
-export const getParsedUserAgent = (userAgent: string) => {
-	const parsedUA = new UAParser(userAgent).getResult();
-
-	return parsedUA;
-};
-
 export const getServerMediaQuery = (
-	req?: IncomingMessage
+	req?: Partial<IncomingMessage>
 ): BrowserMediaQuery => {
 	const parsedUA = getParsedUserAgent(getUserAgent(req));
+	const currentMediaQuery = getIsTablet(parsedUA) ? 'md' : 'sm';
 
-	const deviceType = parsedUA?.device.type;
-	const isIPad = parsedUA?.ua.match(/iPad/i);
-	const isTablet = isIPad || deviceType === 'tablet';
-
-	return getMatchMediasByGivenMediaQuery(isTablet ? 'md' : 'sm');
+	return getMatchMediasByGivenMediaQuery(currentMediaQuery);
 };
 
-const getMatchMediasByGivenMediaQuery = (
+export const getMatchMediasByGivenMediaQuery = (
 	mediaQuery: keyof Screens
 ): BrowserMediaQuery => {
 	if (mediaQuery === 'lg') return { sm: true, md: true, lg: true };

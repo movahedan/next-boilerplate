@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-module.exports = {
+const jestConfig = {
 	// All imported modules in your tests should be mocked automatically
 	// automock: false,
 
@@ -58,10 +58,10 @@ module.exports = {
 	// An object that configures minimum threshold enforcement for coverage results
 	coverageThreshold: {
 		global: {
-			statement: 5,
-			branches: 5,
-			functions: 5,
-			lines: 5,
+			statement: 50,
+			branches: 50,
+			functions: 50,
+			lines: 50,
 		},
 	},
 
@@ -205,3 +205,5 @@ module.exports = {
 	// Whether to use watchman for file crawling
 	// watchman: true,
 };
+
+module.exports = jestConfig;

@@ -37,7 +37,7 @@ const a11yPlugin = {
 };
 
 const prettierPlugin = {
-	ignorePatterns: ['!.prettierrc'], // we want to lint .prettierrc (ignored by default by eslint)
+	ignorePatterns: ['!.prettierrc', './src/lib/utils/css/tailwind-theme.ts'], // we want to lint .prettierrc (ignored by default by eslint)
 	extends: [
 		'plugin:prettier/recommended', // eslint-config-prettier
 	],
@@ -145,7 +145,11 @@ const importPlugin = {
 	},
 	overrides: [
 		{
-			files: ['./src/pages/**/*.tsx', './src/pages/**/*.ts'],
+			files: [
+				'./src/pages/**/*.tsx',
+				'./src/pages/**/*.ts',
+				'./src/lib/utils/css/tailwind-theme.ts',
+			],
 			rules: {
 				'import/no-default-export': 'off',
 			},

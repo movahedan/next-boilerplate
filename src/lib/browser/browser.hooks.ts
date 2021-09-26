@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import { matchMediaEntries } from './browser.constants';
-import { mediaQueryInitializer } from './browser.utils';
+import { getMatchMediaEntries, mediaQueryInitializer } from './browser.utils';
 
-import type { BrowserMediaQuery } from './browser.context';
-import type { Screens } from 'types/screens';
+import type { BrowserMediaQuery } from './browser.types';
+import type { Screens } from 'lib/utils';
 
 export const useMediaQueryProvider = (
 	initialMediaQuery?: BrowserMediaQuery
@@ -23,7 +22,7 @@ export const useMediaQueryProvider = (
 		};
 
 	useEffect(() => {
-		matchMediaEntries.map((matchMediaEntry) => {
+		getMatchMediaEntries().map((matchMediaEntry) => {
 			matchMediaEntry[1]?.addEventListener<'change'>(
 				'change',
 				onChange(matchMediaEntry)
@@ -31,7 +30,7 @@ export const useMediaQueryProvider = (
 		});
 
 		return () => {
-			matchMediaEntries.map((matchMediaEntry) => {
+			getMatchMediaEntries().map((matchMediaEntry) => {
 				matchMediaEntry[1]?.removeEventListener(
 					'change',
 					onChange(matchMediaEntry)

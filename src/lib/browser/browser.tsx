@@ -4,13 +4,12 @@ import { BrowserContext } from './browser.context';
 import { useMediaQueryProvider } from './browser.hooks';
 import { getServerMediaQuery } from './browser.utils';
 
-import type { BrowserObject } from './browser.context';
+import type { BrowserObject } from './browser.types';
 import type { NextPageContext } from 'next';
 import type { FC } from 'react';
 
 export const useBrowser = () => useContext(BrowserContext);
 export const useMediaQuery = () => useContext(BrowserContext).mediaQuery;
-
 export const BrowserProvider: FC<{ initialData?: BrowserObject['browser'] }> =
 	({ initialData, children }) => {
 		const mediaQuery = useMediaQueryProvider(initialData?.mediaQuery);
@@ -22,11 +21,12 @@ export const BrowserProvider: FC<{ initialData?: BrowserObject['browser'] }> =
 		);
 	};
 
-export const extractBrowserServerSideData = (props: BrowserObject) =>
-	props.browser;
-
+export const extractBrowserServerSideData = (props: {
+	[k: string]: unknown;
+	browser?: BrowserObject['browser'];
+}) => props.browser;
 export const attachBrowserServerSideData = (
-	req?: NextPageContext['req']
+	req?: Partial<NextPageContext['req']>
 ): BrowserObject => {
 	if (!req) {
 		throw Error('[attachBrowserServerSideData]: req is undefined');
