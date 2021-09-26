@@ -36,8 +36,6 @@ yarn-error.log*
 # husky
 .husky
 
-# vscode
-.vscode
 # Sentry
 .sentryclirc
 
