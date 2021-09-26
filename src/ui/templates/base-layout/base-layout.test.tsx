@@ -1,6 +1,6 @@
 import { create } from 'react-test-renderer';
 
-import { BaseLayout } from 'ui';
+import { BaseLayout } from './base-layout';
 
 describe('<BaseLayout>', () => {
 	it("should match is's snapshot", () => {

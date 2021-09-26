@@ -146,8 +146,8 @@ const importPlugin = {
 	overrides: [
 		{
 			files: [
-				'./src/pages/**/*.tsx',
-				'./src/pages/**/*.ts',
+				'./src/pages/**/*.ts?(x)',
+				'./src/**/*.stories.ts?(x)',
 				'./src/lib/utils/css/tailwind-theme.ts',
 			],
 			rules: {

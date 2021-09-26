@@ -30,6 +30,8 @@ const jestConfig = {
 		'!src/**/*.types.ts',
 		// Styles
 		'!src/**/*.styles.{ts,tsx}',
+		// Stories
+		'!src/**/*.stories.tsx',
 		// Apis
 		'!src/pages/api/**',
 		// Hard to tests
