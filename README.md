@@ -42,11 +42,11 @@ yarn after-check
 -	Jest mocking service
 - Develop server-side, Structure for features/models/queries
 - Develop react-query
-- Authentication
-- Notification
 - Blog (with comments)
+- Authentication
 - Show this codebase
 - Introduce to machine learning and create an example
+- Notification
 
 ### Done
 - Create directory structure

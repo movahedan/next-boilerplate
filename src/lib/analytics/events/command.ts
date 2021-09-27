@@ -1,5 +1,6 @@
 import type { TfieldsObject, TAnalyticEvent } from './types';
 
+// TODO is it good? should I reset after any changes?
 const resetFields = (fieldsObject: TfieldsObject = {}): TfieldsObject => {
 	return Object.entries(fieldsObject).reduce(
 		(undefinedFieldsObject, [fieldKey]) => {

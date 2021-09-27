@@ -1,4 +1,4 @@
-import { globalGetServerSideProps } from 'lib/server';
+import { cacheThisServerSideProps, globalGetServerSideProps } from 'lib/server';
 
 import { BaseLayout } from 'ui';
 
@@ -36,14 +36,18 @@ IndexPage.Layout = {
 	},
 };
 
-export const getServerSideProps = globalGetServerSideProps<Props>(async () => {
-	return {
-		props: {
-			data: {
-				message: 'Message from getServerSideProps',
+export const getServerSideProps = globalGetServerSideProps<Props>(
+	async (ctx) => {
+		cacheThisServerSideProps(ctx.res);
+
+		return {
+			props: {
+				data: {
+					message: 'Message from getServerSideProps',
+				},
 			},
-		},
-	};
-});
+		};
+	}
+);
 
 export default IndexPage;
