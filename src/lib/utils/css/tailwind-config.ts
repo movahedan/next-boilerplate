@@ -1,4 +1,4 @@
-import tailwindTheme from './tailwind-theme';
+import { tailwindTheme } from './tailwind-theme';
 
 export const tailwindConfig = tailwindTheme;
 

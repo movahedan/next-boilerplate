@@ -9,9 +9,7 @@ const tailwindConfig = require('./tailwind.config.js');
 
 const config = resolveConfig(tailwindConfig);
 const configStr = JSON.stringify(config);
-const js = `const theme = ${configStr};
-
-            export default theme`;
+const js = `export const tailwindTheme = ${configStr};`;
 
 try {
 	fs.writeFileSync(
