@@ -23,12 +23,18 @@ describe('cacheThisServerSideProps', () => {
 		);
 	});
 
-	it('should have support for removing config', async () => {
+	it('should have support for null swr config', async () => {
 		cacheThisServerSideProps(mockRes, { maxAge: 100, swr: null });
 
 		expect(mockRes.setHeader).toBeCalledWith(
 			'Cache-Control',
 			'public, max-age=100'
 		);
+	});
+
+	it('should have support for null maxAge config', async () => {
+		cacheThisServerSideProps(mockRes, { maxAge: null, swr: null });
+
+		expect(mockRes.setHeader).toBeCalledWith('Cache-Control', 'public');
 	});
 });
