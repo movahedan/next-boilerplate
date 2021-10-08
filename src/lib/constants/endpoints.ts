@@ -1,6 +1,6 @@
-import { stringifyUrl } from './urls';
+import { stringifyUrl } from 'lib/utils/routing';
 
-import type { QueryType } from './urls.types';
+import type { QueryType } from 'lib/utils/routing';
 
 const baseUrl =
 	process.env.API_BASE_URL || process.env.NEXT_PUBLIC_API_BASE_URL;
