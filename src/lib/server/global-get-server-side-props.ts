@@ -22,17 +22,13 @@ export function globalGetServerSideProps<
 		const pageResult = await getServerSideProps(ctx);
 
 		// @ts-ignore
-		if (pageResult.props) {
-			return {
-				...pageResult,
-				props: {
-					// @ts-ignore
-					...pageResult.props,
-					...attachBrowserServerSideData(ctx.req),
-				},
-			};
-		}
-
-		return pageResult;
+		return {
+			...pageResult,
+			props: {
+				// @ts-ignore
+				...pageResult.props,
+				...attachBrowserServerSideData(ctx.req),
+			},
+		};
 	};
 }
