@@ -39,7 +39,6 @@ yarn after-check
 ### Todo
 - Deploy on vercel
 -	Add headless-ui
--	Jest mocking service
 - Develop server-side, Structure for features/models/queries
 - Develop react-query
 - Blog (with comments)
@@ -59,7 +58,9 @@ yarn after-check
 - Implement minimal react-query
 - Implement minimal analytics
 - Declare clean types
--	Implement Error Handling and Sentry!
+-	Implement Error Handling and Sentry
 -	Implement browser module (MediaQuery, Agent, tailwindConfig)
 -	Add minimal storybook config
 -	Connect with mongoose
+-	Jest mocking service
+
