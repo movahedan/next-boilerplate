@@ -1,4 +1,4 @@
-import { parseUrl, stringifyUrl } from './routing';
+import { parseUrl, stringifyUrl } from './urls';
 
 describe('routing utils', () => {
 	it('parseUrl', async () => {
