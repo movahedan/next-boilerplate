@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import { BrowserContext } from './browser.context';
 import { useMediaQueryProvider } from './browser.hooks';
-import { getServerMediaQuery } from './browser.utils';
+import { getMatchMediasFromUserAgent } from './browser.utils';
 
 import type { BrowserObject } from './browser.types';
 import type { NextPageContext } from 'next';
@@ -34,7 +34,7 @@ export const attachBrowserServerSideData = (
 
 	return {
 		browser: {
-			mediaQuery: getServerMediaQuery(req),
+			mediaQuery: getMatchMediasFromUserAgent(req),
 		},
 	};
 };

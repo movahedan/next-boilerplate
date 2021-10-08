@@ -26,7 +26,7 @@ export const mediaQueryInitializer = () =>
 		])
 	) as BrowserMediaQuery;
 
-export const getServerMediaQuery = (
+export const getMatchMediasFromUserAgent = (
 	req?: Partial<IncomingMessage>
 ): BrowserMediaQuery => {
 	const parsedUA = getParsedUserAgent(getUserAgent(req));

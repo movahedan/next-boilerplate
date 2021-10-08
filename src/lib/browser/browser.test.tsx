@@ -13,7 +13,7 @@ import {
 	extractBrowserServerSideData,
 	getMatchMediaEntries,
 	getMatchMediasByGivenMediaQuery,
-	getServerMediaQuery,
+	getMatchMediasFromUserAgent,
 } from '.';
 
 import type { BrowserObject, BrowserMediaQuery } from '.';
@@ -48,10 +48,10 @@ describe('browser module', () => {
 			});
 		});
 
-		it('should have getServerMediaQuery calculator', () => {
+		it('should have getMatchMediasFromUserAgent calculator', () => {
 			let calculatedMediaQueries: BrowserMediaQuery;
 
-			calculatedMediaQueries = getServerMediaQuery({
+			calculatedMediaQueries = getMatchMediasFromUserAgent({
 				headers: {
 					'user-agent': '',
 				},
@@ -62,7 +62,7 @@ describe('browser module', () => {
 				lg: true,
 			});
 
-			calculatedMediaQueries = getServerMediaQuery({
+			calculatedMediaQueries = getMatchMediasFromUserAgent({
 				headers: {
 					'user-agent': 'iPad',
 				},
