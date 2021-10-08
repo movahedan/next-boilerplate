@@ -96,15 +96,7 @@ const importPlugin = {
 		'import/no-unassigned-import': [
 			'error',
 			{
-				allow: [
-					'**/*.css',
-					'**/*.png',
-					'**/*.svg',
-					'**/*.jpg',
-					'**/*.jpeg',
-					'node',
-					'@testing-library/jest-dom/extend-expect',
-				],
+				allow: ['**/*.css', 'node', '@testing-library/jest-dom/extend-expect'],
 			},
 		],
 		'import/order': [
@@ -144,6 +136,13 @@ const importPlugin = {
 		],
 	},
 	overrides: [
+		{
+			files: ['./**/*.d.ts', './jest/**/*.ts', './src/__mocks__/**/*.ts'],
+			rules: {
+				'import/no-unassigned-import': 'off',
+				'import/no-default-export': 'off',
+			},
+		},
 		{
 			files: [
 				'./src/pages/**/*.ts?(x)',
