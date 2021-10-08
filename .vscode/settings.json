@@ -2,11 +2,5 @@
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
-  },
-  "javascript.preferences.quoteStyle": "single",
-  "prettier.singleQuote": true,
-  "typescript.preferences.quoteStyle": "single",
-  "editor.insertSpaces": false,
-  "editor.tabSize": 2,
-  "prettier.useTabs": true
+  }
 }

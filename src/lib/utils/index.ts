@@ -1,3 +1,4 @@
+export * from './axios';
 export * from './css';
 export * from './routing';
 export * from './storybook';

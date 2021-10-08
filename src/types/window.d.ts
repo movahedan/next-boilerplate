@@ -5,3 +5,11 @@ declare global {
 		dataLayer: Record<string, unknown>[];
 	}
 }
+
+// declare global {
+// 	namespace NodeJS {
+// 		interface Global {
+// 			mongoose: Mongoose;
+// 		}
+// 	}
+// }
