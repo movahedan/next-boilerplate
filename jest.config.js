@@ -60,10 +60,10 @@ const jestConfig = {
 	// An object that configures minimum threshold enforcement for coverage results
 	coverageThreshold: {
 		global: {
-			statement: 50,
-			branches: 50,
-			functions: 50,
-			lines: 50,
+			statement: 90,
+			branches: 90,
+			functions: 80,
+			lines: 90,
 		},
 	},
 
