@@ -96,8 +96,8 @@ const jestConfig = {
 
 	// A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
 	moduleNameMapper: {
-		'\\.(css|scss)$': '<rootDir>/jest/styleMock.ts',
-		'\\.(ttf|eot|svg|jpg|jpeg|png|gif|webp)$': '<rootDir>/jest/fileMock.ts',
+		'\\.(css|scss)$': '<rootDir>/jest/style.mock.ts',
+		'\\.(ttf|eot|svg|jpg|jpeg|png|gif|webp)$': '<rootDir>/jest/file.mock.ts',
 		'\\*': '<rootDir>/src/$1',
 	},
 
