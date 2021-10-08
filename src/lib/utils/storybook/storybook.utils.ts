@@ -8,7 +8,7 @@ export const number = { control: { type: 'number' } };
 export const object = { control: { type: 'object' } };
 export const color = { control: { type: 'color' } };
 export const select = { control: { type: 'select' } };
-export const selectCustom = (options: any[]) => ({
+export const selectCustom = (options: never[]) => ({
 	control: { type: 'select', options },
 });
 export const range = (
@@ -22,11 +22,11 @@ export const array = { control: { type: 'array' } };
 
 export const action =
 	(str: string) =>
-	(...a: any) => {
+	(...a: never[]) => {
 		action_(str)(a);
 	};
 
-export const addFigmaLink = (figmaLink: string) => {
+export const addLink = (figmaLink: string) => {
 	return {
 		docs: {
 			description: {
