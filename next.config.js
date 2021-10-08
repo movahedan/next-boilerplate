@@ -10,8 +10,6 @@ const IS_PRODUCTION = process.env.NODE_ENV === 'production';
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
-	// @ts-ignore
-	webpack5: true,
 	i18n: {
 		locales: ['en'],
 		defaultLocale: 'en',
