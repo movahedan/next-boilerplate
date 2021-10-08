@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react';
 
-// eslint-disable-next-line import/no-unassigned-import
 import { mockMatchMedia } from '__mocks__/mock-media-query.jest';
 import { mediaQueries } from 'lib/utils';
 
@@ -11,6 +10,7 @@ import {
 	attachBrowserServerSideData,
 	extractBrowserServerSideData,
 	getMatchMediaEntries,
+	getMatchMediasByGivenMediaQuery,
 } from '.';
 
 import type { BrowserObject } from '.';
@@ -116,7 +116,7 @@ describe('browser module', () => {
 			const attachedDataToPageProps = attachBrowserServerSideData(mockReq);
 			expect(attachedDataToPageProps).toMatchObject({
 				browser: {
-					mediaQuery: mediaQueryInitializer(),
+					mediaQuery: getMatchMediasByGivenMediaQuery('lg'),
 				},
 			});
 		});

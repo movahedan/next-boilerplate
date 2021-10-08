@@ -1,4 +1,5 @@
 import {
+	getIsDesktop,
 	getIsTablet,
 	getParsedUserAgent,
 	getUserAgent,
@@ -20,7 +21,7 @@ export const mediaQueryInitializer = () =>
 	Object.fromEntries(
 		getMatchMediaEntries().map(([mediaQueryName, matchMedia]) => [
 			mediaQueryName,
-			mediaQueryName === 'sm' || matchMedia?.matches,
+			matchMedia?.matches,
 		])
 	) as BrowserMediaQuery;
 
@@ -28,7 +29,11 @@ export const getServerMediaQuery = (
 	req?: Partial<IncomingMessage>
 ): BrowserMediaQuery => {
 	const parsedUA = getParsedUserAgent(getUserAgent(req));
-	const currentMediaQuery = getIsTablet(parsedUA) ? 'md' : 'sm';
+	const currentMediaQuery = getIsDesktop(parsedUA)
+		? 'lg'
+		: getIsTablet(parsedUA)
+		? 'md'
+		: 'sm';
 
 	return getMatchMediasByGivenMediaQuery(currentMediaQuery);
 };
@@ -37,6 +42,7 @@ export const getMatchMediasByGivenMediaQuery = (
 	mediaQuery: keyof Screens
 ): BrowserMediaQuery => {
 	if (mediaQuery === 'lg') return { sm: true, md: true, lg: true };
-	if (mediaQuery === 'md') return { sm: true, md: true, lg: false };
-	else return { sm: true, md: false, lg: false };
+	else if (mediaQuery === 'md') return { sm: true, md: true, lg: false };
+
+	return { sm: true, md: false, lg: false };
 };
