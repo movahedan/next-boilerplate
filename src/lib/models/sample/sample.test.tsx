@@ -3,7 +3,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { act } from 'react-dom/test-utils';
 
 import { axiosMock } from '__mocks__';
-import { endpoints } from 'lib/utils';
+import { endpoints } from 'lib/constants';
 
 import { SampleModel } from './index';
 import { useSampleModelInitializer } from './initializers';

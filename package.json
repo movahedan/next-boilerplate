@@ -15,7 +15,7 @@
     "commit-check": "yarn type-check && yarn lint && yarn test",
     "release-check": "yarn commit-check && yarn cypress-check",
     "after-check": "kill -9 $(lsof -iTCP -sTCP:LISTEN | grep 3000 | awk '{print $2}');",
-    "clone:tailwind": "chmod u+x ./tailwind.generate.config.js && ./tailwind.generate.config.js && next lint --fix -d src/lib/utils/css",
+    "clone:tailwind": "chmod u+x ./tailwind.generate.config.js && ./tailwind.generate.config.js && next lint --fix -d src/ui/utils",
     "build:storybook": "build-storybook -s public",
     "build": "NODE_ENV=production next build",
     "start": "NODE_ENV=production next start",

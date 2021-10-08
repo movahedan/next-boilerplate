@@ -3,12 +3,13 @@ import {
 	getIsTablet,
 	getParsedUserAgent,
 	getUserAgent,
-	mediaQueries,
 } from 'lib/utils';
+
+import { mediaQueries } from 'ui';
+import type { Screens } from 'ui';
 
 import type { BrowserMediaQuery } from './browser.types';
 import type { IncomingMessage } from 'http';
-import type { Screens } from 'lib/utils';
 
 type MatchMediaEntry = [keyof typeof mediaQueries, MediaQueryList | undefined];
 export const getMatchMediaEntries = () =>
@@ -29,10 +30,10 @@ export const getServerMediaQuery = (
 	req?: Partial<IncomingMessage>
 ): BrowserMediaQuery => {
 	const parsedUA = getParsedUserAgent(getUserAgent(req));
-	const currentMediaQuery = getIsDesktop(parsedUA)
-		? 'lg'
-		: getIsTablet(parsedUA)
+	const currentMediaQuery = getIsTablet(parsedUA)
 		? 'md'
+		: getIsDesktop(parsedUA)
+		? 'lg'
 		: 'sm';
 
 	return getMatchMediasByGivenMediaQuery(currentMediaQuery);

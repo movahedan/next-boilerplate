@@ -1,4 +1,4 @@
-import type { Screens } from 'lib/utils';
+import type { Screens } from 'ui';
 
 export type BrowserMediaQuery = {
 	[key in keyof Screens]: true | false;

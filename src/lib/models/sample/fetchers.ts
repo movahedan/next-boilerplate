@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { endpoints } from 'lib/utils';
+import { endpoints } from 'lib/constants';
 
 import type { Sample } from './types';
 import type { AxiosWrapperType } from 'axios';

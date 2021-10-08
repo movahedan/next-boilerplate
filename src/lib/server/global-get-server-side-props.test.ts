@@ -9,7 +9,7 @@ describe('global-get-server-side-props', () => {
 		const results = await globalGetServerSideProps(async () => ({
 			props: sampleGetServerSidePropsResult,
 		}))({
-			// @ts-ignore
+			// @ts-expect-error It's just for mocking purpose
 			req: {
 				headers: {
 					'user-agent': '',

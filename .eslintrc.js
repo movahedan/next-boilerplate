@@ -147,7 +147,7 @@ const importPlugin = {
 			files: [
 				'./src/pages/**/*.ts?(x)',
 				'./src/**/*.stories.ts?(x)',
-				'./src/lib/utils/css/tailwind-theme.ts',
+				'./src/ui/utils/tailwind-theme.ts',
 			],
 			rules: {
 				'import/no-default-export': 'off',
@@ -210,7 +210,6 @@ module.exports = {
 	ignorePatterns: [
 		...nextPlugin.ignorePatterns,
 		...prettierPlugin.ignorePatterns,
-		'./src/lib/utils/css/tailwind-theme*',
 		'.husky/*',
 	],
 	plugins: [...importPlugin.plugins],

@@ -1,7 +1,9 @@
 import { render } from '@testing-library/react';
 
 import { mockMatchMedia } from '__mocks__/mock-media-query.jest';
-import { mediaQueries } from 'lib/utils';
+
+import { mediaQueries } from 'ui';
+import type { Screens } from 'ui';
 
 import {
 	useMediaQuery,
@@ -11,11 +13,11 @@ import {
 	extractBrowserServerSideData,
 	getMatchMediaEntries,
 	getMatchMediasByGivenMediaQuery,
+	getServerMediaQuery,
 } from '.';
 
-import type { BrowserObject } from '.';
+import type { BrowserObject, BrowserMediaQuery } from '.';
 import type { IncomingMessage } from 'http';
-import type { Screens } from 'lib/utils';
 import type { FC, ReactNode } from 'react';
 
 describe('browser module', () => {
@@ -43,6 +45,32 @@ describe('browser module', () => {
 				expect(currentMediaQuery[key as keyof Screens]).toStrictEqual(
 					mockedMatchMedia(value).matches
 				);
+			});
+		});
+
+		it('should have getServerMediaQuery calculator', () => {
+			let calculatedMediaQueries: BrowserMediaQuery;
+
+			calculatedMediaQueries = getServerMediaQuery({
+				headers: {
+					'user-agent': '',
+				},
+			});
+			expect(calculatedMediaQueries).toStrictEqual({
+				sm: true,
+				md: true,
+				lg: true,
+			});
+
+			calculatedMediaQueries = getServerMediaQuery({
+				headers: {
+					'user-agent': 'iPad',
+				},
+			});
+			expect(calculatedMediaQueries).toStrictEqual({
+				sm: true,
+				md: true,
+				lg: false,
 			});
 		});
 	});

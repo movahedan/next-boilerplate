@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 
+import type { Screens } from 'ui';
+
 import { getMatchMediaEntries, mediaQueryInitializer } from './browser.utils';
 
 import type { BrowserMediaQuery } from './browser.types';
-import type { Screens } from 'lib/utils';
 
 export const useMediaQueryProvider = (
 	initialMediaQuery?: BrowserMediaQuery
