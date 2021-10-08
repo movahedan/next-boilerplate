@@ -1,4 +1,4 @@
-import { configClientAxios, configServerAxios } from './configs';
+import { configClientAxios, configServerAxios } from './axios.configs';
 
 export const axiosModule = {
 	config: {

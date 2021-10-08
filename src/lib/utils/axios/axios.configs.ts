@@ -5,9 +5,12 @@ import { getUserAgent } from 'lib/utils/user-agent';
 import {
 	axiosClientErrorMiddleware,
 	axiosServerErrorMiddleware,
-} from './middlewares';
+} from './axios.middlewares';
 
-import type { AxiosClientConfigProps, AxiosServerConfigProps } from './types';
+import type {
+	AxiosClientConfigProps,
+	AxiosServerConfigProps,
+} from './axios.types';
 
 let serverInterceptor: number | null = null;
 export function configClientAxios(props: AxiosClientConfigProps): void {
