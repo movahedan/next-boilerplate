@@ -63,4 +63,5 @@ yarn after-check
 -	Add minimal storybook config
 -	Connect with mongoose
 -	Jest mocking service
-
+- Setup optimized google font
+- Setup global CSS
