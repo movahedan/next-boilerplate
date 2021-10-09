@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FontLinks> should matches it's snapshots 1`] = `
+Array [
+  <link
+    crossOrigin="true"
+    href="https://css.gstatic.com/"
+    rel="preconnect"
+  />,
+  <link
+    as="style"
+    href="/css/font.css"
+    rel="preload"
+  />,
+  <link
+    href="/css/font.css"
+    rel="stylesheet"
+  />,
+]
+`;

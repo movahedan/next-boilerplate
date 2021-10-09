@@ -16,7 +16,7 @@ export const GlobalCSS = () => (
 
 const bodyCSS = global`
   body {
-    @apply bg-dark;
+    @apply bg-white;
   }
 
   :global(#__next) {
