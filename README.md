@@ -37,6 +37,7 @@ yarn after-check
 ```
 
 ### Todo
+- Feature using swr both in client and server side
 - Setup Analytics
 - Setup next-page-tester
 -	Setup headless-ui
