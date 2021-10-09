@@ -35,6 +35,7 @@ const jestConfig = {
 		// Stories
 		'!src/**/*.stories.tsx',
 		// Hard to tests
+		'!src/lib/utils/axios/*.{ts,tsx}',
 		'!src/pages/_app.tsx',
 		'!src/pages/_document.tsx',
 		'!src/pages/**/*.{ts,tsx}',
