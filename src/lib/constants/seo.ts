@@ -1,5 +1,8 @@
 import type { NextSeoProps } from 'next-seo';
 
+export const websiteDomain = 'soheilmovahhedan.com';
+export const webstieBaseUrl = `https://www.${websiteDomain}`;
+
 export const authorName = 'Soheil Movahedan';
 export const authorDescription =
 	'Experienced Front-End developer, Next.js enthusiast and highly skilled in React.js';

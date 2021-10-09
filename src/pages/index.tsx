@@ -1,3 +1,6 @@
+import { NextSeo } from 'next-seo';
+
+import { webstieBaseUrl } from 'lib/constants';
 import { globalGetServerSideProps } from 'lib/server';
 
 import type { NextPage } from 'next';
@@ -10,6 +13,7 @@ interface Props {
 
 const IndexPage: NextPage<Props> = ({ data: { message } }) => (
 	<>
+		<NextSeo canonical={`${webstieBaseUrl}/`} />
 		<h1>{message}</h1>
 	</>
 );
