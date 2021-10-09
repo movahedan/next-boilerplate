@@ -1,15 +1,12 @@
 import { DefaultSeo } from 'next-seo';
 import App from 'next/app';
-import Head from 'next/head';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
-import { Hydrate } from 'react-query/hydration';
 
 import { AnalyticsProvider } from 'lib/analytics';
 import { BrowserProvider, extractBrowserServerSideData } from 'lib/browser';
 import { defaultNextSeoConfig } from 'lib/constants';
+import { SampleModel } from 'lib/models/sample';
 
-import { BaseLayout, FontLink, GlobalCSS } from 'ui';
+import { BaseLayout, FontLinkHead, GlobalCSS, ComposeProviders } from 'ui';
 
 import Error from './_error';
 
@@ -19,7 +16,6 @@ import 'tailwindcss/tailwind.css';
 class MyApp extends App<AppWithLayoutProps> {
 	state = {
 		hasError: false,
-		queryClient: new QueryClient(),
 	};
 
 	static getDerivedStateFromError() {
@@ -27,19 +23,22 @@ class MyApp extends App<AppWithLayoutProps> {
 	}
 
 	render() {
-		const { queryClient, hasError } = this.state;
-		const { Component, pageProps } = this.props;
-		const browserData = extractBrowserServerSideData(pageProps);
-
+		const { hasError } = this.state;
 		if (hasError) {
 			return (
 				<>
+					{independentProviders}
 					<Error />
-					<DefaultHead />
-					<GlobalCSS />
 				</>
 			);
 		}
+
+		const { Component, pageProps } = this.props;
+		const browserData = extractBrowserServerSideData(pageProps);
+		const providers = [
+			<BrowserProvider key={0} initialData={browserData} />,
+			<SampleModel.Provider key={1} />,
+		];
 
 		const Layout = Component.Layout?.Component || BaseLayout;
 		const layoutProps =
@@ -49,35 +48,23 @@ class MyApp extends App<AppWithLayoutProps> {
 
 		return (
 			<>
-				<DefaultHead />
-				<GlobalCSS />
-
-				<QueryClientProvider client={queryClient}>
-					<Hydrate state={pageProps.dehydratedState}>
-						<BrowserProvider initialData={browserData}>
-							<Layout {...layoutProps}>
-								<Component {...pageProps} />
-							</Layout>
-						</BrowserProvider>
-
-						<AnalyticsProvider />
-					</Hydrate>
-
-					<ReactQueryDevtools />
-				</QueryClientProvider>
+				{independentProviders}
+				<ComposeProviders providers={providers}>
+					<Layout key={2} {...layoutProps}>
+						<Component {...pageProps} />
+					</Layout>
+				</ComposeProviders>
 			</>
 		);
 	}
 }
 
-const DefaultHead = () => (
-	<Head>
-		<meta charSet='utf-8' />
-
-		<DefaultSeo {...defaultNextSeoConfig} />
-		<FontLink />
-	</Head>
-);
+const independentProviders = [
+	<DefaultSeo key={0} {...defaultNextSeoConfig} />,
+	<FontLinkHead key={1} />,
+	<GlobalCSS key={2} />,
+	<AnalyticsProvider key={3} />,
+];
 
 const IS_WEB_VITALS_ENABLE = process.env.NEXT_PUBLIC_WEB_VITALS === 'true';
 export const reportWebVitals = (metric: NextWebVitalsMetric): void => {
