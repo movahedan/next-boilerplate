@@ -26,7 +26,7 @@
     "build:storybook": "build-storybook -s public",
     "/////////////////// release ////////////////////////////////////////": "",
     "release:commit": "yarn type-check && yarn lint && yarn test",
-    "release:build": "yarn release:commit && yarn build:cypress && build:storybook",
+    "release:build": "yarn release:commit && yarn build:cypress",
     "release:clean": "yarn clean:cypress"
   },
   "sideEffects": [
