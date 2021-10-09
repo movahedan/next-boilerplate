@@ -26,14 +26,14 @@ const jestConfig = {
 		'!src/**/index.ts',
 		// Types
 		'!src/**/*.d.ts',
-		'!src/types/**/*.ts',
-		'!src/**/*.types.ts',
+		'!src/**/*.types.{.d,}{ts}',
+		'!src/types/**/*.{.d,}{ts}',
+		// Constants
+		'!src/lib/constants/*.ts',
 		// Styles
 		'!src/**/*.styles.{ts,tsx}',
 		// Stories
 		'!src/**/*.stories.tsx',
-		// Apis
-		'!src/pages/api/**',
 		// Hard to tests
 		'!src/pages/_app.tsx',
 		'!src/pages/_document.tsx',
