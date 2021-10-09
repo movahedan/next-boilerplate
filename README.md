@@ -41,6 +41,9 @@ yarn after-check
 - Setup next-page-tester
 -	Setup headless-ui
 - Setup Axios
+- Setup a dns service for pictures
+- Setup a picture optimizer and integrate it with NextImage
+- Setup a link preview service
 - Deploy on vercel
 
 ### Done
