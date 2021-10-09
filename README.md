@@ -65,3 +65,4 @@ yarn after-check
 -	Jest mocking service
 - Setup optimized google font
 - Setup global CSS
+- Setup SEO optimization (NextSeo, NextSitemap)
