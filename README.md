@@ -42,10 +42,11 @@ yarn after-check
 - Setup next-page-tester
 -	Setup headless-ui
 - Setup Axios
-- Setup a cdn service for pictures
+- Setup a cdn service for pictures (cloudflare)
 - Setup a picture optimizer and integrate it with NextImage
 - Setup a link preview service
 - Deploy on vercel
+- Setup github actions
 - [x] Setup directory structure
 - [x] Setup well documented eslint config
 - [x] Setup jest config
