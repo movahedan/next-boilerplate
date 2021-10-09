@@ -7,6 +7,14 @@ describe('global-get-server-side-props', () => {
 	const sampleGetServerSideProps = async () => ({
 		props: sampleGetServerSidePropsResult,
 	});
+	const sampleRedirectGetServerSidePropsResults = {
+		redirect: {
+			destination: '/',
+			permanent: false,
+		},
+	};
+	const sampleRedirectGetServerSideProps = async () =>
+		sampleRedirectGetServerSidePropsResults;
 
 	it('should initialize dom media-query', async () => {
 		const ctx = {
@@ -41,5 +49,18 @@ describe('global-get-server-side-props', () => {
 		})(ctx);
 
 		expect(setHeader).toBeCalledWith('Cache-Control', getCacheConfig());
+	});
+
+	it("should do not return browser data when given getServerSideProps does not have any props on it's results", async () => {
+		const ctx = {
+			req: {},
+		};
+
+		const results = await globalGetServerSideProps(
+			sampleRedirectGetServerSideProps
+			// @ts-expect-error It's just for mocking purpose
+		)(ctx);
+
+		expect(results).toEqual(sampleRedirectGetServerSidePropsResults);
 	});
 });
