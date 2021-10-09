@@ -37,32 +37,36 @@ yarn after-check
 ```
 
 ### Todo
+- Setup Analytics
+- Setup next-page-tester
+-	Setup headless-ui
+- Setup Axios
 - Deploy on vercel
--	Add headless-ui
-- Develop server-side, Structure for features/models/queries
-- Develop react-query
+
+### Done
+- Setup directory structure
+- Setup well documented eslint config
+- Setup jest config
+- Setup cypress minimal config
+- Setup workflow, lint-staged, lint, tests
+- Setup styled-jsx, tailwind and postcss
+- Setup layout structuring per page
+- [Canceled] Setup full redux
+- [Canceled] Setup minimal react-query
+- Setup declaring global types
+-	Setup Error Handling and Sentry
+-	Setup browser module (MediaQuery, Agent, tailwindConfig)
+-	Setup minimal storybook config
+-	[Canceled] Connect with mongoose
+-	Setup Jest mocking service
+- Setup optimized google font
+- Setup global CSS
+- Setup SEO optimization (NextSeo, NextSitemap)
+
+### Features to have
+- Resume page
 - Blog (with comments)
 - Authentication
 - Show this codebase
 - Introduce to machine learning and create an example
-- Notification
-
-### Done
-- Create directory structure
-- Implement well documented eslint config
-- Implement jest config
-- Implement cypress minimal config
-- Complete workflow, lint-staged, lint, tests
-- Implement styled-jsx, tailwind and postcss
-- Implement layout structuring per page
-- Implement minimal react-query
-- Implement minimal analytics
-- Declare clean types
--	Implement Error Handling and Sentry
--	Implement browser module (MediaQuery, Agent, tailwindConfig)
--	Add minimal storybook config
--	Connect with mongoose
--	Jest mocking service
-- Setup optimized google font
-- Setup global CSS
-- Setup SEO optimization (NextSeo, NextSitemap)
+- PDF on the go (with paper css)
