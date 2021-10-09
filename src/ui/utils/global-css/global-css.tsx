@@ -14,7 +14,7 @@ export const GlobalCSS = () => (
 	</>
 );
 
-const bodyCSS = global`
+export const bodyCSS = global`
   body {
     @apply bg-white;
   }
@@ -27,14 +27,14 @@ const bodyCSS = global`
   }
 `;
 
-const safeAreaPaddingForNotchs = global`
+export const safeAreaPaddingForNotchs = global`
   body {
     padding: env(safe-area-inset-top) env(safe-area-inset-right)
       env(safe-area-inset-bottom) env(safe-area-inset-left);
   }
 `;
 
-const fontOvverridesCSS = global`
+export const fontOvverridesCSS = global`
   h1, h2 {
     font-family: 'Roboto', sans-serif;
     @apply font-normal text-36px leading-42px uppercase;
