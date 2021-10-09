@@ -1,7 +1,7 @@
 import * as nextRouter from 'next/router';
 
 type MockUseRouterParams = Partial<nextRouter.NextRouter>;
-type MockUseRouter = (args: MockUseRouterParams) => MockUseRouterParams;
+type MockUseRouter = (args?: MockUseRouterParams) => MockUseRouterParams;
 
 export const mockUseRouter: MockUseRouter = ({
 	route = '',
@@ -12,7 +12,7 @@ export const mockUseRouter: MockUseRouter = ({
 	locale = '',
 	locales = [],
 	defaultLocale = '',
-}) => {
+} = {}) => {
 	const actions = {
 		push: jest.fn(() => Promise.resolve(true)),
 		replace: jest.fn(() => Promise.resolve(true)),
