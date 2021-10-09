@@ -36,9 +36,9 @@ module.exports = {
 			},
 			textColor: {
 				primary: {
-					default: '#FFFFFF',
+					default: '#424242',
 					light: '#BDBDBD',
-					'on-dark-bg': '#424242',
+					'on-dark-bg': '#FFFFFF',
 				},
 				secondary: '#4DF8A6',
 			},
