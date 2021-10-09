@@ -36,36 +36,31 @@ yarn release-check
 yarn after-check
 ```
 
-### Todo
+### Tasks
 - Feature using swr both in client and server side
 - Setup Analytics
 - Setup next-page-tester
 -	Setup headless-ui
 - Setup Axios
-- Setup a dns service for pictures
+- Setup a cdn service for pictures
 - Setup a picture optimizer and integrate it with NextImage
 - Setup a link preview service
 - Deploy on vercel
-
-### Done
-- Setup directory structure
-- Setup well documented eslint config
-- Setup jest config
-- Setup cypress minimal config
-- Setup workflow, lint-staged, lint, tests
-- Setup styled-jsx, tailwind and postcss
-- Setup layout structuring per page
-- [Canceled] Setup full redux
-- [Canceled] Setup minimal react-query
-- Setup declaring global types
--	Setup Error Handling and Sentry
--	Setup browser module (MediaQuery, Agent, tailwindConfig)
--	Setup minimal storybook config
--	[Canceled] Connect with mongoose
--	Setup Jest mocking service
-- Setup optimized google font
-- Setup global CSS
-- Setup SEO optimization (NextSeo, NextSitemap)
+- [x] Setup directory structure
+- [x] Setup well documented eslint config
+- [x] Setup jest config
+- [x] Setup cypress minimal config
+- [x] Setup workflow, lint-staged, lint, tests
+- [x] Setup styled-jsx, tailwind and postcss
+- [x] Setup layout structuring per page
+- [x] Setup declaring global types
+-	[x] Setup Error Handling and Sentry
+-	[x] Setup browser module (MediaQuery, Agent, tailwindConfig)
+-	[x] Setup minimal storybook config
+-	[x] Setup Jest mocking service
+- [x] Setup optimized google font
+- [x] Setup global CSS
+- [x] Setup SEO optimization (NextSeo, NextSitemap)
 
 ### Features to have
 - Resume page
