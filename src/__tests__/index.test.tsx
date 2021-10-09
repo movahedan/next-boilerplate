@@ -2,7 +2,8 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import { create } from 'react-test-renderer';
 
-import Homepage from 'pages/index';
+import { attachBrowserServerSideData } from 'lib/browser';
+import Homepage, { getServerSideProps } from 'pages/index';
 
 describe('<Homepage>', () => {
 	it('should match snapshot', async () => {
@@ -18,5 +19,26 @@ describe('<Homepage>', () => {
 		);
 		const results = await axe(container);
 		expect(results).toHaveNoViolations();
+	});
+
+	it('should have getServerSideProps', async () => {
+		const context = {
+			req: { headers: undefined },
+			res: { setHeader: jest.fn() },
+			query: {},
+			resolvedUrl: '/',
+		};
+
+		// @ts-expect-error Mocking
+		const results = await getServerSideProps(context);
+		expect(results).toEqual({
+			props: {
+				data: {
+					message: 'Message from getServerSideProps',
+				},
+				// @ts-expect-error Mocking
+				...attachBrowserServerSideData(context.req),
+			},
+		});
 	});
 });

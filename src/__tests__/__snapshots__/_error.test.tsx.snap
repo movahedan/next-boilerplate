@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ErrorPage> should match snapshot 1`] = `
+<p>
+  An error occurred on client
+</p>
+`;
