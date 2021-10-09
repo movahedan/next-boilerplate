@@ -5,7 +5,7 @@ import { useMediaQueryProvider } from './browser.hooks';
 import { getMatchMediasFromUserAgent } from './browser.utils';
 
 import type { BrowserObject } from './browser.types';
-import type { NextPageContext } from 'next';
+import type { IncomingMessage } from 'http';
 import type { FC } from 'react';
 
 export const useBrowser = () => useContext(BrowserContext);
@@ -26,7 +26,7 @@ export const extractBrowserServerSideData = (props: {
 	browser?: BrowserObject['browser'];
 }) => props.browser;
 export const attachBrowserServerSideData = (
-	req?: Partial<NextPageContext['req']>
+	req: IncomingMessage
 ): BrowserObject => {
 	if (!req) {
 		throw Error('[attachBrowserServerSideData]: req is undefined');

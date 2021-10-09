@@ -51,6 +51,7 @@ describe('browser module', () => {
 		it('should have getMatchMediasFromUserAgent calculator', () => {
 			let calculatedMediaQueries: BrowserMediaQuery;
 
+			// @ts-expect-error Mocking
 			calculatedMediaQueries = getMatchMediasFromUserAgent({
 				headers: {
 					'user-agent': '',
@@ -62,6 +63,7 @@ describe('browser module', () => {
 				lg: true,
 			});
 
+			// @ts-expect-error Mocking
 			calculatedMediaQueries = getMatchMediasFromUserAgent({
 				headers: {
 					'user-agent': 'iPad',
@@ -134,6 +136,7 @@ describe('browser module', () => {
 
 		it('should have a attacher function to attach browser data to page props', () => {
 			try {
+				// @ts-expect-error Testing an error
 				attachBrowserServerSideData();
 			} catch (e) {
 				expect(e).toMatchObject(
@@ -141,6 +144,7 @@ describe('browser module', () => {
 				);
 			}
 
+			// @ts-expect-error Testing an error
 			const attachedDataToPageProps = attachBrowserServerSideData(mockReq);
 			expect(attachedDataToPageProps).toMatchObject({
 				browser: {
