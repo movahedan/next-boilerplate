@@ -7,14 +7,14 @@ module.exports = {
 	purge: ['./src/{ui,pages}/**/*.{ts,tsx}'],
 	darkMode: false,
 	theme: {
+		screens: {
+			sm: '480px',
+			md: '768px',
+			lg: '1280px',
+		},
 		extend: {
 			width: {
 				'240px': '15rem',
-			},
-			screens: {
-				sm: '480px',
-				md: '768px',
-				lg: '1280px',
 			},
 			lineHeight: {
 				'14px': '0.875rem',
