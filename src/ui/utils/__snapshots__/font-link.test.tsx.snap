@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<FontLinks> should matches it's snapshots 1`] = `
+exports[`<FontLink> should matches it's snapshots 1`] = `
 Array [
   <link
     crossOrigin="true"
