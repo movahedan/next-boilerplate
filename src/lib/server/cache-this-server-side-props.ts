@@ -5,7 +5,7 @@ interface CacheConfig {
 	swr?: null | number; // stale-while-revalidation (seconds)
 }
 
-const getCacheConfig = ({
+export const getCacheConfig = ({
 	maxAge = 10,
 	swr = 60,
 }: CacheConfig = {}): string => {
@@ -16,10 +16,14 @@ const getCacheConfig = ({
 	return [typeSection, maxAgeSection, staleSecion].filter(Boolean).join(', ');
 };
 
-export const cacheThisServerSideProps: (
+type CacheThisServerSideProps = (
 	res: {
 		setHeader: ServerResponse['setHeader'];
 	},
 	config?: CacheConfig
-) => void = (res, config) =>
-	res.setHeader('Cache-Control', getCacheConfig(config));
+) => void;
+
+export const cacheThisServerSideProps: CacheThisServerSideProps = (
+	res,
+	config
+) => res.setHeader('Cache-Control', getCacheConfig(config));
