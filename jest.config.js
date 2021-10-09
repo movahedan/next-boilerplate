@@ -38,10 +38,8 @@ const jestConfig = {
 		'!src/lib/utils/axios/*.{ts,tsx}',
 		'!src/pages/_app.tsx',
 		'!src/pages/_document.tsx',
-		'!src/pages/**/*.{ts,tsx}',
+		'!src/pages/analytics-sample/index.tsx',
 		'!src/lib/analytics/**/*.{ts,tsx}',
-		'src/lib/analytics/__tests__/**',
-		'!src/pages/analytics-sample.tsx',
 	],
 
 	// The directory where Jest should output its coverage files
