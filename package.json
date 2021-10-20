@@ -1,5 +1,5 @@
 {
-  "name": "personal-project",
+  "name": "nextjs-boilerplate",
   "license": "MIT",
   "private": "false",
   "version": "0.3.0",
@@ -87,7 +87,6 @@
     "jest-cli": "^27.1.0",
     "lint-staged": "^11.0.0",
     "lost": "^8.3.0",
-    "msw": "^0.35.0",
     "next-page-tester": "^0.28.0",
     "next-sitemap": "^1.6.179",
     "postcss": "^8.3.6",

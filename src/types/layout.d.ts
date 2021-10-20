@@ -11,3 +11,8 @@ declare type LayoutProps<L> = L extends Record<string, unknown>
 	  };
 
 declare type LayoutComponent<L> = FC<LayoutProps<L>>;
+
+declare type LayoutDeclaration<L> = {
+	Component?: LayoutComponent<L>;
+	props?: LayoutProps<L> | ((pageProps: P) => LayoutProps<L>);
+};

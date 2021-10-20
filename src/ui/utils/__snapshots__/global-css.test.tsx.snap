@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`globalCSSList should matches it's snapshots 1`] = `
+Array [
+  Array [
+    "body{--tw-bg-opacity:1;background-color:rgba(255,255,255,var(--tw-bg-opacity));}",
+    "#__next{overflow:hidden;min-height:100vh;max-width:100vw;position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin:0px;}",
+  ],
+  Array [
+    "h1,h2{font-family:\\"Roboto\\",sans-serif;font-size:1.625rem;font-weight:normal;text-transform:uppercase;line-height:2.636875rem;text-align:center;--tw-text-opacity:1;color:rgba(66,66,66,var(--tw-text-opacity));max-width:40rem;-webkit-letter-spacing:0.48em;-moz-letter-spacing:0.48em;-ms-letter-spacing:0.48em;letter-spacing:0.48em;}",
+    "h3{font-family:\\"Roboto\\",sans-serif;font-size:1.5rem;font-weight:normal;line-height:1.758rem;text-align:center;--tw-text-opacity:1;color:rgba(66,66,66,var(--tw-text-opacity));max-width:40rem;}",
+    "p,span,button,a,li,h4,h5,h6{font-family:\\"Roboto\\",sans-serif;}",
+    "p,span,button,a,li,h4,h5,h6{font-size:0.875rem;font-weight:normal;line-height:1.5rem;}",
+    "p,span,button,a,li,h4,h5,h6{text-align:center;--tw-text-opacity:1;color:rgba(66,66,66,var(--tw-text-opacity));}",
+    "p,span,button,a,li,h4,h5,h6{max-width:40rem;}",
+  ],
+  Array [
+    "body{padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);}",
+  ],
+]
+`;

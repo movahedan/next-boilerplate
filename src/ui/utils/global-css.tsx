@@ -1,20 +1,6 @@
 import { global } from 'styled-jsx/css';
 
-export const GlobalCSS = () => (
-	<>
-		<style jsx global>
-			{bodyCSS}
-		</style>
-		<style jsx global>
-			{safeAreaPaddingForNotchs}
-		</style>
-		<style jsx global>
-			{fontOvverridesCSS}
-		</style>
-	</>
-);
-
-export const bodyCSS = global`
+const bodyCSS = global`
   body {
     @apply bg-white;
   }
@@ -27,14 +13,14 @@ export const bodyCSS = global`
   }
 `;
 
-export const safeAreaPaddingForNotchs = global`
+const safeAreaPaddingForNotchs = global`
   body {
     padding: env(safe-area-inset-top) env(safe-area-inset-right)
       env(safe-area-inset-bottom) env(safe-area-inset-left);
   }
 `;
 
-export const fontOvverridesCSS = global`
+const fontOvverridesCSS = global`
   h1, h2 {
     font-family: 'Roboto', sans-serif;
     @apply font-normal text-36px leading-42px uppercase;
@@ -65,3 +51,9 @@ export const fontOvverridesCSS = global`
     @apply max-w-640px;
   }
 `;
+
+export const globalCSSList = [
+	bodyCSS,
+	fontOvverridesCSS,
+	safeAreaPaddingForNotchs,
+];

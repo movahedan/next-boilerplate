@@ -21,8 +21,29 @@ const eslintPlugin = {
 	],
 	rules: {
 		'newline-before-return': 'error',
+		'max-lines': [
+			'error',
+			{ max: 100, skipBlankLines: true, skipComments: true },
+		],
 		'no-unsafe-optional-chaining': 'off',
 	},
+	overrides: [
+		{
+			files: ['.eslintrc.js'],
+			rules: {
+				'max-lines': 'off',
+			},
+		},
+		{
+			files: ['./**/*.test.{ts,tsx}'],
+			rules: {
+				'max-lines': [
+					'error',
+					{ max: 300, skipBlankLines: true, skipComments: true },
+				],
+			},
+		},
+	],
 };
 
 const tailwindPlugin = {
@@ -228,5 +249,9 @@ module.exports = {
 		...a11yPlugin.rules,
 		...prettierPlugin.rules,
 	},
-	overrides: [typescriptConfig, ...importPlugin.overrides],
+	overrides: [
+		typescriptConfig,
+		...importPlugin.overrides,
+		...eslintPlugin.overrides,
+	],
 };

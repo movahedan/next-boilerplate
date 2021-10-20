@@ -1,16 +1,24 @@
 import { DefaultSeo } from 'next-seo';
 import App from 'next/app';
+import Head from 'next/head';
 
 import { AnalyticsProvider } from 'lib/analytics';
 import { BrowserProvider, extractBrowserServerSideData } from 'lib/browser';
 import { defaultNextSeoConfig } from 'lib/constants';
 import { SampleModel } from 'lib/models/sample';
 
-import { BaseLayout, FontLinkHead, GlobalCSS, ComposeProviders } from 'ui';
+import {
+	BaseLayout,
+	ComposeProviders,
+	fontLinksProps,
+	globalCSSList,
+} from 'ui';
 
 import Error from './_error';
 
 import type { AppWithLayoutProps, NextWebVitalsMetric } from 'next/app';
+import type { FC } from 'react';
+
 import 'tailwindcss/tailwind.css';
 
 class MyApp extends App<AppWithLayoutProps> {
@@ -59,9 +67,25 @@ class MyApp extends App<AppWithLayoutProps> {
 	}
 }
 
+const GlobalFont: FC = () => (
+	<Head key={1}>
+		{fontLinksProps.map((props, index) => (
+			<link key={index} {...props} />
+		))}
+	</Head>
+);
+const GlobalCSS: FC = () => (
+	<>
+		{globalCSSList.map((cssString, index) => (
+			<style jsx global key={index}>
+				{cssString}
+			</style>
+		))}
+	</>
+);
 const independentProviders = [
 	<DefaultSeo key={0} {...defaultNextSeoConfig} />,
-	<FontLinkHead key={1} />,
+	<GlobalFont key={1} />,
 	<GlobalCSS key={2} />,
 	<AnalyticsProvider key={3} />,
 ];
