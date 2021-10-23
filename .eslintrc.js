@@ -131,7 +131,7 @@ const importPlugin = {
 				],
 				pathGroups: [
 					{
-						pattern: 'ui',
+						pattern: 'ui/*',
 						group: 'internal',
 						position: 'after',
 					},

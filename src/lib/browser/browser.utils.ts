@@ -4,11 +4,12 @@ import {
 	getParsedUserAgent,
 	getUserAgent,
 } from 'lib/utils';
+
 import { mediaQueries } from 'ui/utils';
+import type { Screens } from 'ui/utils';
 
 import type { BrowserMediaQuery } from './browser.types';
 import type { IncomingMessage } from 'http';
-import type { Screens } from 'ui/utils';
 
 type MatchMediaEntry = [keyof typeof mediaQueries, MediaQueryList | undefined];
 export const getMatchMediaEntries = () =>
