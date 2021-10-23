@@ -1,6 +1,6 @@
-import { stringifyUrl } from 'lib/utils/routing';
+import { stringifyUrl } from 'lib/utils';
 
-import type { QueryType } from 'lib/utils/routing';
+import type { QueryType } from 'lib/utils';
 
 export const endpoints = {
 	sample:

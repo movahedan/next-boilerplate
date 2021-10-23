@@ -1,6 +1,6 @@
 import { create } from 'react-test-renderer';
 
-import { RecentStudent } from 'ui';
+import { RecentStudent } from 'ui/organisms';
 
 describe('<RecentStudent>', () => {
 	it("should match is's snapshot", () => {

@@ -6,13 +6,8 @@ import { AnalyticsProvider } from 'lib/analytics';
 import { BrowserProvider, extractBrowserServerSideData } from 'lib/browser';
 import { defaultNextSeoConfig } from 'lib/constants';
 import { SampleModel } from 'lib/models/sample';
-
-import {
-	BaseLayout,
-	ComposeProviders,
-	fontLinksProps,
-	globalCSSList,
-} from 'ui';
+import { BaseLayout } from 'ui/templates';
+import { ComposeProviders, fontLinksProps, globalCSSList } from 'ui/utils';
 
 import Error from './_error';
 
