@@ -2,7 +2,7 @@ import { DefaultSeo } from 'next-seo';
 import App from 'next/app';
 import Head from 'next/head';
 
-import { AnalyticsProvider } from 'lib/analytics';
+import { AnalyticsHeadScript } from 'lib/analytics';
 import { BrowserProvider, extractBrowserServerSideData } from 'lib/browser';
 import { defaultNextSeoConfig } from 'lib/constants';
 import { SampleModel } from 'lib/models/sample';
@@ -83,7 +83,7 @@ const independentProviders = [
 	<DefaultSeo key={0} {...defaultNextSeoConfig} />,
 	<GlobalFont key={1} />,
 	<GlobalCSS key={2} />,
-	<AnalyticsProvider key={3} />,
+	<AnalyticsHeadScript key={3} />,
 ];
 
 const IS_WEB_VITALS_ENABLE = process.env.NEXT_PUBLIC_WEB_VITALS === 'true';

@@ -9,7 +9,10 @@ const nextPlugin = {
 		'react/prop-types': 'off',
 		'react/display-name': 'off',
 		'react/react-in-jsx-scope': 'off',
-		'react-hooks/exhaustive-deps': 'warn',
+		'react-hooks/exhaustive-deps': [
+			'warn',
+			{ additionalHooks: 'useAnalytics' },
+		],
 		'react-hooks/rules-of-hooks': 'error',
 		'react/jsx-filename-extension': ['warn', { extensions: ['.tsx', '.jsx'] }],
 	},
