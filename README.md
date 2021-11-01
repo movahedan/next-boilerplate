@@ -37,11 +37,8 @@ yarn after-check
 ```
 
 ### Tasks
-- Feature using swr both in client and server side
-- Setup Analytics
-- Setup next-page-tester
 -	Setup headless-ui
-- Setup Axios
+- Setup Fetch and SWR
 - Setup a cdn service for pictures (cloudflare)
 - Setup a picture optimizer and integrate it with NextImage
 - Setup a link preview service
@@ -62,6 +59,8 @@ yarn after-check
 - [x] Setup optimized google font
 - [x] Setup global CSS
 - [x] Setup SEO optimization (NextSeo, NextSitemap)
+- [x] Setup Analytics
+- [x] Setup next-page-tester
 
 ### Features to have
 - Resume page
