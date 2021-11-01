@@ -13,7 +13,6 @@ import { ComposeProviders, fontLinksProps, globalCSSList } from 'ui/utils';
 import Error from './_error';
 
 import type { AppWithLayoutProps, NextWebVitalsMetric } from 'next/app';
-import type { FC } from 'react';
 
 import 'tailwindcss/tailwind.css';
 
@@ -31,7 +30,7 @@ class MyApp extends App<AppWithLayoutProps> {
 		if (hasError) {
 			return (
 				<>
-					{independentProviders}
+					<IndependentProviders />
 					<Error />
 				</>
 			);
@@ -51,7 +50,7 @@ class MyApp extends App<AppWithLayoutProps> {
 
 		return (
 			<>
-				{independentProviders}
+				<IndependentProviders />
 				<ComposeProviders providers={providers}>
 					<Layout key={2} {...layoutProps}>
 						<Component {...pageProps} />
@@ -62,28 +61,26 @@ class MyApp extends App<AppWithLayoutProps> {
 	}
 }
 
-const GlobalFont: FC = () => (
-	<Head key={1}>
-		{fontLinksProps.map((props, index) => (
-			<link key={index} {...props} />
-		))}
-	</Head>
-);
-const GlobalCSS: FC = () => (
+const IndependentProviders = () => (
 	<>
+		<Head>
+			{fontLinksProps.map((props, index) => (
+				<link key={index} {...props} />
+			))}
+		</Head>
 		{globalCSSList.map((cssString, index) => (
 			<style key={index} jsx global>
 				{cssString}
 			</style>
 		))}
+		<DefaultSeo
+			{...getDefaultNextSeoConfig({
+				noIndex: process.env.NEXT_PUBLIC_INDEXING_ENABLED ? false : true,
+			})}
+		/>
+		<AnalyticsHeadScript url={process.env.NEXT_PUBLIC_ANALYTIC_URL} />
 	</>
 );
-const independentProviders = [
-	<DefaultSeo key={0} {...getDefaultNextSeoConfig()} />,
-	<GlobalFont key={1} />,
-	<GlobalCSS key={2} />,
-	<AnalyticsHeadScript key={3} url={process.env.NEXT_PUBLIC_ANALYTIC_URL} />,
-];
 
 export const reportWebVitals = (metric: NextWebVitalsMetric): void => {
 	const IS_WEB_VITALS_ENABLE = process.env.NEXT_PUBLIC_WEB_VITALS === 'true';

@@ -14,18 +14,14 @@ jest.useFakeTimers();
 
 describe('<AnalyticsHeadScript>', () => {
 	it('should renders correct script', async () => {
-		const { queryByTestId } = render(
-			<AnalyticsHeadScript url={process.env.NEXT_PUBLIC_ANALYTIC_URL} />
-		);
+		const url = 'https://domain.com';
+		const { queryByTestId } = render(<AnalyticsHeadScript url={url} />);
 
 		const scriptElement = queryByTestId('analytics-script');
 
 		expect(scriptElement).toHaveAttribute('async');
 		expect(scriptElement).toHaveAttribute('defer');
-		expect(scriptElement).toHaveAttribute(
-			'src',
-			process.env.NEXT_PUBLIC_ANALYTIC_URL
-		);
+		expect(scriptElement).toHaveAttribute('src', url);
 	});
 
 	it('should returns null when no url is passed to it', async () => {

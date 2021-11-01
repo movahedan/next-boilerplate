@@ -20,6 +20,4 @@ it('get-is-desktop should return isTablet boolean', () => {
 		// @ts-expect-error It's just for mocking purpose
 		getIsDesktop({ ua: '', device: { type: '' } })
 	).toBeTruthy();
-
-	expect(getIsDesktop()).toBeTruthy();
 });

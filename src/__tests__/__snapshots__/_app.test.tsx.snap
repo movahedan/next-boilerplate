@@ -1,53 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`_app.ts should match snapshot 1`] = `
-Array [
-  <script
-    async={true}
-    data-testid="analytics-script"
-    defer={true}
-    src="https://domain.com"
-  />,
-  <main />,
-]
+exports[`_app.tsx Analytic integration should match snapshot while noIndex is false: noIndex-is-false 1`] = `<main />`;
+
+exports[`_app.tsx Analytic integration should match snapshot while noIndex is true: noIndex-is-true 1`] = `<main />`;
+
+exports[`_app.tsx Layout per page should match snapshot while a layout is attached to page and the props of layout is customized: with-layout-customized-props 1`] = `
+<main
+  className="text-white"
+/>
 `;
 
-exports[`_app.ts should match snapshot while a layout is attached to page and the props of layout is customized: with-layout-customized-props 1`] = `
-Array [
-  <script
-    async={true}
-    data-testid="analytics-script"
-    defer={true}
-    src="https://domain.com"
-  />,
-  <main
-    className="text-white"
-  />,
-]
-`;
+exports[`_app.tsx Layout per page should match snapshot while a layout is attached to page: with-layout 1`] = `<main />`;
 
-exports[`_app.ts should match snapshot while a layout is attached to page: with-layout 1`] = `
-Array [
-  <script
-    async={true}
-    data-testid="analytics-script"
-    defer={true}
-    src="https://domain.com"
-  />,
-  <main />,
-]
-`;
+exports[`_app.tsx should match snapshot 1`] = `<main />`;
 
-exports[`_app.ts should match snapshot while an error occurred: error 1`] = `
-Array [
-  <script
-    async={true}
-    data-testid="analytics-script"
-    defer={true}
-    src="https://domain.com"
-  />,
-  <p>
-    An error occurred on client
-  </p>,
-]
+exports[`_app.tsx should match snapshot while an error occurred: error 1`] = `
+<p>
+  An error occurred on client
+</p>
 `;

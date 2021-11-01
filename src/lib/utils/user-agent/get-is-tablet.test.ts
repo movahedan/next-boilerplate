@@ -1,25 +1,21 @@
 import { getIsTablet } from '.';
 
 it('get-is-tablet should return isTablet boolean', () => {
-	expect(
-		// @ts-expect-error It's just for mocking purpose
-		getIsTablet({ ua: '', device: { type: 'tablet' } })
-	).toBeTruthy();
+	let isTablet = false;
 
-	expect(
-		// @ts-expect-error It's just for mocking purpose
-		getIsTablet({ ua: 'iPad', device: {} })
-	).toBeTruthy();
+	// @ts-expect-error It's just for mocking purpose
+	isTablet = getIsTablet({ ua: '', device: { type: 'tablet' } });
+	expect(isTablet).toBe(true);
 
-	expect(
-		// @ts-expect-error It's just for mocking purpose
-		getIsTablet({ ua: 'iPad', device: { type: 'tablet' } })
-	).toBeTruthy();
+	// @ts-expect-error It's just for mocking purpose
+	isTablet = getIsTablet({ ua: 'iPad', device: {} });
+	expect(isTablet).toBe(true);
 
-	expect(
-		// @ts-expect-error It's just for mocking purpose
-		getIsTablet({ ua: '', device: { type: 'mobile' } })
-	).toBeFalsy();
+	// @ts-expect-error It's just for mocking purpose
+	isTablet = getIsTablet({ ua: 'iPad', device: { type: 'tablet' } });
+	expect(isTablet).toBe(true);
 
-	expect(getIsTablet()).toBeFalsy();
+	// @ts-expect-error It's just for mocking purpose
+	isTablet = getIsTablet({ ua: '', device: { type: 'mobile' } });
+	expect(isTablet).toBe(false);
 });
