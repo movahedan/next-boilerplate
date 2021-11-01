@@ -1,3 +1,5 @@
+global.window.dataLayer = [];
+
 export const analyticEvent = <
 	AnalyticEventType = string,
 	AnalyticEventData = unknown
@@ -6,7 +8,6 @@ export const analyticEvent = <
 	data: AnalyticEventData
 ): void => {
 	if (name && global.window) {
-		global.window.dataLayer = global.window.dataLayer || [];
 		global.window.dataLayer.push({
 			event: name,
 			data: data,

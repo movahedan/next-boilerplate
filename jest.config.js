@@ -22,24 +22,14 @@ const jestConfig = {
 	// An array of glob patterns indicating a set of files for which coverage information should be collected
 	collectCoverageFrom: [
 		'src/**/*.{ts,tsx}',
-		// Indexes (Warning! Do not write logic/function/statement in index files)
-		'!src/**/index.ts',
-		// Types
-		'!src/**/*.d.ts',
-		'!src/**/*.types.{.d,}{ts}',
-		'!src/types/**/*.{.d,}{ts}',
-		// Constants
-		'!src/lib/constants/*.ts',
-		// Styles
-		'!src/**/*.styles.{ts,tsx}',
-		// Stories
-		'!src/**/*.stories.tsx',
+
+		'!src/**/index.ts', // Indexes (Warning! Do not write logic/function/statement in index files)
+		'!src/**/*.d.ts', // Type definitions
+		'!src/**/*.stories.tsx', // Stories
 		// Hard to tests
 		'!src/lib/utils/axios/*.{ts,tsx}',
 		'!src/pages/_app.tsx',
 		'!src/pages/_document.tsx',
-		'!src/pages/analytics-sample/index.tsx',
-		'!src/lib/analytics/**/*.{ts,tsx}',
 	],
 
 	// The directory where Jest should output its coverage files

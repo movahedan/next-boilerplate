@@ -28,19 +28,6 @@ const HeaderWithAnalyticTracking = () => {
 	);
 };
 
-const HeaderWithAnalyticTrackingWrongAttachment = () => {
-	useAnalytics<undefined, undefined, HTMLDivElement>(
-		() => trackHeaderInteractions,
-		[]
-	);
-
-	return (
-		<div>
-			<button data-testid='btn' />
-		</div>
-	);
-};
-
 describe('Header event tracking', () => {
 	beforeAll(() => {
 		prepareDataLayer();
@@ -83,11 +70,5 @@ describe('Header event tracking', () => {
 		}
 
 		expectDataLayer(dataLayer).not.toBeCalled();
-	});
-
-	it('should not fire analytics push event when ref attached to wrong element', async () => {
-		expect(() =>
-			render(<HeaderWithAnalyticTrackingWrongAttachment />)
-		).toThrow();
 	});
 });
