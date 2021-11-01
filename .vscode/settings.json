@@ -4,6 +4,7 @@
     "source.fixAll.eslint": true,
   },
   "cSpell.words": [
+    "tailwindcss",
     "testid"
   ]
 }

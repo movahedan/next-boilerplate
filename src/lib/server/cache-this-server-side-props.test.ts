@@ -33,7 +33,7 @@ describe('cacheThisServerSideProps', () => {
 		);
 	});
 
-	it('should have support for null maxAge config', async () => {
+	it('should have support for null maxAge and swr config', async () => {
 		cacheThisServerSideProps(mockRes, { maxAge: null, swr: null });
 
 		expect(mockRes.setHeader).toBeCalledWith('Cache-Control', 'public');
@@ -43,6 +43,10 @@ describe('cacheThisServerSideProps', () => {
 describe('getCacheConfig', () => {
 	it('should have a default value', async () => {
 		expect(getCacheConfig()).toEqual(
+			'public, max-age=10, stale-while-revalidate=60'
+		);
+
+		expect(getCacheConfig({})).toEqual(
 			'public, max-age=10, stale-while-revalidate=60'
 		);
 	});

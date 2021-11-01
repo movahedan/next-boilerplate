@@ -1,4 +1,6 @@
-global.window.dataLayer = [];
+if (global.window) {
+	global.window.dataLayer = global.window.dataLayer || [];
+}
 
 export const analyticEvent = <
 	AnalyticEventType = string,

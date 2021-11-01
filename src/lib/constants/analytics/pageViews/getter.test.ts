@@ -54,7 +54,7 @@ describe('Analytics common event object tools: getPage', () => {
 					secondary_category: '',
 					tags: [defaultProps.name],
 					breadcrumbs: [''],
-					updated_date: '',
+					updated_date: 'NaN/NaN/NaN',
 				},
 			},
 		};

@@ -9,7 +9,7 @@ export const getAnalyticsPage = (props: {
 	type: string;
 	lastUpdated: string;
 }): AnalyticEventInfo<typeof pageViewEventKey, PageViewEvent> => {
-	const { id, type, name, lastUpdated } = props;
+	const { id, type, name, lastUpdated = '' } = props;
 
 	return {
 		eventType: pageViewEventKey,
@@ -22,7 +22,7 @@ export const getAnalyticsPage = (props: {
 				secondary_category: '',
 				tags: [name],
 				breadcrumbs: [''],
-				updated_date: lastUpdated ? formatDate(new Date(lastUpdated)) : '',
+				updated_date: formatDate(new Date(lastUpdated)),
 			},
 		},
 	};

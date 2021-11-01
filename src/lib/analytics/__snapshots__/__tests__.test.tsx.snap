@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AnalyticsHeadScript> should returns null when no url is passed to it 1`] = `null`;

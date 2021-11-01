@@ -34,7 +34,7 @@ const expectedEvent = {
 			breadcrumbs: [''],
 			primary_category: '',
 			secondary_category: '',
-			updated_date: '',
+			updated_date: 'NaN/NaN/NaN',
 		},
 	},
 };

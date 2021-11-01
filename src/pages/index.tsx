@@ -1,9 +1,9 @@
 import { NextSeo } from 'next-seo';
 
-import { webstieBaseUrl } from 'lib/constants';
+import { websiteBaseUrl } from 'lib/constants';
 import { globalGetServerSideProps } from 'lib/server';
 
-import type { NextPage } from 'next';
+import type { NextPageWithLayout } from 'next';
 
 interface Props {
 	data: {
@@ -11,9 +11,9 @@ interface Props {
 	};
 }
 
-const IndexPage: NextPage<Props> = ({ data: { message } }) => (
+const IndexPage: NextPageWithLayout<Props> = ({ data: { message } }) => (
 	<>
-		<NextSeo canonical={`${webstieBaseUrl}/`} />
+		<NextSeo canonical={`${websiteBaseUrl}/`} />
 		<h1>{message}</h1>
 	</>
 );

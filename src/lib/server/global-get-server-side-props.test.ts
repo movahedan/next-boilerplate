@@ -36,7 +36,7 @@ describe('global-get-server-side-props', () => {
 		});
 	});
 
-	it('should set cahce header on given config', async () => {
+	it('should set cache header on given config', async () => {
 		const setHeader = jest.fn();
 		const ctx = {
 			req: {},

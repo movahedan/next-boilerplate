@@ -1,5 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<ErrorPage> page renders and matches snapshot 1`] = `"<html data-reactroot=\\"\\"><head></head><body><div id=\\"__next\\"><script data-testid=\\"analytics-script\\" src=\\"https://domain.com\\" async=\\"\\" defer=\\"\\"></script><main><p>An error 200 occurred on server</p></main></div></body></html>"`;
+
+exports[`<ErrorPage> page renders and matches snapshot 2`] = `"<div id=\\"__next\\"><script data-testid=\\"analytics-script\\" src=\\"https://domain.com\\" async=\\"\\" defer=\\"\\"></script><main><p>An error 200 occurred on server</p></main></div>"`;
+
 exports[`<ErrorPage> should match snapshot 1`] = `
 <p>
   An error occurred on client

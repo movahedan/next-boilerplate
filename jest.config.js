@@ -28,8 +28,6 @@ const jestConfig = {
 		'!src/**/*.stories.tsx', // Stories
 		// Hard to tests
 		'!src/lib/utils/axios/*.{ts,tsx}',
-		'!src/pages/_app.tsx',
-		'!src/pages/_document.tsx',
 	],
 
 	// The directory where Jest should output its coverage files
@@ -51,7 +49,7 @@ const jestConfig = {
 		global: {
 			statement: 90,
 			branches: 90,
-			functions: 80,
+			functions: 90,
 			lines: 90,
 		},
 	},

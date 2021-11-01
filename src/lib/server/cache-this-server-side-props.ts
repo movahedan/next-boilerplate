@@ -11,9 +11,9 @@ export const getCacheConfig = ({
 }: CacheConfig = {}): string => {
 	const typeSection = 'public';
 	const maxAgeSection = maxAge === null ? '' : `max-age=${maxAge}`;
-	const staleSecion = swr === null ? '' : `stale-while-revalidate=${swr}`;
+	const staleSection = swr === null ? '' : `stale-while-revalidate=${swr}`;
 
-	return [typeSection, maxAgeSection, staleSecion].filter(Boolean).join(', ');
+	return [typeSection, maxAgeSection, staleSection].filter(Boolean).join(', ');
 };
 
 type CacheThisServerSideProps = (

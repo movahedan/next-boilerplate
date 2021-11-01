@@ -4,7 +4,7 @@ import Head from 'next/head';
 
 import { AnalyticsHeadScript } from 'lib/analytics';
 import { BrowserProvider, extractBrowserServerSideData } from 'lib/browser';
-import { defaultNextSeoConfig } from 'lib/constants';
+import { getDefaultNextSeoConfig } from 'lib/constants';
 import { SampleModel } from 'lib/models/sample';
 
 import { BaseLayout } from 'ui/templates';
@@ -44,11 +44,10 @@ class MyApp extends App<AppWithLayoutProps> {
 			<SampleModel.Provider key={1} />,
 		];
 
-		const Layout = Component.Layout?.Component || BaseLayout;
+		const { Component: Layout = BaseLayout, props: lProps = {} } =
+			Component.Layout || {};
 		const layoutProps =
-			typeof Component.Layout?.props === 'function'
-				? Component.Layout?.props(pageProps)
-				: Component.Layout?.props || {};
+			typeof lProps === 'function' ? lProps(pageProps) : lProps;
 
 		return (
 			<>
@@ -73,21 +72,22 @@ const GlobalFont: FC = () => (
 const GlobalCSS: FC = () => (
 	<>
 		{globalCSSList.map((cssString, index) => (
-			<style jsx global key={index}>
+			<style key={index} jsx global>
 				{cssString}
 			</style>
 		))}
 	</>
 );
 const independentProviders = [
-	<DefaultSeo key={0} {...defaultNextSeoConfig} />,
+	<DefaultSeo key={0} {...getDefaultNextSeoConfig()} />,
 	<GlobalFont key={1} />,
 	<GlobalCSS key={2} />,
-	<AnalyticsHeadScript key={3} />,
+	<AnalyticsHeadScript key={3} url={process.env.NEXT_PUBLIC_ANALYTIC_URL} />,
 ];
 
-const IS_WEB_VITALS_ENABLE = process.env.NEXT_PUBLIC_WEB_VITALS === 'true';
 export const reportWebVitals = (metric: NextWebVitalsMetric): void => {
+	const IS_WEB_VITALS_ENABLE = process.env.NEXT_PUBLIC_WEB_VITALS === 'true';
+
 	if (IS_WEB_VITALS_ENABLE) console.log(metric);
 };
 
