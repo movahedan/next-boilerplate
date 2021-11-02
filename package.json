@@ -6,9 +6,9 @@
   "author": "soheil.movahhedan@gmail.com",
   "scripts": {
     "/////////////////// basic //////////////////////////////////////////": "",
-    "dev": "NODE_ENV=development next dev",
-    "build": "NODE_ENV=production next build",
-    "start": "NODE_ENV=production next start",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "postinstall": "husky install",
     "postbuild": "next-sitemap",
     "/////////////////// test & format //////////////////////////////////": "",
