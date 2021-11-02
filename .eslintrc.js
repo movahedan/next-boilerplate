@@ -32,7 +32,7 @@ const eslintPlugin = {
 	},
 	overrides: [
 		{
-			files: ['.eslintrc.js'],
+			files: ['.eslintrc.js', './src/ui/utils/tailwind-theme.ts'],
 			rules: {
 				'max-lines': 'off',
 			},

@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ComponentSamplePage> should match snapshot 1`] = `
+Array [
+  <h3>
+    Buttons:
+  </h3>,
+  <button
+    aria-disabled={false}
+    aria-label="button"
+    className=" large "
+    data-testid="button"
+    disabled={false}
+    role="button"
+    type="button"
+  >
+    <span
+      aria-hidden={true}
+      role="img"
+    />
+    Large Button
+    <span
+      aria-hidden={true}
+      role="img"
+    />
+  </button>,
+  <button
+    aria-disabled={false}
+    aria-label="button"
+    className=" medium "
+    data-testid="button"
+    disabled={false}
+    role="button"
+    type="button"
+  >
+    <span
+      aria-hidden={true}
+      role="img"
+    />
+    Medium Button
+    <span
+      aria-hidden={true}
+      role="img"
+    />
+  </button>,
+  <button
+    aria-disabled={false}
+    aria-label="button"
+    className=" small "
+    data-testid="button"
+    disabled={false}
+    role="button"
+    type="button"
+  >
+    <span
+      aria-hidden={true}
+      role="img"
+    />
+    Small Button
+    <span
+      aria-hidden={true}
+      role="img"
+    />
+  </button>,
+  <button
+    aria-disabled={true}
+    aria-label="button"
+    className=" medium "
+    data-testid="button"
+    disabled={true}
+    role="button"
+    type="button"
+  >
+    <span
+      aria-hidden={true}
+      role="img"
+    />
+    Disabled Button
+    <span
+      aria-hidden={true}
+      role="img"
+    />
+  </button>,
+  <button
+    aria-disabled={false}
+    aria-label="button"
+    className=" medium "
+    data-testid="button"
+    disabled={false}
+    role="button"
+    type="button"
+  >
+    <span
+      aria-hidden={true}
+      role="img"
+    />
+    Loading...
+    <span
+      aria-hidden={true}
+      role="img"
+    />
+  </button>,
+]
+`;

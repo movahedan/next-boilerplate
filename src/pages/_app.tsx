@@ -1,13 +1,13 @@
 import { DefaultSeo } from 'next-seo';
 import App from 'next/app';
 import Head from 'next/head';
+import { Fragment } from 'react';
 
 import { AnalyticsHeadScript } from 'lib/analytics';
 import { BrowserProvider, extractBrowserServerSideData } from 'lib/browser';
 import { getDefaultNextSeoConfig } from 'lib/constants';
 import { SampleModel } from 'lib/models/sample';
 
-import { BaseLayout } from 'ui/templates';
 import { ComposeProviders, fontLinksProps, globalCSSList } from 'ui/utils';
 
 import Error from './_error';
@@ -43,7 +43,7 @@ class MyApp extends App<AppWithLayoutProps> {
 			<SampleModel.Provider key={1} />,
 		];
 
-		const { Component: Layout = BaseLayout, props: lProps = {} } =
+		const { Component: Layout = Fragment, props: lProps = {} } =
 			Component.Layout || {};
 		const layoutProps =
 			typeof lProps === 'function' ? lProps(pageProps) : lProps;
@@ -64,21 +64,21 @@ class MyApp extends App<AppWithLayoutProps> {
 const IndependentProviders = () => (
 	<>
 		<Head>
+			<AnalyticsHeadScript url={process.env.NEXT_PUBLIC_ANALYTIC_URL} />
 			{fontLinksProps.map((props, index) => (
 				<link key={index} {...props} />
 			))}
 		</Head>
-		{globalCSSList.map((cssString, index) => (
-			<style key={index} jsx global>
-				{cssString}
-			</style>
-		))}
 		<DefaultSeo
 			{...getDefaultNextSeoConfig({
 				noIndex: process.env.NEXT_PUBLIC_INDEXING_ENABLED ? false : true,
 			})}
 		/>
-		<AnalyticsHeadScript url={process.env.NEXT_PUBLIC_ANALYTIC_URL} />
+		{globalCSSList.map((cssString, index) => (
+			<style key={index} jsx global>
+				{cssString}
+			</style>
+		))}
 	</>
 );
 

@@ -1,3 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<GButton> should match is's snapshot 1`] = `<button />`;
+exports[`<GButton> should match is's snapshot 1`] = `
+<button
+  aria-disabled={false}
+  aria-label="button"
+  className=" medium "
+  data-testid="button"
+  disabled={false}
+  role="button"
+  type="button"
+>
+  <span
+    aria-hidden={true}
+    role="img"
+  />
+  <span
+    aria-hidden={true}
+    role="img"
+  />
+</button>
+`;

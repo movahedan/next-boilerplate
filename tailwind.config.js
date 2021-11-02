@@ -16,6 +16,9 @@ module.exports = {
 			width: {
 				'240px': '15rem',
 			},
+			minHeight: {
+				'24px': '1.5rem',
+			},
 			lineHeight: {
 				'14px': '0.875rem',
 				'18px': '1.125rem',

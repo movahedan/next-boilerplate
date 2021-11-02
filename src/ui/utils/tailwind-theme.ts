@@ -1447,7 +1447,7 @@ export const tailwindTheme = {
 			screen: '100vw',
 			'640px': '40rem',
 		},
-		minHeight: { 0: '0px', full: '100%', screen: '100vh' },
+		minHeight: { 0: '0px', full: '100%', screen: '100vh', '24px': '1.5rem' },
 		minWidth: {
 			0: '0px',
 			full: '100%',

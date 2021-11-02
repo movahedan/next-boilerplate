@@ -3,8 +3,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
   },
-  "cSpell.words": [
-    "tailwindcss",
-    "testid"
-  ]
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
 }

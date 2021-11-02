@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`_app.tsx Analytic integration should match snapshot while noIndex is false: noIndex-is-false 1`] = `<main />`;
+exports[`_app.tsx Analytic integration should match snapshot while noIndex is false: noIndex-is-false 1`] = `null`;
 
-exports[`_app.tsx Analytic integration should match snapshot while noIndex is true: noIndex-is-true 1`] = `<main />`;
+exports[`_app.tsx Analytic integration should match snapshot while noIndex is true: noIndex-is-true 1`] = `null`;
 
 exports[`_app.tsx Layout per page should match snapshot while a layout is attached to page and the props of layout is customized: with-layout-customized-props 1`] = `
 <main
@@ -12,7 +12,7 @@ exports[`_app.tsx Layout per page should match snapshot while a layout is attach
 
 exports[`_app.tsx Layout per page should match snapshot while a layout is attached to page: with-layout 1`] = `<main />`;
 
-exports[`_app.tsx should match snapshot 1`] = `<main />`;
+exports[`_app.tsx should match snapshot 1`] = `null`;
 
 exports[`_app.tsx should match snapshot while an error occurred: error 1`] = `
 <p>
