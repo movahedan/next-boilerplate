@@ -1,13 +1,11 @@
 import axios from 'axios';
 
-import { getUserAgent } from 'lib/utils/user-agent';
-
 import {
 	axiosClientErrorMiddleware,
 	axiosServerErrorMiddleware,
 } from './axios.middlewares';
 
-import type { AxiosClientConfigProps, AxiosServerConfigProps } from './axios.d';
+import type { AxiosClientConfigProps } from './axios.d';
 
 let serverInterceptor: number | null = null;
 export function configClientAxios(props: AxiosClientConfigProps): void {
@@ -25,12 +23,9 @@ export function configClientAxios(props: AxiosClientConfigProps): void {
 }
 
 let clientInterceptor: number | null = null;
-export function configServerAxios(props: AxiosServerConfigProps): void {
-	const { req } = props;
-
+export function configServerAxios(): void {
 	axios.defaults.baseURL = process.env.API_BASE;
 	axios.defaults.withCredentials = true;
-	axios.defaults.headers['User-Agent'] = getUserAgent(req);
 
 	if (clientInterceptor !== null) {
 		axios.interceptors.response.eject(clientInterceptor);

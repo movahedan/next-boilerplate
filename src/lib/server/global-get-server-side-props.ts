@@ -19,13 +19,9 @@ export function globalGetServerSideProps<
 	const { cachable } = options || {};
 
 	return async (ctx) => {
-		const { req, res, resolvedUrl } = ctx;
+		const { res } = ctx;
 		if (cachable) cacheThisServerSideProps(res);
-		axiosModule.config.server({
-			req,
-			res,
-			asPath: resolvedUrl,
-		});
+		axiosModule.config.server();
 
 		const pageResult = await getServerSideProps(ctx);
 		// @ts-expect-error Just check page is truthy or not
