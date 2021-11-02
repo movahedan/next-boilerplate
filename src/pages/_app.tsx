@@ -8,7 +8,7 @@ import { BrowserProvider, extractBrowserServerSideData } from 'lib/browser';
 import { getDefaultNextSeoConfig } from 'lib/constants';
 import { SampleModel } from 'lib/models/sample';
 
-import { ComposeProviders, fontLinksProps, globalCSSList } from 'ui/utils';
+import { ComposeProviders, fontLinksProps, GlobalCSSList } from 'ui/utils';
 
 import Error from './_error';
 
@@ -74,11 +74,7 @@ const IndependentProviders = () => (
 				noIndex: process.env.NEXT_PUBLIC_INDEXING_ENABLED ? false : true,
 			})}
 		/>
-		{globalCSSList.map((cssString, index) => (
-			<style key={index} jsx global>
-				{cssString}
-			</style>
-		))}
+		<GlobalCSSList />
 	</>
 );
 

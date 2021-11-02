@@ -52,8 +52,16 @@ const fontOvverridesCSS = global`
   }
 `;
 
-export const globalCSSList = [
-	bodyCSS,
-	fontOvverridesCSS,
-	safeAreaPaddingForNotchs,
-];
+export const GlobalCSSList = () => (
+	<>
+		<style jsx global>
+			{bodyCSS}
+		</style>
+		<style jsx global>
+			{fontOvverridesCSS}
+		</style>
+		<style jsx global>
+			{safeAreaPaddingForNotchs}
+		</style>
+	</>
+);
