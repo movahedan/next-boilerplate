@@ -1,9 +1,9 @@
 import styles from './button.module.scss';
 
-import type { GButtonProps } from './button.d';
+import type { ButtonProps } from './button.d';
 import type { FC } from 'react';
 
-export const GButton: FC<GButtonProps> = ({
+export const Button: FC<ButtonProps> = ({
 	type = 'button',
 	role = 'button',
 	'data-testid': dataTestId = 'button',

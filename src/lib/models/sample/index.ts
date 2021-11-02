@@ -8,7 +8,7 @@ import {
 	attachSampleModelServerSideData,
 } from './utils';
 
-export * from './types';
+export * from './sample.d';
 
 export const SampleModel = {
 	mockData: sampleMock,

@@ -4,7 +4,7 @@ import { BrowserContext } from './browser.context';
 import { useMediaQueryProvider } from './browser.hooks';
 import { getMatchMediasFromUserAgent } from './browser.utils';
 
-import type { BrowserObject } from './browser.types';
+import type { BrowserObject } from './browser.d';
 import type { IncomingMessage } from 'http';
 import type { FC } from 'react';
 

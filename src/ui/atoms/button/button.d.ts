@@ -2,7 +2,7 @@ import type { ReactNode, ButtonHTMLAttributes } from 'react';
 
 type OriginalButtonProps = Partial<ButtonHTMLAttributes<HTMLButtonElement>>;
 
-export interface GButtonProps {
+export interface ButtonProps {
 	type?: OriginalButtonProps['type'];
 	role?: OriginalButtonProps['role'];
 	'data-testid'?: string;

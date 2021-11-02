@@ -1,14 +1,14 @@
-import { GButton } from 'ui/atoms';
+import { Button } from 'ui/atoms';
 
 const ComponentSamplePage = () => {
 	return (
 		<>
 			<h3>Buttons:</h3>
-			<GButton size='large'>Large Button</GButton>
-			<GButton>Medium Button</GButton>
-			<GButton size='small'>Small Button</GButton>
-			<GButton disabled>Disabled Button</GButton>
-			<GButton loading>Disabled Button</GButton>
+			<Button size='large'>Large Button</Button>
+			<Button>Medium Button</Button>
+			<Button size='small'>Small Button</Button>
+			<Button disabled>Disabled Button</Button>
+			<Button loading>Disabled Button</Button>
 		</>
 	);
 };

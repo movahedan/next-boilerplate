@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<GButton> should match is's snapshot 1`] = `
+exports[`<Button> should match is's snapshot 1`] = `
 <button
   aria-disabled={false}
   aria-label="button"

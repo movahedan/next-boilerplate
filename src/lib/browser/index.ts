@@ -1,3 +1,3 @@
 export * from './browser';
 export * from './browser.utils';
-export * from './browser.types';
+export * from './browser.d';

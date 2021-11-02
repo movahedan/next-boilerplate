@@ -7,10 +7,7 @@ import {
 	axiosServerErrorMiddleware,
 } from './axios.middlewares';
 
-import type {
-	AxiosClientConfigProps,
-	AxiosServerConfigProps,
-} from './axios.types';
+import type { AxiosClientConfigProps, AxiosServerConfigProps } from './axios.d';
 
 let serverInterceptor: number | null = null;
 export function configClientAxios(props: AxiosClientConfigProps): void {

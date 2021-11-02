@@ -1,7 +1,7 @@
 import { captureException } from '@sentry/minimal';
 import { Severity } from '@sentry/types';
 
-import type { AxiosClientConfigProps } from './axios.types';
+import type { AxiosClientConfigProps } from './axios.d';
 
 // TODO rotationHandler
 // TODO rotationQueue

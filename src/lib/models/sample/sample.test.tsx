@@ -8,7 +8,7 @@ import { endpoints } from 'lib/constants';
 import { SampleModel } from './index';
 import { useSampleModelInitializer } from './initializers';
 
-import type { Sample } from './types';
+import type { Sample } from './sample.d';
 import type { ReactNode } from 'react';
 
 const waitForPromise = () =>

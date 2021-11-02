@@ -1,4 +1,4 @@
-import type { SampleModelContextType } from './types';
+import type { SampleModelContextType } from './sample.d';
 
 export const initialSampleContext: SampleModelContextType = [
 	{ value: '' },

@@ -8,7 +8,7 @@ import {
 import { mediaQueries } from 'ui/utils';
 import type { Screens } from 'ui/utils';
 
-import type { BrowserMediaQuery } from './browser.types';
+import type { BrowserMediaQuery } from './browser.d';
 import type { IncomingMessage } from 'http';
 
 type MatchMediaEntry = [keyof typeof mediaQueries, MediaQueryList | undefined];

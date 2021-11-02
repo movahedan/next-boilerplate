@@ -4,7 +4,7 @@ import type { Screens } from 'ui/utils';
 
 import { getMatchMediaEntries, mediaQueryInitializer } from './browser.utils';
 
-import type { BrowserMediaQuery } from './browser.types';
+import type { BrowserMediaQuery } from './browser.d';
 
 export const useMediaQueryProvider = (
 	initialMediaQuery?: BrowserMediaQuery

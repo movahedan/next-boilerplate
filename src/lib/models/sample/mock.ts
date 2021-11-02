@@ -1,3 +1,3 @@
-import type { Sample } from './types';
+import type { Sample } from './sample.d';
 
 export const sampleMock: Sample = { value: 'sample' };

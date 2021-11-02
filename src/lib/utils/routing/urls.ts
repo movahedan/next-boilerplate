@@ -5,7 +5,7 @@ import type {
 	StringifyUrl,
 	QueryType,
 	QueryItemType,
-} from './urls.types';
+} from './urls.d';
 
 export const stringifyUrl: StringifyUrl = ({ url, query }) =>
 	getPrettyPath(getUrl(url), getPrettyQuery(query || {}));
