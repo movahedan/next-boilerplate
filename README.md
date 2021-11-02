@@ -13,15 +13,6 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-To run storybook:
-
-```bash
-yarn storybook
-```
-
-Open [http://localhost:6006](http://localhost:6006) with your browser to see the result.
-
-
 To check your staged changes status:
 It runs `yarn type-check` and `yarn lint` and `yarn test`.
 
@@ -46,21 +37,19 @@ yarn after-check
 - Setup github actions
 - [x] Setup directory structure
 - [x] Setup well documented eslint config
+- [x] Setup declaring global types
 - [x] Setup jest config
+- [x] Setup next-page-tester
 - [x] Setup cypress minimal config
 - [x] Setup workflow, lint-staged, lint, tests
-- [x] Setup styled-jsx, tailwind and postcss
-- [x] Setup layout structuring per page
-- [x] Setup declaring global types
--	[x] Setup Error Handling and Sentry
+- [x] Setup styled-jsx and scss modules (with tailwind and postcss)
 -	[x] Setup browser module (MediaQuery, Agent, tailwindConfig)
--	[x] Setup minimal storybook config
--	[x] Setup Jest mocking service
-- [x] Setup optimized google font
 - [x] Setup global CSS
+- [x] Setup optimized google font
+- [x] Setup layout structuring per page
+-	[x] Setup Error Handling and Sentry
 - [x] Setup SEO optimization (NextSeo, NextSitemap)
 - [x] Setup Analytics
-- [x] Setup next-page-tester
 
 ### Features to have
 - Resume page
