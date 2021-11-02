@@ -3,10 +3,9 @@ import { stringifyUrl } from 'lib/utils';
 import type { QueryType } from 'lib/utils';
 
 export const endpoints = {
-	sample:
-		createEndpoint.bind<string, { sortBy?: string } | undefined, string>(
-			'/sample'
-		),
+	sample: createEndpoint.bind<string, { sortBy?: string } | undefined, string>(
+		'/sample'
+	),
 };
 
 function createEndpoint<Query extends QueryType = QueryType>(

@@ -66,6 +66,7 @@ describe('useAnalytics', () => {
 	};
 
 	const AnalyticTrackingWrongAttachment = () => {
+		// eslint-disable-next-line @typescript-eslint/no-empty-function
 		useAnalytics(() => () => {}, []);
 
 		return (

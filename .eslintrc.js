@@ -1,14 +1,6 @@
 const nextPlugin = {
-	extends: [
-		'next', // eslint-plugin-react, eslint-plugin-react-hooks, eslint-plugin-next
-		'next/core-web-vitals', // updates eslint-plugin-next to error on a number of rules that are warnings by default if they affect Core Web Vitals.
-		'plugin:@next/next/recommended',
-	],
-	ignorePatterns: ['node_modules/*', '.out/*', '.next/*'],
+	extends: ['next/core-web-vitals'],
 	rules: {
-		'react/prop-types': 'off',
-		'react/display-name': 'off',
-		'react/react-in-jsx-scope': 'off',
 		'react-hooks/exhaustive-deps': [
 			'warn',
 			{ additionalHooks: 'useAnalytics' },
@@ -231,11 +223,7 @@ module.exports = {
 	settings: {
 		...importPlugin.settings,
 	},
-	ignorePatterns: [
-		...nextPlugin.ignorePatterns,
-		...prettierPlugin.ignorePatterns,
-		'.husky/*',
-	],
+	ignorePatterns: [...prettierPlugin.ignorePatterns],
 	plugins: [...importPlugin.plugins],
 	extends: [
 		...eslintPlugin.extends,
@@ -253,8 +241,8 @@ module.exports = {
 		...prettierPlugin.rules,
 	},
 	overrides: [
-		typescriptConfig,
-		...importPlugin.overrides,
 		...eslintPlugin.overrides,
+		...importPlugin.overrides,
+		typescriptConfig,
 	],
 };
