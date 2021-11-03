@@ -5,8 +5,8 @@ import {
 	getUserAgent,
 } from 'lib/utils/user-agent';
 
-import type { Screens } from 'constants/tailwind';
-import { mediaQueries } from 'constants/tailwind';
+import type { Screens } from 'constants/css';
+import { mediaQueries } from 'constants/css';
 
 import type { BrowserMediaQuery } from './browser.d';
 import type { IncomingMessage } from 'http';

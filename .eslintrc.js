@@ -158,7 +158,7 @@ const importPlugin = {
 			files: [
 				'./src/pages/**/*.ts?(x)',
 				'./src/**/*.stories.ts?(x)',
-				'./src/constants/tailwind/tailwind-theme.ts',
+				'./src/constants/css/tailwind-theme.ts',
 			],
 			rules: {
 				'import/no-default-export': 'off',

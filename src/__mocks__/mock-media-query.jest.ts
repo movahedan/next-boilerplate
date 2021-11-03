@@ -1,7 +1,7 @@
 import { getMatchMediasByGivenMediaQuery } from 'lib/browser';
 
-import { mediaQueries } from 'constants/tailwind';
-import type { Screens } from 'constants/tailwind';
+import { mediaQueries } from 'constants/css';
+import type { Screens } from 'constants/css';
 
 export const mockMatchMedia = (
 	mediaQueryName: keyof Screens = 'sm',

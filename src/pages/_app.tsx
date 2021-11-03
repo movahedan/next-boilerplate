@@ -8,8 +8,8 @@ import { BrowserProvider, extractBrowserServerSideData } from 'lib/browser';
 import { ComposeProviders } from 'lib/utils';
 import { SampleModel } from 'models/sample';
 
+import { fontLinksProps, GlobalCSSList } from 'constants/css';
 import { getDefaultNextSeoConfig } from 'constants/seo';
-import { fontLinksProps, GlobalCSSList } from 'constants/tailwind';
 
 import Error from './_error';
 

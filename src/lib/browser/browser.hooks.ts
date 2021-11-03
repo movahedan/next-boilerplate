@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import type { Screens } from 'constants/tailwind';
+import type { Screens } from 'constants/css';
 
 import { getMatchMediaEntries, mediaQueryInitializer } from './browser.utils';
 
