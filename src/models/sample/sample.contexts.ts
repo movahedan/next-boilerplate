@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-import { initialSampleContext } from './initialData';
+import { initialSampleContext } from './sample.initialData';
 
 import type { SampleModelContextType } from './sample';
 

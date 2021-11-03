@@ -2,7 +2,6 @@ import { render } from '@testing-library/react';
 
 import { mockMatchMedia } from '__mocks__/mock-media-query.jest';
 
-import { mediaQueries } from 'constants/css';
 import type { Screens } from 'constants/css';
 
 import {
@@ -14,6 +13,7 @@ import {
 	getMatchMediaEntries,
 	getMatchMediasByGivenMediaQuery,
 	getMatchMediasFromUserAgent,
+	mediaQueries,
 } from '.';
 
 import type { BrowserObject, BrowserMediaQuery } from '.';

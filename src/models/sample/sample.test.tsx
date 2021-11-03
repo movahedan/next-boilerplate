@@ -7,7 +7,7 @@ import { axiosMock } from '__mocks__';
 import { endpoints } from 'constants/endpoints';
 
 import { SampleModel } from './index';
-import { useSampleModelInitializer } from './initializers';
+import { useSampleModelInitializer } from './sample.initializers';
 
 import type { Sample } from './sample';
 import type { ReactNode } from 'react';

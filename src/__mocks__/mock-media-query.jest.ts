@@ -1,6 +1,5 @@
-import { getMatchMediasByGivenMediaQuery } from 'lib/browser';
+import { getMatchMediasByGivenMediaQuery, mediaQueries } from 'lib/browser';
 
-import { mediaQueries } from 'constants/css';
 import type { Screens } from 'constants/css';
 
 export const mockMatchMedia = (

@@ -30,13 +30,11 @@ export function globalGetServerSideProps<
 		}
 
 		const pageResult = await getServerSideProps(ctx);
-		// @ts-expect-error Just check page is truthy or not
-		if (pageResult.props) {
+		if ((<any>pageResult).props) {
 			return {
 				...pageResult,
 				props: {
-					// @ts-expect-error Just check page is truthy or not
-					...pageResult.props,
+					...(<any>pageResult).props,
 					...attachBrowserServerSideData(headers),
 				},
 			};

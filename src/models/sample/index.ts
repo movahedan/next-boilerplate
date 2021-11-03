@@ -1,12 +1,12 @@
-import { fetchSampleList } from './fetchers';
-import { useSample } from './hooks';
-import { initialSampleContext } from './initialData';
-import { sampleMock } from './mock';
-import { SampleModelProvider } from './providers';
+import { fetchSampleList } from './sample.fetchers';
+import { useSample } from './sample.hooks';
+import { initialSampleContext } from './sample.initialData';
+import { sampleMock } from './sample.mock';
+import { SampleModelProvider } from './sample.providers';
 import {
 	extractSampleServerSideData,
 	attachSampleModelServerSideData,
-} from './utils';
+} from './sample.utils';
 
 export * from './sample.d';
 

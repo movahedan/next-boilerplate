@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import { SampleModelContext } from './contexts';
-import { initialSampleContext } from './initialData';
-import { useSampleModelInitializer } from './initializers';
+import { SampleModelContext } from './sample.contexts';
+import { initialSampleContext } from './sample.initialData';
+import { useSampleModelInitializer } from './sample.initializers';
 
 import type { SampleModelContextType } from './sample';
 import type { FC } from 'react';

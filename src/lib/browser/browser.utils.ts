@@ -1,15 +1,23 @@
+import type { Screens } from 'constants/css';
+import { screensConfig } from 'constants/css';
+
 import {
 	getIsDesktop,
 	getIsTablet,
 	getParsedUserAgent,
 	getUserAgent,
-} from 'lib/utils/user-agent';
-
-import type { Screens } from 'constants/css';
-import { mediaQueries } from 'constants/css';
+} from './user-agent';
 
 import type { BrowserMediaQuery } from './browser.d';
 import type { IncomingMessage } from 'http';
+
+type MediaQueries = { [key in keyof typeof screensConfig]: string };
+export const mediaQueries: MediaQueries = Object.fromEntries(
+	Object.entries(screensConfig).map(([key, value]) => [
+		key as unknown,
+		`(min-width: ${value})`,
+	])
+);
 
 type MatchMediaEntry = [keyof typeof mediaQueries, MediaQueryList | undefined];
 export const getMatchMediaEntries = () =>

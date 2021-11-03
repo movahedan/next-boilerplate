@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import { fetchSampleList } from './fetchers';
+import { fetchSampleList } from './sample.fetchers';
 
 import type { SampleModelContextType } from './sample';
 

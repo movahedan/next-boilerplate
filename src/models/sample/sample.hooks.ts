@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-import { SampleModelContext } from './contexts';
+import { SampleModelContext } from './sample.contexts';
 
 import type { SampleModelContextType } from './sample';
 
