@@ -64,7 +64,6 @@ class MyApp extends App<AppWithLayoutProps> {
 const IndependentProviders = () => (
 	<>
 		<Head>
-			<AnalyticsHeadScript url={process.env.NEXT_PUBLIC_ANALYTIC_URL} />
 			{fontLinksProps.map((props, index) => (
 				<link key={index} {...props} />
 			))}
@@ -74,6 +73,7 @@ const IndependentProviders = () => (
 				noIndex: process.env.NEXT_PUBLIC_INDEXING_ENABLED ? false : true,
 			})}
 		/>
+		<AnalyticsHeadScript url={process.env.NEXT_PUBLIC_ANALYTIC_URL} />
 		<GlobalCSSList />
 	</>
 );

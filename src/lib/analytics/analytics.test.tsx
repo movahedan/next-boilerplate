@@ -8,7 +8,7 @@ import {
 	expectDataLayer,
 } from 'lib/analytics/utils.test';
 
-import { analyticEvent } from './command';
+import { analyticEvent } from './_analytics.command';
 
 jest.useFakeTimers();
 

@@ -1,2 +1,2 @@
-export * from './header';
-export * from './useAnalytics';
+export * from './analytics.header';
+export * from './analytics.hooks';

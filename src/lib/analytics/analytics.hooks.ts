@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import { analyticEvent } from './command';
+import { analyticEvent } from './_analytics.command';
 
 import type { DependencyList, RefObject } from 'react';
 

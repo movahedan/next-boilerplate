@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import React from 'react';
 
 import type { FC } from 'react';
@@ -11,5 +12,14 @@ export const AnalyticsHeadScript: FC<AnalyticsHeadScriptProps> = ({ url }) => {
 		return null;
 	}
 
-	return <script data-testid='analytics-script' src={url} async defer></script>;
+	return (
+		<Script
+			defer
+			async
+			src={url}
+			id='analytics-script'
+			data-testid='analytics-script'
+			strategy='afterInteractive'
+		/>
+	);
 };
