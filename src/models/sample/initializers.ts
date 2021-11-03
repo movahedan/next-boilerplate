@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { fetchSampleList } from './fetchers';
 
-import type { SampleModelContextType } from './sample.d';
+import type { SampleModelContextType } from './sample';
 
 type UseAllProductCategoriesInitializer = (
 	setState?: SampleModelContextType[1],

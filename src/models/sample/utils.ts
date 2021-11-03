@@ -1,4 +1,4 @@
-import type { SampleModelContextType } from './sample.d';
+import type { SampleModelContextType } from './sample';
 
 export const attachSampleModelServerSideData = (
 	sampleModel?: SampleModelContextType[0]

@@ -1,5 +1,7 @@
-import { getCacheConfig } from '.';
-import { cacheThisServerSideProps } from './cache-this-server-side-props';
+import {
+	cacheThisServerSideProps,
+	getCacheConfig,
+} from './cache-this-server-side-props';
 
 import type { ServerResponse } from 'http';
 

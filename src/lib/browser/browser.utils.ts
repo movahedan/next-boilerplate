@@ -3,10 +3,10 @@ import {
 	getIsTablet,
 	getParsedUserAgent,
 	getUserAgent,
-} from 'lib/utils';
+} from 'lib/utils/user-agent';
 
-import { mediaQueries } from 'ui/utils';
-import type { Screens } from 'ui/utils';
+import type { Screens } from 'constants/tailwind';
+import { mediaQueries } from 'constants/tailwind';
 
 import type { BrowserMediaQuery } from './browser.d';
 import type { IncomingMessage } from 'http';

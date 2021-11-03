@@ -2,8 +2,8 @@ import { render } from '@testing-library/react';
 
 import { mockMatchMedia } from '__mocks__/mock-media-query.jest';
 
-import { mediaQueries } from 'ui/utils';
-import type { Screens } from 'ui/utils';
+import { mediaQueries } from 'constants/tailwind';
+import type { Screens } from 'constants/tailwind';
 
 import {
 	useMediaQuery,

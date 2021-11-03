@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import { SampleModelContext } from './contexts';
 
-import type { SampleModelContextType } from './sample.d';
+import type { SampleModelContextType } from './sample';
 
 export const useSample = (): SampleModelContextType => {
 	const [sampleModel, setAllProductCategories] = useContext(SampleModelContext);

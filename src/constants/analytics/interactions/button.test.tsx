@@ -9,9 +9,10 @@ import {
 	getDataLayerSpy,
 	expectDataLayer,
 } from 'lib/analytics/utils.test';
-import { trackHeaderInteractions } from 'lib/constants';
 
 import { interactionEventKey } from './documents';
+
+import { trackHeaderInteractions } from 'constants/analytics';
 
 jest.useFakeTimers();
 

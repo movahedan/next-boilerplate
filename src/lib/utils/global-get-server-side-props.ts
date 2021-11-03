@@ -1,6 +1,6 @@
 import { attachBrowserServerSideData } from 'lib/browser';
-import { axiosModule } from 'lib/utils';
 
+import { axiosModule } from './axios';
 import { cacheThisServerSideProps } from './cache-this-server-side-props';
 
 import type { BrowserObject } from 'lib/browser';

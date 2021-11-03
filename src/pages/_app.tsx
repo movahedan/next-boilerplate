@@ -5,8 +5,9 @@ import { Fragment } from 'react';
 
 import { AnalyticsHeadScript } from 'lib/analytics';
 import { BrowserProvider, extractBrowserServerSideData } from 'lib/browser';
-import { getDefaultNextSeoConfig } from 'lib/constants';
-import { SampleModel } from 'lib/models/sample';
+import { SampleModel } from 'models/sample';
+
+import { getDefaultNextSeoConfig } from 'constants/seo';
 
 import { ComposeProviders, fontLinksProps, GlobalCSSList } from 'ui/utils';
 

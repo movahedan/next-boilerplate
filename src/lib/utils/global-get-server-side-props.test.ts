@@ -1,6 +1,7 @@
 import { getMatchMediasByGivenMediaQuery } from 'lib/browser';
 
-import { globalGetServerSideProps, getCacheConfig } from '.';
+import { getCacheConfig } from './cache-this-server-side-props';
+import { globalGetServerSideProps } from './global-get-server-side-props';
 
 describe('global-get-server-side-props', () => {
 	const sampleGetServerSidePropsResult = { someAttribute: 'value' };

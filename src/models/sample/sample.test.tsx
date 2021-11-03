@@ -3,12 +3,13 @@ import { renderHook } from '@testing-library/react-hooks';
 import { act } from 'react-dom/test-utils';
 
 import { axiosMock } from '__mocks__';
-import { endpoints } from 'lib/constants';
+
+import { endpoints } from 'constants/endpoints';
 
 import { SampleModel } from './index';
 import { useSampleModelInitializer } from './initializers';
 
-import type { Sample } from './sample.d';
+import type { Sample } from './sample';
 import type { ReactNode } from 'react';
 
 const waitForPromise = () =>

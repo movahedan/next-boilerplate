@@ -126,18 +126,13 @@ const importPlugin = {
 				],
 				pathGroups: [
 					{
-						pattern: 'ui/*',
+						pattern: 'constants/*',
 						group: 'internal',
 						position: 'after',
 					},
 					{
-						pattern: 'apis',
-						group: 'type',
-						position: 'before',
-					},
-					{
-						pattern: 'types',
-						group: 'type',
+						pattern: 'ui/*',
+						group: 'internal',
 						position: 'after',
 					},
 				],
@@ -163,7 +158,7 @@ const importPlugin = {
 			files: [
 				'./src/pages/**/*.ts?(x)',
 				'./src/**/*.stories.ts?(x)',
-				'./src/ui/utils/tailwind-theme.ts',
+				'./src/constants/tailwind/tailwind-theme.ts',
 			],
 			rules: {
 				'import/no-default-export': 'off',

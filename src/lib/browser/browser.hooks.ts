@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import type { Screens } from 'ui/utils';
+import type { Screens } from 'constants/tailwind';
 
 import { getMatchMediaEntries, mediaQueryInitializer } from './browser.utils';
 
@@ -18,7 +18,7 @@ export const useMediaQueryProvider = (
 		() => {
 			setMediaQueries((mediaQueries) => ({
 				...mediaQueries,
-				[breakpoint]: matchMedia?.matches,
+				[breakpoint]: matchMedia?.matches || false,
 			}));
 		};
 

@@ -4,7 +4,7 @@ import { SampleModelContext } from './contexts';
 import { initialSampleContext } from './initialData';
 import { useSampleModelInitializer } from './initializers';
 
-import type { SampleModelContextType } from './sample.d';
+import type { SampleModelContextType } from './sample';
 import type { FC } from 'react';
 
 type SampleModelProviderType = FC<{
