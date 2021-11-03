@@ -5,11 +5,11 @@ import { Fragment } from 'react';
 
 import { AnalyticsHeadScript } from 'lib/analytics';
 import { BrowserProvider, extractBrowserServerSideData } from 'lib/browser';
+import { ComposeProviders } from 'lib/utils';
 import { SampleModel } from 'models/sample';
 
 import { getDefaultNextSeoConfig } from 'constants/seo';
-
-import { ComposeProviders, fontLinksProps, GlobalCSSList } from 'ui/utils';
+import { fontLinksProps, GlobalCSSList } from 'constants/tailwind';
 
 import Error from './_error';
 
