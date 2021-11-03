@@ -1,4 +1,3 @@
-export * from './axios';
 export * from './compose-provider';
 export * from './cache-this-server-side-props';
 export * from './delay-import';
