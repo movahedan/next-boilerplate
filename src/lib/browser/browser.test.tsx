@@ -51,11 +51,8 @@ describe('browser module', () => {
 		it('should have getMatchMediasFromUserAgent calculator', () => {
 			let calculatedMediaQueries: BrowserMediaQuery;
 
-			// @ts-expect-error Mocking
 			calculatedMediaQueries = getMatchMediasFromUserAgent({
-				headers: {
-					'user-agent': '',
-				},
+				'user-agent': '',
 			});
 			expect(calculatedMediaQueries).toStrictEqual({
 				sm: true,
@@ -63,11 +60,8 @@ describe('browser module', () => {
 				lg: true,
 			});
 
-			// @ts-expect-error Mocking
 			calculatedMediaQueries = getMatchMediasFromUserAgent({
-				headers: {
-					'user-agent': 'iPad',
-				},
+				'user-agent': 'iPad',
 			});
 			expect(calculatedMediaQueries).toStrictEqual({
 				sm: true,

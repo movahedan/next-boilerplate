@@ -44,7 +44,7 @@ describe('global-get-server-side-props', () => {
 		};
 
 		await globalGetServerSideProps(sampleGetServerSideProps, {
-			cachable: true,
+			cache: true,
 			// @ts-expect-error It's just for mocking purpose
 		})(ctx);
 

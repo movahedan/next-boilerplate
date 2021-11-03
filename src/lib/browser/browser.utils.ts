@@ -27,9 +27,9 @@ export const mediaQueryInitializer = () =>
 	) as BrowserMediaQuery;
 
 export const getMatchMediasFromUserAgent = (
-	req: IncomingMessage
+	headers: IncomingMessage['headers']
 ): BrowserMediaQuery => {
-	const parsedUA = getParsedUserAgent(getUserAgent(req));
+	const parsedUA = getParsedUserAgent(getUserAgent(headers));
 	const currentMediaQuery = getIsTablet(parsedUA)
 		? 'md'
 		: getIsDesktop(parsedUA)

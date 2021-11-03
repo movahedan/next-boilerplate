@@ -27,7 +27,7 @@ export const getServerSideProps = globalGetServerSideProps<Props>(
 		},
 	}),
 	{
-		cachable: true,
+		cache: true,
 	}
 );
 

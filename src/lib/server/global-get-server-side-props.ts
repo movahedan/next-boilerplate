@@ -13,15 +13,21 @@ export function globalGetServerSideProps<
 >(
 	getServerSideProps: GetServerSideProps<Props, Query>,
 	options?: {
-		cachable?: boolean;
+		cache?: boolean;
 	}
 ): GetServerSideProps<Props & BrowserObject, Query> {
-	const { cachable } = options || {};
+	const { cache } = options || {};
 
 	return async (ctx) => {
-		const { res } = ctx;
-		if (cachable) cacheThisServerSideProps(res);
+		const {
+			res,
+			req: { headers },
+		} = ctx;
+
 		axiosModule.config.server();
+		if (cache) {
+			cacheThisServerSideProps(res);
+		}
 
 		const pageResult = await getServerSideProps(ctx);
 		// @ts-expect-error Just check page is truthy or not
@@ -31,7 +37,7 @@ export function globalGetServerSideProps<
 				props: {
 					// @ts-expect-error Just check page is truthy or not
 					...pageResult.props,
-					...attachBrowserServerSideData(ctx.req),
+					...attachBrowserServerSideData(headers),
 				},
 			};
 		}

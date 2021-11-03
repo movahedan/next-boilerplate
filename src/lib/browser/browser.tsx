@@ -26,15 +26,9 @@ export const extractBrowserServerSideData = (props: {
 	browser?: BrowserObject['browser'];
 }) => props.browser;
 export const attachBrowserServerSideData = (
-	req: IncomingMessage
-): BrowserObject => {
-	if (!req) {
-		throw Error('[attachBrowserServerSideData]: req is undefined');
-	}
-
-	return {
-		browser: {
-			mediaQuery: getMatchMediasFromUserAgent(req),
-		},
-	};
-};
+	headers: IncomingMessage['headers']
+): BrowserObject => ({
+	browser: {
+		mediaQuery: getMatchMediasFromUserAgent(headers),
+	},
+});

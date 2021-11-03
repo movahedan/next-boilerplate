@@ -23,7 +23,7 @@ describe('<Homepage>', () => {
 
 	it('should have getServerSideProps', async () => {
 		const context = {
-			req: { headers: undefined },
+			req: { headers: {} },
 			res: { setHeader: jest.fn() },
 			query: {},
 			resolvedUrl: '/',
@@ -36,8 +36,7 @@ describe('<Homepage>', () => {
 				data: {
 					message: 'Message from getServerSideProps',
 				},
-				// @ts-expect-error Mocking
-				...attachBrowserServerSideData(context.req),
+				...attachBrowserServerSideData(context.req.headers),
 			},
 		});
 	});
