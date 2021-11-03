@@ -2,7 +2,7 @@ import { stringifyUrl } from 'lib/utils';
 
 import type { QueryType } from 'lib/utils';
 
-export const endpoints = {
+export const backendEndpoints = {
 	sample: createEndpoint.bind<string, { sortBy?: string } | undefined, string>(
 		'/sample'
 	),

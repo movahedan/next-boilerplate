@@ -6,7 +6,7 @@ import {
 	prepareDataLayer,
 	getDataLayerSpy,
 	expectDataLayer,
-} from 'lib/analytics/utils.test';
+} from 'lib/analytics/testing-utilities.test';
 
 import { analyticEvent } from './_analytics.command';
 

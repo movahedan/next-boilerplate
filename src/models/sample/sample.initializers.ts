@@ -5,7 +5,7 @@ import { fetchSampleList } from './sample.fetchers';
 import type { SampleModelContextType } from './sample';
 
 type UseAllProductCategoriesInitializer = (
-	setState?: SampleModelContextType[1],
+	setState: SampleModelContextType[1],
 	initialData?: null | SampleModelContextType[0]
 ) => void;
 
@@ -13,7 +13,6 @@ export const useSampleModelInitializer: UseAllProductCategoriesInitializer = (
 	setState,
 	initialData
 ) => {
-	const isAliveRef = useRef(false);
 	const initialDataRef = useRef(initialData);
 
 	useEffect(() => {
@@ -22,15 +21,9 @@ export const useSampleModelInitializer: UseAllProductCategoriesInitializer = (
 
 		if (shouldFetch) {
 			fetchSampleList().then(({ data, error }) => {
-				if (isAliveRef.current) {
-					if (data) setState?.(data);
-					if (error) console.error(error);
-				}
+				if (data) setState(data);
+				if (error) console.error(error);
 			});
 		}
-
-		return () => {
-			isAliveRef.current = false;
-		};
 	}, [setState]);
 };

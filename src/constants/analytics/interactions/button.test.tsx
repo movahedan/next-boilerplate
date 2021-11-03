@@ -8,11 +8,11 @@ import {
 	prepareDataLayer,
 	getDataLayerSpy,
 	expectDataLayer,
-} from 'lib/analytics/utils.test';
-
-import { interactionEventKey } from './documents';
+} from 'lib/analytics/testing-utilities.test';
 
 import { trackHeaderInteractions } from 'constants/analytics';
+
+import { interactionEventKey } from './documents';
 
 jest.useFakeTimers();
 

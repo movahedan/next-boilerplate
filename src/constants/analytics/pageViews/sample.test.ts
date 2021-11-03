@@ -5,7 +5,7 @@ import {
 	prepareDataLayer,
 	getDataLayerSpy,
 	expectDataLayer,
-} from 'lib/analytics/utils.test';
+} from 'lib/analytics/testing-utilities.test';
 
 import { pageViewEventKey } from './documents';
 import { getSamplePageAnalyticsProps } from './sample';

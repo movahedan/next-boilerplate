@@ -1,10 +1,9 @@
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
-import { act } from 'react-dom/test-utils';
 
 import { axiosMock } from '__mocks__';
 
-import { endpoints } from 'constants/endpoints';
+import { backendEndpoints } from 'constants/endpoints';
 
 import { SampleModel } from './index';
 import { useSampleModelInitializer } from './sample.initializers';
@@ -12,18 +11,16 @@ import { useSampleModelInitializer } from './sample.initializers';
 import type { Sample } from './sample';
 import type { ReactNode } from 'react';
 
-const waitForPromise = () =>
-	new Promise<void>((res) => {
-		setTimeout(() => {
-			res();
-		}, 50);
-	});
-
 const defaultData: Sample = SampleModel.mockData;
 
 describe('SampleModel', () => {
 	afterEach(() => {
 		axiosMock.reset();
+	});
+
+	let error = jest.spyOn(console, 'error').mockImplementation(() => undefined);
+	beforeEach(() => {
+		error = jest.spyOn(console, 'error').mockImplementation(() => undefined);
 	});
 
 	describe('context', () => {
@@ -44,7 +41,7 @@ describe('SampleModel', () => {
 		};
 
 		it('should provide the data when initialData is given', () => {
-			axiosMock.onGet(endpoints.sample()).replyOnce(200, defaultData);
+			axiosMock.onGet(backendEndpoints.sample()).replyOnce(200, defaultData);
 
 			const { getByTestId } = contextProvidedRender(<DummyContextConsumer />);
 
@@ -54,7 +51,7 @@ describe('SampleModel', () => {
 		});
 
 		it('before initialization the data should match its type', async () => {
-			axiosMock.onGet(endpoints.sample()).replyOnce(200, defaultData);
+			axiosMock.onGet(backendEndpoints.sample()).replyOnce(200, defaultData);
 
 			const { getByTestId } = contextProvidedRender(
 				<DummyContextConsumer />,
@@ -68,48 +65,29 @@ describe('SampleModel', () => {
 	});
 
 	describe('initializers', () => {
-		// TODO
-		it.skip('should initialize sampleModel when initial value is undefined', async () => {
-			axiosMock.onGet(endpoints.sample()).replyOnce(200, defaultData);
-
-			const setState = jest.fn();
-			const { rerender } = renderHook(() =>
-				useSampleModelInitializer(setState)
-			);
-
-			await act(async () => {
-				await waitForPromise();
-			});
-
-			rerender();
-
-			expect(setState).toBeCalledWith(defaultData);
-		});
-
-		it('should console.error the error', async () => {
-			axiosMock.onGet(endpoints.sample()).networkErrorOnce();
+		it('should initialize sampleModel when initial value is undefined', async () => {
+			axiosMock.onGet(backendEndpoints.sample()).replyOnce(200, defaultData);
 
 			const setState = jest.fn();
 			renderHook(() => useSampleModelInitializer(setState));
+			await waitFor(() => expect(setState).toBeCalledWith(defaultData));
+		});
 
-			await act(async () => {
-				await waitForPromise();
-			});
+		it('should console.error the error', async () => {
+			axiosMock.onGet(backendEndpoints.sample()).networkErrorOnce();
 
-			expect(setState).not.toBeCalled();
+			const setState = jest.fn();
+			renderHook(() => useSampleModelInitializer(setState));
+			await waitFor(() => expect(error).toBeCalled());
 		});
 
 		it('should not initialize sampleModel when initial value is available', async () => {
-			axiosMock.onGet(endpoints.sample()).replyOnce(200, defaultData);
+			axiosMock.onGet(backendEndpoints.sample()).replyOnce(200, defaultData);
 
 			const setState = jest.fn();
 			renderHook(() => useSampleModelInitializer(setState, defaultData));
 
-			await act(async () => {
-				await waitForPromise();
-			});
-
-			expect(setState).not.toBeCalled();
+			await waitFor(() => expect(setState).not.toBeCalled());
 		});
 	});
 
