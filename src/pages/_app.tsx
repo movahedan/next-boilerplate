@@ -1,3 +1,4 @@
+import { Global } from '@emotion/react';
 import { DefaultSeo } from 'next-seo';
 import App from 'next/app';
 import Head from 'next/head';
@@ -8,7 +9,7 @@ import { BrowserProvider, extractBrowserServerSideData } from 'lib/browser';
 import { ComposeProviders } from 'lib/utils';
 import { SampleModel } from 'models/sample';
 
-import { fontLinksProps, GlobalCSSList } from 'constants/css';
+import { fontLinksProps, globalStyles, xwindGlobalStyles } from 'constants/css';
 import { getDefaultNextSeoConfig } from 'constants/seo';
 
 import Error from './_error';
@@ -28,6 +29,8 @@ class MyApp extends App<AppWithLayoutProps> {
 
 	render() {
 		const { hasError } = this.state;
+		const { Component, pageProps } = this.props;
+
 		if (hasError) {
 			return (
 				<>
@@ -37,7 +40,6 @@ class MyApp extends App<AppWithLayoutProps> {
 			);
 		}
 
-		const { Component, pageProps } = this.props;
 		const browserData = extractBrowserServerSideData(pageProps);
 		const providers = [
 			<BrowserProvider key={0} initialData={browserData} />,
@@ -64,6 +66,8 @@ class MyApp extends App<AppWithLayoutProps> {
 
 const IndependentProviders = () => (
 	<>
+		<Global styles={globalStyles} />
+		<Global styles={xwindGlobalStyles} />
 		<Head>
 			{fontLinksProps.map((props, index) => (
 				<link key={index} {...props} />
@@ -75,14 +79,15 @@ const IndependentProviders = () => (
 			})}
 		/>
 		<AnalyticsHeadScript url={process.env.NEXT_PUBLIC_ANALYTIC_URL} />
-		<GlobalCSSList />
 	</>
 );
 
 export const reportWebVitals = (metric: NextWebVitalsMetric): void => {
 	const IS_WEB_VITALS_ENABLE = process.env.NEXT_PUBLIC_WEB_VITALS === 'true';
 
-	if (IS_WEB_VITALS_ENABLE) console.log(metric);
+	if (IS_WEB_VITALS_ENABLE) {
+		console.log(metric);
+	}
 };
 
 export default MyApp;

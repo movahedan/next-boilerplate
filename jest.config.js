@@ -22,10 +22,8 @@ const jestConfig = {
 	// An array of glob patterns indicating a set of files for which coverage information should be collected
 	collectCoverageFrom: [
 		'src/**/*.{ts,tsx}',
-
-		'!src/**/index.ts', // Indexes (Warning! Do not write logic/function/statement in index files)
-		'!src/**/*.d.ts', // Type definitions
-		'!src/**/*.stories.tsx', // Stories
+		'!src/**/index.ts',
+		'!src/**/*.{s,d}.ts',
 		// Hard to tests
 		'!src/lib/axios/*.{ts,tsx}',
 	],
@@ -139,7 +137,7 @@ const jestConfig = {
 	// slowTestThreshold: 5,
 
 	// A list of paths to snapshot serializer modules Jest should use for snapshot testing
-	// snapshotSerializers: [],
+	snapshotSerializers: ['@emotion/jest/serializer'],
 
 	// The test environment that will be used for testing
 	testEnvironment: 'jsdom',

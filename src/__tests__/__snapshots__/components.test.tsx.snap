@@ -5,10 +5,139 @@ Array [
   <h3>
     Buttons:
   </h3>,
-  <button
+  .emotion-0 {
+  --tw-text-opacity: 1;
+  position: relative;
+  display: inline-block;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  vertical-align: middle;
+  overflow-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  pointer-events: auto;
+  cursor: pointer;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.25;
+}
+
+.emotion-0.small {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.emotion-0.medium {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.emotion-0.large {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.emotion-0:hover:not(:disabled):after {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.emotion-0:before,
+.emotion-0:after {
+  border-radius: 9999px;
+}
+
+.emotion-0:before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  content: '';
+  z-index: -2;
+}
+
+.emotion-0:after {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  position: absolute;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  right: 0.25rem;
+  left: 0.25rem;
+  -webkit-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -moz-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -ms-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 100ms;
+  display: block;
+  overflow: hidden;
+  content: '';
+  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  z-index: -1;
+}
+
+.emotion-0:active:not(:disabled) {
+  color: #ccc;
+}
+
+.emotion-0:active:not(:disabled):after {
+  position: absolute;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  right: 0.25rem;
+  left: 0.25rem;
+  background-image: linear-gradient(
+  				0deg,
+  				rgba(0, 0, 0, 0.2),
+  				rgba(0, 0, 0, 0.2)
+  			),linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+}
+
+.emotion-0:focus:not(:active):not(:hover):before {
+  background-color: rgba(249, 58, 19, 0.32);
+}
+
+<button
     aria-disabled={false}
     aria-label="button"
-    className=" large "
+    className="emotion-0 large "
     data-testid="button"
     disabled={false}
     role="button"
@@ -24,10 +153,139 @@ Array [
       role="img"
     />
   </button>,
-  <button
+  .emotion-0 {
+  --tw-text-opacity: 1;
+  position: relative;
+  display: inline-block;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  vertical-align: middle;
+  overflow-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  pointer-events: auto;
+  cursor: pointer;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.25;
+}
+
+.emotion-0.small {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.emotion-0.medium {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.emotion-0.large {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.emotion-0:hover:not(:disabled):after {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.emotion-0:before,
+.emotion-0:after {
+  border-radius: 9999px;
+}
+
+.emotion-0:before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  content: '';
+  z-index: -2;
+}
+
+.emotion-0:after {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  position: absolute;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  right: 0.25rem;
+  left: 0.25rem;
+  -webkit-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -moz-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -ms-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 100ms;
+  display: block;
+  overflow: hidden;
+  content: '';
+  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  z-index: -1;
+}
+
+.emotion-0:active:not(:disabled) {
+  color: #ccc;
+}
+
+.emotion-0:active:not(:disabled):after {
+  position: absolute;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  right: 0.25rem;
+  left: 0.25rem;
+  background-image: linear-gradient(
+  				0deg,
+  				rgba(0, 0, 0, 0.2),
+  				rgba(0, 0, 0, 0.2)
+  			),linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+}
+
+.emotion-0:focus:not(:active):not(:hover):before {
+  background-color: rgba(249, 58, 19, 0.32);
+}
+
+<button
     aria-disabled={false}
     aria-label="button"
-    className=" medium "
+    className="emotion-0 medium "
     data-testid="button"
     disabled={false}
     role="button"
@@ -43,10 +301,139 @@ Array [
       role="img"
     />
   </button>,
-  <button
+  .emotion-0 {
+  --tw-text-opacity: 1;
+  position: relative;
+  display: inline-block;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  vertical-align: middle;
+  overflow-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  pointer-events: auto;
+  cursor: pointer;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.25;
+}
+
+.emotion-0.small {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.emotion-0.medium {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.emotion-0.large {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.emotion-0:hover:not(:disabled):after {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.emotion-0:before,
+.emotion-0:after {
+  border-radius: 9999px;
+}
+
+.emotion-0:before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  content: '';
+  z-index: -2;
+}
+
+.emotion-0:after {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  position: absolute;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  right: 0.25rem;
+  left: 0.25rem;
+  -webkit-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -moz-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -ms-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 100ms;
+  display: block;
+  overflow: hidden;
+  content: '';
+  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  z-index: -1;
+}
+
+.emotion-0:active:not(:disabled) {
+  color: #ccc;
+}
+
+.emotion-0:active:not(:disabled):after {
+  position: absolute;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  right: 0.25rem;
+  left: 0.25rem;
+  background-image: linear-gradient(
+  				0deg,
+  				rgba(0, 0, 0, 0.2),
+  				rgba(0, 0, 0, 0.2)
+  			),linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+}
+
+.emotion-0:focus:not(:active):not(:hover):before {
+  background-color: rgba(249, 58, 19, 0.32);
+}
+
+<button
     aria-disabled={false}
     aria-label="button"
-    className=" small "
+    className="emotion-0 small "
     data-testid="button"
     disabled={false}
     role="button"
@@ -62,10 +449,139 @@ Array [
       role="img"
     />
   </button>,
-  <button
+  .emotion-0 {
+  --tw-text-opacity: 1;
+  position: relative;
+  display: inline-block;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  vertical-align: middle;
+  overflow-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  pointer-events: auto;
+  cursor: pointer;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.25;
+}
+
+.emotion-0.small {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.emotion-0.medium {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.emotion-0.large {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.emotion-0:hover:not(:disabled):after {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.emotion-0:before,
+.emotion-0:after {
+  border-radius: 9999px;
+}
+
+.emotion-0:before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  content: '';
+  z-index: -2;
+}
+
+.emotion-0:after {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  position: absolute;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  right: 0.25rem;
+  left: 0.25rem;
+  -webkit-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -moz-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -ms-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 100ms;
+  display: block;
+  overflow: hidden;
+  content: '';
+  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  z-index: -1;
+}
+
+.emotion-0:active:not(:disabled) {
+  color: #ccc;
+}
+
+.emotion-0:active:not(:disabled):after {
+  position: absolute;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  right: 0.25rem;
+  left: 0.25rem;
+  background-image: linear-gradient(
+  				0deg,
+  				rgba(0, 0, 0, 0.2),
+  				rgba(0, 0, 0, 0.2)
+  			),linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+}
+
+.emotion-0:focus:not(:active):not(:hover):before {
+  background-color: rgba(249, 58, 19, 0.32);
+}
+
+<button
     aria-disabled={true}
     aria-label="button"
-    className=" medium "
+    className="emotion-0 medium "
     data-testid="button"
     disabled={true}
     role="button"
@@ -81,12 +597,141 @@ Array [
       role="img"
     />
   </button>,
-  <button
-    aria-disabled={false}
+  .emotion-0 {
+  --tw-text-opacity: 1;
+  position: relative;
+  display: inline-block;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  vertical-align: middle;
+  overflow-wrap: break-word;
+  font-weight: bold;
+  text-align: center;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  pointer-events: auto;
+  cursor: pointer;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.emotion-0:disabled {
+  cursor: not-allowed;
+  opacity: 0.25;
+}
+
+.emotion-0.small {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.emotion-0.medium {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.emotion-0.large {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.emotion-0:hover:not(:disabled):after {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.emotion-0:before,
+.emotion-0:after {
+  border-radius: 9999px;
+}
+
+.emotion-0:before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  content: '';
+  z-index: -2;
+}
+
+.emotion-0:after {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  position: absolute;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  right: 0.25rem;
+  left: 0.25rem;
+  -webkit-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -moz-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  -ms-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 100ms;
+  display: block;
+  overflow: hidden;
+  content: '';
+  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  z-index: -1;
+}
+
+.emotion-0:active:not(:disabled) {
+  color: #ccc;
+}
+
+.emotion-0:active:not(:disabled):after {
+  position: absolute;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  right: 0.25rem;
+  left: 0.25rem;
+  background-image: linear-gradient(
+  				0deg,
+  				rgba(0, 0, 0, 0.2),
+  				rgba(0, 0, 0, 0.2)
+  			),linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+}
+
+.emotion-0:focus:not(:active):not(:hover):before {
+  background-color: rgba(249, 58, 19, 0.32);
+}
+
+<button
+    aria-disabled={true}
     aria-label="button"
-    className=" medium "
+    className="emotion-0 medium "
     data-testid="button"
-    disabled={false}
+    disabled={true}
     role="button"
     type="button"
   >

@@ -33,8 +33,6 @@
   "dependencies": {
     "@emotion/css": "^11.5.0",
     "@emotion/react": "^11.5.0",
-    "@emotion/server": "^11.4.0",
-    "@emotion/styled": "^11.3.0",
     "@sentry/nextjs": "^6.13.3",
     "axios": "^0.24.0",
     "next": "^12.0.2",
@@ -48,7 +46,7 @@
     "@axe-core/react": "^4.2.2",
     "@babel/core": "^7.14.3",
     "@emotion/babel-plugin": "^11.3.0",
-    "@next/eslint-plugin-next": "^12.0.2",
+    "@emotion/jest": "^11.5.0",
     "@testing-library/dom": "^8.2.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
@@ -74,7 +72,6 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-tailwind": "^0.2.1",
-    "fetch": "^1.1.0",
     "husky": "^7.0.4",
     "jest": "^27.1.0",
     "jest-axe": "^5.0.1",
@@ -85,9 +82,10 @@
     "postcss": "^8.3.6",
     "prettier": "^2.3.0",
     "react-test-renderer": "^17.0.2",
-    "sass": "^1.43.4",
-    "tailwindcss": "^2.2.8",
+    "tailwindcss": "2.1.4",
     "ts-jest": "^27.0.5",
-    "typescript": "~4.4.4"
+    "typescript": "~4.4.4",
+    "typescript-xwind-plugin": "^0.8.0",
+    "xwind": "^0.8.0"
   }
 }

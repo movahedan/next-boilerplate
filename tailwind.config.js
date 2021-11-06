@@ -62,4 +62,7 @@ module.exports = {
 		},
 	},
 	plugins: [],
+	xwind: {
+		mode: 'objectstyles',
+	},
 };

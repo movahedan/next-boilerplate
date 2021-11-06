@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import '@testing-library/jest-dom/extend-expect';
+import { matchers } from '@emotion/jest';
 import { toHaveNoViolations } from 'jest-axe';
 
 expect.extend(toHaveNoViolations);
+expect.extend(matchers);
 
 window.matchMedia =
 	window.matchMedia ||
