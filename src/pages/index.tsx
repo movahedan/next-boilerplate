@@ -14,7 +14,6 @@ interface Props {
 }
 
 const basicStyles = css`
-	@apply bg-black;
 	color: cornflowerblue;
 	border: 1px solid lightgreen;
 	border-right: none;

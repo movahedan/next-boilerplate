@@ -1,4 +1,4 @@
-import styles from './button.module.scss';
+// import styles from './button.module.scss';
 
 import type { ButtonProps } from './button.d';
 import type { FC } from 'react';
@@ -9,7 +9,7 @@ export const Button: FC<ButtonProps> = ({
 	'data-testid': dataTestId = 'button',
 	'aria-label': ariaLabel = 'button',
 
-	size = 'medium',
+	// size = 'medium',
 	iconStart,
 	iconEnd,
 	loading = false,
@@ -18,7 +18,7 @@ export const Button: FC<ButtonProps> = ({
 	onClick,
 
 	style,
-	className,
+	// className,
 	children,
 }) => {
 	return (
@@ -31,7 +31,7 @@ export const Button: FC<ButtonProps> = ({
 			aria-disabled={disabled}
 			onClick={onClick}
 			style={style}
-			className={[styles.button, size, className].join(' ')}
+			// className={[styles.button, size, className].join(' ')}
 		>
 			<span role='img' aria-hidden={true}>
 				{iconStart}

@@ -24,7 +24,7 @@ const eslintPlugin = {
 	},
 	overrides: [
 		{
-			files: ['.eslintrc.js', './src/ui/utils/tailwind-theme.ts'],
+			files: ['.eslintrc.js', './src/constants/css/tailwind-theme.ts'],
 			rules: {
 				'max-lines': 'off',
 			},

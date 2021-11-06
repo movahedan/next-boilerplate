@@ -9,7 +9,12 @@ export default class AppDocument extends Document {
 		const page = await ctx.renderPage();
 
 		const { extractCritical } = createEmotionServer(cache);
-		const { ids, css } = extractCritical(page.html);
+		let ids: Array<string> = [],
+			css = '';
+		if (page.html) {
+			({ ids, css } = extractCritical(page.html));
+		}
+
 		const initialProps = await Document.getInitialProps(ctx);
 
 		return {
