@@ -24,6 +24,7 @@ const jestConfig = {
 		'src/**/*.{ts,tsx}',
 		'!src/**/index.ts',
 		'!src/**/*.{s,d}.ts',
+		'!src/**/*.stories.tsx',
 		// Hard to tests
 		'!src/lib/axios/*.{ts,tsx}',
 	],
