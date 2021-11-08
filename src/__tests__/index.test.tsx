@@ -2,8 +2,9 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import { create } from 'react-test-renderer';
 
-import { attachBrowserServerSideData } from 'lib/browser';
 import Homepage, { getServerSideProps } from 'pages/index';
+
+import type { GetServerSidePropsContext } from 'next';
 
 describe('<Homepage>', () => {
 	it('should match snapshot', async () => {
@@ -23,20 +24,25 @@ describe('<Homepage>', () => {
 
 	it('should have getServerSideProps', async () => {
 		const context = {
-			req: { headers: {} },
+			req: { headers: { 'user-agent': '' } },
 			res: { setHeader: jest.fn() },
 			query: {},
 			resolvedUrl: '/',
-		};
+		} as unknown as GetServerSidePropsContext;
 
-		// @ts-expect-error Mocking
 		const results = await getServerSideProps(context);
 		expect(results).toEqual({
 			props: {
 				data: {
 					message: 'Message from getServerSideProps',
 				},
-				...attachBrowserServerSideData(context.req.headers),
+				browser: {
+					mediaQueries: {
+						lg: false,
+						md: false,
+						sm: true,
+					},
+				},
 			},
 		});
 	});

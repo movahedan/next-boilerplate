@@ -5,31 +5,59 @@ import { mockMatchMedia } from '__mocks__/mock-media-query.jest';
 import type { Screens } from 'constants/css';
 
 import {
-	useMediaQuery,
+	useBrowser,
 	BrowserProvider,
-	mediaQueryInitializer,
-	attachBrowserServerSideData,
-	extractBrowserServerSideData,
-	getMatchMediaEntries,
-	getMatchMediasByGivenMediaQuery,
-	getMatchMediasFromUserAgent,
+	withBrowserServerSideData,
+} from './browser';
+import {
 	mediaQueries,
-} from '.';
+	initBrowserContext,
+	getMatchMediaEntries,
+} from './browser.utils';
 
-import type { BrowserObject, BrowserMediaQuery } from '.';
-import type { IncomingMessage } from 'http';
+import type { BrowserObject } from './browser.d';
 import type { FC, ReactNode } from 'react';
 
 describe('browser module', () => {
-	beforeEach(() => {
-		mockMatchMedia('sm');
+	describe('withBrowserServerSideData', () => {
+		let result = withBrowserServerSideData({}, { 'user-agent': '' });
+		expect(result).toStrictEqual({
+			browser: {
+				mediaQueries: {
+					sm: true,
+					md: false,
+					lg: false,
+				},
+			},
+		});
+
+		result = withBrowserServerSideData({}, { 'user-agent': 'iPad' });
+		expect(result).toStrictEqual({
+			browser: {
+				mediaQueries: {
+					sm: true,
+					md: true,
+					lg: false,
+				},
+			},
+		});
+
+		result = withBrowserServerSideData({}, { 'user-agent': 'AppleTv' });
+		expect(result).toStrictEqual({
+			browser: {
+				mediaQueries: {
+					sm: true,
+					md: true,
+					lg: true,
+				},
+			},
+		});
 	});
 
 	describe('browser utils', () => {
 		it('should have getMatchMediaEntries calculator', () => {
 			const mockedMatchMedia = mockMatchMedia('sm', true);
 			const matchMediaEntries = getMatchMediaEntries();
-
 			Object.entries(mediaQueries).forEach(([, value], index) => {
 				expect(matchMediaEntries[index][1]).toStrictEqual(
 					JSON.parse(JSON.stringify(mockedMatchMedia(value)))
@@ -37,36 +65,39 @@ describe('browser module', () => {
 			});
 		});
 
-		it('should have mediaQueryInitializer calculator', () => {
+		it('initBrowserContext - client side - should return correctly', () => {
 			const mockedMatchMedia = mockMatchMedia('sm', true);
-			const currentMediaQuery = mediaQueryInitializer();
-
+			const browserContext = initBrowserContext();
 			Object.entries(mediaQueries).forEach(([key, value]) => {
-				expect(currentMediaQuery[key as keyof Screens]).toStrictEqual(
+				expect(browserContext.mediaQueries[key as keyof Screens]).toStrictEqual(
 					mockedMatchMedia(value).matches
 				);
 			});
 		});
 
-		it('should have getMatchMediasFromUserAgent calculator', () => {
-			let calculatedMediaQueries: BrowserMediaQuery;
-
-			calculatedMediaQueries = getMatchMediasFromUserAgent({
-				'user-agent': '',
+		describe('initBrowserContext - server side', () => {
+			const { window } = global;
+			beforeAll(() => {
+				// @ts-ignore
+				delete global.window;
 			});
-			expect(calculatedMediaQueries).toStrictEqual({
-				sm: true,
-				md: true,
-				lg: true,
+			afterAll(() => {
+				global.window = window;
 			});
 
-			calculatedMediaQueries = getMatchMediasFromUserAgent({
-				'user-agent': 'iPad',
-			});
-			expect(calculatedMediaQueries).toStrictEqual({
-				sm: true,
-				md: true,
-				lg: false,
+			it('runs without error', () => {
+				const browserContext = initBrowserContext();
+				const expectedMediaQueries = [
+					['sm', true],
+					['md', false],
+					['lg', false],
+				];
+
+				Object.entries(mediaQueries).forEach(([key], index) => {
+					expect(
+						browserContext.mediaQueries[key as keyof Screens]
+					).toStrictEqual(expectedMediaQueries[index][1]);
+				});
 			});
 		});
 	});
@@ -77,13 +108,18 @@ describe('browser module', () => {
 			props?: BrowserObject['browser']
 		) =>
 			render(
-				<BrowserProvider initialData={props}>{component}</BrowserProvider>
+				<BrowserProvider initialData={{ browser: props }}>
+					{component}
+				</BrowserProvider>
 			);
 
 		it('should have a provider that provides media query data for "sm"', () => {
-			const { getByTestId } = browserProvidedRender(<JustForTest />, {
-				mediaQuery: mediaQueryInitializer(),
-			});
+			mockMatchMedia('sm');
+
+			const { getByTestId } = browserProvidedRender(
+				<JustForTest />,
+				initBrowserContext()
+			);
 
 			expect(getByTestId('sm')).toHaveTextContent('true');
 			expect(getByTestId('md')).toHaveTextContent('false');
@@ -112,7 +148,7 @@ describe('browser module', () => {
 
 		it('should support initial props to prevent rerendering on first land in browser', () => {
 			const { getByTestId } = browserProvidedRender(<JustForTest />, {
-				mediaQuery: { sm: true, md: true, lg: true },
+				mediaQueries: { sm: true, md: true, lg: true },
 			});
 
 			expect(getByTestId('sm')).toHaveTextContent('true');
@@ -120,53 +156,11 @@ describe('browser module', () => {
 			expect(getByTestId('lg')).toHaveTextContent('true');
 		});
 	});
-
-	describe('browser integration', () => {
-		const mockReq: Partial<IncomingMessage> = {
-			headers: {
-				'user-agent': '',
-			},
-		};
-
-		it('should have a attacher function to attach browser data to page props', () => {
-			try {
-				// @ts-expect-error Testing an error
-				attachBrowserServerSideData();
-			} catch (e) {
-				expect(e).toMatchObject(
-					new Error('[attachBrowserServerSideData]: req is undefined')
-				);
-			}
-
-			// @ts-expect-error Testing an error
-			const attachedDataToPageProps = attachBrowserServerSideData(mockReq);
-			expect(attachedDataToPageProps).toMatchObject({
-				browser: {
-					mediaQuery: getMatchMediasByGivenMediaQuery('lg'),
-				},
-			});
-		});
-
-		it('should have a extractor function to extract browser data from page props', () => {
-			mockMatchMedia('sm');
-
-			const extractedDataFromPageProps = extractBrowserServerSideData({
-				anotherprops: '',
-				browser: {
-					mediaQuery: mediaQueryInitializer(),
-				},
-			});
-
-			expect(extractedDataFromPageProps).toMatchObject({
-				mediaQuery: mediaQueryInitializer(),
-			});
-		});
-	});
 });
 
 const JustForTest: FC = () => {
-	const mediaQuery = useMediaQuery();
-	const mediaQueryEntries = Object.entries(mediaQuery);
+	const mediaQueries = useBrowser().mediaQueries;
+	const mediaQueryEntries = Object.entries(mediaQueries);
 
 	return (
 		<ul>

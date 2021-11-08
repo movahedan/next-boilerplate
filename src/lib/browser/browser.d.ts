@@ -6,6 +6,6 @@ export type BrowserMediaQuery = {
 
 export interface BrowserObject {
 	browser: {
-		mediaQuery: BrowserMediaQuery;
+		mediaQueries: BrowserMediaQuery;
 	};
 }

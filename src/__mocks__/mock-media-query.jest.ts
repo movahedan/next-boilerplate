@@ -1,4 +1,7 @@
-import { getMatchMediasByGivenMediaQuery, mediaQueries } from 'lib/browser';
+import {
+	mediaQueries,
+	getMatchMediasByGivenMediaQuery,
+} from 'lib/browser/browser.utils';
 
 import type { Screens } from 'constants/css';
 
@@ -12,6 +15,7 @@ export const mockMatchMedia = (
 		const mediaQueryEntry = Object.entries(mediaQueries).find(
 			([, value]) => media == value
 		) as [keyof Screens, never];
+
 		const matches = currentMediaQueries[mediaQueryEntry?.[0] || 'sm'];
 
 		if (removeMockedFunction) {

@@ -19,20 +19,24 @@ export const mediaQueries: MediaQueries = Object.fromEntries(
 	])
 );
 
+const mediaQueriesEntries = Object.entries(mediaQueries);
+
 type MatchMediaEntry = [keyof typeof mediaQueries, MediaQueryList | undefined];
 export const getMatchMediaEntries = () =>
-	Object.entries(mediaQueries).map(([key, value]) => [
+	mediaQueriesEntries.map(([key, value]) => [
 		key,
-		global.window?.matchMedia(value),
+		global.window.matchMedia(value),
 	]) as MatchMediaEntry[];
 
-export const mediaQueryInitializer = () =>
-	Object.fromEntries(
-		getMatchMediaEntries().map(([mediaQueryName, matchMedia]) => [
-			mediaQueryName,
-			matchMedia?.matches,
+const defaultMediaQuery = 'sm';
+export const initBrowserContext = () => ({
+	mediaQueries: Object.fromEntries(
+		mediaQueriesEntries.map(([key, value]) => [
+			key,
+			global.window?.matchMedia(value).matches || key === defaultMediaQuery,
 		])
-	) as BrowserMediaQuery;
+	) as BrowserMediaQuery,
+});
 
 export const getMatchMediasFromUserAgent = (
 	headers: IncomingMessage['headers']

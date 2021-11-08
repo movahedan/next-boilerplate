@@ -9,8 +9,10 @@ export const getParsedUserAgent = (userAgent: string) =>
 	new UAParser(userAgent).getResult();
 
 export const getIsDesktop = (parsedUA: UAParser.IResult): boolean => {
-	const deviceType = parsedUA.device.type;
-	const isDesktop = deviceType !== 'mobile' && deviceType !== 'tablet';
+	const { type = '' } = parsedUA.device;
+	const isDesktop = ['console', 'smarttv', 'wearable', 'embedded'].includes(
+		type
+	);
 
 	return Boolean(isDesktop);
 };
@@ -18,7 +20,7 @@ export const getIsDesktop = (parsedUA: UAParser.IResult): boolean => {
 export const getIsTablet = (parsedUA: UAParser.IResult): boolean => {
 	const { type } = parsedUA.device;
 	const isIPad = parsedUA.ua.match(/iPad/i);
-	const isTablet = isIPad || type === 'tablet';
+	const isTablet = type === 'tablet' || isIPad;
 
 	return Boolean(isTablet);
 };

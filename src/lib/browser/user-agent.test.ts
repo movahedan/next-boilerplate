@@ -5,16 +5,15 @@ import {
 	getParsedUserAgent,
 } from './user-agent';
 
+import type { IResult } from 'ua-parser-js';
+
 describe('user-agent', () => {
 	it('getUserAgent should return proper user-agent', () => {
-		const sampleServerUa =
-			'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:92.0) Gecko/20100101 Firefox/92.0';
-
 		const headers = {
-			'user-agent': sampleServerUa,
+			'user-agent': sampleUa,
 		};
 
-		expect(getUserAgent(headers)).toEqual(sampleServerUa);
+		expect(getUserAgent(headers)).toEqual(sampleUa);
 		expect(getUserAgent({})).toEqual('');
 	});
 
@@ -22,46 +21,42 @@ describe('user-agent', () => {
 		expect(getParsedUserAgent(sampleUa)).toEqual(sampleResult);
 	});
 
-	it('getIsDesktop should return isTablet boolean', () => {
-		expect(
-			// @ts-expect-error It's just for mocking purpose
-			getIsDesktop({ ua: '', device: { type: 'tablet' } })
-		).toBeFalsy();
+	describe('getIsDesktop', () => {
+		test.each(['console', 'smarttv', 'wearable', 'embedded'])(
+			'getIsDesktop should return true for device type: $p',
+			(type) => {
+				expect(
+					getIsDesktop({ ua: '', device: { type } } as unknown as IResult)
+				).toBeTruthy();
+			}
+		);
 
-		expect(
-			// @ts-expect-error It's just for mocking purpose
-			getIsDesktop({ ua: '', device: { type: 'mobile' } })
-		).toBeFalsy();
-
-		expect(
-			// @ts-expect-error It's just for mocking purpose
-			getIsDesktop({ ua: 'iPad', device: { type: 'tablet' } })
-		).toBeFalsy();
-
-		expect(
-			// @ts-expect-error It's just for mocking purpose
-			getIsDesktop({ ua: '', device: { type: '' } })
-		).toBeTruthy();
+		test.each(['tablet', 'mobile', '', undefined])(
+			'getIsDesktop should return false for device type: $p',
+			(type) => {
+				expect(
+					getIsDesktop({ ua: '', device: { type } } as unknown as IResult)
+				).toBeFalsy();
+			}
+		);
 	});
 
-	it('getIsTablet should return isTablet boolean', () => {
-		let isTablet = false;
+	describe('getIsTablet', () => {
+		it('should return true for iPad', () => {
+			const isTablet = getIsTablet({
+				ua: 'iPad',
+				device: {},
+			} as unknown as IResult);
+			expect(isTablet).toBe(true);
+		});
 
-		// @ts-expect-error It's just for mocking purpose
-		isTablet = getIsTablet({ ua: '', device: { type: 'tablet' } });
-		expect(isTablet).toBe(true);
-
-		// @ts-expect-error It's just for mocking purpose
-		isTablet = getIsTablet({ ua: 'iPad', device: {} });
-		expect(isTablet).toBe(true);
-
-		// @ts-expect-error It's just for mocking purpose
-		isTablet = getIsTablet({ ua: 'iPad', device: { type: 'tablet' } });
-		expect(isTablet).toBe(true);
-
-		// @ts-expect-error It's just for mocking purpose
-		isTablet = getIsTablet({ ua: '', device: { type: 'mobile' } });
-		expect(isTablet).toBe(false);
+		it('should return true for device type: tablet', () => {
+			const isTablet = getIsTablet({
+				ua: '',
+				device: { type: 'tablet' },
+			} as unknown as IResult);
+			expect(isTablet).toBe(true);
+		});
 	});
 });
 

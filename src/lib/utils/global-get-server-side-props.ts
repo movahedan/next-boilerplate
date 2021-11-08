@@ -1,45 +1,27 @@
 import { axiosModule } from 'lib/axios';
-import { attachBrowserServerSideData } from 'lib/browser';
+import { withBrowserServerSideData } from 'lib/browser';
 
-import { cacheThisServerSideProps } from './cache-this-server-side-props';
+import { setCacheHeader } from './set-cache-header';
 
-import type { BrowserObject } from 'lib/browser';
-import type { GetServerSideProps } from 'next';
-import type { ParsedUrlQuery } from 'querystring';
+import type { GlobalGetServerSideProps } from 'next';
 
-export function globalGetServerSideProps<
-	Props = unknown,
-	Query extends ParsedUrlQuery = ParsedUrlQuery
->(
-	getServerSideProps: GetServerSideProps<Props, Query>,
-	options?: {
-		cache?: boolean;
-	}
-): GetServerSideProps<Props & BrowserObject, Query> {
-	const { cache } = options || {};
-
-	return async (ctx) => {
-		const {
-			res,
-			req: { headers },
-		} = ctx;
-
+export const globalGetServerSideProps: GlobalGetServerSideProps =
+	(getServerSideProps, { cache } = {}) =>
+	async (ctx) => {
 		axiosModule.config.server();
 		if (cache) {
-			cacheThisServerSideProps(res);
+			setCacheHeader(ctx.res);
 		}
 
 		const pageResult = await getServerSideProps(ctx);
-		if ((<any>pageResult).props) {
-			return {
-				...pageResult,
-				props: {
-					...(<any>pageResult).props,
-					...attachBrowserServerSideData(headers),
-				},
-			};
+		const { props } = pageResult as any;
+		if (!props) {
+			return pageResult;
 		}
 
-		return pageResult;
+		const finalProps = withBrowserServerSideData(props, ctx.req.headers);
+
+		return {
+			props: finalProps,
+		};
 	};
-}

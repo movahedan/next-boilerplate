@@ -5,7 +5,7 @@ import Head from 'next/head';
 import { Fragment } from 'react';
 
 import { AnalyticsHeadScript } from 'lib/analytics';
-import { BrowserProvider, extractBrowserServerSideData } from 'lib/browser';
+import { BrowserProvider } from 'lib/browser';
 import { ComposeProviders } from 'lib/utils';
 import { SampleModel } from 'models/sample';
 
@@ -40,9 +40,8 @@ class MyApp extends App<AppWithLayoutProps> {
 			);
 		}
 
-		const browserData = extractBrowserServerSideData(pageProps);
 		const providers = [
-			<BrowserProvider key={0} initialData={browserData} />,
+			<BrowserProvider key={0} initialData={pageProps} />,
 			<SampleModel.Provider key={1} />,
 		];
 

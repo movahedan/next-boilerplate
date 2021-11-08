@@ -1,7 +1,8 @@
-import { getMatchMediasByGivenMediaQuery } from 'lib/browser';
+import { getMatchMediasByGivenMediaQuery } from 'lib/browser/browser.utils';
 
-import { getCacheConfig } from './cache-this-server-side-props';
 import { globalGetServerSideProps } from './global-get-server-side-props';
+
+import type { GetServerSidePropsContext } from 'next';
 
 describe('global-get-server-side-props', () => {
 	const sampleGetServerSidePropsResult = { someAttribute: 'value' };
@@ -20,10 +21,9 @@ describe('global-get-server-side-props', () => {
 	it('should initialize dom media-query', async () => {
 		const ctx = {
 			req: { headers: { 'user-agent': '' } },
-		};
+		} as GetServerSidePropsContext;
 
 		const results = await globalGetServerSideProps(sampleGetServerSideProps)(
-			// @ts-expect-error It's just for mocking purpose
 			ctx
 		);
 
@@ -31,7 +31,7 @@ describe('global-get-server-side-props', () => {
 			props: {
 				...sampleGetServerSidePropsResult,
 				browser: {
-					mediaQuery: getMatchMediasByGivenMediaQuery('lg'),
+					mediaQueries: getMatchMediasByGivenMediaQuery('sm'),
 				},
 			},
 		});
@@ -42,24 +42,25 @@ describe('global-get-server-side-props', () => {
 		const ctx = {
 			req: {},
 			res: { setHeader },
-		};
+		} as unknown as GetServerSidePropsContext;
 
 		await globalGetServerSideProps(sampleGetServerSideProps, {
 			cache: true,
-			// @ts-expect-error It's just for mocking purpose
 		})(ctx);
 
-		expect(setHeader).toBeCalledWith('Cache-Control', getCacheConfig());
+		expect(setHeader).toBeCalledWith(
+			'Cache-Control',
+			'public, max-age=10, stale-while-revalidate=60'
+		);
 	});
 
 	it("should do not return browser data when given getServerSideProps does not have any props on it's results", async () => {
 		const ctx = {
 			req: {},
-		};
+		} as GetServerSidePropsContext;
 
 		const results = await globalGetServerSideProps(
 			sampleRedirectGetServerSideProps
-			// @ts-expect-error It's just for mocking purpose
 		)(ctx);
 
 		expect(results).toEqual(sampleRedirectGetServerSidePropsResults);
