@@ -38,13 +38,11 @@ yarn after-check
 - [x] Setup directory structure
 - [x] Setup well documented eslint config
 - [x] Setup declaring global types
-- [x] Setup jest config
-- [x] Setup next-page-tester
+- [x] Setup jest config and next-page-tester
 - [x] Setup cypress minimal config
 - [x] Setup workflow, lint-staged, lint, tests
-- [x] Setup styled-jsx and scss modules (with tailwind and postcss)
--	[x] Setup browser module (MediaQuery, Agent, tailwindConfig)
-- [x] Setup global CSS
+- [x] Setup emotion with tailwind and postcss
+-	[x] Setup browser module (MediaQuery, UserAgent synced with tailwind config)
 - [x] Setup optimized google font
 - [x] Setup layout structuring per page
 -	[x] Setup Error Handling and Sentry
