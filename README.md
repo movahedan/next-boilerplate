@@ -28,7 +28,8 @@ yarn after-check
 ```
 
 ### Tasks
--	Setup headless-ui
+
+-	Implement a minimal component library (with the help of headless ui)
 - Setup Fetch and SWR
 - Setup a cdn service for pictures (cloudflare)
 - Setup a picture optimizer and integrate it with NextImage
@@ -42,6 +43,7 @@ yarn after-check
 - [x] Setup cypress minimal config
 - [x] Setup workflow, lint-staged, lint, tests
 - [x] Setup emotion with tailwind and postcss
+- [x] Setup storybook
 -	[x] Setup browser module (MediaQuery, UserAgent synced with tailwind config)
 - [x] Setup optimized google font
 - [x] Setup layout structuring per page
