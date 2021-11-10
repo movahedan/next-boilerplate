@@ -38,6 +38,10 @@ describe('routing utils', () => {
 
 		url = stringifyUrl({ url: '/some-page?' });
 		expect(url).toEqual('/some-page');
+		url = stringifyUrl({ url: '/some-page', query: {} });
+		expect(url).toEqual('/some-page');
+		url = stringifyUrl({ url: '/some-page?', query: {} });
+		expect(url).toEqual('/some-page');
 		url = stringifyUrl({ url: '/some-page?query' });
 		expect(url).toEqual('/some-page');
 	});
