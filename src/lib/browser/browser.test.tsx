@@ -2,8 +2,6 @@ import { render } from '@testing-library/react';
 
 import { mockMatchMedia } from '__mocks__/mock-media-query.jest';
 
-import type { Screens } from 'constants/css';
-
 import {
 	useBrowser,
 	BrowserProvider,
@@ -15,7 +13,7 @@ import {
 	getMatchMediaEntries,
 } from './browser.utils';
 
-import type { BrowserObject } from './browser.d';
+import type { Screens, BrowserObject } from './browser.d';
 import type { FC, ReactNode } from 'react';
 
 describe('browser module', () => {

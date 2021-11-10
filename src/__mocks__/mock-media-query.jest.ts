@@ -3,7 +3,7 @@ import {
 	getMatchMediasByGivenMediaQuery,
 } from 'lib/browser/browser.utils';
 
-import type { Screens } from 'constants/css';
+import type { Screens } from 'lib/browser';
 
 export const mockMatchMedia = (
 	mediaQueryName: keyof Screens = 'sm',

@@ -19,7 +19,7 @@
     "storybook": "start-storybook -s ./public -p 6006",
     "build:storybook": "build-storybook -s public",
     "/////////////////// tailwind ///////////////////////////////////////": "",
-    "clone:tailwind": "./tailwind.generate.config.js && next lint --fix -d src/constants/css",
+    "clone:tailwind": "./tailwind.generate.config.js && next lint --fix -d ./src/lib/utils",
     "/////////////////// cypress ////////////////////////////////////////": "",
     "dev:cypress": "yarn dev & yarn cypress open",
     "build:cypress": "yarn build && (yarn start & yarn cypress run)",

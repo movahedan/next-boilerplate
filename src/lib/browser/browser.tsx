@@ -1,7 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
 
-import type { Screens } from 'constants/css';
-
 import { BrowserContext } from './browser.context';
 import {
 	initBrowserContext,
@@ -9,16 +7,9 @@ import {
 	getMatchMediasFromUserAgent,
 } from './browser.utils';
 
-import type { BrowserMediaQuery, BrowserObject } from './browser.d';
+import type { Screens, BrowserObject } from './browser.d';
 import type { IncomingMessage } from 'http';
 import type { FC } from 'react';
-
-interface BrowserProviderProps {
-	initialData: {
-		[k: string]: unknown;
-		browser?: { mediaQueries: BrowserMediaQuery } | undefined;
-	};
-}
 
 export const useBrowser = () => useContext(BrowserContext);
 
@@ -38,7 +29,9 @@ export const BrowserProvider: FC<BrowserProviderProps> = ({
 	initialData,
 	children,
 }) => {
-	const [mediaQueries, setMediaQueries] = useState<BrowserMediaQuery>(
+	const [mediaQueries, setMediaQueries] = useState<
+		BrowserObject['browser']['mediaQueries']
+	>(
 		initialData.browser?.mediaQueries ||
 			(() => initBrowserContext().mediaQueries)
 	);
@@ -77,3 +70,12 @@ export const BrowserProvider: FC<BrowserProviderProps> = ({
 		</BrowserContext.Provider>
 	);
 };
+
+interface BrowserProviderProps {
+	initialData: {
+		[k: string]: unknown;
+		browser?:
+			| { mediaQueries: BrowserObject['browser']['mediaQueries'] }
+			| undefined;
+	};
+}

@@ -11,9 +11,7 @@ const nextPlugin = {
 };
 
 const eslintPlugin = {
-	extends: [
-		'eslint:recommended', // eslint
-	],
+	extends: ['eslint:recommended'],
 	rules: {
 		'newline-before-return': 'error',
 		'max-lines': [
@@ -24,7 +22,7 @@ const eslintPlugin = {
 	},
 	overrides: [
 		{
-			files: ['.eslintrc.js', './src/constants/css/tailwind-theme.ts'],
+			files: ['.eslintrc.js', './src/lib/utils/tailwind-theme.ts'],
 			rules: {
 				'max-lines': 'off',
 			},
@@ -46,7 +44,7 @@ const tailwindPlugin = {
 };
 
 const a11yPlugin = {
-	extends: ['plugin:prettier/recommended'], // eslint-config-prettier
+	extends: ['plugin:jsx-a11y/recommended'], // eslint-config-prettier
 	rules: {
 		'jsx-a11y/anchor-is-valid': 'off', // This rule is not compatible with Next.js <Link /> components
 	},
@@ -158,7 +156,7 @@ const importPlugin = {
 			files: [
 				'./src/pages/**/*.ts?(x)',
 				'./src/**/*.stories.ts?(x)',
-				'./src/constants/css/tailwind-theme.ts',
+				'./src/lib/utils/tailwind-theme.ts',
 			],
 			rules: {
 				'import/no-default-export': 'off',

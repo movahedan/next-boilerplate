@@ -1,5 +1,4 @@
-import type { Screens } from 'constants/css';
-import { screensConfig } from 'constants/css';
+import { tailwindConfig } from 'lib/utils';
 
 import {
 	getIsDesktop,
@@ -8,9 +7,10 @@ import {
 	getUserAgent,
 } from './user-agent';
 
-import type { BrowserMediaQuery } from './browser.d';
+import type { Screens, BrowserObject } from './browser.d';
 import type { IncomingMessage } from 'http';
 
+const screensConfig: Screens = tailwindConfig.theme.screens;
 type MediaQueries = { [key in keyof typeof screensConfig]: string };
 export const mediaQueries: MediaQueries = Object.fromEntries(
 	Object.entries(screensConfig).map(([key, value]) => [
@@ -35,12 +35,12 @@ export const initBrowserContext = () => ({
 			key,
 			global.window?.matchMedia(value).matches || key === defaultMediaQuery,
 		])
-	) as BrowserMediaQuery,
+	) as BrowserObject['browser']['mediaQueries'],
 });
 
 export const getMatchMediasFromUserAgent = (
 	headers: IncomingMessage['headers']
-): BrowserMediaQuery => {
+): BrowserObject['browser']['mediaQueries'] => {
 	const parsedUA = getParsedUserAgent(getUserAgent(headers));
 	const currentMediaQuery = getIsTablet(parsedUA)
 		? 'md'
@@ -53,7 +53,7 @@ export const getMatchMediasFromUserAgent = (
 
 export const getMatchMediasByGivenMediaQuery = (
 	mediaQuery: keyof Screens
-): BrowserMediaQuery => {
+): BrowserObject['browser']['mediaQueries'] => {
 	if (mediaQuery === 'lg') return { sm: true, md: true, lg: true };
 	else if (mediaQuery === 'md') return { sm: true, md: true, lg: false };
 
