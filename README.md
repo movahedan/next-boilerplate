@@ -44,7 +44,7 @@ yarn after-check
 - [x] Setup workflow, lint-staged, lint, tests
 - [x] Setup emotion with tailwind and postcss
 - [x] Setup storybook
--	[x] Setup browser module (MediaQuery, UserAgent synced with tailwind config)
+-	[x] Setup Media query module (synced with tailwind and support SSR)
 - [x] Setup optimized google font
 - [x] Setup layout structuring per page
 -	[x] Setup Error Handling and Sentry
