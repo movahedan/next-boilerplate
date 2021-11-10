@@ -1,5 +1,3 @@
-import { getMatchMediasByGivenMediaQuery } from 'lib/browser/browser.utils';
-
 import { globalGetServerSideProps } from './global-get-server-side-props';
 
 import type { GetServerSidePropsContext } from 'next';
@@ -30,8 +28,8 @@ describe('global-get-server-side-props', () => {
 		expect(results).toEqual({
 			props: {
 				...sampleGetServerSidePropsResult,
-				browser: {
-					mediaQueries: getMatchMediasByGivenMediaQuery('sm'),
+				mediaQueries: {
+					isMobile: false,
 				},
 			},
 		});
@@ -40,7 +38,7 @@ describe('global-get-server-side-props', () => {
 	it('should set cache header on given config', async () => {
 		const setHeader = jest.fn();
 		const ctx = {
-			req: {},
+			req: { headers: {} },
 			res: { setHeader },
 		} as unknown as GetServerSidePropsContext;
 
@@ -56,7 +54,7 @@ describe('global-get-server-side-props', () => {
 
 	it("should do not return browser data when given getServerSideProps does not have any props on it's results", async () => {
 		const ctx = {
-			req: {},
+			req: { headers: {} },
 		} as GetServerSidePropsContext;
 
 		const results = await globalGetServerSideProps(

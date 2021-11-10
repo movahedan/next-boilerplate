@@ -1,5 +1,5 @@
 import { axiosModule } from 'lib/axios';
-import { withBrowserServerSideData } from 'lib/browser';
+import { withMediaQueriesServerSideData } from 'lib/media-queries';
 
 import { setCacheHeader } from './set-cache-header';
 
@@ -19,7 +19,7 @@ export const globalGetServerSideProps: GlobalGetServerSideProps =
 			return pageResult;
 		}
 
-		const finalProps = withBrowserServerSideData(props, ctx.req.headers);
+		const finalProps = withMediaQueriesServerSideData(props, ctx.req.headers);
 
 		return {
 			props: finalProps,

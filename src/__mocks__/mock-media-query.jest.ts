@@ -1,35 +1,33 @@
-import {
-	mediaQueries,
-	getMatchMediasByGivenMediaQuery,
-} from 'lib/browser/browser.utils';
+import { mediaQueriesEntries } from 'lib/media-queries/media-queries.constants';
 
-import type { Screens } from 'lib/browser';
+import type { MediaQueries, ScreenNames } from 'lib/media-queries';
 
-export const mockMatchMedia = (
-	mediaQueryName: keyof Screens = 'sm',
-	removeMockedFunction = false
-) => {
+const getMatchMediasByGivenMediaQuery = (
+	mediaQuery: ScreenNames
+): MediaQueries => {
+	if (mediaQuery === 'lg') {
+		return { sm: true, md: true, lg: true };
+	} else if (mediaQuery === 'md') {
+		return { sm: true, md: true, lg: false };
+	}
+
+	return { sm: true, md: false, lg: false };
+};
+
+export const mockMatchMedia = (mediaQueryName: ScreenNames = 'sm') => {
 	const currentMediaQueries = getMatchMediasByGivenMediaQuery(mediaQueryName);
 
 	const matchMedia = jest.fn().mockImplementation((media) => {
-		const mediaQueryEntry = Object.entries(mediaQueries).find(
+		const mediaQueryEntry = mediaQueriesEntries.find(
 			([, value]) => media == value
-		) as [keyof Screens, never];
+		) as [ScreenNames, never];
 
 		const matches = currentMediaQueries[mediaQueryEntry?.[0] || 'sm'];
-
-		if (removeMockedFunction) {
-			return {
-				matches,
-				media,
-				onchange: null,
-			} as MediaQueryList;
-		}
 
 		return {
 			matches,
 			media,
-			onchange: null,
+			onchange: jest.fn(),
 			dispatchEvent: jest.fn(),
 			addListener: jest.fn(), // Deprecated
 			removeListener: jest.fn(), // Deprecated

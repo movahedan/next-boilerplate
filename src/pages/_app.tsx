@@ -5,7 +5,7 @@ import Head from 'next/head';
 import { Fragment } from 'react';
 
 import { AnalyticsHeadScript } from 'lib/analytics';
-import { BrowserProvider } from 'lib/browser';
+import { MediaQueriesProvider } from 'lib/media-queries';
 import { ComposeProviders } from 'lib/utils';
 import { SampleModel } from 'models/sample';
 
@@ -41,7 +41,7 @@ class MyApp extends App<AppWithLayoutProps> {
 		}
 
 		const providers = [
-			<BrowserProvider key={0} initialData={pageProps} />,
+			<MediaQueriesProvider key={0} initialData={pageProps} />,
 			<SampleModel.Provider key={1} />,
 		];
 

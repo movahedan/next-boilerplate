@@ -36,12 +36,8 @@ describe('<Homepage>', () => {
 				data: {
 					message: 'Message from getServerSideProps',
 				},
-				browser: {
-					mediaQueries: {
-						lg: false,
-						md: false,
-						sm: true,
-					},
+				mediaQueries: {
+					isMobile: false,
 				},
 			},
 		});
