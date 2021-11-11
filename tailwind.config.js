@@ -1,5 +1,7 @@
 // @ts-check
 
+const toRem = (value) => `${value / 16}rem`;
+
 /**
  * @type {import("tailwindcss/tailwind-config").TailwindConfig}
  **/
@@ -8,60 +10,127 @@ module.exports = {
 	darkMode: false,
 	theme: {
 		screens: {
-			sm: '480px',
-			md: '768px',
-			lg: '1280px',
+			sm: toRem(480),
+			md: toRem(768),
+			lg: toRem(1280),
 		},
+		backgroundColor: {
+			white: '#FFFFFF',
+			dark: '#212121',
+		},
+		textColor: {
+			white: '#FFFFFF',
+			black: '#000000',
+			primary: {
+				default: '#424242',
+				light: '#BDBDBD',
+			},
+			secondary: '#4DF8A6',
+		},
+		// Disabling font-related rules to force using typography system
+		fontSize: {},
+		lineHeight: {},
+		fontWeight: {},
+		fontFamily: {},
+		typography: {
+			'heading-sm': {
+				css: {
+					fontFamily: ['sans-serif', 'Roboto'],
+					fontSize: toRem(14),
+					lineHeight: toRem(18),
+					fontWeight: 'bold',
+					maxWidth: toRem(640),
+				},
+			},
+			heading: {
+				css: {
+					fontFamily: ['sans-serif', 'Roboto'],
+					fontSize: toRem(16),
+					lineHeight: toRem(24),
+					fontWeight: 'bold',
+					maxWidth: toRem(640),
+				},
+			},
+			'heading-lg': {
+				css: {
+					fontFamily: ['sans-serif', 'Roboto'],
+					fontSize: toRem(18),
+					lineHeight: toRem(28),
+					fontWeight: 'bold',
+					maxWidth: toRem(640),
+				},
+			},
+			'heading-xl': {
+				css: {
+					fontFamily: ['sans-serif', 'Roboto'],
+					fontSize: toRem(24),
+					lineHeight: toRem(42),
+					fontWeight: 'bold',
+					maxWidth: toRem(640),
+				},
+			},
+
+			sm: {
+				css: {
+					fontFamily: ['sans-serif', 'Roboto'],
+					fontSize: toRem(12),
+					lineHeight: toRem(14),
+					fontWeight: 'normal',
+					maxWidth: toRem(640),
+				},
+			},
+			DEFAULT: {
+				css: {
+					fontFamily: ['sans-serif', 'Roboto'],
+					fontSize: toRem(14),
+					lineHeight: toRem(18),
+					fontWeight: 'normal',
+					maxWidth: toRem(640),
+				},
+			},
+			lg: {
+				css: {
+					fontFamily: ['sans-serif', 'Roboto'],
+					fontSize: toRem(18),
+					lineHeight: toRem(28),
+					fontWeight: 'normal',
+					maxWidth: toRem(640),
+				},
+			},
+			xl: {
+				css: {
+					fontFamily: ['sans-serif', 'Roboto'],
+					fontSize: toRem(24),
+					lineHeight: toRem(42),
+					fontWeight: 'normal',
+					maxWidth: toRem(640),
+				},
+			},
+		},
+
 		extend: {
 			width: {
-				'240px': '15rem',
+				'240px': toRem(240),
 			},
 			minHeight: {
-				'24px': '1.5rem',
-			},
-			lineHeight: {
-				'14px': '0.875rem',
-				'18px': '1.125rem',
-				'24px': '1.5rem',
-				'28px': '1.758rem',
-				'42px': '2.636875rem',
-			},
-			fontSize: {
-				'12px': '0.76rem',
-				'14px': '0.875rem',
-				'18px': '1.125rem',
-				'24px': '1.5rem',
-				'36px': '1.625rem',
-			},
-			fontWeight: {
-				normal: 'normal',
-				bold: 'bold',
-			},
-			textColor: {
-				primary: {
-					default: '#424242',
-					light: '#BDBDBD',
-					'on-dark-bg': '#FFFFFF',
-				},
-				secondary: '#4DF8A6',
-			},
-			backgroundColor: {
-				white: '#FFFFFF',
-				dark: '#212121',
-				lightopacity: 'rgba(255, 255, 255, 0.1)',
+				'24px': toRem(24),
 			},
 			maxWidth: {
 				screen: '100vw',
-				'640px': '40rem',
+				'640px': toRem(640),
 			},
 		},
 	},
 	variants: {
 		extend: {
-			margin: ['last', 'responsive'],
+			margin: ['first', 'last', 'responsive'],
 		},
 	},
-	plugins: [],
+	plugins: [
+		require('@tailwindcss/typography'),
+		require('@tailwindcss/forms'),
+		require('@tailwindcss/line-clamp'),
+	],
 	xwind: {
 		mode: 'objectstyles',
 	},

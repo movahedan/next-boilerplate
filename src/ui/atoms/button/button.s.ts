@@ -3,12 +3,12 @@ import xw from 'xwind';
 
 const buttonSubStyle = {
 	base: xw`
-		relative inline-block items-center justify-center align-middle 
-		break-words font-bold text-center text-white 
+		relative inline-flex items-center justify-center align-middle 
+		break-words text-center
 		pointer-events-auto cursor-pointer 
 		outline-none appearance-none select-none
 
-		disabled:cursor-not-allowed disabled:opacity-25
+		text-white disabled:cursor-not-allowed disabled:opacity-25
 	`,
 	beforeAfter: xw`rounded-full`,
 	hover: xw`ease-in top-0 bottom-0 left-0 right-0`,
@@ -25,9 +25,9 @@ const buttonSubStyle = {
 		absolute top-1 bottom-1 right-1 left-1
 	`,
 	sizeVariant: {
-		small: xw`py-2 px-6`,
-		medium: xw`py-3 px-8`,
-		large: xw`py-4 px-12`,
+		small: xw`py-2 px-6 prose-sm`,
+		medium: xw`py-3 px-8 prose`,
+		large: xw`py-4 px-12 prose-lg`,
 	},
 };
 

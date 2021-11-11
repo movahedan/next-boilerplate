@@ -9,8 +9,9 @@ import { MediaQueriesProvider } from 'lib/media-queries';
 import { ComposeProviders } from 'lib/utils';
 import { SampleModel } from 'models/sample';
 
-import { fontLinksProps, globalStyles, xwindGlobalStyles } from 'constants/css';
 import { getDefaultNextSeoConfig } from 'constants/seo';
+
+import { fontLinksProps, globalStyles, xwindGlobalStyles } from 'ui/utils';
 
 import Error from './_error';
 

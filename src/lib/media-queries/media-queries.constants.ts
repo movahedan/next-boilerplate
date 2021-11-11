@@ -1,9 +1,9 @@
-import { tailwindConfig } from 'lib/utils';
+import { tailwindTheme } from 'lib/utils';
 
 import type { ScreenNames } from './media-queries.d';
 
 export const mediaQueriesEntries: [ScreenNames, string][] = Object.entries(
-	tailwindConfig.theme.screens
+	tailwindTheme.theme.screens
 ).map(([key, value], index) => [
 	key as ScreenNames,
 	`(min-width: ${index === 0 ? '0' : value})`,

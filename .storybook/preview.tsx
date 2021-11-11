@@ -3,7 +3,7 @@ import { addDecorator, Parameters } from '@storybook/react';
 import { configureActions } from '@storybook/addon-actions';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
 
-import { globalStyles, xwindGlobalStyles } from '../src/constants/css';
+import { globalStyles, xwindGlobalStyles } from '../src/ui/utils';
 
 configureActions({
 	depth: 5,

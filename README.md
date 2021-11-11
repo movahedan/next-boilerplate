@@ -29,6 +29,7 @@ yarn after-check
 
 ### Tasks
 
+- Install tailwind font plugin
 -	Implement a minimal component library (with the help of headless ui)
 - Setup Fetch and SWR
 - Setup a cdn service for pictures (cloudflare)
