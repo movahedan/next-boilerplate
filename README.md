@@ -43,7 +43,7 @@ yarn after-check
 - [x] Setup jest config and next-page-tester
 - [x] Setup cypress minimal config
 - [x] Setup workflow, lint-staged, lint, tests
-- [x] Setup emotion with tailwind and postcss
+- [x] Setup emotion with tailwind and postcss, configure typography
 - [x] Setup storybook
 -	[x] Setup Media query module (synced with tailwind and support SSR)
 - [x] Setup optimized google font
