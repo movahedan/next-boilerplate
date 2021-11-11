@@ -4,7 +4,10 @@ exports[`<Button> should match is's snapshot 1`] = `
 .emotion-0 {
   --tw-text-opacity: 1;
   position: relative;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -15,9 +18,7 @@ exports[`<Button> should match is's snapshot 1`] = `
   justify-content: center;
   vertical-align: middle;
   overflow-wrap: break-word;
-  font-weight: bold;
   text-align: center;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
   pointer-events: auto;
   cursor: pointer;
   outline: 2px solid transparent;
@@ -30,6 +31,7 @@ exports[`<Button> should match is's snapshot 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
 .emotion-0:disabled {
@@ -42,6 +44,12 @@ exports[`<Button> should match is's snapshot 1`] = `
   padding-bottom: 0.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  font-family: sans-serif;
+  font-family: Roboto;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  font-weight: normal;
+  max-width: 40rem;
 }
 
 .emotion-0.medium {
@@ -49,6 +57,12 @@ exports[`<Button> should match is's snapshot 1`] = `
   padding-bottom: 0.75rem;
   padding-left: 2rem;
   padding-right: 2rem;
+  font-family: sans-serif;
+  font-family: Roboto;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: normal;
+  max-width: 40rem;
 }
 
 .emotion-0.large {
@@ -56,6 +70,12 @@ exports[`<Button> should match is's snapshot 1`] = `
   padding-bottom: 1rem;
   padding-left: 3rem;
   padding-right: 3rem;
+  font-family: sans-serif;
+  font-family: Roboto;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: normal;
+  max-width: 40rem;
 }
 
 .emotion-0:hover:not(:disabled):after {
@@ -154,7 +174,10 @@ exports[`<Button> should match is's snapshot for loading state: loading 1`] = `
 .emotion-0 {
   --tw-text-opacity: 1;
   position: relative;
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -165,9 +188,7 @@ exports[`<Button> should match is's snapshot for loading state: loading 1`] = `
   justify-content: center;
   vertical-align: middle;
   overflow-wrap: break-word;
-  font-weight: bold;
   text-align: center;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
   pointer-events: auto;
   cursor: pointer;
   outline: 2px solid transparent;
@@ -180,6 +201,7 @@ exports[`<Button> should match is's snapshot for loading state: loading 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
 .emotion-0:disabled {
@@ -192,6 +214,12 @@ exports[`<Button> should match is's snapshot for loading state: loading 1`] = `
   padding-bottom: 0.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  font-family: sans-serif;
+  font-family: Roboto;
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  font-weight: normal;
+  max-width: 40rem;
 }
 
 .emotion-0.medium {
@@ -199,6 +227,12 @@ exports[`<Button> should match is's snapshot for loading state: loading 1`] = `
   padding-bottom: 0.75rem;
   padding-left: 2rem;
   padding-right: 2rem;
+  font-family: sans-serif;
+  font-family: Roboto;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: normal;
+  max-width: 40rem;
 }
 
 .emotion-0.large {
@@ -206,6 +240,12 @@ exports[`<Button> should match is's snapshot for loading state: loading 1`] = `
   padding-bottom: 1rem;
   padding-left: 3rem;
   padding-right: 3rem;
+  font-family: sans-serif;
+  font-family: Roboto;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: normal;
+  max-width: 40rem;
 }
 
 .emotion-0:hover:not(:disabled):after {
