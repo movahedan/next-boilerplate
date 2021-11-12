@@ -1,6 +1,7 @@
 // @ts-check
 
 const toRem = (value) => `${value / 16}rem`;
+const fontList = ['sans-serif', 'Red Hat Mono'];
 
 /**
  * @type {import("tailwindcss/tailwind-config").TailwindConfig}
@@ -35,7 +36,7 @@ module.exports = {
 		typography: {
 			'heading-sm': {
 				css: {
-					fontFamily: ['sans-serif', 'Roboto'],
+					fontFamily: fontList,
 					fontSize: toRem(14),
 					lineHeight: toRem(18),
 					fontWeight: 'bold',
@@ -44,7 +45,7 @@ module.exports = {
 			},
 			heading: {
 				css: {
-					fontFamily: ['sans-serif', 'Roboto'],
+					fontFamily: fontList,
 					fontSize: toRem(16),
 					lineHeight: toRem(24),
 					fontWeight: 'bold',
@@ -53,7 +54,7 @@ module.exports = {
 			},
 			'heading-lg': {
 				css: {
-					fontFamily: ['sans-serif', 'Roboto'],
+					fontFamily: fontList,
 					fontSize: toRem(18),
 					lineHeight: toRem(28),
 					fontWeight: 'bold',
@@ -62,7 +63,7 @@ module.exports = {
 			},
 			'heading-xl': {
 				css: {
-					fontFamily: ['sans-serif', 'Roboto'],
+					fontFamily: fontList,
 					fontSize: toRem(24),
 					lineHeight: toRem(42),
 					fontWeight: 'bold',
@@ -72,7 +73,7 @@ module.exports = {
 
 			sm: {
 				css: {
-					fontFamily: ['sans-serif', 'Roboto'],
+					fontFamily: fontList,
 					fontSize: toRem(12),
 					lineHeight: toRem(14),
 					fontWeight: 'normal',
@@ -81,7 +82,7 @@ module.exports = {
 			},
 			DEFAULT: {
 				css: {
-					fontFamily: ['sans-serif', 'Roboto'],
+					fontFamily: fontList,
 					fontSize: toRem(14),
 					lineHeight: toRem(18),
 					fontWeight: 'normal',
@@ -90,7 +91,7 @@ module.exports = {
 			},
 			lg: {
 				css: {
-					fontFamily: ['sans-serif', 'Roboto'],
+					fontFamily: fontList,
 					fontSize: toRem(18),
 					lineHeight: toRem(28),
 					fontWeight: 'normal',
@@ -99,7 +100,7 @@ module.exports = {
 			},
 			xl: {
 				css: {
-					fontFamily: ['sans-serif', 'Roboto'],
+					fontFamily: fontList,
 					fontSize: toRem(24),
 					lineHeight: toRem(42),
 					fontWeight: 'normal',
