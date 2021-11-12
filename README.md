@@ -29,7 +29,6 @@ yarn after-check
 
 ### Tasks
 
-- Install tailwind font plugin
 -	Implement a minimal component library (with the help of headless ui)
 - Setup Fetch and SWR
 - Setup a cdn service for pictures (cloudflare)
@@ -40,11 +39,11 @@ yarn after-check
 - [x] Setup directory structure
 - [x] Setup well documented eslint config
 - [x] Setup declaring global types
-- [x] Setup jest config and next-page-tester
-- [x] Setup cypress minimal config
+- [x] Setup Jest config and next-page-tester
+- [x] Setup Cypress minimal config
 - [x] Setup workflow, lint-staged, lint, tests
-- [x] Setup emotion with tailwind and postcss, configure typography
-- [x] Setup storybook
+- [x] Setup Emotion and PostCSS with typography configured Tailwind
+- [x] Setup UI library with Storybook
 -	[x] Setup Media query module (synced with tailwind and support SSR)
 - [x] Setup optimized google font
 - [x] Setup layout structuring per page
