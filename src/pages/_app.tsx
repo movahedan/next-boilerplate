@@ -6,12 +6,16 @@ import { Fragment } from 'react';
 
 import { AnalyticsHeadScript } from 'lib/analytics';
 import { MediaQueriesProvider } from 'lib/media-queries';
-import { ComposeProviders } from 'lib/utils';
 import { SampleModel } from 'models/sample';
 
 import { getDefaultNextSeoConfig } from 'constants/seo';
 
-import { fontLinksProps, globalStyles, xwindGlobalStyles } from 'ui/utils';
+import {
+	ComposeProviders,
+	fontLinksProps,
+	globalStyles,
+	xwindGlobalStyles,
+} from 'ui/utils';
 
 import Error from './_error';
 
