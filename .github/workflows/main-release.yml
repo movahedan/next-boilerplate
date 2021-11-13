@@ -4,7 +4,7 @@ jobs:
   main-release:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🎉 A ${{ github.event_name }} event running on a ${{ runner.os }} server."
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v2
@@ -16,4 +16,4 @@ jobs:
       - run: yarn install
       - run: echo "🖥️ Testing your changes"
       - run: yarn deploy:build
-      - run: echo "🍏 Congratulations! Your changes pass all the tests"
+      - run: echo "🍏 Congratulations! The tests still passes."
