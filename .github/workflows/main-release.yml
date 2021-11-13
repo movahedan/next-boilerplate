@@ -16,5 +16,4 @@ jobs:
       - run: yarn install
       - run: echo "🖥️ Testing your changes"
       - run: yarn deploy:build
-      - run: yarn deploy:clean
       - run: echo "🍏 Congratulations! Your changes pass all the tests"
