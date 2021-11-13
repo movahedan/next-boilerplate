@@ -24,8 +24,7 @@
     "cypress:clean": "kill -9 $(lsof -iTCP -sTCP:LISTEN | grep 3000 | awk '{print $2}');",
     "/////////////////// deploy /////////////////////////////////////////////////////////////": "",
     "deploy:check": "yarn type-check && yarn lint && yarn test",
-    "deploy:build": "yarn deploy:check && yarn build:cypress",
-    "deploy:clean": "yarn clean:cypress"
+    "deploy:build": "yarn deploy:check && yarn cypress:build"
   },
   "sideEffects": [
     "./public/*",
