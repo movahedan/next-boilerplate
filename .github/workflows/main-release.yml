@@ -1,5 +1,7 @@
 name: GitHub Actions Demo
-on: [push]
+on:
+  push:
+    branches: [ main ]
 jobs:
   main-release:
     runs-on: ubuntu-latest
@@ -9,11 +11,33 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - name: Setup node
+     - name: Setup node
         uses: actions/setup-node@v2
         with:
           node-version: '16.2.0'
       - run: echo "📦 Installing packages" && yarn install
-      - run: echo "🖥️ Pre testing" && yarn deploy:test
+      
+      - name: 🖥️ Testing
+        run: |
+          SUMMARY="$(yarn test --coverage --coverageReporters='text-summary' | tail -2 | head -1)"
+          TOKENS=($SUMMARY)
+          echo "COVERAGE=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
+          REF=${{ github.ref }}
+          # var PATHS = REF.split('/');
+          IFS='/' read -ra PATHS <<< "$REF"
+          BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
+          echo $BRANCH_NAME
+          echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
+      - name: Create the Badge
+        uses: schneegans/dynamic-badges-action@v1.0.0
+        with:
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: 49ff7044879e43a1daf430086b622c53
+          filename: next-boilerplate__heads_main.json
+          label: Test Coverage
+          message: ${{ env.COVERAGE }}
+          color: green
+          namedLogo: jest
+      - run: echo "🖥️ Building" && yarn build --profile
       - run: echo "🖥️ Run e2e testing" && yarn deploy:e2e
       - run: echo "✅ Congratulations!"
