@@ -16,20 +16,13 @@ jobs:
         with:
           node-version: '16.2.0'
       - run: echo "📦 Installing packages" && yarn install
-      
-      - name: 🖥️ Testing
+      - name: Run echo "🖥️ Run unit tests with coverage"
         run: |
-          SUMMARY="$(yarn test --coverage --coverageReporters='text-summary' | tail -2 | head -1)"
+          SUMMARY="$(yarn test --coverage --coverageReporters=text-summary | tail -3 | head -1)"
           TOKENS=($SUMMARY)
           echo "COVERAGE=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
-          REF=${{ github.ref }}
-          # var PATHS = REF.split('/');
-          IFS='/' read -ra PATHS <<< "$REF"
-          BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
-          echo $BRANCH_NAME
-          echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
-      - name: Create the Badge
-        uses: schneegans/dynamic-badges-action@v1.0.0
+      - name: Create Coverage Badge
+        uses: schneegans/dynamic-badges-action@v1.1.0
         with:
           auth: ${{ secrets.GIST_SECRET }}
           gistID: 49ff7044879e43a1daf430086b622c53
