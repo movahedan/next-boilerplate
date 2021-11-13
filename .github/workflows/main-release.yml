@@ -13,9 +13,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16.2.0'
-      - run: yarn install
-      - run: echo "😒 Testing changes"
+        run: yarn install
       - run: yarn deploy:test
-      - run: echo "🤨 E2E Testing"
       - run: yarn deploy:build
-      - run: echo "😬 Congratulations! The tests still passes."
+      - run: echo "Congratulations!"
