@@ -15,8 +15,6 @@ jobs:
           node-version: '16.2.0'
       - run: yarn install
       - run: echo "🖥️ Testing your changes"
-      - run: yarn deploy:check
-      - run: echo "🍏 Congratulations! deploy:check was ${{ job.status }}."
       - run: yarn deploy:build
       - run: yarn deploy:clean
       - run: echo "🍏 Congratulations! Your changes pass all the tests"
