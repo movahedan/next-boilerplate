@@ -19,7 +19,7 @@ jobs:
       - name: Run echo "🖥️ Building"
         run: |
           yarn build --profile
-          if $?=0
+          if (( $? == 0 ))
           then 
             BUILD_STATUS=passing
             BUILD_STATUS_COLOR=green
