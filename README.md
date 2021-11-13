@@ -3,28 +3,55 @@
 This project is created by Soheil Movahedan, feel free to leave
 a comment or even better! A Pull request and make it better.
 
-## Getting Started
+## Running
 
-First, run the development server:
+After cloning repository, go to the directory you've cloned it and:
 
+Run the development server:
 ```bash
 yarn dev
 ```
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-To check your staged changes status:
-It runs `yarn type-check` and `yarn lint` and `yarn test`.
 
+Run the storybook:
 ```bash
-yarn commit-check
+yarn storybook:dev
+```
+Open [http://localhost:6006](http://localhost:6006) with your browser to see the result.
+
+Run the cypress:
+```bash
+yarn cypress:dev
+```
+The cypress application will comes up and you can test some flow.
+
+## Contributing
+
+Fist change the thing you with to be changed.
+
+To check your staged changes status:
+```bash
+yarn deploy:check
+```
+It runs `yarn type-check`, `yarn lint` and `yarn test` together to see if there is any conflicts between the changes and the previous state of repo.
+
+[Note:] If you change tailwind.config.js, please run the following command to sync tailwind config between JS and CSS.
+```bash
+yarn tailwind
 ```
 
-To do pre-release check:
+## Build and deploy
 
 ```bash
-yarn release-check
-yarn after-check
+yarn deploy:check
+yarn deploy:build
+yarn deploy:clean
+```
+
+To build storybook, run the following command:
+```bash
+yarn storybook:build
 ```
 
 ### Tasks
@@ -34,7 +61,6 @@ yarn after-check
 - Setup a cdn service for pictures (cloudflare)
 - Setup a picture optimizer and integrate it with NextImage
 - Setup a link preview service
-- Deploy on vercel
 - Setup github actions
 - [x] Setup directory structure
 - [x] Setup well documented eslint config
@@ -50,6 +76,7 @@ yarn after-check
 -	[x] Setup Error Handling and Sentry
 - [x] Setup SEO optimization (NextSeo, NextSitemap)
 - [x] Setup Analytics
+- [x] Deploy on vercel
 
 ### Features to have
 - Resume page
