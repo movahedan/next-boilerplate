@@ -38,6 +38,7 @@ class MyApp extends App<AppWithLayoutProps> {
 			return (
 				<>
 					<IndependentProviders />
+					{/* @ts-ignore */}
 					<Error />
 				</>
 			);

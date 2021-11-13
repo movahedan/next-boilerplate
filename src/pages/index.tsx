@@ -15,6 +15,13 @@ interface Props {
 const IndexPage: NextPageWithLayout<Props> = ({ data: { message } }) => (
 	<>
 		<NextSeo canonical={`${websiteBaseUrl}/`} />
+		<button
+			onClick={() => {
+				throw Error('error');
+			}}
+		>
+			Error
+		</button>
 		<h1>{message}</h1>
 	</>
 );

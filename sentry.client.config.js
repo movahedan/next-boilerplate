@@ -8,7 +8,6 @@ import { SENTRY_DSN } from './envs';
 
 Sentry.init({
 	dsn: SENTRY_DSN,
-	debug: false,
 	// Adjust this value in production, or use tracesSampler for greater control
 	tracesSampleRate: 1.0,
 	// ...

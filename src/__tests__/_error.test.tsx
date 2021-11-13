@@ -21,6 +21,7 @@ describe.skip('<ErrorPage>', () => {
 	});
 
 	it('should match snapshot', async () => {
+		// @ts-ignore
 		const component = create(<ErrorPage />).toJSON();
 		expect(component).toMatchSnapshot();
 

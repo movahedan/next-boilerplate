@@ -47,3 +47,9 @@ yarn-error.log*
 
 # ts build info
 tsconfig.tsbuildinfo
+
+# Sentry
+.sentryclirc
+
+# Sentry
+.sentryclirc
