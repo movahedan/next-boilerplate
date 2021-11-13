@@ -18,8 +18,8 @@
     "storybook:build": "build-storybook -s public",
     "tailwind": "./tailwind.generate.config.js && next lint --fix -d ./src/lib/utils",
 
-    "deploy:check": "yarn build --profile && yarn test",
-    "deploy:build": "yarn start & yarn cypress:build",
+    "deploy:test": "yarn build --profile && yarn test",
+    "deploy:e2e": "yarn start & yarn cypress:build",
     
     "postinstall": "husky install",
     "postbuild": "next-sitemap",
