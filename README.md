@@ -1,23 +1,23 @@
-# Personal project
+# Next.js opinionated boilerplate
 
 A well-structured production-ready Next.js boilerplate with Typescript, Jest, React testing library, Storybook, Emotion, Tailwind, PostCSS, Fetch, Bundle Analyzer, Per page Layouts, Custom models 
 
 ![Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/movahedan/49ff7044879e43a1daf430086b622c53/raw/next-boilerplate__heads_main.json)
 ![Build Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/movahedan/49ff7044879e43a1daf430086b622c53/raw/next-boilerplate__build_badge.json)
 
-##### Project maintenance
+#### Project maintenance
 - [x] Setup strong Linter, lint-staged, husky
 - [x] Setup Jest and react-test-renderer
 - [x] Setup Cypress
 - [x] Setup GitHub actions
 - [x] Deploy on vercel
-##### Styling
+#### Styling
 - [x] Setup Emotion and PostCSS with fully-configured Tailwind
 - [x] Setup UI library (Storybook installed with some helper functions)
 -	[x] Setup MediaQuery module (supports Tailwind and SSR)
 - [x] Setup optimized, easy to change, test and scale GoogleFont
 -	Implement a minimal component library (with the help of headless ui)
-##### Application development
+#### Application development
 - [x] Setup directory structure
 - [x] Setup declaring global types
 - [x] Setup Layout structure (supports PerPageLayout)
@@ -55,12 +55,14 @@ Fist change the thing you with to be changed and check your staged changes statu
 yarn check
 ```
 
-- [Note] If you've changed tailwind.config.js, please run the following command to sync it's config between CSS & JS.
+- If you've changed `tailwind.config.js`, please run the following command to sync it's config between CSS & JS.
 ```bash
 yarn tailwind
 ```
 
 ## Build and deploy
+
+To check for a clean deployment and run the project run the following commands, they will take care of unit testing, e2e testing and create production-optimized build of application.
 
 ```bash
 yarn deploy:test
