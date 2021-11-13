@@ -21,11 +21,11 @@ jobs:
           yarn build --profile
           if (( $? == 0 ))
           then 
-            BUILD_STATUS=passing
-            BUILD_STATUS_COLOR=green
+            echo "BUILD_STATUS=passing" >> $GITHUB_ENV
+            echo "BUILD_STATUS_COLOR=green" >> $GITHUB_ENV
           else 
-            BUILD_STATUS=failed
-            BUILD_STATUS_COLOR=red
+            echo "BUILD_STATUS=failed" >> $GITHUB_ENV
+            echo "BUILD_STATUS_COLOR=red" >> $GITHUB_ENV
           fi
       - name: Create Build Badge
         uses: schneegans/dynamic-badges-action@v1.1.0
