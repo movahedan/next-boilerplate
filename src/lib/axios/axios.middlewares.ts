@@ -1,6 +1,3 @@
-import { captureException } from '@sentry/minimal';
-import { Severity } from '@sentry/types';
-
 import type { AxiosClientConfigProps } from './axios.d';
 
 // TODO rotationHandler
@@ -30,16 +27,10 @@ export const axiosClientErrorMiddleware =
 
 					return await rotationHandler();
 				} else {
-					captureException(requestPayload, {
-						level: Severity.Critical,
-					});
 					toLogoutPage(asPath);
 				}
 			} else if (status === 500) {
 				// if (global.window) toast500();
-				captureException(requestPayload, {
-					level: Severity.Critical,
-				});
 			} else if (status === 502) {
 				// if (global.window) toast502();
 			} else if (status === 403) {

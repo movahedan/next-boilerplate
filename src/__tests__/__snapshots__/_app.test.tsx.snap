@@ -15,55 +15,7 @@ exports[`_app.tsx Layout per page should match snapshot while a layout is attach
 exports[`_app.tsx should match snapshot 1`] = `null`;
 
 exports[`_app.tsx should match snapshot while an error occurred: error 1`] = `
-<div
-  style={
-    Object {
-      "alignItems": "center",
-      "background": "#fff",
-      "color": "#000",
-      "display": "flex",
-      "flexDirection": "column",
-      "fontFamily": "-apple-system, BlinkMacSystemFont, Roboto, \\"Segoe UI\\", \\"Fira Sans\\", Avenir, \\"Helvetica Neue\\", \\"Lucida Grande\\", sans-serif",
-      "height": "100vh",
-      "justifyContent": "center",
-      "textAlign": "center",
-    }
-  }
->
-  <div>
-    <style
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "body { margin: 0 }",
-        }
-      }
-    />
-    <div
-      style={
-        Object {
-          "display": "inline-block",
-          "height": "49px",
-          "lineHeight": "49px",
-          "textAlign": "left",
-          "verticalAlign": "middle",
-        }
-      }
-    >
-      <h2
-        style={
-          Object {
-            "fontSize": "14px",
-            "fontWeight": "normal",
-            "lineHeight": "inherit",
-            "margin": 0,
-            "padding": 0,
-          }
-        }
-      >
-        Application error: a client-side exception has occurred (see the browser console for more information)
-        .
-      </h2>
-    </div>
-  </div>
-</div>
+<p>
+  An error occurred on client
+</p>
 `;
