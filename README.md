@@ -1,23 +1,27 @@
 # Next.js opinionated boilerplate
 
-A well-structured production-ready Next.js boilerplate with Typescript, Jest, React testing library, Storybook, Emotion, Tailwind, PostCSS, Fetch, Bundle Analyzer, Per page Layouts, Custom models 
+A well-structured production-ready Next.js boilerplate with Typescript, Jest, react-testing-library, Storybook, Emotion, Tailwind, PostCSS, Fetch, Bundle Analyzer, Per page Layouts, Custom models 
 
 ![Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/movahedan/49ff7044879e43a1daf430086b622c53/raw/next-boilerplate__heads_main.json)
 ![Build Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/movahedan/49ff7044879e43a1daf430086b622c53/raw/next-boilerplate__build_badge.json)
 
-#### Project maintenance
+## Benefits
+
+### Project maintenance
 - [x] Setup strong Linter, lint-staged, husky
 - [x] Setup Jest and react-test-renderer
 - [x] Setup Cypress
 - [x] Setup GitHub actions
 - [x] Deploy on vercel
-#### Styling
+- Dockerize it
+- Configure GitHub actions for pull requests
+### Styling
 - [x] Setup Emotion and PostCSS with fully-configured Tailwind
 - [x] Setup UI library (Storybook installed with some helper functions)
 -	[x] Setup MediaQuery module (supports Tailwind and SSR)
 - [x] Setup optimized, easy to change, test and scale GoogleFont
 -	Implement a minimal component library (with the help of headless ui)
-#### Application development
+### Application development
 - [x] Setup directory structure
 - [x] Setup declaring global types
 - [x] Setup Layout structure (supports PerPageLayout)
@@ -25,6 +29,7 @@ A well-structured production-ready Next.js boilerplate with Typescript, Jest, Re
 - [x] Setup Analytics tools with separate business level abstracting
 -	Setup Error Handling and Reporting
 - Setup Fetch and SWR
+- Setup Redux
 
 ## Running
 
@@ -47,7 +52,6 @@ Open [http://localhost:6006](http://localhost:6006) with your browser to see the
 yarn cypress:dev
 ```
 
-
 ## Contributing
 
 Fist change the thing you with to be changed and check your staged changes status with the following command.
@@ -55,7 +59,7 @@ Fist change the thing you with to be changed and check your staged changes statu
 yarn check
 ```
 
-- If you've changed `tailwind.config.js`, please run the following command to sync it's config between CSS & JS.
+If you've changed `tailwind.config.js`, please run the following command to sync it's config between CSS & JS.
 ```bash
 yarn tailwind
 ```
@@ -76,6 +80,7 @@ yarn storybook:build
 ```
 
 ### Features to have
+
 - Resume page
 - Blog (with comments)
 - Authentication
