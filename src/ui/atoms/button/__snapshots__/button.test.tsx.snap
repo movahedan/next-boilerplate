@@ -45,7 +45,7 @@ exports[`<Button> should match is's snapshot 1`] = `
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   font-family: sans-serif;
-  font-family: Roboto;
+  font-family: Red Hat Mono;
   font-size: 0.75rem;
   line-height: 0.875rem;
   font-weight: normal;
@@ -58,7 +58,7 @@ exports[`<Button> should match is's snapshot 1`] = `
   padding-left: 2rem;
   padding-right: 2rem;
   font-family: sans-serif;
-  font-family: Roboto;
+  font-family: Red Hat Mono;
   font-size: 0.875rem;
   line-height: 1.125rem;
   font-weight: normal;
@@ -71,7 +71,7 @@ exports[`<Button> should match is's snapshot 1`] = `
   padding-left: 3rem;
   padding-right: 3rem;
   font-family: sans-serif;
-  font-family: Roboto;
+  font-family: Red Hat Mono;
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: normal;
@@ -215,7 +215,7 @@ exports[`<Button> should match is's snapshot for loading state: loading 1`] = `
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   font-family: sans-serif;
-  font-family: Roboto;
+  font-family: Red Hat Mono;
   font-size: 0.75rem;
   line-height: 0.875rem;
   font-weight: normal;
@@ -228,7 +228,7 @@ exports[`<Button> should match is's snapshot for loading state: loading 1`] = `
   padding-left: 2rem;
   padding-right: 2rem;
   font-family: sans-serif;
-  font-family: Roboto;
+  font-family: Red Hat Mono;
   font-size: 0.875rem;
   line-height: 1.125rem;
   font-weight: normal;
@@ -241,7 +241,7 @@ exports[`<Button> should match is's snapshot for loading state: loading 1`] = `
   padding-left: 3rem;
   padding-right: 3rem;
   font-family: sans-serif;
-  font-family: Roboto;
+  font-family: Red Hat Mono;
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: normal;
