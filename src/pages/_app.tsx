@@ -6,7 +6,6 @@ import { Fragment } from 'react';
 
 import { AnalyticsHeadScript } from 'lib/analytics';
 import { MediaQueriesProvider } from 'lib/media-queries';
-import { SampleModel } from 'models/sample';
 
 import { getDefaultNextSeoConfig } from 'constants/seo';
 
@@ -34,7 +33,6 @@ class MyApp extends App<AppWithLayoutProps> {
 
 	render() {
 		const { hasError } = this.state;
-		const { Component, pageProps } = this.props;
 
 		if (hasError) {
 			return (
@@ -45,11 +43,7 @@ class MyApp extends App<AppWithLayoutProps> {
 			);
 		}
 
-		const providers = [
-			<MediaQueriesProvider key={0} initialData={pageProps} />,
-			<SampleModel.Provider key={1} />,
-		];
-
+		const { Component, pageProps } = this.props;
 		const { Component: Layout = Fragment, props: lProps = {} } =
 			Component.Layout || {};
 		const layoutProps =
@@ -58,8 +52,10 @@ class MyApp extends App<AppWithLayoutProps> {
 		return (
 			<>
 				<IndependentProviders />
-				<ComposeProviders providers={providers}>
-					<Layout key={2} {...layoutProps}>
+				<ComposeProviders
+					providers={[<MediaQueriesProvider key={0} initialData={pageProps} />]}
+				>
+					<Layout {...layoutProps}>
 						<Component {...pageProps} />
 					</Layout>
 				</ComposeProviders>
