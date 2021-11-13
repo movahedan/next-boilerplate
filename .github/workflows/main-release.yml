@@ -22,8 +22,10 @@ jobs:
           if $?=0
           then 
             BUILD_STATUS=passing
+            BUILD_STATUS_COLOR=green
           else 
             BUILD_STATUS=failed
+            BUILD_STATUS_COLOR=red
           fi
       - name: Create Build Badge
         uses: schneegans/dynamic-badges-action@v1.1.0
@@ -33,8 +35,8 @@ jobs:
           filename: next-boilerplate__build_badge.json
           label: build
           message: ${{ env.BUILD_STATUS }}
-          color: green
-          namedLogo: jest
+          color: ${{ env.BUILD_STATUS_COLOR }}
+          namedLogo: esbuild
       - name: Run echo "🖥️ Run unit tests with coverage"
         run: |
           SUMMARY="$(yarn test --coverage --coverageReporters=text-summary | tail -3 | head -1)"
