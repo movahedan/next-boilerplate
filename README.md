@@ -1,45 +1,61 @@
 # Personal project
 
+A well-structured production-ready Next.js boilerplate with Typescript, Jest, React testing library, Storybook, Emotion, Tailwind, PostCSS, Fetch, Bundle Analyzer, Per page Layouts, Custom models 
+
 ![Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/movahedan/49ff7044879e43a1daf430086b622c53/raw/next-boilerplate__heads_main.json)
 ![Build Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/movahedan/49ff7044879e43a1daf430086b622c53/raw/next-boilerplate__build_badge.json)
 
-This project is created by Soheil Movahedan, feel free to leave
-a comment or even better! A Pull request and make it better.
+##### Project maintenance
+- [x] Setup strong Linter, lint-staged, husky
+- [x] Setup Jest and react-test-renderer
+- [x] Setup Cypress
+- [x] Setup GitHub actions
+- [x] Deploy on vercel
+##### Styling
+- [x] Setup Emotion and PostCSS with fully-configured Tailwind
+- [x] Setup UI library (Storybook installed with some helper functions)
+-	[x] Setup MediaQuery module (supports Tailwind and SSR)
+- [x] Setup optimized, easy to change, test and scale GoogleFont
+-	Implement a minimal component library (with the help of headless ui)
+##### Application development
+- [x] Setup directory structure
+- [x] Setup declaring global types
+- [x] Setup Layout structure (supports PerPageLayout)
+- [x] Setup SEO optimization (NextSeo, NextSitemap)
+- [x] Setup Analytics tools with separate business level abstracting
+-	Setup Error Handling and Reporting
+- Setup Fetch and SWR
 
 ## Running
 
-After cloning repository, go to the directory you've cloned it and:
+After cloning repository, go to the directory you've cloned it.
 
-Run the development server:
+##### Run the development server:
 ```bash
 yarn dev
 ```
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-
-Run the storybook:
+##### Run the storybook:
 ```bash
 yarn storybook:dev
 ```
 Open [http://localhost:6006](http://localhost:6006) with your browser to see the result.
 
-Run the cypress:
+##### Run the cypress:
 ```bash
 yarn cypress:dev
 ```
-The cypress application will comes up and you can test some flow.
+
 
 ## Contributing
 
-Fist change the thing you with to be changed.
-
-To check your staged changes status:
+Fist change the thing you with to be changed and check your staged changes status with the following command.
 ```bash
-yarn deploy:check
+yarn check
 ```
-It runs `yarn type-check`, `yarn lint` and `yarn test` together to see if there is any conflicts between the changes and the previous state of repo.
 
-[Note:] If you change tailwind.config.js, please run the following command to sync tailwind config between JS and CSS.
+- [Note] If you've changed tailwind.config.js, please run the following command to sync it's config between CSS & JS.
 ```bash
 yarn tailwind
 ```
@@ -47,39 +63,15 @@ yarn tailwind
 ## Build and deploy
 
 ```bash
-yarn deploy:check
-yarn deploy:build
-yarn deploy:clean
+yarn deploy:test
+yarn deploy:e2e
+yarn start
 ```
 
 To build storybook, run the following command:
 ```bash
 yarn storybook:build
 ```
-
-### Tasks
-
--	Implement a minimal component library (with the help of headless ui)
-- Setup Fetch and SWR
-- Setup a cdn service for pictures (cloudflare)
-- Setup a picture optimizer and integrate it with NextImage
-- Setup a link preview service
-- Setup github actions
-- [x] Setup directory structure
-- [x] Setup well documented eslint config
-- [x] Setup declaring global types
-- [x] Setup Jest config and next-page-tester
-- [x] Setup Cypress minimal config
-- [x] Setup workflow, lint-staged, lint, tests
-- [x] Setup Emotion and PostCSS with typography configured Tailwind
-- [x] Setup UI library with Storybook
--	[x] Setup Media query module (synced with tailwind and support SSR)
-- [x] Setup optimized google font
-- [x] Setup layout structuring per page
--	[x] Setup Error Handling and Sentry
-- [x] Setup SEO optimization (NextSeo, NextSitemap)
-- [x] Setup Analytics
-- [x] Deploy on vercel
 
 ### Features to have
 - Resume page
@@ -88,3 +80,6 @@ yarn storybook:build
 - Show this codebase
 - Introduce to machine learning and create an example
 - PDF on the go (with paper css)
+- Setup a cdn service for pictures (cloudflare)
+- Setup a picture optimizer and integrate it with NextImage
+- Setup a link preview service
