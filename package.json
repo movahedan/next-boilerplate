@@ -5,26 +5,25 @@
   "version": "0.3.0",
   "author": "soheil.movahhedan@gmail.com",
   "scripts": {
-    "/////////////////// basic //////////////////////////////////////////////////////////////": "",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "test": "yarn jest",
     "type-check": "tsc --project tsconfig.json --pretty --noEmit",
+    
+    "cypress": "yarn dev & yarn cypress open",
+    "cypress:build": "yarn cypress run",
+    "storybook": "start-storybook -s ./public -p 6006",
+    "storybook:build": "build-storybook -s public",
+    "tailwind": "./tailwind.generate.config.js && next lint --fix -d ./src/lib/utils",
+
+    "deploy:check": "yarn build --profile && yarn test",
+    "deploy:build": "yarn start & yarn cypress:build",
+    
     "postinstall": "husky install",
     "postbuild": "next-sitemap",
-    "/////////////////// ui /////////////////////////////////////////////////////////////////": "",
-    "tailwind": "./tailwind.generate.config.js && next lint --fix -d ./src/lib/utils",
-    "storybook:dev": "start-storybook -s ./public -p 6006",
-    "storybook:build": "build-storybook -s public",
-    "/////////////////// cypress ////////////////////////////////////////////////////////////": "",
-    "cypress:dev": "yarn dev & yarn cypress open",
-    "cypress:build": "yarn build && (yarn start & yarn cypress run)",
-    "cypress:clean": "kill -9 $(lsof -iTCP -sTCP:LISTEN | grep 3000 | awk '{print $2}');",
-    "/////////////////// deploy /////////////////////////////////////////////////////////////": "",
-    "deploy:check": "yarn type-check && yarn lint && yarn test",
-    "deploy:build": "yarn deploy:check && yarn cypress:build"
+    "kill": "kill -9 $(lsof -iTCP -sTCP:LISTEN | grep 3000 | awk '{print $2}');"
   },
   "sideEffects": [
     "./public/*",
