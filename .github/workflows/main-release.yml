@@ -15,7 +15,26 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16.2.0'
-      - run: echo "📦 Installing packages" && yarn install
+      - run: echo "📦 Installing packages" && yarn install --frozen-lockfile
+      - name: Run echo "🖥️ Building"
+        run: |
+          yarn build --profile
+          if $?=0
+          then 
+            BUILD_STATUS=passing
+          else 
+            BUILD_STATUS=failed
+          fi
+      - name: Create Build Badge
+        uses: schneegans/dynamic-badges-action@v1.1.0
+        with:
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: 49ff7044879e43a1daf430086b622c53
+          filename: next-boilerplate__build_badge.json
+          label: build
+          message: ${{ env.BUILD_STATUS }}
+          color: green
+          namedLogo: jest
       - name: Run echo "🖥️ Run unit tests with coverage"
         run: |
           SUMMARY="$(yarn test --coverage --coverageReporters=text-summary | tail -3 | head -1)"
@@ -27,10 +46,9 @@ jobs:
           auth: ${{ secrets.GIST_SECRET }}
           gistID: 49ff7044879e43a1daf430086b622c53
           filename: next-boilerplate__heads_main.json
-          label: Test Coverage
+          label: coverage
           message: ${{ env.COVERAGE }}
           color: green
           namedLogo: jest
-      - run: echo "🖥️ Building" && yarn build --profile
       - run: echo "🖥️ Run e2e testing" && yarn deploy:e2e
       - run: echo "✅ Congratulations!"
