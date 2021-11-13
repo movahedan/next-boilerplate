@@ -1,6 +1,7 @@
 # Personal project
 
 ![Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/movahedan/49ff7044879e43a1daf430086b622c53/raw/next-boilerplate__heads_main.json)
+![Build Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/movahedan/49ff7044879e43a1daf430086b622c53/raw/next-boilerplate__build_badge.json)
 
 This project is created by Soheil Movahedan, feel free to leave
 a comment or even better! A Pull request and make it better.
