@@ -2,11 +2,20 @@
 import '@testing-library/jest-dom/extend-expect';
 import { matchers } from '@emotion/jest';
 import { toHaveNoViolations } from 'jest-axe';
+import jestFetchMock from 'jest-fetch-mock';
+
+jestFetchMock.enableMocks();
+beforeEach(() => {
+	jestFetchMock.resetMocks();
+});
+afterAll(() => {
+	jestFetchMock.disableMocks();
+});
 
 expect.extend(toHaveNoViolations);
 expect.extend(matchers);
 
-// @ts-ignore
+// @ts-expect-error mocking readonly variable geoLocation
 window.navigator.geolocation = {
 	clearWatch: jest.fn(),
 	getCurrentPosition: jest.fn(),

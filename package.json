@@ -83,6 +83,7 @@
     "jest": "^27.1.0",
     "jest-axe": "^5.0.1",
     "jest-cli": "^27.1.0",
+    "jest-fetch-mock": "^3.0.3",
     "lint-staged": "^11.0.0",
     "next-page-tester": "^0.30.0",
     "next-sitemap": "^1.6.179",
