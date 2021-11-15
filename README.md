@@ -78,7 +78,7 @@ To build storybook, run the following command:
 yarn storybook:build
 ```
 
-### Features to have
+## Features to have
 
 - Resume page
 - Blog (with comments)
