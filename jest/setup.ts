@@ -6,6 +6,13 @@ import { toHaveNoViolations } from 'jest-axe';
 expect.extend(toHaveNoViolations);
 expect.extend(matchers);
 
+// @ts-ignore
+window.navigator.geolocation = {
+	clearWatch: jest.fn(),
+	getCurrentPosition: jest.fn(),
+	watchPosition: jest.fn(),
+};
+
 window.matchMedia =
 	window.matchMedia ||
 	function () {

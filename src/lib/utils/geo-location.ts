@@ -3,8 +3,8 @@ type GeoLocation = {
 	latitude: number;
 } | null;
 
-export const getGeoLocation = async (): Promise<GeoLocation> =>
-	await new Promise<GeoLocation>((resolve) => {
+export const getGeoLocation = (): Promise<GeoLocation> =>
+	new Promise<GeoLocation>((resolve) => {
 		navigator.geolocation.getCurrentPosition(
 			(position) => {
 				resolve({
