@@ -27,7 +27,6 @@ const jestConfig = {
 		'!src/**/*.stories.tsx',
 		// Hard to tests
 		'!src/pages/_error.tsx',
-		'!src/lib/axios/*.{ts,tsx}',
 	],
 
 	// The directory where Jest should output its coverage files
