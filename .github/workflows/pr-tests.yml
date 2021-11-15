@@ -1,7 +1,6 @@
-name: Release tag
-on:
-  push:
-    branches: [ main ]
+name: Pull Request Integration
+on: [ pull_request ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,14 +18,7 @@ jobs:
           node-version: '16.2.0'
 
       - uses: ./.github/workflows/_build.yml
-        with:
-          create_badge: true
-          gist_secret: ${{ secret.GIST_SECRET }}
-
       - uses: ./.github/workflows/_unit_coverage.yml
-        with:
-          create_badge: true
-          gist_secret: ${{ secret.GIST_SECRET }}
 
       - run: echo "🖥️ Run e2e testing" && yarn deploy:e2e
       - run: echo "✅ Congratulations!"
