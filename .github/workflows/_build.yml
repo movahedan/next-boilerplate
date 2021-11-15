@@ -1,0 +1,44 @@
+name: Build
+
+on:
+  workflow_call:
+    inputs:
+      create_badge:
+        default: false
+        required: false
+        type: boolean
+    secrets:
+      gist_secret:
+        required: true
+
+jobs:
+  build:
+    name: Build yarn project and add badge
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "📦 Installing packages" && yarn install --frozen-lockfile
+      - name: Run echo "🖥️ Building"
+        run: |
+          yarn build --profile
+          if [ ${{ inputs.create_badge }} == "true" ];
+          then
+            if (( $? == 0 ))
+            then 
+              echo "BUILD_STATUS=passing" >> $GITHUB_ENV
+              echo "BUILD_STATUS_COLOR=green" >> $GITHUB_ENV
+            else 
+              echo "BUILD_STATUS=failed" >> $GITHUB_ENV
+              echo "BUILD_STATUS_COLOR=red" >> $GITHUB_ENV
+            fi
+          fi
+      - name: Create Build Badge
+        if: ${{ inputs.create_badge }} == 'true'
+        uses: schneegans/dynamic-badges-action@v1.1.0
+        with:
+          auth: ${{ secrets.gist_secret }}
+          gistID: 49ff7044879e43a1daf430086b622c53
+          filename: next-boilerplate__build_badge.json
+          label: build
+          message: ${{ env.BUILD_STATUS }}
+          color: ${{ env.BUILD_STATUS_COLOR }}
+          namedLogo: esbuild

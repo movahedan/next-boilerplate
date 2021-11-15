@@ -1,0 +1,39 @@
+name: Unit tests
+
+on:
+  workflow_call:
+    inputs:
+      create_badge:
+        default: false
+        required: false
+        type: boolean
+    secrets:
+      gist_secret:
+        required: true
+
+jobs:
+  build:
+    name: Build yarn project and add badge
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run echo "🖥️ Run unit tests with coverage"
+        run: |
+          SUMMARY="$(yarn test --coverage --coverageReporters=text-summary | tail -3 | head -1)"
+          if [ ${{ inputs.create_badge }} == "true" ];
+          then
+            TOKENS=($SUMMARY)
+            echo "COVERAGE=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
+          else
+            echo $SUMMARY
+          fi
+      - name: Create Coverage Badge
+        if: ${{ inputs.create_badge }} == 'true'
+        uses: schneegans/dynamic-badges-action@v1.1.0
+        with:
+          auth: ${{ secrets.gist_secret }}
+          gistID: 49ff7044879e43a1daf430086b622c53
+          filename: next-boilerplate__heads_main.json
+          label: coverage
+          message: ${{ env.COVERAGE }}
+          color: green
+          namedLogo: jest
