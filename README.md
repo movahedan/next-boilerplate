@@ -27,8 +27,9 @@ A well-structured production-ready Next.js boilerplate with Typescript, Jest, re
 - [x] Setup Layout structure (supports PerPageLayout)
 - [x] Setup SEO optimization (NextSeo, NextSitemap)
 - [x] Setup Analytics tools with separate business level abstracting
+- [x] Setup configurable Fetch
 -	Setup Error Handling and Reporting
-- Setup Fetch and SWR
+- Setup SWR
 - Setup Redux
 
 ## Running
