@@ -11,10 +11,9 @@ A well-structured production-ready Next.js boilerplate with Typescript, Jest, re
 - [x] Setup strong Linter, lint-staged, husky
 - [x] Setup Jest and react-test-renderer
 - [x] Setup Cypress
-- [x] Setup GitHub actions
+- [x] Setup GitHub actions for main branch and pull requests
 - [x] Deploy on vercel
 - Dockerize it
-- Configure GitHub actions for pull requests
 ### Styling
 - [x] Setup Emotion and PostCSS with fully-configured Tailwind
 - [x] Setup UI library (Storybook installed with some helper functions)
