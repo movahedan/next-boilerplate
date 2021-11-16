@@ -18,11 +18,11 @@ jobs:
         with:
           node-version: '16.2.0'
 
-      - uses: ../.github/workflows/_build
+      - uses: ./.github/workflows/_build
         with:
           create_badge: true
           gist_secret: ${{ secrets.GIST_SECRET }}
-          
+
       - uses: ./.github/workflows/_unit_coverage
         with:
           create_badge: true
