@@ -16,6 +16,12 @@ jobs:
     name: Build yarn project and add badge
     runs-on: ubuntu-latest
     steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.2.0'
       - run: echo "📦 Installing packages" && yarn install --frozen-lockfile
       - name: Run echo "🖥️ Building"
         run: |
