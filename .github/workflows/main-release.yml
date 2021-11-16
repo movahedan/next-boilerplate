@@ -21,12 +21,12 @@ jobs:
       - uses: ./.github/workflows/_build.yml
         with:
           create_badge: true
-          gist_secret: ${{ secret.GIST_SECRET }}
+          gist_secret: ${{ secrets.GIST_SECRET }}
 
       - uses: ./.github/workflows/_unit_coverage.yml
         with:
           create_badge: true
-          gist_secret: ${{ secret.GIST_SECRET }}
+          gist_secret: ${{ secrets.GIST_SECRET }}
 
       - run: echo "🖥️ Run e2e testing" && yarn deploy:e2e
       - run: echo "✅ Congratulations!"
