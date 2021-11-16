@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '16.2.0'
 
-      - uses: ../.github/workflows/_build.yml@main
+      - uses: ../.github/workflows/_build.yml
         with:
           create_badge: true
           gist_secret: ${{ secrets.GIST_SECRET }}
