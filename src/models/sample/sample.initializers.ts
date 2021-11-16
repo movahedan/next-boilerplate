@@ -20,10 +20,9 @@ export const useSampleModelInitializer: UseAllProductCategoriesInitializer = (
 			initialDataRef.current === undefined && typeof setState === 'function';
 
 		if (shouldFetch) {
-			fetchSampleList().then(({ data, error }) => {
-				if (data) setState(data);
-				if (error) console.error(error);
-			});
+			fetchSampleList()
+				.then((data) => setState(data))
+				.catch(console.error);
 		}
 	}, [setState]);
 };

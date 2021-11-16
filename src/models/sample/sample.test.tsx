@@ -1,10 +1,6 @@
 import { render, waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
-import { axiosMock } from '__mocks__';
-
-import { backendEndpoints } from 'constants/endpoints';
-
 import { SampleModel } from './index';
 import { useSampleModelInitializer } from './sample.initializers';
 
@@ -14,10 +10,6 @@ import type { ReactNode } from 'react';
 const defaultData: Sample = SampleModel.mockData;
 
 describe('SampleModel', () => {
-	afterEach(() => {
-		axiosMock.reset();
-	});
-
 	let error = jest.spyOn(console, 'error').mockImplementation(() => undefined);
 	beforeEach(() => {
 		error = jest.spyOn(console, 'error').mockImplementation(() => undefined);
@@ -41,7 +33,12 @@ describe('SampleModel', () => {
 		};
 
 		it('should provide the data when initialData is given', () => {
-			axiosMock.onGet(backendEndpoints.sample()).replyOnce(200, defaultData);
+			fetchMock.mockResolvedValueOnce({
+				ok: true,
+				status: 200,
+				statusText: 'ok',
+				json: async () => defaultData,
+			} as Response);
 
 			const { getByTestId } = contextProvidedRender(<DummyContextConsumer />);
 
@@ -51,7 +48,12 @@ describe('SampleModel', () => {
 		});
 
 		it('before initialization the data should match its type', async () => {
-			axiosMock.onGet(backendEndpoints.sample()).replyOnce(200, defaultData);
+			fetchMock.mockResolvedValueOnce({
+				ok: true,
+				status: 200,
+				statusText: 'ok',
+				json: async () => defaultData,
+			} as Response);
 
 			const { getByTestId } = contextProvidedRender(
 				<DummyContextConsumer />,
@@ -66,7 +68,12 @@ describe('SampleModel', () => {
 
 	describe('initializers', () => {
 		it('should initialize sampleModel when initial value is undefined', async () => {
-			axiosMock.onGet(backendEndpoints.sample()).replyOnce(200, defaultData);
+			fetchMock.mockResolvedValueOnce({
+				ok: true,
+				status: 200,
+				statusText: 'ok',
+				json: async () => defaultData,
+			} as Response);
 
 			const setState = jest.fn();
 			renderHook(() => useSampleModelInitializer(setState));
@@ -74,7 +81,7 @@ describe('SampleModel', () => {
 		});
 
 		it('should console.error the error', async () => {
-			axiosMock.onGet(backendEndpoints.sample()).networkErrorOnce();
+			fetchMock.mockRejectOnce();
 
 			const setState = jest.fn();
 			renderHook(() => useSampleModelInitializer(setState));
@@ -82,7 +89,12 @@ describe('SampleModel', () => {
 		});
 
 		it('should not initialize sampleModel when initial value is available', async () => {
-			axiosMock.onGet(backendEndpoints.sample()).replyOnce(200, defaultData);
+			fetchMock.mockResolvedValueOnce({
+				ok: true,
+				status: 200,
+				statusText: 'ok',
+				json: async () => defaultData,
+			} as Response);
 
 			const setState = jest.fn();
 			renderHook(() => useSampleModelInitializer(setState, defaultData));

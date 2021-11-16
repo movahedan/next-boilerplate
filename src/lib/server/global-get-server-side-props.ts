@@ -1,5 +1,6 @@
-import { axiosModule } from 'lib/axios';
 import { withMediaQueriesServerSideData } from 'lib/media-queries';
+
+import { fetcherConfig } from 'constants/configs';
 
 import { setCacheHeader } from './set-cache-header';
 
@@ -8,7 +9,8 @@ import type { GlobalGetServerSideProps } from 'next';
 export const globalGetServerSideProps: GlobalGetServerSideProps =
 	(getServerSideProps, { cache } = {}) =>
 	async (ctx) => {
-		axiosModule.config.server();
+		fetcherConfig(ctx.req, ctx.res);
+
 		if (cache) {
 			setCacheHeader(ctx.res);
 		}

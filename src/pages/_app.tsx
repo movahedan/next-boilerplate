@@ -7,6 +7,7 @@ import { Fragment } from 'react';
 import { AnalyticsHeadScript } from 'lib/analytics';
 import { MediaQueriesProvider } from 'lib/media-queries';
 
+import { fetcherConfig } from 'constants/configs';
 import { getDefaultNextSeoConfig } from 'constants/seo';
 
 import {
@@ -26,6 +27,10 @@ class MyApp extends App<AppWithLayoutProps> {
 	state = {
 		hasError: false,
 	};
+
+	componentDidMount() {
+		fetcherConfig();
+	}
 
 	static getDerivedStateFromError() {
 		return { hasError: true };
