@@ -18,10 +18,12 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
+
       - name: Setup node
         uses: actions/setup-node@v2
         with:
           node-version: '16.2.0'
+
       - run: echo "📦 Installing packages" && yarn install --frozen-lockfile
       - name: Run echo "🖥️ Building"
         run: |
@@ -37,6 +39,7 @@ jobs:
               echo "BUILD_STATUS_COLOR=red" >> $GITHUB_ENV
             fi
           fi
+          
       - name: Create Build Badge
         if: ${{ inputs.create_badge }} == 'true'
         uses: schneegans/dynamic-badges-action@v1.1.0
