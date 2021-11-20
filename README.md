@@ -68,18 +68,6 @@ Open [http://localhost:6006](http://localhost:6006) with your browser to see the
 yarn cypress:dev
 ```
 
-## Contributing
-
-Fist change the thing you with to be changed and check your staged changes status with the following command.
-```bash
-yarn check
-```
-
-If you've changed `tailwind.config.js`, please run the following command to sync it's config between CSS & JS.
-```bash
-yarn tailwind
-```
-
 ## Build and deploy
 
 To check for a clean deployment and run the project run the following commands, they will take care of unit testing, e2e testing and create production-optimized build of application.
@@ -93,6 +81,18 @@ yarn start
 To build storybook, run the following command:
 ```bash
 yarn storybook:build
+```
+
+## Contributing
+
+Fist change the thing you with to be changed and check your staged changes status with the following command.
+```bash
+yarn check
+```
+
+If you've changed `tailwind.config.js`, please run the following command to sync it's config between CSS & JS.
+```bash
+yarn tailwind
 ```
 
 ## Features to have
