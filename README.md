@@ -30,6 +30,22 @@ A well-structured production-ready Next.js boilerplate with Typescript, Jest, re
 -	Setup Error Handling and Reporting
 - Setup SWR
 - Setup Redux
+- ##### Additional hooks:
+  - useAliveRef
+  - useCombinedRef
+  - useElementSize
+  - useIntersect
+  - useInfiniteLoader
+  - useResizeEffect
+  - useScrollEffect
+  - useThrottleCallback
+  - useThrottleEffect
+  - useClipboard
+  - useLocalStorageState
+  - useCookieState
+  - useNetworkStatus
+- ##### Additional components:
+  - TruncatedText
 
 ## Running
 
