@@ -10,7 +10,6 @@ export const fetcher = async <Data = unknown>(
 	configProps?: RequestInit
 ): Promise<Data> => {
 	const config = getDefaultConfig(configProps);
-	const ongoingRequest = { url, config };
 
 	return fetch(url, config)
 		.then((res) => {
@@ -25,6 +24,7 @@ export const fetcher = async <Data = unknown>(
 		})
 		.catch((error: Error) => {
 			const errorHandler = getErrorHandler();
+			const ongoingRequest = { url, config };
 
 			return errorHandler<Data>(error, ongoingRequest);
 		});
