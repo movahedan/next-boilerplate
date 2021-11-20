@@ -31,15 +31,15 @@ A well-structured production-ready Next.js boilerplate with Typescript, Jest, re
 - Setup SWR
 - Setup Redux
 ### Additional hooks
-  - useAliveRef
-  - useCombinedRef
-  - useElementSize
-  - useIntersect
+  - [x] useAliveRef
+  - [x] useCombinedRef
+  - [x] useElementSize
+  - [x] useIntersect
+  - [x] useResizeEffect
+  - [x] useScrollEffect
+  - [x] useThrottleCallback
+  - [x] useThrottleEffect
   - useInfiniteLoader
-  - useResizeEffect
-  - useScrollEffect
-  - useThrottleCallback
-  - useThrottleEffect
   - useClipboard
   - useLocalStorageState
   - useCookieState
