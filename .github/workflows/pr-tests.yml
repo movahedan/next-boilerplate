@@ -1,8 +1,9 @@
-name: Pull Request Integration
+name: Pull Request Actions
+
 on: [ pull_request ]
 
 jobs:
-  build:
+  pr-release:
     runs-on: ubuntu-latest
     steps:
       - run: echo "👋 A ${{ github.event_name }} event running on a ${{ runner.os }} server."
@@ -17,8 +18,7 @@ jobs:
         with:
           node-version: '16.2.0'
 
-      - uses: ./.github/workflows/_build.yml
-      - uses: ./.github/workflows/_unit_coverage.yml
-
+      - run: Run echo "🖥️ Building" && yarn build --profile
+      - run: echo "🖥️ Run unit tests with coverage" && yarn test
       - run: echo "🖥️ Run e2e testing" && yarn deploy:e2e
       - run: echo "✅ Congratulations!"

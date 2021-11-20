@@ -1,32 +1,58 @@
-name: Release tag
+name: Main Release Actions
+
 on:
   push:
     branches: [ main ]
+
 jobs:
-  build:
+  main-release:
     runs-on: ubuntu-latest
     steps:
       - run: echo "👋 A ${{ github.event_name }} event running on a ${{ runner.os }} server."
       - run: echo "🔎 The name of branch is ${{ github.ref }} and repository is ${{ github.repository }}."
-
       - name: Check out repository code
         uses: actions/checkout@v2
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-
       - name: Setup node
         uses: actions/setup-node@v2
         with:
           node-version: '16.2.0'
-
-      - uses: ./.github/workflows/_build
+      - run: echo "📦 Installing packages" && yarn install --frozen-lockfile
+      - name: Run echo "🖥️ Building"
+        run: |
+          yarn build --profile
+          if (( $? == 0 ))
+          then 
+            echo "BUILD_STATUS=passing" >> $GITHUB_ENV
+            echo "BUILD_STATUS_COLOR=green" >> $GITHUB_ENV
+          else 
+            echo "BUILD_STATUS=failed" >> $GITHUB_ENV
+            echo "BUILD_STATUS_COLOR=red" >> $GITHUB_ENV
+          fi
+      - name: Create Build Badge
+        uses: schneegans/dynamic-badges-action@v1.1.0
         with:
-          create_badge: true
-          gist_secret: ${{ secrets.GIST_SECRET }}
-
-      - uses: ./.github/workflows/_unit_coverage
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: 49ff7044879e43a1daf430086b622c53
+          filename: next-boilerplate__build_badge.json
+          label: build
+          message: ${{ env.BUILD_STATUS }}
+          color: ${{ env.BUILD_STATUS_COLOR }}
+          namedLogo: esbuild
+      - name: Run echo "🖥️ Run unit tests with coverage"
+        run: |
+          SUMMARY="$(yarn test --coverage --coverageReporters=text-summary | tail -3 | head -1)"
+          TOKENS=($SUMMARY)
+          echo "COVERAGE=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
+      - name: Create Coverage Badge
+        uses: schneegans/dynamic-badges-action@v1.1.0
         with:
-          create_badge: true
-          gist_secret: ${{ secrets.GIST_SECRET }}
-
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: 49ff7044879e43a1daf430086b622c53
+          filename: next-boilerplate__heads_main.json
+          label: coverage
+          message: ${{ env.COVERAGE }}
+          color: green
+          namedLogo: jest
       - run: echo "🖥️ Run e2e testing" && yarn deploy:e2e
       - run: echo "✅ Congratulations!"
