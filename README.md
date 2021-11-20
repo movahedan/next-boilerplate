@@ -30,7 +30,7 @@ A well-structured production-ready Next.js boilerplate with Typescript, Jest, re
 -	Setup Error Handling and Reporting
 - Setup SWR
 - Setup Redux
-### Additional hooks:
+### Additional hooks
   - useAliveRef
   - useCombinedRef
   - useElementSize
@@ -44,7 +44,7 @@ A well-structured production-ready Next.js boilerplate with Typescript, Jest, re
   - useLocalStorageState
   - useCookieState
   - useNetworkStatus
-### Additional components:
+### Additional components
   - TruncatedText
 
 ## Running
