@@ -92,15 +92,3 @@ If you've changed `tailwind.config.js`, please run the following command to sync
 ```bash
 yarn tailwind
 ```
-
-## Features to have
-
-- Resume page
-- Blog (with comments)
-- Authentication
-- Show this codebase
-- Introduce to machine learning and create an example
-- PDF on the go (with paper css)
-- Setup a cdn service for pictures (cloudflare)
-- Setup a picture optimizer and integrate it with NextImage
-- Setup a link preview service
