@@ -7,11 +7,12 @@ module.exports = {
 		jest: true,
 	},
 	extends: [
-		'.linters/eslint.js',
-		'.linters/tailwind.js',
-		'.linters/import.js',
-		'.linters/prettier.js',
 		'.linters/a11y.js',
+		'.linters/eslint.js',
+		'.linters/import.js',
+		'.linters/next.js',
+		'.linters/prettier.js',
+		'.linters/tailwind.js',
 		'.linters/typescript.js',
 	],
 };
