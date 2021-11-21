@@ -51,19 +51,19 @@ A well-structured production-ready Next.js boilerplate with Typescript, Jest, re
 
 After cloning repository, go to the directory you've cloned it.
 
-##### Run the development server:
+##### Run the development server
 ```bash
 yarn dev
 ```
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-##### Run the storybook:
+##### Run the storybook
 ```bash
 yarn storybook:dev
 ```
 Open [http://localhost:6006](http://localhost:6006) with your browser to see the result.
 
-##### Run the cypress:
+##### Run the cypress
 ```bash
 yarn cypress:dev
 ```
