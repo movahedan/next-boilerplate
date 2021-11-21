@@ -8,7 +8,7 @@ import {
 	initMediaQueriesContext,
 } from './media-queries.context';
 
-import type { ScreenNames, MediaQueries } from './media-queries.d';
+import type { ScreenNames, MediaQueries } from './media-queries.types';
 import type { IncomingMessage } from 'http';
 import type { FC } from 'react';
 

@@ -1,6 +1,6 @@
-import { buttonStyles } from './button.s';
+import { buttonStyles } from './button.styles';
 
-import type { ButtonProps } from './button.d';
+import type { ButtonProps } from './button.types';
 import type { FC } from 'react';
 
 export const Button: FC<ButtonProps> = ({

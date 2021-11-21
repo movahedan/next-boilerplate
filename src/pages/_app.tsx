@@ -8,8 +8,8 @@ import { SWRConfig } from 'swr';
 import { AnalyticsHeadScript } from 'lib/analytics';
 import { MediaQueriesProvider } from 'lib/media-queries';
 
-import { fetcherConfig, swrConfig } from 'constants/configs';
-import { getDefaultNextSeoConfig } from 'constants/seo';
+import { fetcherConfig, swrConfig } from 'entry/configs';
+import { getDefaultNextSeoConfig } from 'entry/seo';
 
 import {
 	ComposeProviders,

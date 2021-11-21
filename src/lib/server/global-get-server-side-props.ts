@@ -1,6 +1,6 @@
 import { withMediaQueriesServerSideData } from 'lib/media-queries';
 
-import { fetcherConfig } from 'constants/configs';
+import { fetcherConfig } from 'entry/configs';
 
 import { setCacheHeader } from './set-cache-header';
 

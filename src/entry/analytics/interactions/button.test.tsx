@@ -10,7 +10,7 @@ import {
 	expectDataLayer,
 } from 'lib/analytics/testing-utilities.test';
 
-import { trackHeaderInteractions } from 'constants/analytics';
+import { trackHeaderInteractions } from 'entry/analytics';
 
 import { interactionEventKey } from './documents';
 

@@ -1,6 +1,6 @@
 import { tailwindTheme } from 'lib/utils';
 
-import type { ScreenNames } from './media-queries.d';
+import type { ScreenNames } from './media-queries.types';
 
 export const mediaQueriesEntries: [ScreenNames, string][] = Object.entries(
 	tailwindTheme.theme.screens

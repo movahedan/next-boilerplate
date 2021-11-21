@@ -2,7 +2,7 @@ import { createContext } from 'react';
 
 import { getMatchMediaEntries } from './media-queries.constants';
 
-import type { ScreenNames, MediaQueries } from './media-queries.d';
+import type { ScreenNames, MediaQueries } from './media-queries.types';
 
 export const initMediaQueriesContext = (defaultValue: ScreenNames = 'sm') =>
 	Object.fromEntries(

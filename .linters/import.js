@@ -62,7 +62,7 @@ const importPlugin = {
 				],
 				pathGroups: [
 					{
-						pattern: 'constants/*',
+						pattern: 'entry/*',
 						group: 'internal',
 						position: 'after',
 					},

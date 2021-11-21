@@ -2,7 +2,7 @@ import { NextSeo } from 'next-seo';
 
 import { globalGetServerSideProps } from 'lib/server';
 
-import { websiteBaseUrl } from 'constants/seo';
+import { websiteBaseUrl } from 'entry/seo';
 
 import type { NextPageWithLayout } from 'next';
 

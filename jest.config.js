@@ -23,10 +23,8 @@ const jestConfig = {
 	collectCoverageFrom: [
 		'src/**/*.{ts,tsx}',
 		'!src/**/index.ts',
-		'!src/**/*.{s,d}.ts',
+		'!src/**/*.{d,types,styles}.ts',
 		'!src/**/*.stories.tsx',
-		// Hard to tests
-		'!src/pages/_error.tsx',
 	],
 
 	// The directory where Jest should output its coverage files

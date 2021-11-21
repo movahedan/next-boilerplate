@@ -6,7 +6,7 @@ import { useMediaQueries, MediaQueriesProvider } from './media-queries';
 import { mediaQueriesEntries } from './media-queries.constants';
 import { initMediaQueriesContext } from './media-queries.context';
 
-import type { ScreenNames } from './media-queries.d';
+import type { ScreenNames } from './media-queries.types';
 import type { FC, ReactNode } from 'react';
 
 describe('media-queries context', () => {

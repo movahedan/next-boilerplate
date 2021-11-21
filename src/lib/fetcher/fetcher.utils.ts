@@ -1,4 +1,4 @@
-import type { ErrorHandler } from './fetcher.d';
+import type { ErrorHandler } from './fetcher.types';
 
 let defaultConfig: RequestInit = {};
 export const getDefaultConfig = (config?: RequestInit) => ({
