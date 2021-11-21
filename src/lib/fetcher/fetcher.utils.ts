@@ -1,3 +1,5 @@
+import type { ErrorHandler } from './fetcher.d';
+
 let defaultConfig: RequestInit = {};
 export const getDefaultConfig = (config?: RequestInit) => ({
 	...defaultConfig,
@@ -7,10 +9,6 @@ export const setDefaultConfig = (config: RequestInit) => {
 	defaultConfig = config;
 };
 
-type ErrorHandler = <Data>(
-	error: Error,
-	ongoingRequest: { url: string; config: RequestInit }
-) => Promise<Data>;
 let errorHandler: ErrorHandler = (error) => {
 	throw error;
 };

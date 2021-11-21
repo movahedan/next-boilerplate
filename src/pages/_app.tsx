@@ -3,11 +3,12 @@ import { DefaultSeo } from 'next-seo';
 import App from 'next/app';
 import Head from 'next/head';
 import { Fragment } from 'react';
+import { SWRConfig } from 'swr';
 
 import { AnalyticsHeadScript } from 'lib/analytics';
 import { MediaQueriesProvider } from 'lib/media-queries';
 
-import { fetcherConfig } from 'constants/configs';
+import { fetcherConfig, swrConfig } from 'constants/configs';
 import { getDefaultNextSeoConfig } from 'constants/seo';
 
 import {
@@ -28,8 +29,13 @@ class MyApp extends App<AppWithLayoutProps> {
 		hasError: false,
 	};
 
-	componentDidMount() {
-		fetcherConfig();
+	constructor(props: AppWithLayoutProps) {
+		super(props);
+
+		if (global.window) {
+			// eslint-disable-next-line @typescript-eslint/no-empty-function
+			fetcherConfig(() => {});
+		}
 	}
 
 	static getDerivedStateFromError() {
@@ -43,7 +49,6 @@ class MyApp extends App<AppWithLayoutProps> {
 			return (
 				<>
 					<IndependentProviders />
-					{/* @ts-ignore */}
 					<Error />
 				</>
 			);
@@ -59,7 +64,10 @@ class MyApp extends App<AppWithLayoutProps> {
 			<>
 				<IndependentProviders />
 				<ComposeProviders
-					providers={[<MediaQueriesProvider key={0} initialData={pageProps} />]}
+					providers={[
+						<SWRConfig key={0} value={swrConfig(pageProps)} />,
+						<MediaQueriesProvider key={1} initialData={pageProps} />,
+					]}
 				>
 					<Layout {...layoutProps}>
 						<Component {...pageProps} />

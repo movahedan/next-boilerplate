@@ -9,13 +9,15 @@ import type { GlobalGetServerSideProps } from 'next';
 export const globalGetServerSideProps: GlobalGetServerSideProps =
 	(getServerSideProps, { cache } = {}) =>
 	async (ctx) => {
-		fetcherConfig(ctx.req, ctx.res);
+		// eslint-disable-next-line @typescript-eslint/no-empty-function
+		fetcherConfig(() => {}, ctx.req, ctx.res);
 
 		if (cache) {
 			setCacheHeader(ctx.res);
 		}
 
 		const pageResult = await getServerSideProps(ctx);
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		const { props } = pageResult as any;
 		if (!props) {
 			return pageResult;
