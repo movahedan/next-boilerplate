@@ -1,6 +1,6 @@
 # Next.js opinionated boilerplate
 
-A well-structured production-ready Next.js boilerplate with Typescript, Jest, react-testing-library, Storybook, Emotion, Tailwind, PostCSS, Fetch, Bundle Analyzer, Per page Layouts, Custom models 
+A well-structured production-ready Next.js boilerplate with a well-documented directory structuring that supports Typescript, Jest, react-testing-library, Cypress, configurable Fetch and SWR, and a configured component library using Emotion, Tailwind, PostCSS, and Storybook. Plus, taking advantage of NextSeo and NextSitemap for SEO. 
 
 ![Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/movahedan/49ff7044879e43a1daf430086b622c53/raw/next-boilerplate__heads_main.json)
 ![Build Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/movahedan/49ff7044879e43a1daf430086b622c53/raw/next-boilerplate__build_badge.json)
