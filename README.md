@@ -11,25 +11,23 @@ A well-structured production-ready Next.js boilerplate with a well-documented di
 - [x] Setup strong Linter, lint-staged, husky
 - [x] Setup Jest and react-test-renderer
 - [x] Setup Cypress
-- [x] Setup GitHub actions for main branch and pull requests
+- [x] Setup GitHub actions
 - [x] Deploy on vercel
 - Dockerize it
+### Application development
+- [x] Setup directory structure and global types
+- [x] Setup configurable Fetch and SWR
+- [x] Setup Analytics tools with separate business level abstracting
+- [x] Setup SEO optimization (NextSeo, NextSitemap)
+-	Setup Error Handling and Reporting
+- Setup Redux
 ### Styling
 - [x] Setup Emotion and PostCSS with fully-configured Tailwind
 - [x] Setup UI library (Storybook installed with some helper functions)
 -	[x] Setup MediaQuery module (supports Tailwind and SSR)
-- [x] Setup optimized, easy to change, test and scale GoogleFont
+- [x] Setup optimized, easy to change, testable Google font
+- [x] Setup Layout structure (supports per page layout)
 -	Implement a minimal component library (with the help of headless ui)
-### Application development
-- [x] Setup directory structure
-- [x] Setup declaring global types
-- [x] Setup Layout structure (supports PerPageLayout)
-- [x] Setup SEO optimization (NextSeo, NextSitemap)
-- [x] Setup Analytics tools with separate business level abstracting
-- [x] Setup configurable Fetch
--	Setup Error Handling and Reporting
-- Setup SWR
-- Setup Redux
 ### Additional hooks
   - [x] useAliveRef
   - [x] useCombinedRef
@@ -49,7 +47,7 @@ A well-structured production-ready Next.js boilerplate with a well-documented di
 
 ## Running
 
-After cloning repository, go to the directory you've cloned it.
+After cloning repository, go to the directory you've cloned into.
 
 ##### Run the development server
 ```bash
