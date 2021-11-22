@@ -4,7 +4,19 @@ import { fetcherConfig } from 'entry/configs';
 
 import { setCacheHeader } from './set-cache-header';
 
-import type { GlobalGetServerSideProps } from 'next';
+import type { GetServerSideProps, PreviewData } from 'next';
+import type { ParsedUrlQuery } from 'querystring';
+
+type GlobalGetServerSideProps = <
+	Props = unknown,
+	Query extends ParsedUrlQuery = ParsedUrlQuery,
+	PreviewDataType extends PreviewData = PreviewData
+>(
+	getServerSideProps: GetServerSideProps<Props, Query, PreviewDataType>,
+	options?: {
+		cache?: boolean;
+	}
+) => GetServerSideProps<Props, Query, PreviewDataType>;
 
 export const globalGetServerSideProps: GlobalGetServerSideProps =
 	(getServerSideProps, { cache } = {}) =>

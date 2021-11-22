@@ -1,5 +1,7 @@
-import type { LayoutDeclaration } from './layout';
+import type { LayoutDeclaration, LayoutDeclaration } from './layout';
 import type { NextPage } from 'next';
+import type { AppProps } from 'next/app';
+import type { AppPropsType } from 'next/dist/shared/lib/utils';
 
 declare module 'next' {
 	declare type NextPageWithLayout<
@@ -8,17 +10,15 @@ declare module 'next' {
 	> = NextPage<Props> & {
 		Layout?: LayoutDeclaration<LayoutProps>;
 	};
+}
 
-	declare function declaredGlobalGetServerSideProps<
-		Props = unknown,
-		Query extends ParsedUrlQuery = ParsedUrlQuery,
-		PreviewData = unknown
-	>(
-		getServerSideProps: GetServerSideProps<Props, Query, PreviewData>,
-		options?: {
-			cache?: boolean;
-		}
-	): GetServerSideProps<Props, Query, PreviewData>;
-
-	type GlobalGetServerSideProps = typeof declaredGlobalGetServerSideProps;
+declare module 'next/app' {
+	declare type AppWithLayoutProps<P = undefined, L = undefined> = Omit<
+		AppProps<P>,
+		'Component'
+	> & {
+		Component: AppPropsType['Component'] & {
+			Layout?: LayoutDeclaration<L>;
+		};
+	};
 }
