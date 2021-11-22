@@ -15,7 +15,7 @@ A well-structured production-ready Next.js boilerplate with a well-documented di
 - [x] Deploy on vercel
 - Dockerize it
 ### Application development
-- [x] Setup directory structure and global types
+- [x] Setup directory structure and global types [Read documentation](https://github.com/movahedan/next-boilerplate/blob/main/docs/directories.md "Directories documentation")
 - [x] Setup configurable Fetch and SWR
 - [x] Setup Analytics tools with separate business level abstracting
 - [x] Setup SEO optimization (NextSeo, NextSitemap)
