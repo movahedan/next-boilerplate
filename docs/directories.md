@@ -3,7 +3,7 @@
 ## Rules and Conventions
 
 1. Don't do over-creating files/directories just because it feels better.
-    Every file/directory that we are creating, hide some of the complexity of the project. With a large number of files, more codes hide from us and I can't trust a person who hides a lot from me.
+    Every file/directory that we are creating, hide some of the complexity of the project. With a large number of files, more codes hide from us and I can't trust a project which hides a lot from me.
 
 2. Relative imports are ugly, absolute ones are cool.
 
