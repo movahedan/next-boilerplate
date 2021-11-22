@@ -4,7 +4,7 @@ import {
 	expectDataLayer,
 } from 'lib/analytics/testing-utilities.test';
 
-import { analyticEvent } from './_analytics.command';
+import { analyticEvent } from './_analytics';
 
 describe('Analytic Commands', () => {
 	beforeAll(prepareDataLayer);

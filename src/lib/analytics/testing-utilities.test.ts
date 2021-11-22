@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import type { analyticEvent } from './_analytics.command';
+import type { analyticEvent } from './_analytics';
 
 type AnalyticEvent = typeof analyticEvent;
 
