@@ -32,10 +32,14 @@ As we have mentioned in [Directories documentation](https://github.com/movahedan
     
 `entry/analytics`:
     By now, we have the tools we want, now we have to turn/copy the documentation into the code. You have this directory to fill. You can create a directory for each `eventType` you have. For instance, `pageView` and `interaction`. Each of them has these files:
-        - `getter.ts`: This helps us to get a default clear object as the data of the event.
-        - `documents.ts`: It's just a type declaration of the event data, but you may add comments or anything to be clear about each attribute of the event data.
-        - `your-normal-event.ts`: That is the file you actually write your event into it. It gets help from the `getter` and returns the event properties. (Be careful, don't trigger the event, just return the props and connect it to the `useAnalytics` at the usage time)
-        - `your-direct-event.ts`: You might want to send the report in very complex circumstances, so you can create an `AnalyticTracker` and equip your component with a `ref` around it. Now the component DOM is all yours to do your action. You CAN trigger the report in such files because it has been given to you through `useAnalytics`
+       - `getter.ts`: 
+          This helps us to get a default clear object as the data of the event.
+       - `documents.ts`: 
+          It's just a type declaration of the event data, but you may add comments or anything to be clear about each attribute of the event data.
+       - `your-normal-event.ts`: 
+          That is the file you actually write your event into it. It gets help from the `getter` and returns the event properties. (Be careful, don't trigger the event, just return the props and connect it to the `useAnalytics` at the usage time)
+       - `your-direct-event.ts`: 
+          You might want to send the report in very complex circumstances, so you can create an `AnalyticTracker` and equip your component with a `ref` around it. Now the component DOM is all yours to do your action. You CAN trigger the report in such files because it has been given to you through `useAnalytics`
 
 ## Rules and Conventions
 
