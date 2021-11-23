@@ -6,7 +6,7 @@ If you ask me to list the things I don't love, analytics-procedures is on the to
 
 Another noisy thing, we shall not send repetitive reports, in the API calls, it might be just a matter of lowering resources and being optimized, but in the analytics, it's different! You send a report 2 times on every page view, and the whole statistics of your organization would be full of wrong data!
 
-And... imagine you are designing a component like `Header`. You polish it and make it works and you make it awesome. It would be just perfect when you have the analytic task of it in your hand. Great! Now you need to add so many callbacks!
+And... imagine you are designing a component like `Header`. You polish it and make it work and you make it awesome. It would be just perfect when you have the analytic task of it in your hand. Great! Now you need to add so many callbacks!
 
 > [PM]: When the user clicks on the first one, fire this.
 
