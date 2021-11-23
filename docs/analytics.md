@@ -23,6 +23,7 @@ I have good news too, almost every organization I've worked for has asked me to 
 As we have mentioned in [Directories documentation](https://github.com/movahedan/next-boilerplate/blob/main/docs/directories.md "Rule 9") we should not write business level logic in `lib` directory, thus, we have 2 directories to handle analytics.
 
 `lib/analytics`:
+
    First of all, you have a pre-declared head script waiting for a `url` as a prop to be ready to start. Put the script in your `_app.tsx` to be able to send real requests.
     
    Lets take a look at the main file: There we have a nice analytics module to work with. It gives us a single hook named `useAnalytics`, it's a regular custom hook with a callback as the first argument and a dependency list as the second one, just like useEffect, with the main difference that you can customize it by sending different values as the result of the callback.
@@ -30,9 +31,11 @@ As we have mentioned in [Directories documentation](https://github.com/movahedan
    You can use it in 2 ways, either you want to fire analytic report automatically by sending the `eventType` and the `data` of it, that is normal, Or you want to report it directly, in that case, you will need the firing method of the analytic module.
     
 > ATTENTION: You must not import the firing method declared in `_analytics.ts` directly, it will be given to you if you know how to work with `useAnalytics`
+
 > You can read in detail about it on the top of the hook declaration: `src/lib/analytics/analytics.ts`.
     
 `entry/analytics`:
+
    By now, we have the tools we want, now we have to turn/copy the documentation into the code. You have this directory to fill. You can create a directory for each `eventType` you have. For instance, `pageView` and `interaction`. Each of them has these files:
    - `getter.ts`: 
       This helps us to get a default clear object as the data of the event.
@@ -45,7 +48,7 @@ As we have mentioned in [Directories documentation](https://github.com/movahedan
 
 ### Rules and Conventions
 
-1. Never import the `analytic-event-firer` directly from `_analytics.ts`. We have come from C++ ages.
+1. Never import the `analytic-event-firer` directly from `_analytics.ts`.
 2. Always create `getter.ts` for each event type, so we can always be sure about the default values.
 3. Always create well-documented `documents.ts` for each event type, so we can always be sure about what these attributes really are.
 4. Always unit test your reports :)
