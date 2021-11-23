@@ -1,5 +1,7 @@
 # Directories
 
+Creating directories and files must follow a unique rule, to be recognizable as fast as they can. We, as developers, should be very clear about where we store the module we make, a component we design and, the bulk of utilities we create for ourselves.
+
 ## Rules and Conventions
 
 1. Don't do over-creating files/directories just because it feels better.
