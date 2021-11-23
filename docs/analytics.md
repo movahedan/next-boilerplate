@@ -8,11 +8,11 @@ Another noisy thing, we shall not send repetitive reports, in the API calls, it 
 
 And... imagine you are designing a component like `Header`. You polish it and make it works and you make it awesome. It would be just perfect when you have the analytic task of it in your hand. Great! Now you need to add so many callbacks!
 
-    > [PM]: When the user clicks on the first one, fire this.
+> [PM]: When the user clicks on the first one, fire this.
 
-    > [PM]: When the user clicks on the other, fire that.
+> [PM]: When the user clicks on the other, fire that.
 
-    > [PM]: Hey! can you fire a report when the user scrolls to the bottom and think for a little bit and scrolls to the top again? Cool! thanks! by the way, send me this HUGE object too so I can get to know about the context.
+> [PM]: Hey! can you fire a report when the user scrolls to the bottom and think for a little bit and scrolls to the top again? Cool! thanks! by the way, send me this HUGE object too so I can get to know about the context.
 
 And suddenly, your beautiful `Header` component starts to get dirty, and you would be in sorrow for that, me too. By the way, lots of business-level logic would be put on in the `ui` directory...
 
@@ -27,9 +27,8 @@ As we have mentioned in [Directories documentation](https://github.com/movahedan
     Lets take a look at the main file: There we have a nice analytics module to work with. It gives us a single hook named `useAnalytics`, it's a regular custom hook with a callback as the first argument and a dependency list as the second one, just like useEffect, with the main difference that you can customize it by sending different values as the result of the callback.
     You can use it in 2 ways, either you want to fire analytic report automatically by sending the `eventType` and the `data` of it, that is normal, Or you want to report it directly, in that case, you will need the firing method of the analytic module.
     
-       > ATTENTION: You must not import the firing method declared in `_analytics.ts` directly, it will be given to you if you know how to work with `useAnalytics`
-    
-       > You can read in detail about it on the top of the hook declaration: `src/lib/analytics/analytics.ts`.
+> ATTENTION: You must not import the firing method declared in `_analytics.ts` directly, it will be given to you if you know how to work with `useAnalytics`
+> You can read in detail about it on the top of the hook declaration: `src/lib/analytics/analytics.ts`.
     
 `entry/analytics`:
     By now, we have the tools we want, now we have to turn/copy the documentation into the code. You have this directory to fill. You can create a directory for each `eventType` you have. For instance, `pageView` and `interaction`. Each of them has these files:
