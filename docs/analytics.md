@@ -1,6 +1,6 @@
 # Analytics
 
-## Subject description
+### Subject description
 
 If you ask me to list the things I don't love, analytics-procedures is on the top. They are hidden in the UI, although they need to match the exact documentation that we are given, as we change the structure of the project, or develop it, we might forget about them, so they will send the wrong data to the analytics provider.
 
@@ -18,7 +18,7 @@ And suddenly, your beautiful `Header` component starts to get dirty, and you wou
 
 I have good news too, almost every organization I've worked for has asked me to send analytics reports. And you know, the architecture is always the same, you have a `dataLayer` (or whatever you would call it) as an array and push the reports into it. (It might be different if you are working with a SaaS to collect analytics reports, you might be calling some APIs for it, and it's ok, you can watch that array and call yours)
 
-## Development description
+### Development description
 
 As we have mentioned in [Directories documentation](https://github.com/movahedan/next-boilerplate/blob/main/docs/directories.md "Rule 9") we should not write business level logic in `lib` directory, thus, we have 2 directories to handle analytics.
 
@@ -31,19 +31,19 @@ As we have mentioned in [Directories documentation](https://github.com/movahedan
 > You can read in detail about it on the top of the hook declaration: `src/lib/analytics/analytics.ts`.
     
 `entry/analytics`:
-    By now, we have the tools we want, now we have to turn/copy the documentation into the code. You have this directory to fill. You can create a directory for each `eventType` you have. For instance, `pageView` and `interaction`. Each of them has these files:
-       - `getter.ts`: 
-          This helps us to get a default clear object as the data of the event.
-       - `documents.ts`: 
-          It's just a type declaration of the event data, but you may add comments or anything to be clear about each attribute of the event data.
-       - `your-normal-event.ts`: 
-          That is the file you actually write your event into it. It gets help from the `getter` and returns the event properties. (Be careful, don't trigger the event, just return the props and connect it to the `useAnalytics` at the usage time)
-       - `your-direct-event.ts`: 
-          You might want to send the report in very complex circumstances, so you can create an `AnalyticTracker` and equip your component with a `ref` around it. Now the component DOM is all yours to do your action. You CAN trigger the report in such files because it has been given to you through `useAnalytics`
+   By now, we have the tools we want, now we have to turn/copy the documentation into the code. You have this directory to fill. You can create a directory for each `eventType` you have. For instance, `pageView` and `interaction`. Each of them has these files:
+   - `getter.ts`: 
+      This helps us to get a default clear object as the data of the event.
+   - `documents.ts`: 
+      It's just a type declaration of the event data, but you may add comments or anything to be clear about each attribute of the event data.
+   - `your-normal-event.ts`: 
+      That is the file you actually write your event into it. It gets help from the `getter` and returns the event properties. (Be careful, don't trigger the event, just return the props and connect it to the `useAnalytics` at the usage time)
+   - `your-direct-event.ts`: 
+      You might want to send the report in very complex circumstances, so you can create an `AnalyticTracker` and equip your component with a `ref` around it. Now the component DOM is all yours to do your action. You CAN trigger the report in such files because it has been given to you through `useAnalytics`
 
-## Rules and Conventions
+### Rules and Conventions
 
-0. Never import the `analytic-event-firer` directly from `_analytics.ts`. We have come from C++ ages.
-1. Always create `getter.ts` for each event type, so we can always be sure about the default values.
-2. Always create well-documented `documents.ts` for each event type, so we can always be sure about what these attributes really are.
-3. Always unit test your reports :)
+1. Never import the `analytic-event-firer` directly from `_analytics.ts`. We have come from C++ ages.
+2. Always create `getter.ts` for each event type, so we can always be sure about the default values.
+3. Always create well-documented `documents.ts` for each event type, so we can always be sure about what these attributes really are.
+4. Always unit test your reports :)
