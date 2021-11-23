@@ -24,7 +24,9 @@ As we have mentioned in [Directories documentation](https://github.com/movahedan
 
 `lib/analytics`:
     First of all, you have a pre-declared head script waiting for a `url` as a prop to be ready to start. Put the script in your `_app.tsx` to be able to send real requests.
+    
     Lets take a look at the main file: There we have a nice analytics module to work with. It gives us a single hook named `useAnalytics`, it's a regular custom hook with a callback as the first argument and a dependency list as the second one, just like useEffect, with the main difference that you can customize it by sending different values as the result of the callback.
+    
     You can use it in 2 ways, either you want to fire analytic report automatically by sending the `eventType` and the `data` of it, that is normal, Or you want to report it directly, in that case, you will need the firing method of the analytic module.
     
 > ATTENTION: You must not import the firing method declared in `_analytics.ts` directly, it will be given to you if you know how to work with `useAnalytics`
