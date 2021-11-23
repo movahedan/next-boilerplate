@@ -17,7 +17,7 @@ A well-structured production-ready Next.js boilerplate with a well-documented di
 ### Application development
 - [x] Setup directory structure and global types [Read documentation](https://github.com/movahedan/next-boilerplate/blob/main/docs/directories.md "Directories documentation")
 - [x] Setup configurable Fetch and SWR
-- [x] Setup Analytics tools with separate business level abstracting
+- [x] Setup Analytics tools with separate business level abstracting [Read documentation](https://github.com/movahedan/next-boilerplate/blob/main/docs/analytics.md "Analytics documentation")
 - [x] Setup SEO optimization (NextSeo, NextSitemap)
 -	Setup Error Handling and Reporting
 - Setup Redux
