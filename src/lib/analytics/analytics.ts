@@ -6,6 +6,10 @@ import type { DependencyList, RefObject } from 'react';
 
 /**
  ** useAnalytics
+
+ Please read this document if you are new to the topic:
+ https://github.com/movahedan/next-boilerplate/blob/main/docs/directories.md
+
  * A hook util to send analytic events, that gives the access of analytic command
  * and works in 2 way for manual (dom interaction) and functional tracking
  *
