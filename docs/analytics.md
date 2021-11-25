@@ -2,21 +2,21 @@
 
 ### Subject description
 
-If you ask me to list the things I don't love, analytics-procedures is on the top. They are hidden in the UI, although they need to match the exact documentation that we are given, as we change the structure of the project, or develop it, we might forget about them, so they will send the wrong data to the analytics provider.
+If you ask me to list the things I don't love, analytics procedures is on the top. They are hidden in the UI, although they need to match the exact documentation that we are given. As we change the structure of the project or develop it, we might forget about them. Therefore they will send the wrong data to the analytics provider.
 
-Another noisy thing, we shall not send repetitive reports, in the API calls, it might be just a matter of lowering resources and being optimized, but in the analytics, it's different! You send a report 2 times on every page view, and the whole statistics of your organization would be full of wrong data!
+It is really nerveracking to mind sending repetitive reports. In the API calls, it might be just a matter of lowering resources and being optimized, but in the analytics, it's different! You send a report two times on every page view, and the whole statistics of your organization will be full of wrong data!
 
-And... imagine you are designing a component like `Header`. You polish it and make it work and you make it awesome. It would be just perfect when you have the analytic task of it in your hand. Great! Now you need to add so many callbacks!
+And, imagine you are designing a component like `Header`. You polish it and make it work and you make it awesome. It would be just perfect when you have its analytics task in your reach. Great! Now you need to add so many callbacks!
 
 > [PM]: When the user clicks on the first one, fire this.
 
 > [PM]: When the user clicks on the other, fire that.
 
-> [PM]: Hey! can you fire a report when the user scrolls to the bottom and think for a little bit and scrolls to the top again? Cool! thanks! by the way, send me this HUGE object too so I can get to know about the context.
+> [PM]: Hey! can you fire a report when the user scrolls to the bottom and thinks a bit and scrolls to the top again? Cool! By the way, send me this HUGE object, too. So I can get to know about the context.
 
-And suddenly, your beautiful `Header` component starts to get dirty, and you would be in sorrow for that, me too. By the way, lots of business-level logic would be put on in the `ui` directory...
+Suddenly, your beautiful `Header` component starts to get dirty, and you get upset because of it. Me, too. By the way, lots of business-level logic would be put on in the `ui` directory.
 
-I have good news too, almost every organization I've worked for has asked me to send analytics reports. And you know, the architecture is always the same, you have a `dataLayer` (or whatever you would call it) as an array and push the reports into it. (It might be different if you are working with a SaaS to collect analytics reports, you might be calling some APIs for it, and it's ok, you can watch that array and call yours)
+I have good news, too. Almost all organizations I've worked for have asked me to send analytics reports. And you know what? The architecture is always the same. You have a `dataLayer` (or whatever you call it) as an array and push the reports into it. (It might be different if you are working with a SaaS to collect analytics reports, you might be calling some APIs for it, and it's ok, you can watch that array and call yours)
 
 ### Development description
 
