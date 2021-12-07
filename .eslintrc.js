@@ -11,6 +11,7 @@ module.exports = {
 		'.linters/eslint.js',
 		'.linters/import.js',
 		'.linters/next.js',
+		'.linters/hooks.js',
 		'.linters/prettier.js',
 		'.linters/tailwind.js',
 		'.linters/typescript.js',
