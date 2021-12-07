@@ -4,7 +4,7 @@ const eslintPlugin = {
 		'newline-before-return': 'error',
 		'max-lines': [
 			'error',
-			{ max: 100, skipBlankLines: true, skipComments: true },
+			{ max: 1000, skipBlankLines: true, skipComments: true },
 		],
 		'no-unsafe-optional-chaining': 'off',
 	},
