@@ -27,9 +27,12 @@ module.exports = {
 		colors: {
 			transparent: 'transparent',
 			white: '#FFFFFF',
+			'white-opacity-10': 'rgba(255, 255, 255, 0.1)',
 			black: '#000000',
 			yellow: '#FFC93D',
+			'yellow-opacity-10': 'rgba(255, 201, 61, 0.1)',
 			blue: '#3AB3DA',
+			'blue-opacity-10': 'rgba(58, 179, 218, 0.1)',
 			mellow: '#888888',
 			gray: '#B5B5B5',
 			primary: {
