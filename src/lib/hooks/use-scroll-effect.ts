@@ -1,24 +1,36 @@
-import { useEffect, useRef } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useCallback, useEffect, useRef } from 'react';
 
 import type { DependencyList } from 'react';
 
 export const useScrollEffect = (
-	callback: (event: WindowEventMap['scroll']) => void,
+	callback: (event: Event) => void,
 	deps: DependencyList
 ) => {
-	const ref = useRef<HTMLElement | null>(null);
+	const isLock = useRef(false);
+	const animationFrame = useRef(0);
 
-	useEffect(() => {
-		const element = ref.current || window;
+	const onScroll = useCallback((event) => {
+		if (!isLock.current) {
+			cancelAnimationFrame(animationFrame.current);
+			animationFrame.current = requestAnimationFrame(() => {
+				callback(event);
 
-		element.removeEventListener('scroll', callback);
-		element.addEventListener('scroll', callback);
+				setTimeout(() => {
+					isLock.current = false;
+				}, 10);
+			});
 
-		return () => {
-			element.removeEventListener('scroll', callback);
-		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+			isLock.current = true;
+		}
 	}, deps);
 
-	return ref;
+	useEffect(() => {
+		document.addEventListener('scroll', onScroll);
+
+		return function () {
+			cancelAnimationFrame(animationFrame.current);
+			document.removeEventListener('scroll', onScroll);
+		};
+	}, [onScroll]);
 };

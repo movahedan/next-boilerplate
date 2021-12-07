@@ -1,13 +1,19 @@
-import { renderHook } from '@testing-library/react-hooks';
+import { fireEvent } from '@testing-library/dom';
+import { act, renderHook } from '@testing-library/react-hooks';
 
 import { useScrollEffect } from './use-scroll-effect';
 
 describe('useScrollEffect', () => {
-	it('should call the callback on window scroll', () => {
+	it('should call the callback on window scroll', async () => {
 		const callback = jest.fn();
-		renderHook(() => useScrollEffect(callback, []));
+		const { waitFor } = renderHook(() => useScrollEffect(callback, []));
 
-		global.dispatchEvent(new Event('scroll'));
-		expect(callback).toBeCalledTimes(1);
+		act(() => {
+			fireEvent.scroll(document);
+		});
+
+		await waitFor(() => {
+			expect(callback).toBeCalledTimes(1);
+		});
 	});
 });
