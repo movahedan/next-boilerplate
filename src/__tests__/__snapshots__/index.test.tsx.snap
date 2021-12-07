@@ -39,8 +39,6 @@ Array [
 
 .emotion-0>h1 {
   margin-top: 0.5rem;
-  font-family: sans-serif;
-  font-family: Sen;
   font-family: Red Hat Mono;
   font-size: 4rem;
   line-height: 6.25rem;
@@ -113,11 +111,10 @@ Array [
 }
 
 .emotion-0>p {
-  --tw-text-opacity: 1;
   margin-top: 5rem;
   margin-bottom: 5rem;
+  --tw-text-opacity: 1;
   color: rgba(181, 181, 181, var(--tw-text-opacity));
-  font-family: sans-serif;
   font-family: Sen;
   font-size: 1.5rem;
   line-height: 2.5rem;
@@ -134,7 +131,6 @@ Array [
 }
 
 .emotion-1 {
-  --tw-text-opacity: 1;
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -149,6 +145,7 @@ Array [
   -webkit-justify-content: center;
   justify-content: center;
   vertical-align: middle;
+  --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
   overflow-wrap: break-word;
   text-align: center;
@@ -177,7 +174,6 @@ Array [
   padding-bottom: 0.5rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  font-family: sans-serif;
   font-family: Sen;
   font-size: 0.75rem;
   line-height: 0.875rem;
@@ -190,7 +186,6 @@ Array [
   padding-bottom: 0.75rem;
   padding-left: 2rem;
   padding-right: 2rem;
-  font-family: sans-serif;
   font-family: Sen;
   font-size: 0.875rem;
   line-height: 1.125rem;
@@ -203,20 +198,11 @@ Array [
   padding-bottom: 1.5rem;
   padding-left: 3rem;
   padding-right: 3rem;
-  font-family: sans-serif;
   font-family: Sen;
   font-size: 2rem;
   line-height: 2.5rem;
   font-weight: bold;
   max-width: 40rem;
-}
-
-.emotion-1.primary {
-  background: linear-gradient(
-  			91.52deg,
-  			rgba(28, 121, 150, 0.8) 0.13%,
-  			rgba(179, 129, 0, 0.8) 100%
-  		);
 }
 
 .emotion-1:hover:not(:disabled):after {
@@ -245,22 +231,12 @@ Array [
 }
 
 .emotion-1:after {
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-rotate: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
   position: absolute;
   top: 0.25rem;
   bottom: 0.25rem;
   right: 0.25rem;
   left: 0.25rem;
-  -webkit-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  -moz-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  -ms-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-transform: translate3d(var(--tw-translate-x), var(--tw-translate-y), 0) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
   transition-duration: 100ms;
   display: block;
@@ -379,7 +355,6 @@ Array [
 .emotion-0>h2 {
   display: inline-block;
   text-align: center;
-  font-family: sans-serif;
   font-family: Sen;
   font-size: 5rem;
   line-height: 6rem;
@@ -437,19 +412,18 @@ Array [
 }
 
 .emotion-0>ol>li i svg {
-  --tw-text-opacity: 1;
   width: 3rem;
   height: 3rem;
+  --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
 .emotion-0>ol>li i span {
-  --tw-text-opacity: 1;
-  font-family: sans-serif;
   font-family: Sen;
   font-size: 1.5rem;
   line-height: 2.5rem;
   font-weight: normal;
+  --tw-text-opacity: 1;
   color: rgba(181, 181, 181, var(--tw-text-opacity));
 }
 
@@ -510,7 +484,6 @@ Array [
 
 .emotion-0>h2 {
   text-align: center;
-  font-family: sans-serif;
   font-family: Sen;
   font-size: 5rem;
   line-height: 6rem;
@@ -564,7 +537,6 @@ Array [
 }
 
 .emotion-0>ul>li section h3 {
-  font-family: sans-serif;
   font-family: Sen;
   font-size: 2rem;
   line-height: 2.375rem;
@@ -572,7 +544,6 @@ Array [
 }
 
 .emotion-0>ul>li section h4 base {
-  font-family: sans-serif;
   font-family: Sen;
   font-size: 3rem;
   line-height: 2.5rem;
@@ -592,7 +563,6 @@ Array [
 }
 
 .emotion-0>ul>li section p {
-  font-family: sans-serif;
   font-family: Sen;
   font-size: 1.125rem;
   line-height: 2rem;
@@ -603,7 +573,6 @@ Array [
 .emotion-0>ul>li section span {
   display: block;
   margin-bottom: 0.5rem;
-  font-family: sans-serif;
   font-family: Sen;
   font-size: 1.125rem;
   line-height: 2rem;
@@ -614,7 +583,6 @@ Array [
 .emotion-0>ul>li section span:first-child {
   display: inline-block;
   margin-bottom: 1.5rem;
-  font-family: sans-serif;
   font-family: Sen;
   font-size: 2rem;
   line-height: 2.375rem;
@@ -634,17 +602,9 @@ Array [
   transition-duration: 500ms;
 }
 
-.emotion-1.blue {
-  background: linear-gradient(134.14deg, #3AB3DA 0%, rgba(255, 255, 255, 0.1) 25.6%);
-}
-
 .emotion-1.blue:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(58, 179, 218, var(--tw-bg-opacity));
-}
-
-.emotion-1.yellow {
-  background: linear-gradient(146.28deg, #FFC93D 0%, rgba(255, 255, 255, 0.1) 25.6%);
 }
 
 .emotion-1.yellow:hover {
@@ -656,13 +616,13 @@ Array [
   --tw-bg-opacity: 1;
   background-color: rgba(33, 33, 33, var(--tw-bg-opacity));
   border-radius: 1.25rem;
-  height: 100%;
 }
 
 .emotion-3 {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 1.25rem;
   height: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgba(33, 33, 33, var(--tw-bg-opacity));
+  border-radius: 1.25rem;
 }
 
 .emotion-3.blue {
@@ -670,6 +630,20 @@ Array [
 }
 
 .emotion-3.yellow {
+  background: linear-gradient(137.94deg, rgba(255, 201, 61, 0.1) 0%, transparent 30.89%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+.emotion-4 {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  height: 100%;
+}
+
+.emotion-4.blue {
+  background: linear-gradient(130.76deg, rgba(58, 179, 218, 0.1) 0%, transparent 50.03%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+.emotion-4.yellow {
   background: linear-gradient(137.94deg, rgba(255, 201, 61, 0.1) 0%, transparent 30.89%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
 }
 
@@ -686,30 +660,34 @@ Array [
         <div
           className="emotion-2"
         >
-          <section
-            className="emotion-3"
+          <div
+            className="emotion-3 yellow"
           >
-            <h3>
-              👨🏻‍ Senior Front-end Developer
-            </h3>
-            <span>
-              (
-              Full-time
-              )
-            </span>
-            <h4>
-              Jaytoon
-            </h4>
-            <span>
-              📆 September 2020  –present 5 months
-            </span>
-            <span>
-              🏢 Sydney, Australia (Remote, International product)
-            </span>
-            <p>
-              As a team member, I'm working here on a task/project basis. job. Working on various projects in agile.
-            </p>
-          </section>
+            <section
+              className="emotion-4"
+            >
+              <h3>
+                👨🏻‍ Senior Front-end Developer
+              </h3>
+              <span>
+                (
+                Full-time
+                )
+              </span>
+              <h4>
+                Jaytoon
+              </h4>
+              <span>
+                📆 September 2020  –present 5 months
+              </span>
+              <span>
+                🏢 Sydney, Australia (Remote, International product)
+              </span>
+              <p>
+                As a team member, I'm working here on a task/project basis. job. Working on various projects in agile.
+              </p>
+            </section>
+          </div>
         </div>
       </li>
       <li
@@ -718,30 +696,34 @@ Array [
         <div
           className="emotion-2"
         >
-          <section
-            className="emotion-3"
+          <div
+            className="emotion-3 blue"
           >
-            <h3>
-              👨🏻‍ Senior Front-end Developer
-            </h3>
-            <span>
-              (
-              Full-time
-              )
-            </span>
-            <h4>
-              Techlinked
-            </h4>
-            <span>
-              📆 October 2019  –present 17 months
-            </span>
-            <span>
-              🏢 California, USA (Remote, International product)
-            </span>
-            <p>
-              A platform for industrial equipment, their experts and their service-providing companies that includes a series of social-media features like feed, follow, etc. The company is based in Silicon valley.
-            </p>
-          </section>
+            <section
+              className="emotion-4"
+            >
+              <h3>
+                👨🏻‍ Senior Front-end Developer
+              </h3>
+              <span>
+                (
+                Full-time
+                )
+              </span>
+              <h4>
+                Techlinked
+              </h4>
+              <span>
+                📆 October 2019  –present 17 months
+              </span>
+              <span>
+                🏢 California, USA (Remote, International product)
+              </span>
+              <p>
+                A platform for industrial equipment, their experts and their service-providing companies that includes a series of social-media features like feed, follow, etc. The company is based in Silicon valley.
+              </p>
+            </section>
+          </div>
         </div>
       </li>
       <li
@@ -750,30 +732,34 @@ Array [
         <div
           className="emotion-2"
         >
-          <section
-            className="emotion-3"
+          <div
+            className="emotion-3 yellow"
           >
-            <h3>
-              👨🏻‍ Senior Front-end Developer
-            </h3>
-            <span>
-              (
-              Full-time
-              )
-            </span>
-            <h4>
-              Techlinked
-            </h4>
-            <span>
-              📆 October 2019  –present 17 months
-            </span>
-            <span>
-              🏢 California, USA (Remote, International product)
-            </span>
-            <p>
-              A platform for industrial equipment, their experts and their service-providing companies that includes a series of social-media features like feed, follow, etc. The company is based in Silicon valley.
-            </p>
-          </section>
+            <section
+              className="emotion-4"
+            >
+              <h3>
+                👨🏻‍ Senior Front-end Developer
+              </h3>
+              <span>
+                (
+                Full-time
+                )
+              </span>
+              <h4>
+                Techlinked
+              </h4>
+              <span>
+                📆 October 2019  –present 17 months
+              </span>
+              <span>
+                🏢 California, USA (Remote, International product)
+              </span>
+              <p>
+                A platform for industrial equipment, their experts and their service-providing companies that includes a series of social-media features like feed, follow, etc. The company is based in Silicon valley.
+              </p>
+            </section>
+          </div>
         </div>
       </li>
       <li
@@ -782,30 +768,34 @@ Array [
         <div
           className="emotion-2"
         >
-          <section
-            className="emotion-3"
+          <div
+            className="emotion-3 blue"
           >
-            <h3>
-              👨🏻‍ Senior Front-end Developer
-            </h3>
-            <span>
-              (
-              Full-time
-              )
-            </span>
-            <h4>
-              Techlinked
-            </h4>
-            <span>
-              📆 October 2019  –present 17 months
-            </span>
-            <span>
-              🏢 California, USA (Remote, International product)
-            </span>
-            <p>
-              A platform for industrial equipment, their experts and their service-providing companies that includes a series of social-media features like feed, follow, etc. The company is based in Silicon valley.
-            </p>
-          </section>
+            <section
+              className="emotion-4"
+            >
+              <h3>
+                👨🏻‍ Senior Front-end Developer
+              </h3>
+              <span>
+                (
+                Full-time
+                )
+              </span>
+              <h4>
+                Techlinked
+              </h4>
+              <span>
+                📆 October 2019  –present 17 months
+              </span>
+              <span>
+                🏢 California, USA (Remote, International product)
+              </span>
+              <p>
+                A platform for industrial equipment, their experts and their service-providing companies that includes a series of social-media features like feed, follow, etc. The company is based in Silicon valley.
+              </p>
+            </section>
+          </div>
         </div>
       </li>
     </ul>
