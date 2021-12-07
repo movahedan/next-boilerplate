@@ -4,8 +4,8 @@ import { getIsMobileUserAgent } from 'lib/utils';
 
 import { Mouse, Scrollbar } from 'ui/atoms';
 
-import { CustomLayoutBgSvg } from './custom-bg-svg';
-import { bgStyles, customLayoutGlobalStyles } from './custom-layout.styles';
+import { CustomLayoutBg } from './custom-layout-bg';
+import { customLayoutGlobalStyles } from './custom-layout.styles';
 
 import type { FC, CSSProperties } from 'react';
 
@@ -26,14 +26,14 @@ export const CustomLayout: FC<CustomLayoutProps> = ({
 	return (
 		<>
 			<Global styles={customLayoutGlobalStyles} />
-			{!isTouch && <Scrollbar />}
-			{!isTouch && <Mouse />}
 
 			<main style={style} className={className}>
 				{children}
 			</main>
 
-			<CustomLayoutBgSvg width='100vw' height='100vh' className={bgStyles} />
+			{!isTouch && <Scrollbar />}
+			{!isTouch && <Mouse />}
+			<CustomLayoutBg className='custom-layout-bg' />
 		</>
 	);
 };

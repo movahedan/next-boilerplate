@@ -1,15 +1,5 @@
-export const CustomLayoutBgSvg = ({
-	width = 1920,
-	height = 1208,
-	className,
-}: {
-	width?: string | number;
-	height?: string | number;
-	className?: string;
-}) => (
+export const CustomLayoutBg = ({ className = '' }) => (
 	<svg
-		width={width}
-		height={height}
 		// viewBox={`0 0 1920 1080`}
 		fill='none'
 		xmlns='http://www.w3.org/2000/svg'

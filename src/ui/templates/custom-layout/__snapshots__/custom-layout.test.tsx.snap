@@ -2,6 +2,7 @@
 
 exports[`<CustomLayout> should match snapshot 1`] = `
 Array [
+  <main />,
   .emotion-0 {
   position: absolute;
   top: 0px;
@@ -44,21 +45,9 @@ Array [
       }
     />
   </span>,
-  <main />,
-  .emotion-0 {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  top: 0px;
-  z-index: 10;
-}
-
-<svg
-    className="emotion-0"
+  <svg
+    className="custom-layout-bg"
     fill="none"
-    height="100vh"
-    width="100vw"
     xmlns="http://www.w3.org/2000/svg"
   >
     <g
@@ -313,6 +302,7 @@ Array [
 
 exports[`<CustomLayout> should match snapshot on desktop: desktop 1`] = `
 Array [
+  <main />,
   .emotion-0 {
   position: absolute;
   top: 0px;
@@ -355,21 +345,9 @@ Array [
       }
     />
   </span>,
-  <main />,
-  .emotion-0 {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  top: 0px;
-  z-index: 10;
-}
-
-<svg
-    className="emotion-0"
+  <svg
+    className="custom-layout-bg"
     fill="none"
-    height="100vh"
-    width="100vw"
     xmlns="http://www.w3.org/2000/svg"
   >
     <g
@@ -625,20 +603,9 @@ Array [
 exports[`<CustomLayout> should match snapshot on mobile: mobile 1`] = `
 Array [
   <main />,
-  .emotion-0 {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  top: 0px;
-  z-index: 10;
-}
-
-<svg
-    className="emotion-0"
+  <svg
+    className="custom-layout-bg"
     fill="none"
-    height="100vh"
-    width="100vw"
     xmlns="http://www.w3.org/2000/svg"
   >
     <g
