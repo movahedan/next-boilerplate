@@ -1,9 +1,9 @@
 import { cx } from '@emotion/css';
 
 import {
+	containerClassName,
 	wrapperClassName,
 	middleClassName,
-	containerClassName,
 } from './card-gradient.styles';
 
 import type { FC } from 'react';

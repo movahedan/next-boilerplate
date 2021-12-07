@@ -2,6 +2,17 @@
 
 exports[`<Mouse> should match snapshot 1`] = `
 .emotion-0 {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 10;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.emotion-1 {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -21,7 +32,7 @@ exports[`<Mouse> should match snapshot 1`] = `
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .emotion-0 {
+  .emotion-1 {
     -webkit-transform: none;
     -moz-transform: none;
     -ms-transform: none;
@@ -30,10 +41,10 @@ exports[`<Mouse> should match snapshot 1`] = `
 }
 
 <span
-  className="fixed top-0 bottom-0 left-0 right-0 z-10 h-screen pointer-events-none"
+  className="emotion-0"
 >
   <span
-    className="emotion-0"
+    className="emotion-1"
     hidden={false}
     style={
       Object {

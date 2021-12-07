@@ -29,12 +29,12 @@ export const wrapperClassName = css`
 	}
 `;
 
-const middleBase = xw`bg-dark rounded-20px`;
+const middleBase = xw`bg-dark rounded-20px h-full`;
 export const middleClassName = css`
 	${middleBase}
 `;
 
-const containerBase = xw`bg-white-opacity-10 rounded-20px`;
+const containerBase = xw`bg-white-opacity-10 rounded-20px h-full`;
 export const containerClassName = css`
 	${containerBase};
 
