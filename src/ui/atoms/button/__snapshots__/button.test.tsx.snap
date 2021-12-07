@@ -17,10 +17,10 @@ exports[`<Button> should match is's snapshot 1`] = `
   -webkit-justify-content: center;
   justify-content: center;
   vertical-align: middle;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
   overflow-wrap: break-word;
   text-align: center;
-  pointer-events: auto;
-  cursor: pointer;
+  border-radius: 0.375rem;
   outline: 2px solid transparent;
   outline-offset: 2px;
   -webkit-appearance: none;
@@ -31,12 +31,13 @@ exports[`<Button> should match is's snapshot 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 .emotion-0:disabled {
-  cursor: not-allowed;
   opacity: 0.25;
+  cursor: not-allowed;
 }
 
 .emotion-0.small {
@@ -45,7 +46,7 @@ exports[`<Button> should match is's snapshot 1`] = `
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   font-family: sans-serif;
-  font-family: Red Hat Mono;
+  font-family: Sen;
   font-size: 0.75rem;
   line-height: 0.875rem;
   font-weight: normal;
@@ -58,7 +59,7 @@ exports[`<Button> should match is's snapshot 1`] = `
   padding-left: 2rem;
   padding-right: 2rem;
   font-family: sans-serif;
-  font-family: Red Hat Mono;
+  font-family: Sen;
   font-size: 0.875rem;
   line-height: 1.125rem;
   font-weight: normal;
@@ -66,16 +67,24 @@ exports[`<Button> should match is's snapshot 1`] = `
 }
 
 .emotion-0.large {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   padding-left: 3rem;
   padding-right: 3rem;
   font-family: sans-serif;
-  font-family: Red Hat Mono;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: normal;
+  font-family: Sen;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: bold;
   max-width: 40rem;
+}
+
+.emotion-0.primary {
+  background: linear-gradient(
+  			91.52deg,
+  			rgba(28, 121, 150, 0.8) 0.13%,
+  			rgba(179, 129, 0, 0.8) 100%
+  		);
 }
 
 .emotion-0:hover:not(:disabled):after {
@@ -153,7 +162,7 @@ exports[`<Button> should match is's snapshot 1`] = `
 <button
   aria-disabled={false}
   aria-label="button"
-  className="emotion-0 medium "
+  className="emotion-0 medium primary "
   data-testid="button"
   disabled={false}
   role="button"
@@ -187,10 +196,10 @@ exports[`<Button> should match is's snapshot for loading state: loading 1`] = `
   -webkit-justify-content: center;
   justify-content: center;
   vertical-align: middle;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
   overflow-wrap: break-word;
   text-align: center;
-  pointer-events: auto;
-  cursor: pointer;
+  border-radius: 0.375rem;
   outline: 2px solid transparent;
   outline-offset: 2px;
   -webkit-appearance: none;
@@ -201,12 +210,13 @@ exports[`<Button> should match is's snapshot for loading state: loading 1`] = `
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 .emotion-0:disabled {
-  cursor: not-allowed;
   opacity: 0.25;
+  cursor: not-allowed;
 }
 
 .emotion-0.small {
@@ -215,7 +225,7 @@ exports[`<Button> should match is's snapshot for loading state: loading 1`] = `
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   font-family: sans-serif;
-  font-family: Red Hat Mono;
+  font-family: Sen;
   font-size: 0.75rem;
   line-height: 0.875rem;
   font-weight: normal;
@@ -228,7 +238,7 @@ exports[`<Button> should match is's snapshot for loading state: loading 1`] = `
   padding-left: 2rem;
   padding-right: 2rem;
   font-family: sans-serif;
-  font-family: Red Hat Mono;
+  font-family: Sen;
   font-size: 0.875rem;
   line-height: 1.125rem;
   font-weight: normal;
@@ -236,16 +246,24 @@ exports[`<Button> should match is's snapshot for loading state: loading 1`] = `
 }
 
 .emotion-0.large {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   padding-left: 3rem;
   padding-right: 3rem;
   font-family: sans-serif;
-  font-family: Red Hat Mono;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: normal;
+  font-family: Sen;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: bold;
   max-width: 40rem;
+}
+
+.emotion-0.primary {
+  background: linear-gradient(
+  			91.52deg,
+  			rgba(28, 121, 150, 0.8) 0.13%,
+  			rgba(179, 129, 0, 0.8) 100%
+  		);
 }
 
 .emotion-0:hover:not(:disabled):after {
@@ -323,7 +341,7 @@ exports[`<Button> should match is's snapshot for loading state: loading 1`] = `
 <button
   aria-disabled={true}
   aria-label="button"
-  className="emotion-0 medium "
+  className="emotion-0 medium primary "
   data-testid="button"
   disabled={true}
   role="button"

@@ -10,6 +10,7 @@ export const Button: FC<ButtonProps> = ({
 	'aria-label': ariaLabel = 'button',
 
 	size = 'medium',
+	variant = 'primary',
 	iconStart,
 	iconEnd,
 	loading = false,
@@ -30,7 +31,7 @@ export const Button: FC<ButtonProps> = ({
 		aria-disabled={disabled || loading}
 		onClick={onClick}
 		style={style}
-		className={[buttonStyles, size, className].join(' ')}
+		className={[buttonStyles, size, variant, className].join(' ')}
 	>
 		<span role='img' aria-hidden={true}>
 			{iconStart}

@@ -9,6 +9,7 @@ export interface ButtonProps {
 	'aria-label'?: string;
 
 	size?: 'small' | 'medium' | 'large';
+	variant?: 'primary' | 'outline';
 	iconStart?: ReactNode;
 	iconEnd?: ReactNode;
 	disabled?: boolean;

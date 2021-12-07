@@ -1,15 +1,17 @@
 import { css } from '@emotion/css';
 import xw from 'xwind';
 
+import { tailwindTheme } from 'lib/utils';
+
 const buttonSubStyle = {
 	base: xw`
 		relative inline-flex items-center justify-center align-middle 
-		break-words text-center
-		pointer-events-auto cursor-pointer 
-		outline-none appearance-none select-none
+		text-white break-words text-center
+		rounded-6px outline-none appearance-none disabled:opacity-25
+		select-none pointer-events-auto
+		cursor-pointer disabled:cursor-not-allowed
+		`,
 
-		text-white disabled:cursor-not-allowed disabled:opacity-25
-	`,
 	beforeAfter: xw`rounded-full`,
 	hover: xw`ease-in top-0 bottom-0 left-0 right-0`,
 	before: xw`
@@ -24,10 +26,14 @@ const buttonSubStyle = {
 	active: xw`
 		absolute top-1 bottom-1 right-1 left-1
 	`,
+	colorVariant: {
+		primary: xw``,
+		outline: xw``,
+	},
 	sizeVariant: {
 		small: xw`py-2 px-6 prose-sm`,
 		medium: xw`py-3 px-8 prose`,
-		large: xw`py-4 px-12 prose-lg`,
+		large: xw`py-6 px-12 prose-heading-xl`,
 	},
 };
 
@@ -42,6 +48,17 @@ export const buttonStyles = css`
 	}
 	&.large {
 		${buttonSubStyle.sizeVariant.large};
+	}
+
+	&.primary {
+		background: linear-gradient(
+			91.52deg,
+			${tailwindTheme.theme.colors['blue-opacity-80']} 0.13%,
+			${tailwindTheme.theme.colors['yellow-opacity-80']} 100%
+		);
+	}
+	&.outline {
+		${buttonSubStyle.colorVariant.outline};
 	}
 
 	&:hover:not(:disabled):after {
