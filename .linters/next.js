@@ -5,6 +5,8 @@ const additionalHooks = `(${[
 	'useScrollEffect',
 	'useThrottleCallback',
 	'useThrottleEffect',
+	'useMouseEffect',
+	'useScrollEffect',
 ].join('|')})`;
 
 const nextPlugin = {
