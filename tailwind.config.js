@@ -149,7 +149,7 @@ module.exports = {
 				css: {
 					fontFamily: fontList,
 					fontSize: toRem(18),
-					lineHeight: toRem(28),
+					lineHeight: toRem(32),
 					fontWeight: 'normal',
 					maxWidth: toRem(640),
 				},
@@ -168,6 +168,16 @@ module.exports = {
 					fontSize: toRem(32),
 					lineHeight: toRem(38),
 					fontWeight: 'normal',
+				},
+			},
+
+			'hyper-type': {
+				css: {
+					color: 'transparent',
+					opacity: 0.5,
+					fontFamily: fontList,
+					backgroundClip: 'text',
+					backgroundImage: 'linear-gradient(to right, #3AB3DA, #FFC93D)',
 				},
 			},
 		},
