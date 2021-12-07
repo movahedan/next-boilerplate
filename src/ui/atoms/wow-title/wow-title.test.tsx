@@ -10,6 +10,11 @@ describe('<WowTitle>', () => {
 		expect(component).toMatchSnapshot();
 	});
 
+	it('should match snapshot given another element', async () => {
+		const component = create(<WowTitle as='p'>Wow</WowTitle>).toJSON();
+		expect(component).toMatchSnapshot();
+	});
+
 	it('should be accessible', async () => {
 		const { container } = render(<WowTitle>Wow</WowTitle>);
 		const results = await axe(container);
