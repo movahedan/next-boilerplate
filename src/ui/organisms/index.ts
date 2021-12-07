@@ -1,1 +1,2 @@
-export * from './recent-student';
+// Put your organisms here
+export const Organism = () => null;

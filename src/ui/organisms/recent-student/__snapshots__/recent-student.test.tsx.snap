@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`<RecentStudent> should match is's snapshot 1`] = `
-Array [
-  "Student!",
-  "Student!",
-  "Student!",
-]
-`;
