@@ -2,7 +2,7 @@ import { getHeaderUserAgent, getIsMobileUserAgent } from './user-agent';
 
 // These examples are taken from Mozilla documentation
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent
-const mobileCases = [
+export const mobileUserAgentCases = [
 	[
 		'Mozilla (Gecko, Firefox)',
 		'Mozilla/5.0 (Android; Mobile; rv:13.0) Gecko/13.0 Firefox/13.0',
@@ -28,7 +28,8 @@ const mobileCases = [
 		'Mozilla/5.0 (Windows Phone 10.0; Android 6.0.1; Xbox; Xbox One) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Mobile Safari/537.36 Edge/16.16299',
 	],
 ];
-const desktopCases = [
+
+export const desktopUserAgentCases = [
 	['Mozilla (Gecko, Firefox)', 'Mozilla/5.0 Gecko/13.0 Firefox/13.0'],
 	[
 		'Blink-based (Chromium, Google Chrome, Opera 15+, Edge)',
@@ -44,8 +45,10 @@ const desktopCases = [
 describe('user-agent', () => {
 	describe('getHeaderUserAgent', () => {
 		it('should return the user-agent inside of passed header', () => {
-			const userAgent = getHeaderUserAgent({ 'user-agent': mobileCases[0][1] });
-			expect(userAgent).toBe(mobileCases[0][1]);
+			const userAgent = getHeaderUserAgent({
+				'user-agent': mobileUserAgentCases[0][1],
+			});
+			expect(userAgent).toBe(mobileUserAgentCases[0][1]);
 		});
 
 		it('should return an empty string if no user-agent available in passed header', () => {
@@ -55,14 +58,14 @@ describe('user-agent', () => {
 	});
 
 	describe('getIsMobileUserAgent', () => {
-		test.each(mobileCases)(
+		test.each(mobileUserAgentCases)(
 			'should return true for mobile user agents (like: %p)',
 			(_, value: string) => {
 				expect(getIsMobileUserAgent(value)).toBeTruthy();
 			}
 		);
 
-		test.each(desktopCases)(
+		test.each(desktopUserAgentCases)(
 			'should return false for desktop user agents (like: %p)',
 			(_, value: string) => {
 				expect(getIsMobileUserAgent(value)).toBeFalsy();
