@@ -31,8 +31,10 @@ module.exports = {
 			black: '#000000',
 			yellow: '#FFC93D',
 			'yellow-opacity-10': 'rgba(255, 201, 61, 0.1)',
+			'yellow-opacity-80': 'rgba(179, 129, 0, 0.8)',
 			blue: '#3AB3DA',
 			'blue-opacity-10': 'rgba(58, 179, 218, 0.1)',
+			'blue-opacity-80': 'rgba(28, 121, 150, 0.8)',
 			mellow: '#888888',
 			gray: '#B5B5B5',
 			primary: {
