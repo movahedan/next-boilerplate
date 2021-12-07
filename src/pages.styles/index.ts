@@ -1,14 +1,14 @@
 import { css, keyframes } from '@emotion/css';
-import xw from 'xwind';
+import tw from 'twin.macro';
 
 const headerClassNames = {
-	base: xw`flex flex-col justify-center h-screen m-auto w-960px`,
+	base: tw`flex flex-col justify-center h-screen m-auto w-960px`,
 	h1: {
-		base: xw`mt-2 prose-hero-xl`,
-		yellow: xw`text-yellow`,
-		blue: xw`text-blue`,
-		block: xw`block`,
-		mellow: xw`text-mellow`,
+		base: tw`mt-2 prose-hero-xl`,
+		yellow: tw`text-yellow`,
+		blue: tw`text-blue`,
+		block: tw`block`,
+		mellow: tw`text-mellow`,
 		blinkKeyframe: keyframes`
 		0% {
 			opacity: 0;
@@ -24,9 +24,9 @@ const headerClassNames = {
 		}
 	`,
 	},
-	description: xw`my-80px text-gray prose-xl`,
-	buttonsWrapper: xw`mx-auto`,
-	firstButton: xw`mr-10`,
+	description: tw`my-80px text-gray prose-xl`,
+	buttonsWrapper: tw`mx-auto`,
+	firstButton: tw`mr-10`,
 };
 export const headerSectionClassName = css`
 	${headerClassNames.base};
@@ -92,15 +92,15 @@ export const headerSectionClassName = css`
 `;
 
 const findMeSectionClassNames = {
-	base: xw`flex flex-col items-center my-80px`,
-	h2: xw`inline-block text-center prose-wow-xl prose-hyper-type`,
+	base: tw`flex flex-col items-center my-80px`,
+	h2: tw`inline-block text-center prose-wow-xl prose-hyper-type`,
 	ol: {
-		base: xw`flex flex-wrap justify-center text-center list-none mt-40px`,
+		base: tw`flex flex-wrap justify-center text-center list-none mt-40px`,
 		li: {
-			base: xw`w-480px mt-40px`,
-			icon: xw`flex items-center justify-center mx-auto mb-6 w-72px h-72px bg-white-opacity-10 rounded-6px`,
-			iconSvg: xw`w-12 h-12 text-white`,
-			iconLabel: xw`prose-xl text-gray`,
+			base: tw`w-480px mt-40px`,
+			icon: tw`flex items-center justify-center mx-auto mb-6 w-72px h-72px bg-white-opacity-10 rounded-6px`,
+			iconSvg: tw`w-12 h-12 text-white`,
+			iconLabel: tw`prose-xl text-gray`,
 		},
 	},
 };
@@ -127,35 +127,35 @@ export const findMeSectionClassName = css`
 `;
 
 const jobsSectionClassNames = {
-	base: xw`px-10 my-80px`,
-	h2: xw`text-center prose-wow-xl prose-hyper-type`,
+	base: tw`px-10 my-80px`,
+	h2: tw`text-center prose-wow-xl prose-hyper-type`,
 	ul: {
-		base: xw`flex flex-wrap items-stretch justify-center gap-6 mt-80px`,
+		base: tw`flex flex-wrap items-stretch justify-center gap-6 mt-80px`,
 		li: {
-			base: xw`max-w-4xl`,
-			yellowVariant: xw`lg:w-480px`,
-			blueVariant: xw`lg:max-w-4xl`,
+			base: tw`max-w-4xl`,
+			yellowVariant: tw`lg:w-480px`,
+			blueVariant: tw`lg:max-w-4xl`,
 			section: {
-				base: xw`p-10`,
+				base: tw`p-10`,
 
-				h3: xw`prose-2xl`,
+				h3: tw`prose-2xl`,
 				h4: {
-					base: xw`prose-heading-2xl mb-6`,
-					blue: xw`text-blue`,
-					yellow: xw`text-yellow`,
+					base: tw`prose-heading-2xl mb-6`,
+					blue: tw`text-blue`,
+					yellow: tw`text-yellow`,
 				},
 				span: {
-					base: xw`block mb-2 prose-lg`,
-					firstChild: xw`inline-block mb-6 prose-2xl`,
-					lastChild: xw`block mb-6`,
+					base: tw`block mb-2 prose-lg`,
+					firstChild: tw`inline-block mb-6 prose-2xl`,
+					lastChild: tw`block mb-6`,
 				},
-				p: xw`prose-lg`,
+				p: tw`prose-lg`,
 			},
 		},
 	},
-	icon: xw`flex items-center justify-center mx-auto mb-6 w-72px h-72px bg-white-opacity-10 rounded-6px`,
-	iconPath: xw`w-12 h-12 text-white`,
-	iconLabel: xw`prose-xl text-gray`,
+	icon: tw`flex items-center justify-center mx-auto mb-6 w-72px h-72px bg-white-opacity-10 rounded-6px`,
+	iconPath: tw`w-12 h-12 text-white`,
+	iconLabel: tw`prose-xl text-gray`,
 };
 export const jobsSectionClassName = css`
 	${jobsSectionClassNames.base};
