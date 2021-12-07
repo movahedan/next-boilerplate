@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Mouse> should match snapshot 1`] = `
+.emotion-0 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  pointer-events: none;
+  --tw-bg-opacity: 1;
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
+  opacity: 0.75;
+  border-color: rgba(255, 255, 255, 0.3);
+  border-width: 0.1875rem;
+  border-radius: 9999px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  transition-duration: 100ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .emotion-0 {
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    transform: none;
+  }
+}
+
+<span
+  className="fixed top-0 bottom-0 left-0 right-0 z-10 h-screen pointer-events-none"
+>
+  <span
+    className="emotion-0"
+    hidden={false}
+    style={
+      Object {
+        "left": -36,
+        "top": -36,
+      }
+    }
+  />
+</span>
+`;

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WowTitle> should match snapshot 1`] = `
+.emotion-0 {
+  --tw-gradient-from: #3AB3DA;
+  --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to, rgba(58, 179, 218, 0));
+  --tw-gradient-to: #FFC93D;
+  display: inline-block;
+  text-align: center;
+  color: transparent;
+  opacity: 0.5;
+  font-family: sans-serif;
+  font-family: Sen;
+  font-size: 5rem;
+  line-height: 6rem;
+  font-weight: 700;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+<span
+  className="emotion-0"
+>
+  Wow
+</span>
+`;
