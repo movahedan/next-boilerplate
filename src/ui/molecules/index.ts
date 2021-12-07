@@ -1,1 +1,1 @@
-export * from './student';
+export const Molecules = () => null;
