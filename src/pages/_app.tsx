@@ -22,7 +22,7 @@ import Error from './_error';
 
 import type { AppWithLayoutProps, NextWebVitalsMetric } from 'next/app';
 
-import 'tailwindcss/tailwind.css';
+import 'tailwindcss/base.css';
 
 class MyApp extends App<AppWithLayoutProps> {
 	state = {
