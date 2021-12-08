@@ -1,3 +1,36 @@
+const importOrderConfig = {
+	groups: [
+		['builtin', 'external'],
+		'internal',
+		['parent', 'sibling', 'index'],
+		'type',
+	],
+	pathGroups: [
+		{
+			pattern: 'entry/*',
+			group: 'internal',
+			position: 'after',
+		},
+		{
+			pattern: 'ui/*',
+			group: 'internal',
+			position: 'after',
+		},
+		{
+			pattern: 'pages.styles',
+			group: 'internal',
+			position: 'after',
+		},
+	],
+	pathGroupsExcludedImportTypes: ['builtin', 'external'],
+	'newlines-between': 'always',
+	alphabetize: {
+		order: 'asc',
+		caseInsensitive: false,
+	},
+	warnOnUnassignedImports: false,
+}
+
 const importPlugin = {
 	plugins: ['import'],
 	settings: {
@@ -53,33 +86,7 @@ const importPlugin = {
 		],
 		'import/order': [
 			'error',
-			{
-				groups: [
-					['builtin', 'external'],
-					'internal',
-					['parent', 'sibling', 'index'],
-					'type',
-				],
-				pathGroups: [
-					{
-						pattern: 'entry/*',
-						group: 'internal',
-						position: 'after',
-					},
-					{
-						pattern: 'ui/*',
-						group: 'internal',
-						position: 'after',
-					},
-				],
-				pathGroupsExcludedImportTypes: ['builtin', 'external'],
-				'newlines-between': 'always',
-				alphabetize: {
-					order: 'asc',
-					caseInsensitive: false,
-				},
-				warnOnUnassignedImports: false,
-			},
+			importOrderConfig,
 		],
 	},
 	overrides: [
