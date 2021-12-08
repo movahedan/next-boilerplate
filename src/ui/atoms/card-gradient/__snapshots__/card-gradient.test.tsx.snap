@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardGradient> should match is's blue variant snapshot 1`] = `
+.emotion-0 {
+  padding: 0.125rem;
+  border-radius: 1.25rem;
+  transition-property: background-color,border-color,color,fill,stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.emotion-0.blue {
+  background: linear-gradient(134.14deg, #3AB3DA 0%, rgba(255, 255, 255, 0.1) 25.6%);
+}
+
+.emotion-0.blue:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(58, 179, 218, var(--tw-bg-opacity));
+}
+
+.emotion-0.yellow {
+  background: linear-gradient(146.28deg, #FFC93D 0%, rgba(255, 255, 255, 0.1) 25.6%);
+}
+
+.emotion-0.yellow:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 201, 61, var(--tw-bg-opacity));
+}
+
+.emotion-1 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(33, 33, 33, var(--tw-bg-opacity));
+  border-radius: 1.25rem;
+  height: 100%;
+}
+
+.emotion-2 {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  height: 100%;
+}
+
+.emotion-2.blue {
+  background: linear-gradient(130.76deg, rgba(58, 179, 218, 0.1) 0%, transparent 50.03%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+.emotion-2.yellow {
+  background: linear-gradient(137.94deg, rgba(255, 201, 61, 0.1) 0%, transparent 30.89%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+<div
+  className="emotion-0 blue"
+>
+  <div
+    className="emotion-1"
+  >
+    <div
+      className="emotion-2"
+    />
+  </div>
+</div>
+`;
+
+exports[`<CardGradient> should match is's yellow variant snapshot 1`] = `
+.emotion-0 {
+  padding: 0.125rem;
+  border-radius: 1.25rem;
+  transition-property: background-color,border-color,color,fill,stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.emotion-0.blue {
+  background: linear-gradient(134.14deg, #3AB3DA 0%, rgba(255, 255, 255, 0.1) 25.6%);
+}
+
+.emotion-0.blue:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(58, 179, 218, var(--tw-bg-opacity));
+}
+
+.emotion-0.yellow {
+  background: linear-gradient(146.28deg, #FFC93D 0%, rgba(255, 255, 255, 0.1) 25.6%);
+}
+
+.emotion-0.yellow:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 201, 61, var(--tw-bg-opacity));
+}
+
+.emotion-1 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(33, 33, 33, var(--tw-bg-opacity));
+  border-radius: 1.25rem;
+  height: 100%;
+}
+
+.emotion-2 {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  height: 100%;
+}
+
+.emotion-2.blue {
+  background: linear-gradient(130.76deg, rgba(58, 179, 218, 0.1) 0%, transparent 50.03%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+.emotion-2.yellow {
+  background: linear-gradient(137.94deg, rgba(255, 201, 61, 0.1) 0%, transparent 30.89%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+<div
+  className="emotion-0 yellow"
+>
+  <div
+    className="emotion-1"
+  >
+    <div
+      className="emotion-2"
+    />
+  </div>
+</div>
+`;

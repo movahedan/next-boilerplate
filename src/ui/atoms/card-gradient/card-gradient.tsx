@@ -12,23 +12,17 @@ interface CardGradientProps {
 	as?: keyof JSX.IntrinsicElements;
 	innerAs?: keyof JSX.IntrinsicElements;
 	variant: 'blue' | 'yellow';
-	className?: string;
-	innerClassName?: string;
 }
 
 export const CardGradient: FC<CardGradientProps> = ({
 	as: OuterAs = 'div',
 	innerAs: InnerAs = 'div',
 	variant,
-	className: outerClassName,
-	innerClassName,
 	children,
 }) => (
-	<OuterAs className={cx(wrapperClassName, variant, outerClassName)}>
+	<OuterAs className={cx(wrapperClassName, variant)}>
 		<div className={middleClassName}>
-			<InnerAs className={cx(containerClassName, innerClassName)}>
-				{children}
-			</InnerAs>
+			<InnerAs className={containerClassName}>{children}</InnerAs>
 		</div>
 	</OuterAs>
 );
