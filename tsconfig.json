@@ -33,7 +33,15 @@
         "*"
       ]
     },
-    "incremental": true
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "typescript-xwind-plugin",
+        "config": "./tailwind.config.js", 
+        "ignoreErrors": null,
+        "tags": ["tw", "xw"]
+      }
+    ]
   },
   "exclude": [
     "node_modules",
