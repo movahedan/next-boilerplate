@@ -20,6 +20,7 @@ exports[`<CardGradient> should match is's blue variant snapshot 1`] = `
 }
 
 .emotion-1 {
+  height: 100%;
   --tw-bg-opacity: 1;
   background-color: rgba(33, 33, 33, var(--tw-bg-opacity));
   border-radius: 1.25rem;
@@ -91,6 +92,7 @@ exports[`<CardGradient> should match is's yellow variant snapshot 1`] = `
 }
 
 .emotion-1 {
+  height: 100%;
   --tw-bg-opacity: 1;
   background-color: rgba(33, 33, 33, var(--tw-bg-opacity));
   border-radius: 1.25rem;
