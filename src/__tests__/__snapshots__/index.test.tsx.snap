@@ -37,56 +37,31 @@ Array [
   width: 60rem;
 }
 
-.emotion-0>h1 {
-  margin-top: 0.5rem;
-  font-family: Red Hat Mono;
-  font-size: 4rem;
-  line-height: 6.25rem;
-  font-weight: 500;
-}
-
-.emotion-0>h1 .block {
-  display: block;
-}
-
-.emotion-0>h1 .yellow {
-  --tw-text-opacity: 1;
-  color: rgba(255, 201, 61, var(--tw-text-opacity));
-}
-
-.emotion-0>h1 .blue {
-  --tw-text-opacity: 1;
-  color: rgba(58, 179, 218, var(--tw-text-opacity));
-}
-
-.emotion-0>h1 .mellow {
-  --tw-text-opacity: 1;
-  color: rgba(136, 136, 136, var(--tw-text-opacity));
-}
-
-.emotion-0>h1 .intro::before {
+.emotion-1 .intro::before {
   content: '*';
   --tw-text-opacity: 1;
   color: rgba(255, 201, 61, var(--tw-text-opacity));
 }
 
-.emotion-0>h1 .info {
+.emotion-1 .info {
+  --tw-text-opacity: 1;
+  color: rgba(58, 179, 218, var(--tw-text-opacity));
   display: block;
 }
 
-.emotion-0>h1 .info::after {
+.emotion-1 .info::after {
   content: ' &&';
   --tw-text-opacity: 1;
   color: rgba(58, 179, 218, var(--tw-text-opacity));
 }
 
-.emotion-0>h1 .outro {
-  display: block;
+.emotion-1 .outro {
   --tw-text-opacity: 1;
   color: rgba(136, 136, 136, var(--tw-text-opacity));
+  display: block;
 }
 
-.emotion-0>h1 .outro::after {
+.emotion-1 .outro::after {
   content: ';';
   --tw-text-opacity: 1;
   color: rgba(255, 201, 61, var(--tw-text-opacity));
@@ -98,19 +73,27 @@ Array [
   animation-iteration-count: infinite;
 }
 
-.emotion-0>h1 .name::before {
+.emotion-1 .name::before {
   content: '<';
   --tw-text-opacity: 1;
   color: rgba(58, 179, 218, var(--tw-text-opacity));
 }
 
-.emotion-0>h1 .name::after {
+.emotion-1 .name::after {
   content: '>';
   --tw-text-opacity: 1;
   color: rgba(58, 179, 218, var(--tw-text-opacity));
 }
 
-.emotion-0>p {
+.emotion-2 {
+  margin-top: 0.5rem;
+  font-family: Red Hat Mono;
+  font-size: 4rem;
+  line-height: 6.25rem;
+  font-weight: 500;
+}
+
+.emotion-3 {
   margin-top: 5rem;
   margin-bottom: 5rem;
   --tw-text-opacity: 1;
@@ -121,16 +104,12 @@ Array [
   font-weight: normal;
 }
 
-.emotion-0>div {
+.emotion-4 {
   margin-left: auto;
   margin-right: auto;
 }
 
-.emotion-0>div button:first-child {
-  margin-right: 2.5rem;
-}
-
-.emotion-1 {
+.emotion-5 {
   position: relative;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -164,12 +143,12 @@ Array [
   cursor: pointer;
 }
 
-.emotion-1:disabled {
+.emotion-5:disabled {
   opacity: 0.25;
   cursor: not-allowed;
 }
 
-.emotion-1.small {
+.emotion-5.small {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1.5rem;
@@ -181,7 +160,7 @@ Array [
   max-width: 40rem;
 }
 
-.emotion-1.medium {
+.emotion-5.medium {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   padding-left: 2rem;
@@ -193,7 +172,7 @@ Array [
   max-width: 40rem;
 }
 
-.emotion-1.large {
+.emotion-5.large {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   padding-left: 3rem;
@@ -205,7 +184,15 @@ Array [
   max-width: 40rem;
 }
 
-.emotion-1:hover:not(:disabled):after {
+.emotion-5.primary {
+  background: linear-gradient(
+  			91.52deg,
+  			rgba(28, 121, 150, 0.8) 0.13%,
+  			rgba(179, 129, 0, 0.8) 100%
+  		);
+}
+
+.emotion-5:hover:not(:disabled):after {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   top: 0px;
   bottom: 0px;
@@ -213,12 +200,12 @@ Array [
   right: 0px;
 }
 
-.emotion-1:before,
-.emotion-1:after {
+.emotion-5:before,
+.emotion-5:after {
   border-radius: 9999px;
 }
 
-.emotion-1:before {
+.emotion-5:before {
   display: block;
   width: 100%;
   height: 100%;
@@ -230,7 +217,7 @@ Array [
   z-index: -2;
 }
 
-.emotion-1:after {
+.emotion-5:after {
   position: absolute;
   top: 0.25rem;
   bottom: 0.25rem;
@@ -242,35 +229,27 @@ Array [
   display: block;
   overflow: hidden;
   content: '';
-  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
   z-index: -1;
 }
 
-.emotion-1:active:not(:disabled) {
-  color: #ccc;
-}
-
-.emotion-1:active:not(:disabled):after {
+.emotion-5:active:not(:disabled):after {
   position: absolute;
   top: 0.25rem;
   bottom: 0.25rem;
   right: 0.25rem;
   left: 0.25rem;
-  background-image: linear-gradient(
-  				0deg,
-  				rgba(0, 0, 0, 0.2),
-  				rgba(0, 0, 0, 0.2)
-  			),linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
 }
 
-.emotion-1:focus:not(:active):not(:hover):before {
-  background-color: rgba(249, 58, 19, 0.32);
+.emotion-6 {
+  margin-right: 2.5rem;
 }
 
 <header
     className="emotion-0"
   >
-    <h1>
+    <h1
+      className="emotion-1 emotion-2"
+    >
       <span
         className="intro"
       >
@@ -292,14 +271,18 @@ Array [
         Never keeps you await
       </span>
     </h1>
-    <p>
+    <p
+      className="emotion-3"
+    >
       A JavaScript developer with 5 years of experience in Front-End development. Skills include fast learning, creative problem solving and high perseverance. Able to communicate effectively in a team and very keen to improve my management skills.
     </p>
-    <div>
+    <div
+      className="emotion-4"
+    >
       <button
         aria-disabled={false}
         aria-label="button"
-        className="emotion-1 large primary "
+        className="emotion-5 large primary emotion-6"
         data-testid="button"
         disabled={false}
         role="button"
@@ -318,7 +301,7 @@ Array [
       <button
         aria-disabled={false}
         aria-label="button"
-        className="emotion-1 large outline "
+        className="emotion-5 large outline "
         data-testid="button"
         disabled={false}
         role="button"
@@ -352,7 +335,7 @@ Array [
   margin-bottom: 5rem;
 }
 
-.emotion-0>h2 {
+.emotion-1 {
   display: inline-block;
   text-align: center;
   font-family: Sen;
@@ -366,7 +349,7 @@ Array [
   background-image: linear-gradient(to right, #3AB3DA, #FFC93D);
 }
 
-.emotion-0>ol {
+.emotion-2 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -384,12 +367,12 @@ Array [
   margin-top: 2.5rem;
 }
 
-.emotion-0>ol>li {
+.emotion-3 {
   width: 30rem;
   margin-top: 2.5rem;
 }
 
-.emotion-0>ol>li i {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -411,14 +394,14 @@ Array [
   border-radius: 0.375rem;
 }
 
-.emotion-0>ol>li i svg {
+.emotion-5 {
   width: 3rem;
   height: 3rem;
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
-.emotion-0>ol>li i span {
+.emotion-6 {
   font-family: Sen;
   font-size: 1.5rem;
   line-height: 2.5rem;
@@ -430,14 +413,25 @@ Array [
 <section
     className="emotion-0"
   >
-    <h2>
+    <h2
+      className="emotion-1"
+    >
       Find Me at
     </h2>
-    <ol>
-      <li>
-        <i>
-          <svg>
+    <ol
+      className="emotion-2"
+    >
+      <li
+        className="emotion-3"
+      >
+        <i
+          className="emotion-4"
+        >
+          <svg
+            className="emotion-5"
+          >
             <path
+              className="emotion-6"
               d="M44 12C44 9.8 42.2 8 40 8H8C5.8 8 4 9.8 4 12V36C4 38.2 5.8 40 8 40H40C42.2 40 44 38.2 44 36V12ZM40 12L24 22L8 12H40ZM40 36H8V16L24 26L40 16V36Z"
               fill="currentColor"
             />
@@ -447,10 +441,17 @@ Array [
           soheil.movahhedan@gmail.com
         </span>
       </li>
-      <li>
-        <i>
-          <svg>
+      <li
+        className="emotion-3"
+      >
+        <i
+          className="emotion-4"
+        >
+          <svg
+            className="emotion-5"
+          >
             <path
+              className="emotion-6"
               d="M24 4C21.3736 4 18.7728 4.51732 16.3463 5.52241C13.9198 6.5275 11.715 8.00069 9.85786 9.85786C6.10714 13.6086 4 18.6957 4 24C4 32.84 9.74 40.34 17.68 43C18.68 43.16 19 42.54 19 42C19 41.54 19 40.28 19 38.62C13.46 39.82 12.28 35.94 12.28 35.94C11.36 33.62 10.06 33 10.06 33C8.24 31.76 10.2 31.8 10.2 31.8C12.2 31.94 13.26 33.86 13.26 33.86C15 36.9 17.94 36 19.08 35.52C19.26 34.22 19.78 33.34 20.34 32.84C15.9 32.34 11.24 30.62 11.24 23C11.24 20.78 12 19 13.3 17.58C13.1 17.08 12.4 15 13.5 12.3C13.5 12.3 15.18 11.76 19 14.34C20.58 13.9 22.3 13.68 24 13.68C25.7 13.68 27.42 13.9 29 14.34C32.82 11.76 34.5 12.3 34.5 12.3C35.6 15 34.9 17.08 34.7 17.58C36 19 36.76 20.78 36.76 23C36.76 30.64 32.08 32.32 27.62 32.82C28.34 33.44 29 34.66 29 36.52C29 39.2 29 41.36 29 42C29 42.54 29.32 43.18 30.34 43C38.28 40.32 44 32.84 44 24C44 21.3736 43.4827 18.7728 42.4776 16.3463C41.4725 13.9198 39.9993 11.715 38.1421 9.85786C36.285 8.00069 34.0802 6.5275 31.6537 5.52241C29.2272 4.51732 26.6264 4 24 4Z"
               fill="currentColor"
             />
@@ -460,10 +461,17 @@ Array [
           https://linkedin.com/in/soheil-movahedan
         </span>
       </li>
-      <li>
-        <i>
-          <svg>
+      <li
+        className="emotion-3"
+      >
+        <i
+          className="emotion-4"
+        >
+          <svg
+            className="emotion-5"
+          >
             <path
+              className="emotion-6"
               d="M38 6C39.0609 6 40.0783 6.42143 40.8284 7.17157C41.5786 7.92172 42 8.93913 42 10V38C42 39.0609 41.5786 40.0783 40.8284 40.8284C40.0783 41.5786 39.0609 42 38 42H10C8.93913 42 7.92172 41.5786 7.17157 40.8284C6.42143 40.0783 6 39.0609 6 38V10C6 8.93913 6.42143 7.92172 7.17157 7.17157C7.92172 6.42143 8.93913 6 10 6H38ZM37 37V26.4C37 24.6708 36.3131 23.0124 35.0903 21.7897C33.8676 20.5669 32.2092 19.88 30.48 19.88C28.78 19.88 26.8 20.92 25.84 22.48V20.26H20.26V37H25.84V27.14C25.84 25.6 27.08 24.34 28.62 24.34C29.3626 24.34 30.0748 24.635 30.5999 25.1601C31.125 25.6852 31.42 26.3974 31.42 27.14V37H37ZM13.76 17.12C14.6511 17.12 15.5058 16.766 16.1359 16.1359C16.766 15.5058 17.12 14.6511 17.12 13.76C17.12 11.9 15.62 10.38 13.76 10.38C12.8636 10.38 12.0039 10.7361 11.37 11.37C10.7361 12.0039 10.38 12.8636 10.38 13.76C10.38 15.62 11.9 17.12 13.76 17.12ZM16.54 37V20.26H11V37H16.54Z"
               fill="currentColor"
             />
@@ -482,7 +490,7 @@ Array [
   margin-bottom: 5rem;
 }
 
-.emotion-0>h2 {
+.emotion-1 {
   text-align: center;
   font-family: Sen;
   font-size: 5rem;
@@ -495,7 +503,27 @@ Array [
   background-image: linear-gradient(to right, #3AB3DA, #FFC93D);
 }
 
-.emotion-0>ul {
+.emotion-2>li {
+  max-width: 56rem;
+}
+
+@media (min-width: 80rem) {
+  .emotion-2>li.blue {
+    max-width: 56rem;
+  }
+}
+
+@media (min-width: 80rem) {
+  .emotion-2>li.yellow {
+    width: 30rem;
+  }
+}
+
+.emotion-2>li section {
+  padding: 2.5rem;
+}
+
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -516,34 +544,84 @@ Array [
   margin-top: 5rem;
 }
 
-.emotion-0>ul>li {
-  max-width: 56rem;
+.emotion-4 {
+  padding: 0.125rem;
+  border-radius: 1.25rem;
+  transition-property: background-color,border-color,color,fill,stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
 }
 
-@media (min-width: 80rem) {
-  .emotion-0>ul>li.blue {
-    max-width: 56rem;
-  }
+.emotion-4.blue:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(58, 179, 218, var(--tw-bg-opacity));
 }
 
-@media (min-width: 80rem) {
-  .emotion-0>ul>li.yellow {
-    width: 30rem;
-  }
+.emotion-4.yellow:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 201, 61, var(--tw-bg-opacity));
 }
 
-.emotion-0>ul>li section {
-  padding: 2.5rem;
+.emotion-5 {
+  height: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgba(33, 33, 33, var(--tw-bg-opacity));
+  border-radius: 1.25rem;
 }
 
-.emotion-0>ul>li section h3 {
+.emotion-6 {
+  height: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgba(33, 33, 33, var(--tw-bg-opacity));
+  border-radius: 1.25rem;
+}
+
+.emotion-6.blue {
+  background: linear-gradient(130.76deg, rgba(58, 179, 218, 0.1) 0%, transparent 50.03%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+.emotion-6.yellow {
+  background: linear-gradient(137.94deg, rgba(255, 201, 61, 0.1) 0%, transparent 30.89%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+.emotion-7 {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  height: 100%;
+}
+
+.emotion-7.blue {
+  background: linear-gradient(130.76deg, rgba(58, 179, 218, 0.1) 0%, transparent 50.03%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+.emotion-7.yellow {
+  background: linear-gradient(137.94deg, rgba(255, 201, 61, 0.1) 0%, transparent 30.89%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+.emotion-8 {
   font-family: Sen;
   font-size: 2rem;
   line-height: 2.375rem;
   font-weight: normal;
 }
 
-.emotion-0>ul>li section h4 base {
+.emotion-9 {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: Sen;
+  font-size: 1.125rem;
+  line-height: 2rem;
+  font-weight: normal;
+  max-width: 40rem;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-family: Sen;
+  font-size: 2rem;
+  line-height: 2.375rem;
+  font-weight: normal;
+}
+
+.emotion-10 {
   font-family: Sen;
   font-size: 3rem;
   line-height: 2.5rem;
@@ -552,25 +630,7 @@ Array [
   margin-bottom: 1.5rem;
 }
 
-.emotion-0>ul>li section h4 blue {
-  --tw-text-opacity: 1;
-  color: rgba(58, 179, 218, var(--tw-text-opacity));
-}
-
-.emotion-0>ul>li section h4 yellow {
-  --tw-text-opacity: 1;
-  color: rgba(255, 201, 61, var(--tw-text-opacity));
-}
-
-.emotion-0>ul>li section p {
-  font-family: Sen;
-  font-size: 1.125rem;
-  line-height: 2rem;
-  font-weight: normal;
-  max-width: 40rem;
-}
-
-.emotion-0>ul>li section span {
+.emotion-11 {
   display: block;
   margin-bottom: 0.5rem;
   font-family: Sen;
@@ -580,110 +640,72 @@ Array [
   max-width: 40rem;
 }
 
-.emotion-0>ul>li section span:first-child {
-  display: inline-block;
-  margin-bottom: 1.5rem;
-  font-family: Sen;
-  font-size: 2rem;
-  line-height: 2.375rem;
-  font-weight: normal;
-}
-
-.emotion-0>ul>li section span:last-child {
+.emotion-12 {
   display: block;
   margin-bottom: 1.5rem;
 }
 
-.emotion-1 {
-  padding: 0.125rem;
-  border-radius: 1.25rem;
-  transition-property: background-color,border-color,color,fill,stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 500ms;
-}
-
-.emotion-1.blue:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgba(58, 179, 218, var(--tw-bg-opacity));
-}
-
-.emotion-1.yellow:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgba(255, 201, 61, var(--tw-bg-opacity));
-}
-
-.emotion-2 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(33, 33, 33, var(--tw-bg-opacity));
-  border-radius: 1.25rem;
-}
-
-.emotion-3 {
-  height: 100%;
-  --tw-bg-opacity: 1;
-  background-color: rgba(33, 33, 33, var(--tw-bg-opacity));
-  border-radius: 1.25rem;
-}
-
-.emotion-3.blue {
-  background: linear-gradient(130.76deg, rgba(58, 179, 218, 0.1) 0%, transparent 50.03%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
-}
-
-.emotion-3.yellow {
-  background: linear-gradient(137.94deg, rgba(255, 201, 61, 0.1) 0%, transparent 30.89%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
-}
-
-.emotion-4 {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 1.25rem;
-  height: 100%;
-}
-
-.emotion-4.blue {
-  background: linear-gradient(130.76deg, rgba(58, 179, 218, 0.1) 0%, transparent 50.03%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
-}
-
-.emotion-4.yellow {
-  background: linear-gradient(137.94deg, rgba(255, 201, 61, 0.1) 0%, transparent 30.89%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+.emotion-13 {
+  font-family: Sen;
+  font-size: 1.125rem;
+  line-height: 2rem;
+  font-weight: normal;
+  max-width: 40rem;
 }
 
 <section
     className="emotion-0"
   >
-    <h2>
+    <h2
+      className="emotion-1"
+    >
       I’ve Worked in
     </h2>
-    <ul>
+    <ul
+      className="emotion-2 emotion-3"
+    >
       <li
-        className="emotion-1 yellow"
+        className="emotion-4 yellow"
       >
         <div
-          className="emotion-2"
+          className="emotion-5"
         >
           <div
-            className="emotion-3 yellow"
+            className="emotion-6 yellow"
           >
             <section
-              className="emotion-4"
+              className="emotion-7"
             >
-              <h3>
+              <h3
+                className="emotion-8"
+              >
                 👨🏻‍ Senior Front-end Developer
               </h3>
-              <span>
+              <span
+                className="emotion-9"
+              >
                 (
                 Full-time
                 )
               </span>
-              <h4>
+              <h4
+                className="emotion-10"
+              >
                 Jaytoon
               </h4>
-              <span>
+              <span
+                className="emotion-11"
+              >
                 📆 September 2020  –present 5 months
               </span>
-              <span>
+              <span
+                className="emotion-12"
+              >
                 🏢 Sydney, Australia (Remote, International product)
               </span>
-              <p>
+              <p
+                className="emotion-13"
+              >
                 As a team member, I'm working here on a task/project basis. job. Working on various projects in agile.
               </p>
             </section>
@@ -691,35 +713,47 @@ Array [
         </div>
       </li>
       <li
-        className="emotion-1 blue"
+        className="emotion-4 blue"
       >
         <div
-          className="emotion-2"
+          className="emotion-5"
         >
           <div
-            className="emotion-3 blue"
+            className="emotion-6 blue"
           >
             <section
-              className="emotion-4"
+              className="emotion-7"
             >
-              <h3>
+              <h3
+                className="emotion-8"
+              >
                 👨🏻‍ Senior Front-end Developer
               </h3>
-              <span>
+              <span
+                className="emotion-9"
+              >
                 (
                 Full-time
                 )
               </span>
-              <h4>
+              <h4
+                className="emotion-10"
+              >
                 Techlinked
               </h4>
-              <span>
+              <span
+                className="emotion-11"
+              >
                 📆 October 2019  –present 17 months
               </span>
-              <span>
+              <span
+                className="emotion-12"
+              >
                 🏢 California, USA (Remote, International product)
               </span>
-              <p>
+              <p
+                className="emotion-13"
+              >
                 A platform for industrial equipment, their experts and their service-providing companies that includes a series of social-media features like feed, follow, etc. The company is based in Silicon valley.
               </p>
             </section>
@@ -727,35 +761,47 @@ Array [
         </div>
       </li>
       <li
-        className="emotion-1 yellow"
+        className="emotion-4 yellow"
       >
         <div
-          className="emotion-2"
+          className="emotion-5"
         >
           <div
-            className="emotion-3 yellow"
+            className="emotion-6 yellow"
           >
             <section
-              className="emotion-4"
+              className="emotion-7"
             >
-              <h3>
+              <h3
+                className="emotion-8"
+              >
                 👨🏻‍ Senior Front-end Developer
               </h3>
-              <span>
+              <span
+                className="emotion-9"
+              >
                 (
                 Full-time
                 )
               </span>
-              <h4>
+              <h4
+                className="emotion-10"
+              >
                 Techlinked
               </h4>
-              <span>
+              <span
+                className="emotion-11"
+              >
                 📆 October 2019  –present 17 months
               </span>
-              <span>
+              <span
+                className="emotion-12"
+              >
                 🏢 California, USA (Remote, International product)
               </span>
-              <p>
+              <p
+                className="emotion-13"
+              >
                 A platform for industrial equipment, their experts and their service-providing companies that includes a series of social-media features like feed, follow, etc. The company is based in Silicon valley.
               </p>
             </section>
@@ -763,35 +809,47 @@ Array [
         </div>
       </li>
       <li
-        className="emotion-1 blue"
+        className="emotion-4 blue"
       >
         <div
-          className="emotion-2"
+          className="emotion-5"
         >
           <div
-            className="emotion-3 blue"
+            className="emotion-6 blue"
           >
             <section
-              className="emotion-4"
+              className="emotion-7"
             >
-              <h3>
+              <h3
+                className="emotion-8"
+              >
                 👨🏻‍ Senior Front-end Developer
               </h3>
-              <span>
+              <span
+                className="emotion-9"
+              >
                 (
                 Full-time
                 )
               </span>
-              <h4>
+              <h4
+                className="emotion-10"
+              >
                 Techlinked
               </h4>
-              <span>
+              <span
+                className="emotion-11"
+              >
                 📆 October 2019  –present 17 months
               </span>
-              <span>
+              <span
+                className="emotion-12"
+              >
                 🏢 California, USA (Remote, International product)
               </span>
-              <p>
+              <p
+                className="emotion-13"
+              >
                 A platform for industrial equipment, their experts and their service-providing companies that includes a series of social-media features like feed, follow, etc. The company is based in Silicon valley.
               </p>
             </section>
