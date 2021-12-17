@@ -44,8 +44,6 @@ Array [
 }
 
 .emotion-1 .info {
-  --tw-text-opacity: 1;
-  color: rgba(58, 179, 218, var(--tw-text-opacity));
   display: block;
 }
 

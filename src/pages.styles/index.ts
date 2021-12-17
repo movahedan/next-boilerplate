@@ -23,7 +23,7 @@ export const headerSectionClassName = css`
 		}
 	}
 	.info {
-		${tw`text-blue block`};
+		${tw`block`};
 		&::after {
 			content: ' &&';
 			${tw`text-blue`};
