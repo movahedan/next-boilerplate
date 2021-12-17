@@ -2,11 +2,11 @@ import { useContext, useEffect, useState } from 'react';
 
 import { getHeaderUserAgent, getIsMobileUserAgent } from 'lib/utils';
 
-import { getMatchMediaEntries } from './media-queries.constants';
 import {
 	MediaQueriesContext,
 	initMediaQueriesContext,
 } from './media-queries.context';
+import { getMatchMediaEntries } from './media-queries.utils';
 
 import type { ScreenNames, MediaQueries } from './media-queries.types';
 import type { IncomingMessage } from 'http';

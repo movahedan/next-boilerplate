@@ -13,7 +13,7 @@ const eslintPlugin = {
 			files: [
 				'.eslintrc.js',
 				'./tailwind.config.js',
-				'./src/lib/utils/tailwind-theme.ts',
+				'./src/ui/utils/tailwind-theme.ts',
 			],
 			rules: {
 				'max-lines': 'off',

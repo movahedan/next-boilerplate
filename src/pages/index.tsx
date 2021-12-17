@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo';
 
-import { globalGetServerSideProps } from 'lib/server';
+import { globalGetServerSideProps } from 'pages.shared';
 
 import { websiteBaseUrl } from 'entry/seo';
 

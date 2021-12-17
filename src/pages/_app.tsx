@@ -7,11 +7,11 @@ import { SWRConfig } from 'swr';
 import { GlobalStyles } from 'twin.macro';
 
 import { AnalyticsHeadScript } from 'lib/analytics';
-import { MediaQueriesProvider } from 'lib/media-queries';
 
 import { fetcherConfig, swrConfig } from 'entry/configs';
 import { getDefaultNextSeoConfig } from 'entry/seo';
 
+import { MediaQueriesProvider } from 'ui/media-queries';
 import { ComposeProviders, fontLinksProps, globalStyles } from 'ui/utils';
 
 import Error from './_error';

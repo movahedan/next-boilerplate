@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-import { getMatchMediaEntries } from './media-queries.constants';
+import { getMatchMediaEntries } from './media-queries.utils';
 
 import type { ScreenNames, MediaQueries } from './media-queries.types';
 

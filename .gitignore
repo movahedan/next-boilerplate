@@ -23,6 +23,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.yarn
 
 # local env files
 .env.local
@@ -36,9 +37,6 @@ yarn-error.log*
 # husky
 .husky
 
-# Sentry
-.sentryclirc
-
 # robots.txt
 /public/robots.txt
 
@@ -47,9 +45,3 @@ yarn-error.log*
 
 # ts build info
 tsconfig.tsbuildinfo
-
-# Sentry
-.sentryclirc
-
-# Sentry
-.sentryclirc

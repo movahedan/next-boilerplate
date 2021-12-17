@@ -1,5 +1,9 @@
 import * as nextRouter from 'next/router';
 
+it('Dummy test', () => {
+	expect(true).toBeTruthy();
+});
+
 type MockUseRouterParams = Partial<nextRouter.NextRouter>;
 type MockUseRouter = (args?: MockUseRouterParams) => MockUseRouterParams;
 

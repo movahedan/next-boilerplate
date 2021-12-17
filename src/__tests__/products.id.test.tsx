@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
 import { create } from 'react-test-renderer';
 
-import { mockUseRouter } from '__mocks__/mock-router.jest';
+import { mockUseRouter } from '__tests__/__helpers__/router.test';
 import ProductPage, {
 	getStaticPaths,
 	getStaticProps,

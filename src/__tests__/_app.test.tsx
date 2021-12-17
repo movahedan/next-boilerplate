@@ -1,6 +1,6 @@
 import { create } from 'react-test-renderer';
 
-import { mockUseRouter } from '__mocks__/mock-router.jest';
+import { mockUseRouter } from '__tests__/__helpers__/router.test';
 import App, { reportWebVitals } from 'pages/_app';
 
 import { BaseLayout } from 'ui/templates';

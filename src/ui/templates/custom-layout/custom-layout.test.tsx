@@ -3,9 +3,9 @@ import { axe } from 'jest-axe';
 import { create } from 'react-test-renderer';
 
 import {
-	mobileUserAgentCases,
 	desktopUserAgentCases,
-} from '__mocks__/mock-user-agent.jest';
+	mobileUserAgentCases,
+} from 'lib/utils/user-agent.test';
 
 import { CustomLayout } from './custom-layout';
 
