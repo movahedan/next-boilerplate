@@ -1,19 +1,16 @@
-import { css as globalCss } from '@emotion/react';
-import xw from 'xwind';
+import { css } from '@emotion/react';
+import tw from 'twin.macro';
 
-const nextElementStyle = xw`relative bg-dark text-white`;
-const bgSvgStyle = xw`fixed w-screen h-screen pointer-events-none top-0 z-10`;
-
-export const customLayoutGlobalStyles = globalCss`
+export const customLayoutGlobalStyles = css`
 	::-webkit-scrollbar {
 		width: 0px;
 	}
 
 	#__next {
-    ${nextElementStyle};
+		${tw`relative bg-dark text-white`}
 
 		> svg.custom-layout-bg {
-			${bgSvgStyle}
+			${tw`fixed w-screen h-screen pointer-events-none top-0 z-10`}
 		}
 	}
 

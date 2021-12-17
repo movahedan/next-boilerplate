@@ -4,6 +4,7 @@ import App from 'next/app';
 import Head from 'next/head';
 import { Fragment } from 'react';
 import { SWRConfig } from 'swr';
+import { GlobalStyles } from 'twin.macro';
 
 import { AnalyticsHeadScript } from 'lib/analytics';
 import { MediaQueriesProvider } from 'lib/media-queries';
@@ -11,12 +12,7 @@ import { MediaQueriesProvider } from 'lib/media-queries';
 import { fetcherConfig, swrConfig } from 'entry/configs';
 import { getDefaultNextSeoConfig } from 'entry/seo';
 
-import {
-	ComposeProviders,
-	fontLinksProps,
-	globalStyles,
-	xwindGlobalStyles,
-} from 'ui/utils';
+import { ComposeProviders, fontLinksProps, globalStyles } from 'ui/utils';
 
 import Error from './_error';
 
@@ -80,8 +76,8 @@ class MyApp extends App<AppWithLayoutProps> {
 
 const IndependentProviders = () => (
 	<>
+		<GlobalStyles />
 		<Global styles={globalStyles} />
-		<Global styles={xwindGlobalStyles} />
 		<Head>
 			{fontLinksProps.map((props, index) => (
 				<link key={index} {...props} />

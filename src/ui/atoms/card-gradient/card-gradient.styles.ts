@@ -1,13 +1,13 @@
 import { css } from '@emotion/css';
-import xw from 'xwind';
+import tw from 'twin.macro';
 
 import { tailwindTheme } from 'lib/utils';
 
 const border = {
 	blueGradient: `linear-gradient(134.14deg, ${tailwindTheme.theme.colors.blue} 0%, ${tailwindTheme.theme.colors['white-opacity-10']} 25.6%)`,
-	blueHoverClassName: xw`hover:bg-blue`,
+	blueHoverClassName: tw`hover:bg-blue`,
 	yellowGradient: `linear-gradient(146.28deg, ${tailwindTheme.theme.colors.yellow} 0%, ${tailwindTheme.theme.colors['white-opacity-10']} 25.6%)`,
-	yellowHoverClassName: xw`hover:bg-yellow`,
+	yellowHoverClassName: tw`hover:bg-yellow`,
 };
 
 const background = {
@@ -15,7 +15,7 @@ const background = {
 	yellow: `linear-gradient(137.94deg, ${tailwindTheme.theme.colors['yellow-opacity-10']} 0%, transparent 30.89%), linear-gradient(0deg, ${tailwindTheme.theme.colors['white-opacity-10']}, ${tailwindTheme.theme.colors['white-opacity-10']})`,
 };
 
-const wrapperBase = xw`p-2px rounded-20px transition-colors ease-in-out duration-500`;
+const wrapperBase = tw`p-2px rounded-20px transition-colors ease-in-out duration-500`;
 export const wrapperClassName = css`
 	${wrapperBase}
 
@@ -29,12 +29,7 @@ export const wrapperClassName = css`
 	}
 `;
 
-const middleBase = xw`bg-dark rounded-20px h-full`;
-export const middleClassName = css`
-	${middleBase}
-`;
-
-const containerBase = xw`bg-white-opacity-10 rounded-20px h-full`;
+const containerBase = tw`bg-white-opacity-10 rounded-20px h-full`;
 export const containerClassName = css`
 	${containerBase};
 

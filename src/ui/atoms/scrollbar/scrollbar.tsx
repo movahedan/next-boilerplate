@@ -1,14 +1,7 @@
-import { cx } from '@emotion/css';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import tw from 'twin.macro';
 
 import { useMouseEffect, useScrollPosition } from 'lib/hooks';
-
-import {
-	wrapperStyles,
-	scrollbarStyles,
-	thumbStyles,
-	innerThumbStyles,
-} from './scrollbar.styles';
 
 import type { CSSProperties } from 'react';
 
@@ -85,8 +78,14 @@ export const Scrollbar = () => {
 	);
 
 	return noScrollbar ? null : (
-		<span className={wrapperStyles}>
-			<span className={cx(scrollbarStyles, isExpanded && 'active')}>
+		<span css={tw`fixed top-0 right-0 z-0 flex h-screen`}>
+			<span
+				css={[
+					tw`relative w-3 md:w-4 my-auto h-70vh`,
+					tw`rounded-full rounded-tr-none rounded-br-none bg-white-opacity-10`,
+					isExpanded && tw`rounded-full`,
+				]}
+			>
 				<span
 					ref={scrollThumbRef}
 					tabIndex={-1}
@@ -97,10 +96,17 @@ export const Scrollbar = () => {
 					onTouchEnd={onScrollBlur}
 					onFocus={onScrollFocus}
 					onBlur={onScrollBlur}
-					className={thumbStyles}
+					css={tw`absolute top-0 right-0 z-0 w-12`}
 					style={thumbInlineStyles}
 				>
-					<span className={cx(innerThumbStyles, isExpanded && 'active')} />
+					<span
+						css={[
+							tw`transition-all duration-300 ease-out motion-reduce:transform-none`,
+							tw`absolute top-0 right-0 z-0 h-full w-3 md:w-4`,
+							tw`bg-blue border-mouse rounded-full rounded-tr-none rounded-br-none`,
+							isExpanded && tw`rounded-full`,
+						]}
+					/>
 				</span>
 			</span>
 		</span>

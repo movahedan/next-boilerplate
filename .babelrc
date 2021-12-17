@@ -12,6 +12,7 @@
 	],
 	"plugins": [
     "@emotion",
-		"xwind/babel"
+    "babel-plugin-twin",
+    "babel-plugin-macros"
 	]	
 }

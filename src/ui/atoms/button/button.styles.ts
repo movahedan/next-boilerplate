@@ -1,39 +1,37 @@
 import { css } from '@emotion/css';
-import xw from 'xwind';
-
-import { tailwindTheme } from 'lib/utils';
+import tw from 'twin.macro';
 
 const buttonSubStyle = {
-	base: xw`
+	base: tw`
 		relative inline-flex items-center justify-center align-middle 
 		text-white break-words text-center
 		rounded-6px outline-none appearance-none disabled:opacity-25
 		select-none pointer-events-auto
 		cursor-pointer disabled:cursor-not-allowed
-		`,
+	`,
 
-	beforeAfter: xw`rounded-full`,
-	hover: xw`ease-in top-0 bottom-0 left-0 right-0`,
-	before: xw`
+	beforeAfter: tw`rounded-full`,
+	hover: tw`ease-in top-0 bottom-0 left-0 right-0`,
+	before: tw`
 		block w-full h-full overflow-hidden 
 		absolute left-0 top-0
 	`,
-	after: xw`
+	after: tw`
 		absolute top-1 bottom-1 right-1 left-1
 		transform-gpu ease-out duration-100
 		block overflow-hidden
 	`,
-	active: xw`
+	active: tw`
 		absolute top-1 bottom-1 right-1 left-1
 	`,
 	colorVariant: {
-		primary: xw``,
-		outline: xw``,
+		primary: tw``,
+		outline: tw``,
 	},
 	sizeVariant: {
-		small: xw`py-2 px-6 prose-sm`,
-		medium: xw`py-3 px-8 prose`,
-		large: xw`py-6 px-12 prose-heading-xl`,
+		small: tw`py-2 px-6 prose-sm`,
+		medium: tw`py-3 px-8 prose`,
+		large: tw`py-6 px-12 prose-heading-xl`,
 	},
 };
 
@@ -50,13 +48,6 @@ export const buttonStyles = css`
 		${buttonSubStyle.sizeVariant.large};
 	}
 
-	&.primary {
-		background: linear-gradient(
-			91.52deg,
-			${tailwindTheme.theme.colors['blue-opacity-80']} 0.13%,
-			${tailwindTheme.theme.colors['yellow-opacity-80']} 100%
-		);
-	}
 	&.outline {
 		${buttonSubStyle.colorVariant.outline};
 	}

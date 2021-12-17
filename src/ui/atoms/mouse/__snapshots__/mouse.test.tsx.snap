@@ -18,9 +18,9 @@ exports[`<Mouse> should match snapshot 1`] = `
   left: 0px;
   z-index: 10;
   pointer-events: none;
-  --tw-bg-opacity: 1;
   width: 4.5rem;
   height: 4.5rem;
+  --tw-bg-opacity: 1;
   background-color: rgba(18, 18, 18, var(--tw-bg-opacity));
   opacity: 0.75;
   border-color: rgba(255, 255, 255, 0.3);
@@ -28,7 +28,7 @@ exports[`<Mouse> should match snapshot 1`] = `
   border-radius: 9999px;
   transition-property: all;
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  transition-duration: 100ms;
+  transition-duration: 75ms;
 }
 
 @media (prefers-reduced-motion: reduce) {

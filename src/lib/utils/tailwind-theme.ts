@@ -124,7 +124,7 @@ export const tailwindTheme = {
 				css: {
 					fontFamily: ['sans-serif', 'Sen'],
 					fontSize: '1.125rem',
-					lineHeight: '1.75rem',
+					lineHeight: '2rem',
 					fontWeight: 'normal',
 					maxWidth: '40rem',
 				},
@@ -143,6 +143,15 @@ export const tailwindTheme = {
 					fontSize: '2rem',
 					lineHeight: '2.375rem',
 					fontWeight: 'normal',
+				},
+			},
+			'hyper-type': {
+				css: {
+					color: 'transparent',
+					opacity: 0.5,
+					fontFamily: ['sans-serif', 'Sen'],
+					backgroundClip: 'text',
+					backgroundImage: 'linear-gradient(to right, #3AB3DA, #FFC93D)',
 				},
 			},
 		},
@@ -1856,7 +1865,6 @@ export const tailwindTheme = {
 	],
 	purge: ['./src/{ui,pages}/**/*.{ts,tsx}'],
 	darkMode: false,
-	xwind: { mode: 'objectstyles' },
 	presets: [],
 	variantOrder: [
 		'first',

@@ -25,6 +25,8 @@ const jestConfig = {
 		'!src/**/index.ts',
 		'!src/**/*.{d,types,styles}.ts',
 		'!src/**/*.stories.tsx',
+		// Hard to test
+		'!src/ui/atoms/scrollbar/**/*.{ts,tsx}',
 	],
 
 	// The directory where Jest should output its coverage files

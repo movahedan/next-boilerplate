@@ -1,10 +1,4 @@
-import { cx } from '@emotion/css';
-
-import {
-	containerClassName,
-	wrapperClassName,
-	middleClassName,
-} from './card-gradient.styles';
+import { containerClassName, wrapperClassName } from './card-gradient.styles';
 
 import type { FC } from 'react';
 
@@ -20,8 +14,8 @@ export const CardGradient: FC<CardGradientProps> = ({
 	variant,
 	children,
 }) => (
-	<OuterAs className={cx(wrapperClassName, variant)}>
-		<div className={middleClassName}>
+	<OuterAs className={[wrapperClassName, variant].join(' ')}>
+		<div className='h-full bg-dark rounded-20px'>
 			<InnerAs className={containerClassName}>{children}</InnerAs>
 		</div>
 	</OuterAs>
