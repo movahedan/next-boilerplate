@@ -19,7 +19,7 @@ export const CardGradient: FC<CardGradientProps> = ({
 	children,
 }) => (
 	<OuterAs className={[wrapperClassName, variant].join(' ')}>
-		<div tw='bg-dark rounded-20px'>
+		<div tw='h-full bg-dark rounded-20px'>
 			<div className={[middleClassName, variant].join(' ')}>
 				<InnerAs className={containerClassName}>{children}</InnerAs>
 			</div>
