@@ -4,7 +4,7 @@ import xw from 'xwind';
 const mouseStyles = {
 	base: xw`absolute top-0 left-0 z-10 pointer-events-none`,
 	theme: xw`w-72px h-72px bg-mouse opacity-75 border-mouse border-3px rounded-full`,
-	animation: xw`transition-all duration-100 ease-out motion-reduce:transform-none`,
+	animation: xw`transition-all duration-75 ease-out motion-reduce:transform-none`,
 };
 
 export const mouseClassName = css`
