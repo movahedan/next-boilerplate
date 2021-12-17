@@ -76,6 +76,14 @@ exports[`<Button> should match is's snapshot 1`] = `
   max-width: 40rem;
 }
 
+.emotion-0.primary {
+  background: linear-gradient(
+  			91.52deg,
+  			rgba(28, 121, 150, 0.8) 0.13%,
+  			rgba(179, 129, 0, 0.8) 100%
+  		);
+}
+
 .emotion-0:hover:not(:disabled):after {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   top: 0px;
@@ -113,12 +121,7 @@ exports[`<Button> should match is's snapshot 1`] = `
   display: block;
   overflow: hidden;
   content: '';
-  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
   z-index: -1;
-}
-
-.emotion-0:active:not(:disabled) {
-  color: #ccc;
 }
 
 .emotion-0:active:not(:disabled):after {
@@ -127,15 +130,6 @@ exports[`<Button> should match is's snapshot 1`] = `
   bottom: 0.25rem;
   right: 0.25rem;
   left: 0.25rem;
-  background-image: linear-gradient(
-  				0deg,
-  				rgba(0, 0, 0, 0.2),
-  				rgba(0, 0, 0, 0.2)
-  			),linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
-}
-
-.emotion-0:focus:not(:active):not(:hover):before {
-  background-color: rgba(249, 58, 19, 0.32);
 }
 
 <button
@@ -234,6 +228,14 @@ exports[`<Button> should match is's snapshot for loading state: loading 1`] = `
   max-width: 40rem;
 }
 
+.emotion-0.primary {
+  background: linear-gradient(
+  			91.52deg,
+  			rgba(28, 121, 150, 0.8) 0.13%,
+  			rgba(179, 129, 0, 0.8) 100%
+  		);
+}
+
 .emotion-0:hover:not(:disabled):after {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   top: 0px;
@@ -271,12 +273,7 @@ exports[`<Button> should match is's snapshot for loading state: loading 1`] = `
   display: block;
   overflow: hidden;
   content: '';
-  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
   z-index: -1;
-}
-
-.emotion-0:active:not(:disabled) {
-  color: #ccc;
 }
 
 .emotion-0:active:not(:disabled):after {
@@ -285,15 +282,6 @@ exports[`<Button> should match is's snapshot for loading state: loading 1`] = `
   bottom: 0.25rem;
   right: 0.25rem;
   left: 0.25rem;
-  background-image: linear-gradient(
-  				0deg,
-  				rgba(0, 0, 0, 0.2),
-  				rgba(0, 0, 0, 0.2)
-  			),linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
-}
-
-.emotion-0:focus:not(:active):not(:hover):before {
-  background-color: rgba(249, 58, 19, 0.32);
 }
 
 <button
