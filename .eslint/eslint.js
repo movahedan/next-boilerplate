@@ -10,21 +10,11 @@ const eslintPlugin = {
 	},
 	overrides: [
 		{
-			files: [
-				'.eslintrc.js',
-				'./tailwind.config.js',
-				'./src/ui/utils/tailwind-theme.ts',
-			],
-			rules: {
-				'max-lines': 'off',
-			},
-		},
-		{
 			files: ['./**/*.test.{ts,tsx}'],
 			rules: {
 				'max-lines': [
 					'error',
-					{ max: 300, skipBlankLines: true, skipComments: true },
+					{ max: 3000, skipBlankLines: true, skipComments: true },
 				],
 			},
 		},
