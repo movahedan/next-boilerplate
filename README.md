@@ -1,6 +1,6 @@
 # Next.js opinionated boilerplate
 
-A well-structured production-ready Next.js boilerplate with a well-documented directory structuring that supports Typescript, Jest, react-testing-library, Cypress, configurable Fetch and SWR, and a configured component library using Emotion, Tailwind, PostCSS, and Storybook. Plus, taking advantage of NextSeo and NextSitemap for SEO. 
+A well-structured production-ready Next.js boilerplate with a well-documented directory structuring that supports Typescript, Jest, react-testing-library, Cypress, configurable Fetch and SWR, and a configured component library using Emotion, twin.macro, Tailwind, and Storybook. Plus, taking advantage of NextSeo and NextSitemap. 
 
 ![Coverage Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/movahedan/49ff7044879e43a1daf430086b622c53/raw/next-boilerplate__heads_main.json)
 ![Build Badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/movahedan/49ff7044879e43a1daf430086b622c53/raw/next-boilerplate__build_badge.json)
@@ -13,7 +13,7 @@ A well-structured production-ready Next.js boilerplate with a well-documented di
 - [x] Setup Cypress
 - [x] Setup GitHub actions
 - [x] Deploy on vercel
-- Dockerize it
+- [x] Dockerize it
 ### Application development
 - [x] Setup directory structure and global types [Read documentation](https://github.com/movahedan/next-boilerplate/blob/main/docs/directories.md "Directories documentation")
 - [x] Setup configurable Fetch and SWR
@@ -22,11 +22,11 @@ A well-structured production-ready Next.js boilerplate with a well-documented di
 -	Setup Error Handling and Reporting
 - Setup Redux
 ### Styling
-- [x] Setup Emotion and PostCSS with fully-configured Tailwind
+- [x] Setup Emotion and twin.macro with fully-configured Tailwind
 - [x] Setup UI library (Storybook installed with some helper functions)
--	[x] Setup MediaQuery module (supports Tailwind and SSR)
+-	[x] Setup MediaQuery module (SSR support)
 - [x] Setup optimized, easy to change, testable Google font
-- [x] Setup Layout structure (supports per page layout)
+- [x] Setup Layout structure (Per page layout support)
 -	Implement a minimal component library (with the help of headless ui)
 ### Additional hooks
   - [x] useAliveRef
