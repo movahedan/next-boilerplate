@@ -9,17 +9,9 @@ exports[`<CardGradient> should match is's blue variant snapshot 1`] = `
   transition-duration: 500ms;
 }
 
-.emotion-0.blue {
-  background: linear-gradient(134.14deg, #3AB3DA 0%, rgba(255, 255, 255, 0.1) 25.6%);
-}
-
 .emotion-0.blue:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(58, 179, 218, var(--tw-bg-opacity));
-}
-
-.emotion-0.yellow {
-  background: linear-gradient(146.28deg, #FFC93D 0%, rgba(255, 255, 255, 0.1) 25.6%);
 }
 
 .emotion-0.yellow:hover {
@@ -28,16 +20,37 @@ exports[`<CardGradient> should match is's blue variant snapshot 1`] = `
 }
 
 .emotion-1 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(33, 33, 33, var(--tw-bg-opacity));
+  border-radius: 1.25rem;
+}
+
+.emotion-2 {
+  height: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgba(33, 33, 33, var(--tw-bg-opacity));
+  border-radius: 1.25rem;
+}
+
+.emotion-2.blue {
+  background: linear-gradient(130.76deg, rgba(58, 179, 218, 0.1) 0%, transparent 50.03%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+.emotion-2.yellow {
+  background: linear-gradient(137.94deg, rgba(255, 201, 61, 0.1) 0%, transparent 30.89%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+.emotion-3 {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 1.25rem;
   height: 100%;
 }
 
-.emotion-1.blue {
+.emotion-3.blue {
   background: linear-gradient(130.76deg, rgba(58, 179, 218, 0.1) 0%, transparent 50.03%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
 }
 
-.emotion-1.yellow {
+.emotion-3.yellow {
   background: linear-gradient(137.94deg, rgba(255, 201, 61, 0.1) 0%, transparent 30.89%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
 }
 
@@ -45,11 +58,15 @@ exports[`<CardGradient> should match is's blue variant snapshot 1`] = `
   className="emotion-0 blue"
 >
   <div
-    className="h-full bg-dark rounded-20px"
+    className="emotion-1"
   >
     <div
-      className="emotion-1"
-    />
+      className="emotion-2 blue"
+    >
+      <div
+        className="emotion-3"
+      />
+    </div>
   </div>
 </div>
 `;
@@ -63,17 +80,9 @@ exports[`<CardGradient> should match is's yellow variant snapshot 1`] = `
   transition-duration: 500ms;
 }
 
-.emotion-0.blue {
-  background: linear-gradient(134.14deg, #3AB3DA 0%, rgba(255, 255, 255, 0.1) 25.6%);
-}
-
 .emotion-0.blue:hover {
   --tw-bg-opacity: 1;
   background-color: rgba(58, 179, 218, var(--tw-bg-opacity));
-}
-
-.emotion-0.yellow {
-  background: linear-gradient(146.28deg, #FFC93D 0%, rgba(255, 255, 255, 0.1) 25.6%);
 }
 
 .emotion-0.yellow:hover {
@@ -82,16 +91,37 @@ exports[`<CardGradient> should match is's yellow variant snapshot 1`] = `
 }
 
 .emotion-1 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(33, 33, 33, var(--tw-bg-opacity));
+  border-radius: 1.25rem;
+}
+
+.emotion-2 {
+  height: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgba(33, 33, 33, var(--tw-bg-opacity));
+  border-radius: 1.25rem;
+}
+
+.emotion-2.blue {
+  background: linear-gradient(130.76deg, rgba(58, 179, 218, 0.1) 0%, transparent 50.03%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+.emotion-2.yellow {
+  background: linear-gradient(137.94deg, rgba(255, 201, 61, 0.1) 0%, transparent 30.89%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+.emotion-3 {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 1.25rem;
   height: 100%;
 }
 
-.emotion-1.blue {
+.emotion-3.blue {
   background: linear-gradient(130.76deg, rgba(58, 179, 218, 0.1) 0%, transparent 50.03%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
 }
 
-.emotion-1.yellow {
+.emotion-3.yellow {
   background: linear-gradient(137.94deg, rgba(255, 201, 61, 0.1) 0%, transparent 30.89%),linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
 }
 
@@ -99,11 +129,15 @@ exports[`<CardGradient> should match is's yellow variant snapshot 1`] = `
   className="emotion-0 yellow"
 >
   <div
-    className="h-full bg-dark rounded-20px"
+    className="emotion-1"
   >
     <div
-      className="emotion-1"
-    />
+      className="emotion-2 yellow"
+    >
+      <div
+        className="emotion-3"
+      />
+    </div>
   </div>
 </div>
 `;

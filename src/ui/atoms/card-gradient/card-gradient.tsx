@@ -1,4 +1,8 @@
-import { containerClassName, wrapperClassName } from './card-gradient.styles';
+import {
+	containerClassName,
+	wrapperClassName,
+	middleClassName,
+} from './card-gradient.styles';
 
 import type { FC } from 'react';
 
@@ -15,8 +19,10 @@ export const CardGradient: FC<CardGradientProps> = ({
 	children,
 }) => (
 	<OuterAs className={[wrapperClassName, variant].join(' ')}>
-		<div className='h-full bg-dark rounded-20px'>
-			<InnerAs className={containerClassName}>{children}</InnerAs>
+		<div tw='bg-dark rounded-20px'>
+			<div className={[middleClassName, variant].join(' ')}>
+				<InnerAs className={containerClassName}>{children}</InnerAs>
+			</div>
 		</div>
 	</OuterAs>
 );

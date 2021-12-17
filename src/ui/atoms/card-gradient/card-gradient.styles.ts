@@ -15,23 +15,30 @@ const background = {
 	yellow: `linear-gradient(137.94deg, ${tailwindTheme.theme.colors['yellow-opacity-10']} 0%, transparent 30.89%), linear-gradient(0deg, ${tailwindTheme.theme.colors['white-opacity-10']}, ${tailwindTheme.theme.colors['white-opacity-10']})`,
 };
 
-const wrapperBase = tw`p-2px rounded-20px transition-colors ease-in-out duration-500`;
 export const wrapperClassName = css`
-	${wrapperBase}
+	${tw`p-2px rounded-20px transition-colors ease-in-out duration-500`}
 
 	&.blue {
-		background: ${border.blueGradient};
 		${border.blueHoverClassName}
 	}
 	&.yellow {
-		background: ${border.yellowGradient};
 		${border.yellowHoverClassName}
 	}
 `;
 
-const containerBase = tw`bg-white-opacity-10 rounded-20px h-full`;
+export const middleClassName = css`
+	${tw`h-full bg-dark rounded-20px`}
+
+	&.blue {
+		background: ${background.blue};
+	}
+	&.yellow {
+		background: ${background.yellow};
+	}
+`;
+
 export const containerClassName = css`
-	${containerBase};
+	${tw`bg-white-opacity-10 rounded-20px h-full`};
 
 	&.blue {
 		background: ${background.blue};
