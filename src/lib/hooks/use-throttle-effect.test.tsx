@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { act, render } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import { useEffect, useState } from 'react';
 
@@ -9,8 +9,11 @@ import { useThrottleEffect } from './use-throttle-effect';
 describe('useThrottleEffect', () => {
 	it('should throttle the effect', async () => {
 		const callback = jest.fn();
-		render(<Dummy callback={callback} />);
-		await waitForMilliseconds(400);
+
+		await act(async () => {
+			render(<Dummy callback={callback} />);
+			await waitForMilliseconds(400);
+		});
 
 		expect(callback).toHaveBeenCalledTimes(1);
 	});

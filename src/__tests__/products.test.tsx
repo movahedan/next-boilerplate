@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react';
 import { axe } from 'jest-axe';
-import { act } from 'react-dom/test-utils';
 import { create } from 'react-test-renderer';
 
 import { mockUseRouter } from '__tests__/__helpers__/router.test';
@@ -18,7 +17,7 @@ describe('<ProductsPage>', () => {
 		},
 	};
 
-	it('should match snapshot', async () => {
+	it('should match snapshot', () => {
 		const component = create(<ProductsPage {...defaultProps} />).toJSON();
 		expect(component).toMatchSnapshot();
 	});
@@ -26,10 +25,7 @@ describe('<ProductsPage>', () => {
 	it('should be accessible', async () => {
 		const { container } = render(<ProductsPage {...defaultProps} />);
 
-		let results;
-		await act(async () => {
-			results = await axe(container);
-		});
+		const results = await axe(container);
 		expect(results).toHaveNoViolations();
 	});
 

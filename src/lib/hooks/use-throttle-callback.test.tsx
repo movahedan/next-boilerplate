@@ -1,5 +1,5 @@
-import { render } from '@testing-library/react';
-import { renderHook } from '@testing-library/react-hooks';
+import { render, act } from '@testing-library/react';
+import { renderHook, act as actHook } from '@testing-library/react-hooks';
 import { useEffect, useState } from 'react';
 
 import { waitForMilliseconds } from 'lib/utils';
@@ -8,8 +8,12 @@ import { useThrottleCallback } from './use-throttle-callback';
 
 describe('useThrottleCallback', () => {
 	it('should throttle the callback', async () => {
-		const { container } = render(<Dummy />);
-		await waitForMilliseconds(400);
+		let container;
+
+		await act(async () => {
+			({ container } = render(<Dummy />));
+			await waitForMilliseconds(400);
+		});
 
 		expect(container).toHaveTextContent('1');
 	});
@@ -20,7 +24,9 @@ describe('useThrottleCallback', () => {
 			useThrottleCallback(callback, [])
 		);
 
-		rerender();
+		actHook(() => {
+			rerender();
+		});
 		unmount();
 
 		waitFor(() => {
