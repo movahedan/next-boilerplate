@@ -3,7 +3,6 @@ export const portfolioContent = {
 		intro: 'I’m',
 		name: 'Soheil Movahedan',
 		infoList: ['A JavaScript developer', 'Never keeps you await'],
-
 		description:
 			'A JavaScript developer with 5 years of experience in Front-End development. Skills include fast learning, creative problem solving and high perseverance. Able to communicate effectively in a team and very keen to improve my management skills.',
 
