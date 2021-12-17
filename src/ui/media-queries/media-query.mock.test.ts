@@ -1,6 +1,10 @@
-import { mediaQueriesEntries } from 'lib/media-queries/media-queries.constants';
+import { mediaQueriesEntries } from 'ui/media-queries/media-queries.utils';
 
-import type { MediaQueries, ScreenNames } from 'lib/media-queries';
+import type { MediaQueries, ScreenNames } from 'ui/media-queries';
+
+it('Dummy test', () => {
+	expect(true).toBeTruthy();
+});
 
 const getMatchMediasByGivenMediaQuery = (
 	mediaQuery: ScreenNames

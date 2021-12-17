@@ -1,4 +1,4 @@
-import { tailwindTheme } from 'lib/utils';
+import { tailwindTheme } from 'ui/utils';
 
 import type { ScreenNames } from './media-queries.types';
 

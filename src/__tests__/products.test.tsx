@@ -3,7 +3,7 @@ import { axe } from 'jest-axe';
 import { act } from 'react-dom/test-utils';
 import { create } from 'react-test-renderer';
 
-import { mockUseRouter } from '__mocks__/mock-router.jest';
+import { mockUseRouter } from '__tests__/__helpers__/router.test';
 import ProductsPage, { getStaticProps } from 'pages/products/index';
 
 import type { InferGetStaticPropsType } from 'next';

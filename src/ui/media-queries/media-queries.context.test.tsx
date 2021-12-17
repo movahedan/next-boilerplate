@@ -1,10 +1,9 @@
 import { render, waitFor } from '@testing-library/react';
 
-import { mockMatchMedia } from '__mocks__/mock-media-query.jest';
-
 import { useMediaQueries, MediaQueriesProvider } from './media-queries';
-import { mediaQueriesEntries } from './media-queries.constants';
 import { initMediaQueriesContext } from './media-queries.context';
+import { mediaQueriesEntries } from './media-queries.utils';
+import { mockMatchMedia } from './media-query.mock.test';
 
 import type { ScreenNames } from './media-queries.types';
 import type { FC, ReactNode } from 'react';
@@ -13,6 +12,7 @@ describe('media-queries context', () => {
 	describe('server side', () => {
 		const { window } = global;
 		beforeEach(() => {
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 			// @ts-ignore
 			delete global.window;
 		});

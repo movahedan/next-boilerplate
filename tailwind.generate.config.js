@@ -13,7 +13,7 @@ const js = `export const tailwindTheme = ${configStr};`;
 
 try {
 	fs.writeFileSync(
-		path.resolve(process.cwd(), './src/lib/utils/tailwind-theme.ts'),
+		path.resolve(process.cwd(), './src/ui/utils/tailwind-theme.ts'),
 		prettier.format(js, { parser: 'babel' }),
 		'utf-8'
 	);

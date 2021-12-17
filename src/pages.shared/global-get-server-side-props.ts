@@ -1,8 +1,8 @@
-import { withMediaQueriesServerSideData } from 'lib/media-queries';
+import { setCacheHeader } from 'lib/server';
 
 import { fetcherConfig } from 'entry/configs';
 
-import { setCacheHeader } from './set-cache-header';
+import { withMediaQueriesServerSideData } from 'ui/media-queries';
 
 import type { GetServerSideProps, PreviewData } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
