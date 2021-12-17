@@ -85,10 +85,5 @@ yarn storybook:build
 
 Fist change the thing you with to be changed and check your staged changes status with the following command.
 ```bash
-yarn check
-```
-
-If you've changed `tailwind.config.js`, please run the following command to sync it's config between CSS & JS.
-```bash
-yarn tailwind
+yarn commit-check
 ```

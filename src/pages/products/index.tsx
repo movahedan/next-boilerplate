@@ -20,7 +20,7 @@ export const getStaticProps: GetStaticProps<IProductsPage> = async () => {
 
 const ProductsPage: NextPage<IProductsPage> = ({ data: { ids } }) => (
 	<div>
-		<h1>Produtcs page</h1>
+		<h1>Products page</h1>
 		<ul>
 			{ids.map((id) => (
 				<li key={id}>
