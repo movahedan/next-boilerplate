@@ -3,7 +3,7 @@
 exports[`<ProductsPage> should match snapshot 1`] = `
 <div>
   <h1>
-    Produtcs page
+    Products page
   </h1>
   <ul>
     <li>
